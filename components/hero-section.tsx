@@ -46,6 +46,9 @@ export function HeroSection() {
           <p className="text-5xl font-black text-yellow-400 md:text-6xl lg:text-7xl">
             99,000<span className="text-3xl md:text-4xl">원</span>
           </p>
+          <p className="mt-4 text-base font-medium text-white/90 md:text-lg lg:text-xl">
+            월 구독 가격으로 1개월만 관리 받아 보세요
+          </p>
         </h1>
 
         {/* Trust Indicators */}
