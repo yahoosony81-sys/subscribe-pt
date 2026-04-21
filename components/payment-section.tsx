@@ -11,6 +11,7 @@ const clientKey = process.env.NEXT_PUBLIC_TOSS_CLIENT_KEY || "test_ck_D5GePWvyJn
 export function PaymentSection() {
   const [widgets, setWidgets] = useState<TossPaymentsWidgets | null>(null)
   const [isReady, setIsReady] = useState(false)
+  const [loadError, setLoadError] = useState(false)
   const initialized = useRef(false)
 
   useEffect(() => {
@@ -36,6 +37,7 @@ export function PaymentSection() {
         setIsReady(true)
       } catch (error) {
         console.error("토스페이먼츠 위젯 초기화 실패:", error)
+        setLoadError(true)
       }
     }
 
@@ -78,10 +80,12 @@ export function PaymentSection() {
           {/* 결제하기 버튼 */}
           <Button
             onClick={handlePayment}
-            disabled={!isReady}
+            disabled={!isReady || loadError}
             className="relative mt-4 w-full overflow-hidden rounded-lg bg-blue-600 py-6 text-base font-bold text-white transition-all hover:bg-blue-700 disabled:opacity-50"
           >
-            {!isReady ? (
+            {loadError ? (
+              "결제 모듈을 불러오지 못했습니다. (새로고침 해주세요)"
+            ) : !isReady ? (
               <span className="flex items-center justify-center gap-2">
                 <svg className="h-5 w-5 animate-spin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
