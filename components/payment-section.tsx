@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { loadTossPayments, TossPaymentsWidgets } from "@tosspayments/tosspayments-sdk"
 import { Button } from "@/components/ui/button"
 
@@ -11,8 +11,12 @@ const clientKey = process.env.NEXT_PUBLIC_TOSS_CLIENT_KEY || "test_ck_D5GePWvyJn
 export function PaymentSection() {
   const [widgets, setWidgets] = useState<TossPaymentsWidgets | null>(null)
   const [isReady, setIsReady] = useState(false)
+  const initialized = useRef(false)
 
   useEffect(() => {
+    if (initialized.current) return
+    initialized.current = true
+
     async function initWidgets() {
       try {
         // 1. 토스페이먼츠 SDK 초기화
