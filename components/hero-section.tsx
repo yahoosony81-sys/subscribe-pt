@@ -34,7 +34,7 @@ export function HeroSection() {
 
         {/* Main Title */}
         <h1 className="mb-4 max-w-4xl text-balance font-extrabold leading-tight tracking-tight text-white">
-          <p className="text-xl font-black md:text-3xl lg:text-4xl">
+          <p className="font-[family-name:var(--font-nanum)] text-xl font-black md:text-3xl lg:text-4xl">
             PT도 구독하는 시대<br />제대로 관리 받자
           </p>
           <p className="mt-8 text-4xl font-black md:text-5xl lg:text-6xl">

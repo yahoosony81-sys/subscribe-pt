@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Noto_Sans_KR } from 'next/font/google'
+import { Noto_Sans_KR, Nanum_Gothic } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 import './globals.css'
@@ -8,6 +8,12 @@ const notoSansKr = Noto_Sans_KR({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
   variable: "--font-sans"
+});
+
+const nanumGothic = Nanum_Gothic({
+  subsets: ["latin"],
+  weight: ["400", "700", "800"],
+  variable: "--font-nanum"
 });
 
 export const metadata: Metadata = {
@@ -36,7 +42,7 @@ export default function RootLayout({
         </Script>
         {/* --- GTM 헤드 코드 삽입 끝 --- */}
       </head>
-      <body className={`${notoSansKr.variable} font-sans antialiased`}>
+      <body className={`${notoSansKr.variable} ${nanumGothic.variable} font-sans antialiased`}>
         {/* --- [2] GTM 바디 코드(noscript) 삽입 시작 --- */}
         <noscript>
           <iframe
