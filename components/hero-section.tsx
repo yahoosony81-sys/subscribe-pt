@@ -8,13 +8,8 @@ export function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-
           src="/images/hero-bg.jpg"
           alt="커피한잔 - PT 트레이닝 전문 관리"
-
-         
-          
-
           fill
           className="object-cover object-center"
           priority
@@ -35,10 +30,10 @@ export function HeroSection() {
         {/* Main Title */}
         <h1 className="mb-4 max-w-4xl text-balance font-extrabold leading-tight tracking-tight text-white">
           <p className="text-xl font-black md:text-3xl lg:text-4xl">
-            PT도 구독하는 시대<br />제대로 관리 받자
+            이젠 PT도 관리 받는 시대
           </p>
           <p className="mt-8 text-4xl font-black md:text-5xl lg:text-6xl">
-            한달에
+            1개월 집중 패스
           </p>
           <p className="mt-1 text-lg font-semibold text-white/60 line-through md:text-2xl">
             500,000원
@@ -46,6 +41,17 @@ export function HeroSection() {
           <p className="text-5xl font-black text-yellow-400 md:text-6xl lg:text-7xl">
             99,000<span className="text-3xl md:text-4xl">원</span>
           </p>
+
+          {/* 사업자님 요청 문구 추가 */}
+          <div className="mt-8 border-y border-white/20 py-6">
+            <p className="text-xl font-bold text-white/90 md:text-2xl lg:text-3xl">
+              "월 구독 가격으로 1개월만 먼저 관리 받아보세요"
+            </p>
+            {/* 토스 심사 통과를 위한 필수 안내 문구 */}
+            <p className="mt-3 text-sm font-medium text-white/50">
+              * 본 상품은 자동 결제 걱정 없는 1회성 단건 결제 상품입니다.
+            </p>
+          </div>
         </h1>
 
         {/* Trust Indicators */}
