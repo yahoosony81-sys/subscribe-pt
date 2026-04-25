@@ -26,8 +26,8 @@ export function PaymentSection() {
         const customerKey = `customer_${new Date().getTime()}`
         const widget = tossPayments.widgets({ customerKey })
 
-        // 2. 결제 금액 설정 (예: 구독권 50,000원)
-        await widget.setAmount({ currency: "KRW", value: 50000 })
+        // 2. 결제 금액 설정 (예: 구독권 99,000원)
+        await widget.setAmount({ currency: "KRW", value: 99000 })
 
         // 3. 결제 위젯 렌더링
         await widget.renderPaymentMethods({ selector: "#payment-method" })
@@ -94,7 +94,7 @@ export function PaymentSection() {
                 결제 모듈 불러오는 중...
               </span>
             ) : (
-              "50,000원 결제하기"
+              "99,000원 결제하기"
             )}
           </Button>
         </div>
