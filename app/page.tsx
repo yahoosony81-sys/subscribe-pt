@@ -16,27 +16,9 @@
  * ============================================================
  */
 
-import { PromotionTabs } from "@/components/promotions/promotion-tabs"
-import { LocationSection } from "@/components/location-section"
-import { RegistrationSection } from "@/components/registration-section"
-import { Footer } from "@/components/footer"
+import { redirect } from "next/navigation"
 
 export default function Home() {
-  return (
-    <main className="min-h-screen">
-      {/* ─────────────────────────────────────────────
-          📌 프로모션 탭 영역
-          - 상단 탭 메뉴 + 프로모션 A/B/C 독립 컨테이너
-          - 탭 관련 수정은 components/promotions/ 폴더에서
-          ───────────────────────────────────────────── */}
-      <PromotionTabs />
-
-      {/* ─────────────────────────────────────────────
-          📌 공통 섹션 (모든 탭에서 동일하게 보이는 영역)
-          ───────────────────────────────────────────── */}
-      <LocationSection />
-      <RegistrationSection />
-      <Footer />
-    </main>
-  )
+  // 사용자가 메인 도메인으로 접속하면 자동으로 첫 번째 프로모션 탭으로 이동시킵니다.
+  redirect("/promo-a")
 }

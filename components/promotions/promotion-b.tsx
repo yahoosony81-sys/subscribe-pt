@@ -189,7 +189,7 @@ export function PromotionB() {
             {copyData.stepsSub}
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
+          <div className="grid grid-cols-4 gap-2 sm:gap-6 md:gap-8">
             {[
               { step: "STEP 1", title: "온라인 결제", desc: "사이트에서 정기관리 신청" },
               { step: "STEP 2", title: "상담 및 예약", desc: "해피콜을 통한 첫 방문 예약" },
@@ -197,19 +197,19 @@ export function PromotionB() {
               { step: "STEP 4", title: "관리 시작", desc: "1:1 PT 및 맞춤형 루틴 진행" }
             ].map((s, i) => (
               <div key={i} className="flex flex-col items-center">
-                <h4 className="text-2xl font-black mb-4">{s.step}</h4>
-                <div className="w-full aspect-square bg-slate-200 mb-6 relative">
+                <h4 className="text-[11px] sm:text-lg md:text-2xl font-black mb-2 sm:mb-4">{s.step}</h4>
+                <div className="w-full aspect-square bg-slate-200 mb-2 sm:mb-6 relative rounded-sm sm:rounded-none">
                   {/* 스텝별 아이콘이나 이미지 자리 */}
-                  <div className="absolute inset-0 flex items-center justify-center text-4xl text-slate-400">
+                  <div className="absolute inset-0 flex items-center justify-center text-lg sm:text-3xl md:text-4xl text-slate-400">
                     {i === 0 ? "💳" : i === 1 ? "📞" : i === 2 ? "📊" : "🏃‍♂️"}
                   </div>
                 </div>
-                <h5 className="font-bold text-lg mb-2">{s.title}</h5>
-                <p className="text-sm text-slate-500">{s.desc}</p>
+                <h5 className="font-bold text-[10px] sm:text-base md:text-lg mb-1 sm:mb-2 text-center leading-tight break-keep">{s.title}</h5>
+                <p className="hidden sm:block text-[9px] sm:text-sm text-slate-500 text-center break-keep leading-snug">{s.desc}</p>
                 {i === 0 && (
                   <button 
                     onClick={() => document.getElementById('payment-section-b')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="mt-6 border border-black bg-white px-4 py-2 text-xs font-bold hover:bg-black hover:text-white"
+                    className="mt-2 sm:mt-6 border border-black bg-white px-2 py-1 sm:px-4 sm:py-2 text-[9px] sm:text-xs font-bold hover:bg-black hover:text-white"
                   >
                     참가 신청
                   </button>

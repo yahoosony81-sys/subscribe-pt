@@ -10,10 +10,7 @@
  * ============================================================
  */
 
-import { useState } from "react"
-import { PromotionA } from "./promotion-a"
-import { PromotionB } from "./promotion-b"
-import { PromotionC } from "./promotion-c"
+import Link from "next/link"
 
 /* ─────────────────────────────────────────────
    📌 탭 설정 배열
@@ -28,9 +25,7 @@ const tabs = [
   { id: "c", label: "가정의 달 특별", badge: "EVENT" },
 ]
 
-export function PromotionTabs() {
-  const [activeTab, setActiveTab] = useState("a")
-
+export function PromotionTabs({ activeTab }: { activeTab: string }) {
   return (
     <section className="bg-white">
       {/* ─────────────────────────────────────────────
@@ -41,9 +36,9 @@ export function PromotionTabs() {
         <div className="mx-auto w-full max-w-4xl px-2 sm:px-4">
           <div className="flex w-full items-center justify-between gap-1 py-2 sm:justify-center sm:gap-2 sm:py-3">
             {tabs.map((tab) => (
-              <button
+              <Link
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                href={`/promo-${tab.id}`}
                 className={`
                   relative flex flex-1 flex-col items-center justify-center gap-1 rounded-lg px-1 py-2 text-[11px] font-bold leading-tight tracking-tight
                   transition-all duration-300 xs:flex-row xs:text-xs sm:flex-none sm:gap-1.5 sm:rounded-xl sm:px-6 sm:py-3 sm:text-base
@@ -74,26 +69,10 @@ export function PromotionTabs() {
                 {activeTab === tab.id && (
                   <span className="absolute -bottom-[9px] left-1/2 h-1 w-6 sm:w-8 -translate-x-1/2 rounded-full bg-[#FF5C00] sm:-bottom-[11px]" />
                 )}
-              </button>
+              </Link>
             ))}
           </div>
         </div>
-      </div>
-
-      {/* ─────────────────────────────────────────────
-          📌 프로모션 콘텐츠 영역
-          - 각 탭에 연결된 독립적인 컨테이너가 렌더링됩니다
-          - 새로운 프로모션을 추가하면 아래 조건문도 추가하세요
-          ───────────────────────────────────────────── */}
-      <div className="promotion-content-area">
-        {/* 프로모션 A 컨테이너 */}
-        {activeTab === "a" && <PromotionA />}
-
-        {/* 프로모션 B 컨테이너 */}
-        {activeTab === "b" && <PromotionB />}
-
-        {/* 프로모션 C 컨테이너 */}
-        {activeTab === "c" && <PromotionC />}
       </div>
     </section>
   )
