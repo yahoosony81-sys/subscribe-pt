@@ -38,15 +38,15 @@ export function PromotionTabs() {
           - 탭 디자인을 바꾸고 싶으면 이 부분만 수정하세요
           ───────────────────────────────────────────── */}
       <div className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md">
-        <div className="mx-auto max-w-4xl px-4">
-          <div className="flex items-center justify-start gap-2 overflow-x-auto py-3 scrollbar-hide sm:justify-center">
+        <div className="mx-auto w-full max-w-4xl px-2 sm:px-4">
+          <div className="flex w-full items-center justify-between gap-1 py-2 sm:justify-center sm:gap-2 sm:py-3">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`
-                  relative flex shrink-0 items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-semibold
-                  transition-all duration-300 sm:px-6 sm:py-3 sm:text-base
+                  relative flex flex-1 flex-col items-center justify-center gap-1 rounded-lg px-1 py-2 text-[11px] font-bold leading-tight tracking-tight
+                  transition-all duration-300 xs:flex-row xs:text-xs sm:flex-none sm:gap-1.5 sm:rounded-xl sm:px-6 sm:py-3 sm:text-base
                   ${
                     activeTab === tab.id
                       ? "bg-[#FF5C00] text-white shadow-lg shadow-orange-500/25"
@@ -54,12 +54,12 @@ export function PromotionTabs() {
                   }
                 `}
               >
-                {tab.label}
+                <span className="whitespace-nowrap">{tab.label}</span>
                 {/* 뱃지 표시 */}
                 {tab.badge && (
                   <span
                     className={`
-                      ml-1 rounded-full px-1.5 py-0.5 text-[10px] font-bold leading-none
+                      rounded-full px-1.5 py-0.5 text-[9px] sm:text-[10px] font-black leading-none sm:ml-1
                       ${
                         activeTab === tab.id
                           ? "bg-white/25 text-white"
@@ -72,7 +72,7 @@ export function PromotionTabs() {
                 )}
                 {/* 활성 탭 하단 인디케이터 */}
                 {activeTab === tab.id && (
-                  <span className="absolute -bottom-[11px] left-1/2 h-1 w-8 -translate-x-1/2 rounded-full bg-[#FF5C00]" />
+                  <span className="absolute -bottom-[9px] left-1/2 h-1 w-6 sm:w-8 -translate-x-1/2 rounded-full bg-[#FF5C00] sm:-bottom-[11px]" />
                 )}
               </button>
             ))}

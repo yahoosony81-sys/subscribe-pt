@@ -57,7 +57,7 @@ const copyData = {
 }
 
 export function PromotionB() {
-  const nikeButtonStyle = "inline-flex items-center justify-center border-2 border-black bg-white px-8 py-3 text-sm font-bold text-black transition-colors hover:bg-black hover:text-white uppercase tracking-wider"
+  const nikeButtonStyle = "inline-flex w-full sm:w-auto items-center justify-center border-2 border-black bg-white px-8 py-3 text-sm font-bold text-black transition-colors hover:bg-black hover:text-white uppercase tracking-wider"
 
   return (
     <div className="promotion-b-container bg-white font-sans text-black">
@@ -79,14 +79,14 @@ export function PromotionB() {
           📌 [B-2] 중앙 정렬 타이틀 (CHOOSE GO 스타일)
           ───────────────────────────────────────────── */}
       <section className="py-20 md:py-28 px-4 text-center">
-        <h2 className="mb-4 text-5xl md:text-7xl font-black uppercase tracking-tighter">
+        <h2 className="mb-4 text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter break-keep">
           {copyData.heroTitle} <br className="md:hidden" />
-          {copyData.heroSub}
+          <span className="text-3xl sm:text-4xl md:text-6xl">{copyData.heroSub}</span>
         </h2>
-        <p className="mb-10 text-lg md:text-xl font-medium text-slate-700 whitespace-pre-line leading-relaxed">
+        <p className="mb-10 text-base md:text-xl font-medium text-slate-700 whitespace-pre-line leading-relaxed break-keep px-2">
           {copyData.heroDesc}
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-sm mx-auto sm:max-w-none">
           <button 
             onClick={() => document.getElementById('payment-section-b')?.scrollIntoView({ behavior: 'smooth' })}
             className={nikeButtonStyle}
@@ -113,20 +113,20 @@ export function PromotionB() {
             />
           </div>
           <div className="w-full md:w-1/2">
-            <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-8">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6 md:mb-8">
               {copyData.block1Title}
             </h3>
-            <ul className="space-y-3 mb-10 text-sm md:text-base">
+            <ul className="space-y-4 mb-8 md:mb-10 text-sm md:text-base">
               {copyData.block1List.map((item, idx) => (
-                <li key={idx} className="flex border-b border-slate-200 pb-3">
-                  <span className="w-16 font-bold text-slate-900 flex-shrink-0">{item.label}</span>
-                  <span className={`font-medium ${item.highlight ? 'text-blue-600 font-bold' : 'text-slate-600'}`}>
-                    : {item.value}
+                <li key={idx} className="flex flex-col sm:flex-row sm:items-start border-b border-slate-200 pb-4">
+                  <span className="w-20 font-bold text-slate-900 flex-shrink-0 mb-1 sm:mb-0">{item.label}</span>
+                  <span className={`font-medium break-keep leading-snug ${item.highlight ? 'text-blue-600 font-bold' : 'text-slate-600'}`}>
+                    {item.value}
                   </span>
                 </li>
               ))}
             </ul>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-3">
               <button 
                 onClick={() => document.getElementById('payment-section-b')?.scrollIntoView({ behavior: 'smooth' })}
                 className={nikeButtonStyle}
@@ -147,22 +147,24 @@ export function PromotionB() {
       <section className="py-12 px-4 max-w-7xl mx-auto mb-20">
         <div className="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-16">
           <div className="w-full md:w-1/2">
-            <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-8">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6 md:mb-8 break-keep">
               {copyData.block2Title}
             </h3>
-            <ul className="space-y-3 mb-10 text-sm md:text-base">
+            <ul className="space-y-4 mb-8 md:mb-10 text-sm md:text-base">
               {copyData.block2List.map((item, idx) => (
-                <li key={idx} className="flex border-b border-slate-200 pb-3">
-                  <span className="w-16 font-bold text-slate-900 flex-shrink-0">{item.label}</span>
-                  <span className="font-medium text-slate-600">
-                    : {item.value}
+                <li key={idx} className="flex flex-col sm:flex-row sm:items-start border-b border-slate-200 pb-4">
+                  <span className="w-20 font-bold text-slate-900 flex-shrink-0 mb-1 sm:mb-0">{item.label}</span>
+                  <span className="font-medium text-slate-600 break-keep leading-snug">
+                    {item.value}
                   </span>
                 </li>
               ))}
             </ul>
-            <button className={nikeButtonStyle}>
-              자세히 보기
-            </button>
+            <div className="w-full sm:w-auto">
+              <button className={nikeButtonStyle}>
+                자세히 보기
+              </button>
+            </div>
           </div>
           <div className="w-full md:w-1/2 aspect-[4/3] relative bg-slate-200">
             <Image
@@ -180,14 +182,14 @@ export function PromotionB() {
           ───────────────────────────────────────────── */}
       <section className="py-24 bg-slate-50 border-t border-slate-200">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="mb-4 text-4xl md:text-6xl font-black uppercase tracking-tighter">
+          <h2 className="mb-4 text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tighter">
             {copyData.stepsTitle}
           </h2>
-          <p className="mb-16 text-lg font-medium text-slate-600 whitespace-pre-line">
+          <p className="mb-12 md:mb-16 text-base md:text-lg font-medium text-slate-600 whitespace-pre-line break-keep px-2">
             {copyData.stepsSub}
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {[
               { step: "STEP 1", title: "온라인 결제", desc: "사이트에서 정기관리 신청" },
               { step: "STEP 2", title: "상담 및 예약", desc: "해피콜을 통한 첫 방문 예약" },
@@ -231,11 +233,11 @@ export function PromotionB() {
             className="object-cover opacity-40 grayscale"
           />
         </div>
-        <div className="relative z-10 px-6 md:px-20 max-w-7xl mx-auto w-full">
-          <h2 className="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter mb-4 italic">
+        <div className="relative z-10 px-6 md:px-20 max-w-7xl mx-auto w-full text-center md:text-left">
+          <h2 className="text-4xl sm:text-5xl md:text-8xl font-black text-white uppercase tracking-tighter mb-4 italic">
             {copyData.darkTitle}
           </h2>
-          <p className="text-lg md:text-2xl font-bold text-white/90 whitespace-pre-line mb-8">
+          <p className="text-base sm:text-lg md:text-2xl font-bold text-white/90 whitespace-pre-line mb-8 break-keep">
             {copyData.darkDesc}
           </p>
           <button 
