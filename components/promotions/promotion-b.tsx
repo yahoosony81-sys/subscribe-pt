@@ -38,7 +38,6 @@ const copyData = {
     { label: "목표", value: "체력 증진, 다이어트, 체형 교정 등" },
     { label: "정가", value: "월 500,000원" },
     { label: "결제", value: "월 249,000원 (50% 할인)", highlight: true },
-    { label: "안내", value: "3개월 약정 상품. 매월 자동 결제 진행." },
   ],
 
   block2Title: "SMART CARE SYSTEM",
@@ -259,16 +258,12 @@ export function PromotionB() {
             <PromotionPayment
               amount={249000}
               orderName="3개월 정기관리 (월 결제)"
-              buttonLabel="249,000원 정기결제 등록"
+              buttonLabel="249,000원 결제"
               buttonColor="bg-black hover:bg-slate-800 text-white font-bold rounded-none uppercase tracking-wider w-full py-4 text-lg"
             />
           </div>
           
-          <div className="mt-20 pt-10 border-t border-slate-200 text-sm font-bold text-slate-500">
-            <p>마인드 휘트니스 운영 사무국</p>
-            <p className="mt-2 text-black">TEL : 010-XXXX-XXXX</p>
-            <p className="mt-1 text-black">E-MAIL : MINDFITNESS@EXAMPLE.COM</p>
-          </div>
+
         </div>
       </section>
 
