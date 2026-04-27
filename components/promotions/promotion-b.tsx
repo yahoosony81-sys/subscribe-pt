@@ -59,7 +59,7 @@ export function PromotionB() {
   const nikeButtonStyle = "inline-flex w-full sm:w-auto items-center justify-center border-2 border-black bg-white px-8 py-3 text-sm font-bold text-black transition-colors hover:bg-black hover:text-white uppercase tracking-wider"
 
   return (
-    <div id="promo-b" className="promotion-b-container bg-white font-sans text-black">
+    <div className="promotion-b-container bg-white font-sans text-black">
       
       {/* ─────────────────────────────────────────────
           📌 [B-1] 풀와이드 히어로 이미지

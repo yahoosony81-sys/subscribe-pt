@@ -222,7 +222,7 @@ export function PromotionA() {
           - amount: 결제 금액을 변경하려면 이 숫자만 수정하세요
           - orderName: 결제 상품명을 변경하려면 이 문자열만 수정하세요
           ───────────────────────────────────────────── */}
-      <section id="payment-section-a" className="bg-white py-16">
+      <section className="bg-white py-16">
         <div className="mx-auto max-w-xl px-4">
           <div className="mb-8 text-center">
             <h3 className="mb-3 text-2xl font-bold text-slate-900">
