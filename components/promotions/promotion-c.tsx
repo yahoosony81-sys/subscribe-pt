@@ -60,7 +60,7 @@ export function PromotionC() {
   const textColorBlue = "text-[#00AEEF]"
 
   return (
-    <div className="promotion-c-container bg-white font-sans text-slate-900 tracking-tight">
+    <div id="promo-c" className="promotion-c-container bg-white font-sans text-slate-900 tracking-tight">
       
       {/* ─────────────────────────────────────────────
           📌 [C-1] 히어로 섹션 (Dark & Bold)

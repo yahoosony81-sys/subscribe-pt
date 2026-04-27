@@ -77,7 +77,7 @@ const trustIndicators = ["전문 트레이너 상주", "1:1 맞춤 관리", "합
 
 export function PromotionA() {
   return (
-    <div className="promotion-a-container">
+    <div id="promo-a" className="promotion-a-container">
       {/* ─────────────────────────────────────────────
           📌 [A-1] 히어로 섹션 - 메인 비주얼 & 가격
           ───────────────────────────────────────────── */}
@@ -222,7 +222,7 @@ export function PromotionA() {
           - amount: 결제 금액을 변경하려면 이 숫자만 수정하세요
           - orderName: 결제 상품명을 변경하려면 이 문자열만 수정하세요
           ───────────────────────────────────────────── */}
-      <section className="bg-white py-16">
+      <section id="payment-section-a" className="bg-white py-16">
         <div className="mx-auto max-w-xl px-4">
           <div className="mb-8 text-center">
             <h3 className="mb-3 text-2xl font-bold text-slate-900">
