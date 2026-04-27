@@ -30,7 +30,7 @@ const copyData = {
   heroTitle: "REAL CHANGE.",
   heroSub: "진짜 변화는 3개월부터.",
   heroDesc: "1개월로는 습관이 되지 않습니다. 3개월의 꾸준한 관리를 통해\n운동이 일상이 되고, 몸이 달라지는 것을 직접 느껴보세요.",
-  
+
   block1Title: "1:1 PREMIUM PT",
   block1List: [
     { label: "대상", value: "건강한 변화를 원하는 누구나" },
@@ -50,7 +50,7 @@ const copyData = {
 
   stepsTitle: "HOW IT WORKS",
   stepsSub: "마인드 휘트니스의 정기관리 시스템을 시작하세요.\n체계적인 4단계 프로세스로 목표 달성을 돕습니다.",
-  
+
   darkTitle: "JUST START NOW",
   darkDesc: "매일 달라지는 나를 위한 최고의 선택.\n망설임은 변화를 늦출 뿐입니다.",
 }
@@ -59,8 +59,8 @@ export function PromotionB() {
   const nikeButtonStyle = "inline-flex w-full sm:w-auto items-center justify-center border-2 border-black bg-white px-8 py-3 text-sm font-bold text-black transition-colors hover:bg-black hover:text-white uppercase tracking-wider"
 
   return (
-    <div className="promotion-b-container bg-white font-sans text-black">
-      
+    <div id="promo-b" className="promotion-b-container bg-white font-sans text-black">
+
       {/* ─────────────────────────────────────────────
           📌 [B-1] 풀와이드 히어로 이미지
           ───────────────────────────────────────────── */}
@@ -86,7 +86,7 @@ export function PromotionB() {
           {copyData.heroDesc}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-sm mx-auto sm:max-w-none">
-          <button 
+          <button
             onClick={() => document.getElementById('payment-section-b')?.scrollIntoView({ behavior: 'smooth' })}
             className={nikeButtonStyle}
           >
@@ -126,7 +126,7 @@ export function PromotionB() {
               ))}
             </ul>
             <div className="flex flex-col sm:flex-row gap-3">
-              <button 
+              <button
                 onClick={() => document.getElementById('payment-section-b')?.scrollIntoView({ behavior: 'smooth' })}
                 className={nikeButtonStyle}
               >
@@ -206,7 +206,7 @@ export function PromotionB() {
                 <h5 className="font-bold text-[10px] sm:text-base md:text-lg mb-1 sm:mb-2 text-center leading-tight break-keep">{s.title}</h5>
                 <p className="hidden sm:block text-[9px] sm:text-sm text-slate-500 text-center break-keep leading-snug">{s.desc}</p>
                 {i === 0 && (
-                  <button 
+                  <button
                     onClick={() => document.getElementById('payment-section-b')?.scrollIntoView({ behavior: 'smooth' })}
                     className="mt-2 sm:mt-6 border border-black bg-white px-2 py-1 sm:px-4 sm:py-2 text-[9px] sm:text-xs font-bold hover:bg-black hover:text-white"
                   >
@@ -239,7 +239,7 @@ export function PromotionB() {
           <p className="text-base sm:text-lg md:text-2xl font-bold text-white/90 whitespace-pre-line mb-8 break-keep">
             {copyData.darkDesc}
           </p>
-          <button 
+          <button
             onClick={() => document.getElementById('payment-section-b')?.scrollIntoView({ behavior: 'smooth' })}
             className="border-2 border-white bg-transparent px-8 py-3 text-sm font-bold text-white transition-colors hover:bg-white hover:text-black uppercase tracking-wider"
           >
@@ -262,7 +262,7 @@ export function PromotionB() {
               buttonColor="bg-black hover:bg-slate-800 text-white font-bold rounded-none uppercase tracking-wider w-full py-4 text-lg"
             />
           </div>
-          
+
 
         </div>
       </section>
