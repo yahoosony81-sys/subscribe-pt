@@ -23,6 +23,7 @@ const tabs = [
   { id: "a", label: "1개월 집중 패스", badge: "BEST" },
   { id: "b", label: "3개월 정기관리", badge: "NEW" },
   { id: "c", label: "가정의 달 특별", badge: "EVENT" },
+  { id: "d", label: "무료체험신청", badge: "FREE" },
 ]
 
 export function PromotionTabs({ activeTab }: { activeTab: string }) {
