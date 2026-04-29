@@ -67,10 +67,10 @@ export function PromotionD() {
           ───────────────────────────────────────────── */}
       <section className="relative w-full h-[50vh] md:h-[70vh] bg-slate-100">
         <Image
-          src="/images/hero-bg.jpg"
-          alt="Free Trial Hero"
+          src="/체험신청히어로이미지.png"
+          alt="무료체험 신청 히어로"
           fill
-          className="object-cover object-center grayscale opacity-80"
+          className="object-cover object-center opacity-90"
           priority
         />
       </section>
@@ -256,12 +256,12 @@ export function PromotionD() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <p className="text-xl font-bold mb-8">부담 없이 무료로 체험해 보세요. 지금 바로 신청하세요.</p>
           <div className="border border-slate-200 p-8 shadow-sm">
-            <PromotionPayment
-              amount={0}
-              orderName="무료체험 신청"
-              buttonLabel="무료체험 신청하기"
-              buttonColor="bg-black hover:bg-slate-800 text-white font-bold rounded-none uppercase tracking-wider w-full py-4 text-lg"
-            />
+            <button
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-black hover:bg-slate-800 text-white font-bold rounded-none uppercase tracking-wider w-full py-4 text-lg transition-colors"
+            >
+              무료체험 상담 신청하기
+            </button>
           </div>
 
 
