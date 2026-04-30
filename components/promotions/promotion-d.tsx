@@ -117,7 +117,7 @@ export function PromotionD() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-sm mx-auto sm:max-w-none">
           <button
-            onClick={() => document.getElementById('payment-section-d')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
             className={nikeButtonStyle}
           >
             무료체험 신청
@@ -155,10 +155,10 @@ export function PromotionD() {
             </ul>
             <div className="flex flex-col sm:flex-row gap-3">
               <button
-                onClick={() => document.getElementById('payment-section-d')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
                 className={nikeButtonStyle}
               >
-                체험 신청
+                체험시간 예약하기
               </button>
 
             </div>
@@ -220,28 +220,234 @@ export function PromotionD() {
               { step: "STEP 4", title: "맞춤 플랜", desc: "체험 후 나만의 플랜 제안" }
             ].map((s, i) => (
               <div key={i} className="flex flex-col items-center">
-                <h4 className="text-[11px] sm:text-lg md:text-2xl font-black mb-2 sm:mb-4">{s.step}</h4>
-                <div className="w-full aspect-square bg-slate-200 mb-2 sm:mb-6 relative rounded-sm sm:rounded-none">
-                  {/* 스텝별 아이콘이나 이미지 자리 */}
-                  <div className="absolute inset-0 flex items-center justify-center text-lg sm:text-3xl md:text-4xl text-slate-400">
+                <h4 className="text-[11px] sm:text-lg md:text-2xl font-black mb-2">{s.step}</h4>
+                <div className="w-full aspect-square bg-slate-200 mb-2 sm:mb-6 relative rounded-2xl overflow-hidden shadow-inner border border-slate-100">
+                  <div className="absolute inset-0 flex items-center justify-center text-4xl sm:text-6xl md:text-7xl">
                     {i === 0 ? "📝" : i === 1 ? "📞" : i === 2 ? "🏋️" : "📋"}
                   </div>
                 </div>
-                <h5 className="font-bold text-[10px] sm:text-base md:text-lg mb-1 sm:mb-2 text-center leading-tight break-keep">{s.title}</h5>
-                <p className="hidden sm:block text-[9px] sm:text-sm text-slate-500 text-center break-keep leading-snug">{s.desc}</p>
-                {i === 0 && (
-                  <button
-                    onClick={() => document.getElementById('payment-section-d')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="mt-2 sm:mt-6 border border-black bg-white px-2 py-1 sm:px-4 sm:py-2 text-[9px] sm:text-xs font-bold hover:bg-black hover:text-white"
-                  >
-                    지금 신청
-                  </button>
-                )}
+                <h5 className="font-bold text-[10px] sm:text-base md:text-lg mb-1 text-slate-800">{s.title}</h5>
+                <p className="hidden sm:block text-[9px] sm:text-sm text-slate-500 text-center leading-relaxed px-2">{s.desc}</p>
               </div>
             ))}
           </div>
+
+          <div className="flex justify-center w-full mt-12 pb-10">
+            <button
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+              className="w-[320px] sm:w-[450px] bg-black text-white py-5 text-xl font-black rounded-xl hover:bg-slate-800 transition-all shadow-xl"
+            >
+              체험시간 예약하기
+            </button>
+          </div>
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════════════
+          📌 [D-NEW] 여기서부터 시작 — 3개 상품 설명 섹션 추가
+          ═══════════════════════════════════════════════ */}
+
+      {/* ─────────────────────────────────────────────
+          📌 [D-5a] 섹션 1: 담당관리 서비스 예약 안내
+          ───────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-white border-t border-slate-200">
+        <div className="max-w-4xl mx-auto px-4">
+          {/* 섹션 타이틀 */}
+          <div className="text-center mb-12 md:mb-16">
+            <div className="inline-block bg-yellow-400 border-2 border-black px-4 py-1 mb-4">
+              <span className="text-sm md:text-base font-black uppercase tracking-wider text-black">RESERVATION</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tighter break-keep">
+              첫 방문 후 무엇을 하나요?
+            </h2>
+          </div>
+
+          {/* 카드 그리드 (3장) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            {/* 카드 1: 0회차 상담 */}
+            <div className="border-2 border-black p-6 md:p-8 flex flex-col items-start">
+              <span className="text-3xl mb-4">🗓️</span>
+              <h3 className="text-lg md:text-xl font-black mb-3 break-keep">0회차 상담</h3>
+              <p className="text-sm md:text-base text-slate-600 leading-relaxed break-keep">
+                트레이너와 <strong className="text-black">0회차 상담</strong> 후<br />
+                운동 방향부터 함께 설정합니다.
+              </p>
+            </div>
+
+            {/* 카드 2: 바디코디 어플 예약 */}
+            <div className="border-2 border-black bg-black text-white p-6 md:p-8 flex flex-col items-start">
+              <span className="text-3xl mb-4">📱</span>
+              <h3 className="text-lg md:text-xl font-black mb-3 break-keep">바디코디 어플 예약</h3>
+              <p className="text-sm md:text-base text-slate-300 leading-relaxed break-keep">
+                상담 이후에는<br />
+                <strong className="text-yellow-400">&apos;바디코디&apos; 어플</strong>을 통해<br />
+                원하는 시간에 직접 예약!
+              </p>
+              <div className="mt-4 inline-block bg-yellow-400 text-black px-3 py-1 text-xs font-bold">
+                👉 내 스케줄에 맞춰 자유 이용
+              </div>
+            </div>
+
+            {/* 카드 3: 월 5회 + 충전권 */}
+            <div className="border-2 border-black p-6 md:p-8 flex flex-col items-start">
+              <span className="text-3xl mb-4">🔄</span>
+              <h3 className="text-lg md:text-xl font-black mb-3 break-keep">월 5회 수업 제공</h3>
+              <p className="text-sm md:text-base text-slate-600 leading-relaxed break-keep">
+                매달 <strong className="text-black">5회 수업</strong>이 제공되며<br />
+                부족할 경우
+              </p>
+              <div className="mt-4 inline-block border-2 border-black px-3 py-1 text-xs font-bold text-black">
+                👉 충전권으로 추가 이용 가능
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────
+          📌 [D-5b] 섹션 2: 담당관리 서비스 구독권
+          ───────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-4xl mx-auto px-4">
+          {/* 섹션 타이틀 */}
+          <div className="text-center mb-12 md:mb-16">
+            <div className="inline-block bg-yellow-400 border-2 border-black px-4 py-1 mb-4">
+              <span className="text-sm md:text-base font-black uppercase tracking-wider text-black">SUBSCRIPTION</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tighter break-keep">
+              월구독 서비스 가격은 어떻게 되나요?
+            </h2>
+            <p className="mt-4 text-base md:text-lg text-slate-600 font-medium break-keep">
+              매월 부담 없이 시작하는 관리 시스템
+            </p>
+          </div>
+
+          {/* 가격 강조 박스 */}
+          <div className="border-2 border-black bg-black text-white p-8 md:p-12 text-center mb-8 md:mb-10">
+            <p className="text-sm md:text-base font-bold text-slate-400 uppercase tracking-wider mb-2">Monthly Plan</p>
+            <p className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter">
+              월 <span className="text-yellow-400">99,000</span>원
+            </p>
+            <p className="mt-3 text-sm md:text-base text-slate-300 font-medium">10개월 전용 구독 플랜</p>
+            <div className="mt-5 inline-block bg-yellow-400 text-black px-4 py-1.5 text-xs md:text-sm font-bold">
+              📱 바디코디 어플에서 간편 구독 신청
+            </div>
+          </div>
+
+          {/* 보증금·환불 정책 테이블 */}
+          <div className="border-2 border-black overflow-hidden">
+            <table className="w-full text-sm md:text-base">
+              <thead>
+                <tr className="bg-black text-white">
+                  <th className="py-3 px-4 text-left font-bold">항목</th>
+                  <th className="py-3 px-4 text-left font-bold">내용</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t border-slate-200 bg-white">
+                  <td className="py-4 px-4 font-bold text-black whitespace-nowrap">💰 보증금</td>
+                  <td className="py-4 px-4 text-slate-700 break-keep">
+                    가입 시 <strong className="text-black">99,000원</strong> 별도 결제
+                  </td>
+                </tr>
+                <tr className="border-t border-slate-200 bg-slate-50">
+                  <td className="py-4 px-4 font-bold text-black whitespace-nowrap">🔄 환불 조건</td>
+                  <td className="py-4 px-4 break-keep">
+                    <strong className="text-blue-600">10개월 유지 시 보증금 전액 환불</strong>
+                  </td>
+                </tr>
+                <tr className="border-t border-slate-200 bg-white">
+                  <td className="py-4 px-4 font-bold text-black whitespace-nowrap">⏹️ 해지</td>
+                  <td className="py-4 px-4 text-slate-700 break-keep">
+                    별도 해지 없이 <strong className="text-black">10개월 후 자동 해지</strong>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────
+          📌 [D-5c] 섹션 3: 담당관리 서비스 안내
+          ───────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-white border-t border-slate-200">
+        <div className="max-w-4xl mx-auto px-4">
+          {/* 섹션 타이틀 */}
+          <div className="text-center mb-12 md:mb-16">
+            <div className="inline-block bg-yellow-400 border-2 border-black px-4 py-1 mb-4">
+              <span className="text-sm md:text-base font-black uppercase tracking-wider text-black">SERVICE</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tighter break-keep">
+              실제 어떤 서비스를 제공 받나요?
+            </h2>
+            <p className="mt-4 text-base md:text-lg text-slate-600 font-medium break-keep">
+
+            </p>
+          </div>
+
+          {/* 서비스 카드 리스트 (세로 스택) */}
+          <div className="space-y-5 md:space-y-6 mb-12 md:mb-16">
+            {/* 카드: 월간 바디 케어 */}
+            <div className="flex items-start gap-4 md:gap-6 border-2 border-black p-5 md:p-7">
+              <span className="text-2xl md:text-3xl mt-0.5 shrink-0">💪</span>
+              <div>
+                <h3 className="text-base md:text-lg font-black mb-2 break-keep">월간 바디 케어 제공</h3>
+                <ul className="text-sm md:text-base text-slate-600 leading-relaxed break-keep space-y-1.5">
+                  <li><strong className="text-black">1.</strong> 월 5회 주기적으로 서비스가 제공됩니다.</li>
+                  <li><strong className="text-black">2.</strong> 올바른 운동 자세와 기구 사용법을 안내합니다.</li>
+                  <li><strong className="text-black">3.</strong> 체계적인 신체의 변화를 추적 관찰하며 피드백 합니다.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* 카드: 회원관리 파일 */}
+            <div className="flex items-start gap-4 md:gap-6 border-2 border-black p-5 md:p-7">
+              <span className="text-2xl md:text-3xl mt-0.5 shrink-0">📋</span>
+              <div>
+                <h3 className="text-base md:text-lg font-black mb-1 break-keep">회원관리 파일 제공</h3>
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed break-keep">
+                  운동 방법 / 루틴 / 커리큘럼 / 식단 / 관리일지
+                </p>
+                <div className="mt-2 inline-block bg-slate-100 border border-slate-300 px-3 py-1 text-xs font-bold text-slate-700">
+                  👉 운동을 기록하고 유지하는 시스템
+                </div>
+              </div>
+            </div>
+
+            {/* 카드: 0회차 상담 + 월 5회 PT */}
+            <div className="flex items-start gap-4 md:gap-6 border-2 border-black bg-black text-white p-5 md:p-7">
+              <span className="text-2xl md:text-3xl mt-0.5 shrink-0">🏋️</span>
+              <div>
+                <h3 className="text-base md:text-lg font-black mb-1 break-keep">0회차 상담 + 월 5회 PT</h3>
+                <p className="text-sm md:text-base text-slate-300 leading-relaxed break-keep">
+                  운동 방법, 루틴, 식단까지<br />
+                  <strong className="text-yellow-400">지속될 수 있도록 관리</strong>합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 감성 마무리 블록 */}
+          <div className="text-center py-10 md:py-14 border-t-2 border-b-2 border-black">
+            <p className="text-lg md:text-2xl font-black text-slate-800 leading-relaxed break-keep mb-6">
+              운동을 해야 하는 순간이 아니라<br />
+              <span className="text-black">운동이 자연스러운 일상</span>이 됩니다.
+            </p>
+            {/* 사은품 강조 */}
+            <div className="inline-flex items-center gap-3 bg-yellow-400 border-2 border-black px-5 py-3">
+              <span className="text-2xl">🎁</span>
+              <span className="text-sm md:text-base font-black text-black break-keep">
+                등록 시 다이어트 캘린더 제공
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════
+          📌 [D-NEW] 여기서 끝 — 3개 상품 설명 섹션 추가 완료
+          ═══════════════════════════════════════════════ */}
 
       {/* ─────────────────────────────────────────────
           📌 [D-6] Dark Contrast Block (JUST DO IT 스타일)
@@ -264,7 +470,7 @@ export function PromotionD() {
             {copyData.darkDesc}
           </p>
           <button
-            onClick={() => document.getElementById('payment-section-d')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
             className="border-2 border-white bg-transparent px-8 py-3 text-sm font-bold text-white transition-colors hover:bg-white hover:text-black uppercase tracking-wider"
           >
             무료체험 신청
@@ -272,24 +478,6 @@ export function PromotionD() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────
-          📌 [D-7] 하단 결제 영역 (미니멀 스타일)
-          ───────────────────────────────────────────── */}
-      <section id="payment-section-d" className="py-24 bg-white">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <p className="text-xl font-bold mb-8">부담 없이 무료로 체험해 보세요. <br /> 지금 바로 신청하세요.</p>
-          <div className="border border-slate-200 p-8 shadow-sm">
-            <button
-              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-black hover:bg-slate-800 text-white font-bold rounded-none uppercase tracking-wider w-full py-4 text-lg transition-colors"
-            >
-              무료체험 시간 예약하기
-            </button>
-          </div>
-
-
-        </div>
-      </section>
 
       {/* ─── 프로모션 D 끝 ─── */}
     </div>
