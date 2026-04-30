@@ -137,3 +137,19 @@
     display: none; /* Chrome, Safari and Opera */
   }
 }
+
+/* ── react-day-picker 캘린더 스타일 보정 ── */
+.rdp {
+  --rdp-accent-color: #f97316;
+  --rdp-background-color: #fff7ed;
+}
+.rdp-root {
+  font-family: inherit;
+}
+.rdp-day_button {
+  border: none;
+  background: none;
+}
+.rdp-chevron {
+  fill: #64748b;
+}
