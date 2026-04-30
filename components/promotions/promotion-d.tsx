@@ -69,7 +69,7 @@ export function PromotionD() {
       <section className="relative w-full h-[50vh] md:h-[70vh] bg-slate-100 overflow-hidden">
         {/* 배경 이미지 */}
         <Image
-          src="/체험신청히어로이미지.png" // 파일명을 실제 사용 중인 이미지 경로로 확인하세요
+          src="/살빠진한림뚱순이-히어로섹션.png"
           alt="월구독 PT 체험 환영 히어로"
           fill
           className="object-cover object-center" // 원본 이미지 색감을 위해 opacity는 뺐습니다. 필요하면 opacity-90 추가
