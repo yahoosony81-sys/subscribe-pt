@@ -29,14 +29,14 @@ import { PromotionPayment } from "./promotion-payment"
    ───────────────────────────────────────────── */
 const copyData = {
   heroTitle: "TRY FREE.",
-  heroSub: "무료로 먼저 체험해 보세요.",
-  heroDesc: "결제 부담 없이, 전문 트레이너와 함께하는 1회 무료 PT 체험.\n직접 경험해 보고 결정하세요. 마인드 휘트니스의 차이를 느껴보실 수 있습니다.",
+  heroSub: "월구독 PT상품 \n 무료로 먼저 체험해 보세요.",
+  heroDesc: "결제 부담 없이, 전문 트레이너와 \n 함께하는 1회 무료 PT 체험.\n직접 경험해 보고 결정하세요. \n S 마인드 휘트니스의 차이를 느껴보실 수 있습니다.",
 
   block1Title: "FREE TRIAL PT",
   block1List: [
     { label: "대상", value: "피트니스에 관심 있는 누구나" },
     { label: "수업", value: "1회 전문 트레이너 1:1 체험 레슨" },
-    { label: "시간", value: "약 50분 (상담 포함)" },
+    { label: "시간", value: "약 30분 (상담 포함)" },
     { label: "비용", value: "완전 무료 (0원)", highlight: true },
     { label: "준비물", value: "편한 운동복 & 실내화" },
   ],
@@ -65,24 +65,53 @@ export function PromotionD() {
       {/* ─────────────────────────────────────────────
           📌 [D-1] 풀와이드 히어로 이미지
           ───────────────────────────────────────────── */}
-      <section className="relative w-full h-[50vh] md:h-[70vh] bg-slate-100">
+      {/* 히어로 섹션 (배경이미지 + 텍스트) */}
+      <section className="relative w-full h-[50vh] md:h-[70vh] bg-slate-100 overflow-hidden">
+        {/* 배경 이미지 */}
         <Image
-          src="/체험신청히어로이미지.png"
-          alt="무료체험 신청 히어로"
+          src="/체험신청히어로이미지.png" // 파일명을 실제 사용 중인 이미지 경로로 확인하세요
+          alt="월구독 PT 체험 환영 히어로"
           fill
-          className="object-cover object-center opacity-90"
+          className="object-cover object-center" // 원본 이미지 색감을 위해 opacity는 뺐습니다. 필요하면 opacity-90 추가
           priority
         />
+
+        {/* [핵심] 모델의 양손 사이에 위치하는 텍스트 영역 */}
+        <div className="absolute inset-0 flex flex-col items-center justify-end pb-[10vh] md:pb-[15vh] px-4">
+          {/* 반투명 배경 박스 */}
+          <div className="text-center w-auto max-w-[95%] mx-auto bg-white/40 backdrop-blur-sm px-8 py-4 rounded-2xl border border-white/30 shadow-lg">
+            {/* 블랙 테두리가 적용된 골드 텍스트 */}
+            <h1 className="text-2xl sm:text-3xl md:text-7xl font-black tracking-tight whitespace-nowrap"
+              style={{
+                fontFamily: "'Noto Sans KR', sans-serif",
+                color: "#D4AF37",
+                letterSpacing: '-0.05em',
+                /* 블랙 테두리 효과 추가 */
+                textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
+              }}>
+              월구독 PT 체험을 환영합니다
+            </h1>
+          </div>
+        </div>
       </section>
 
       {/* ─────────────────────────────────────────────
           📌 [D-2] 중앙 정렬 타이틀 (CHOOSE GO 스타일)
           ───────────────────────────────────────────── */}
       <section className="py-20 md:py-28 px-4 text-center">
-        <h2 className="mb-4 text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter break-keep">
-          {copyData.heroTitle} <br className="md:hidden" />
-          <span className="text-3xl sm:text-4xl md:text-6xl">{copyData.heroSub}</span>
-        </h2>
+        <div className="flex flex-col items-center mb-6">
+          {/* 노란색 TRY FREE 박스 */}
+          <div className="inline-block bg-yellow-400 border-2 border-black px-4 py-1 mb-4">
+            <span className="text-xl md:text-2xl font-black uppercase tracking-tighter text-black">
+              {copyData.heroTitle}
+            </span>
+          </div>
+
+          {/* 메인 타이틀 (줄바꿈 적용됨) */}
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black whitespace-pre-line leading-tight text-center">
+            {copyData.heroSub}
+          </h2>
+        </div>
         <p className="mb-10 text-base md:text-xl font-medium text-slate-700 whitespace-pre-line leading-relaxed break-keep px-2">
           {copyData.heroDesc}
         </p>
@@ -93,9 +122,7 @@ export function PromotionD() {
           >
             무료체험 신청
           </button>
-          <button className={nikeButtonStyle}>
-            프로그램 상세
-          </button>
+
         </div>
       </section>
 
@@ -133,9 +160,7 @@ export function PromotionD() {
               >
                 체험 신청
               </button>
-              <button className={nikeButtonStyle}>
-                상세 보기
-              </button>
+
             </div>
           </div>
         </div>
@@ -161,9 +186,7 @@ export function PromotionD() {
               ))}
             </ul>
             <div className="w-full sm:w-auto">
-              <button className={nikeButtonStyle}>
-                자세히 보기
-              </button>
+
             </div>
           </div>
           <div className="w-full md:w-1/2 aspect-[4/3] relative bg-slate-200">
@@ -192,7 +215,7 @@ export function PromotionD() {
           <div className="grid grid-cols-4 gap-2 sm:gap-6 md:gap-8">
             {[
               { step: "STEP 1", title: "무료체험 신청", desc: "사이트에서 간편 신청" },
-              { step: "STEP 2", title: "전화 상담", desc: "해피콜을 통한 방문 일정 확정" },
+              { step: "STEP 2", title: "예약확인 문자수령", desc: "해피콜을 통한 방문 일정 확정" },
               { step: "STEP 3", title: "방문 체험", desc: "1:1 트레이너와 체험 레슨" },
               { step: "STEP 4", title: "맞춤 플랜", desc: "체험 후 나만의 플랜 제안" }
             ].map((s, i) => (
@@ -254,13 +277,13 @@ export function PromotionD() {
           ───────────────────────────────────────────── */}
       <section id="payment-section-d" className="py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <p className="text-xl font-bold mb-8">부담 없이 무료로 체험해 보세요. 지금 바로 신청하세요.</p>
+          <p className="text-xl font-bold mb-8">부담 없이 무료로 체험해 보세요. <br /> 지금 바로 신청하세요.</p>
           <div className="border border-slate-200 p-8 shadow-sm">
             <button
               onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-black hover:bg-slate-800 text-white font-bold rounded-none uppercase tracking-wider w-full py-4 text-lg transition-colors"
             >
-              무료체험 상담 신청하기
+              무료체험 시간 예약하기
             </button>
           </div>
 

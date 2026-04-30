@@ -165,7 +165,7 @@ export function LocationSection() {
                 <div>
                   <h3 className="font-semibold text-foreground">주차안내</h3>
                   <p className="text-muted-foreground">
-                    건물 내 무���� 주차 가능 (30대)
+                    건물 외부 주변 주차 가능 (30대)
                   </p>
                 </div>
               </div>

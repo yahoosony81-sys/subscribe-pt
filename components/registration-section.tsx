@@ -161,7 +161,7 @@ export function RegistrationSection() {
             <div>
               <label htmlFor="preferredTime" className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
                 <Clock className="h-4 w-4 text-orange-500" />
-                상담 희망 시간
+                체험 희망 날짜와 시간
               </label>
               <select
                 id="preferredTime"
@@ -182,7 +182,7 @@ export function RegistrationSection() {
             <div>
               <label htmlFor="message" className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
                 <MessageSquare className="h-4 w-4 text-orange-500" />
-                문의 사항
+                기타 문의 사항(선택)
               </label>
               <textarea
                 id="message"
