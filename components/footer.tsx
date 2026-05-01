@@ -176,7 +176,7 @@ Personal Training Session 규정
 
 3. 본 계약에 따른 개인트레이닝은 회원 본인만 이용함을 원칙으로 하나 부득이한 경우 마인드휘트니스의 사전승인을 받아 유효 회원에게 양도할 수 있습니다. (양도 양수는 1회에 한함)
 
-4. 회���님께서는 개인트레이닝을 받으신 후 당일 운동 프로그램 서명란에 매 수업마다 서명을 하셔야 합니다.
+4. 회원님께서는 개인트레이닝을 받으신 후 당일 운동 프로그램 서명란에 매 수업마다 서명을 하셔야 합니다.
 
 5. 원래 예정되었던 트레이너가 강습을 할 수 없는 경우 다른 트레이너로 대체될 수 있으며 이로 인한 환불은 환불 사유에 해당하지 않습니다.
 
@@ -244,8 +244,8 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Brand & Logo */}
           <div className="text-center md:text-left">
-            <h3 className="text-lg font-bold text-white">마인드휘트니스 PT&필라테스</h3>
-            <p className="mt-1 text-sm text-slate-400">Mind Fitness 한림점</p>
+            <h3 className="text-lg font-bold text-white">마인드휘트니스 헬스&PT&필라테스</h3>
+            <p className="mt-1 text-sm text-slate-400">Mind Fitness 노형점</p>
             
             {/* Social Links */}
             <div className="mt-4 flex justify-center gap-3 md:justify-start">
@@ -293,16 +293,16 @@ export function Footer() {
             <h4 className="mb-3 text-sm font-semibold text-white">사업자 정보</h4>
             <ul className="space-y-1.5 text-slate-400">
               <li>
-                <span className="text-slate-500">상호명:</span> 마인드휘트니스 PT&필라테스 한림점
+                <span className="text-slate-500">상호명:</span> 마인드휘트니스 헬스&PT&필라테스 노형점
               </li>
               <li>
                 <span className="text-slate-500">대표자:</span> 문정준
               </li>
               <li>
-                <span className="text-slate-500">사업자등록번호:</span> 555-46-00930
+                <span className="text-slate-500">사업자등록번호:</span> 784-10-01858
               </li>
               <li>
-                <span className="text-slate-500">주소:</span> 제주 제주시 한림읍 한림남1길 3 상두거리 몽돌스테이 3층
+                <span className="text-slate-500">주소:</span> 제주 제주시 월랑로 1 8층, 9층 마인드휘트니스 노형점
               </li>
             </ul>
           </div>
@@ -312,7 +312,7 @@ export function Footer() {
             <h4 className="mb-3 text-sm font-semibold text-white">고객센터</h4>
             <ul className="space-y-1.5 text-slate-400">
               <li>
-                <span className="text-slate-500">전화:</span> 0507-1320-2245
+                <span className="text-slate-500">전화:</span> 0507-1439-0799
               </li>
               <li>
                 <span className="text-slate-500">이메일:</span> mindfitness@naver.com
@@ -347,7 +347,7 @@ export function Footer() {
 
         {/* Bottom Section */}
         <div className="flex flex-col items-center justify-between gap-4 text-center text-xs text-slate-500 md:flex-row">
-          <p>Copyright &copy; 2024 마인드휘트니스 PT&필라테스 한림점. All rights reserved.</p>
+          <p>Copyright &copy; 2024 마인드휘트니스 헬스&PT&필라테스 노형점. All rights reserved.</p>
           <div className="flex gap-4">
             <LegalModal type="termsAndPrivacy" />
             <LegalModal type="refund" />

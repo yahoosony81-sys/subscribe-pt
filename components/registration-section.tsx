@@ -200,7 +200,7 @@ export function RegistrationSection() {
           <div className="mb-10 text-center">
             <h2 className="mb-3 text-2xl font-bold text-slate-900">무료체험 신청하기</h2>
             <p className="text-base text-slate-600">
-              궁금한 점이 있으시다면 정보를 남겨주세요. 확인 후 바로 연락드리겠습니다.
+              궁금한 점이 있으시다면 정보를 남겨주세요. <br />확인 후 바로 연락드리겠습니다.
             </p>
           </div>
 

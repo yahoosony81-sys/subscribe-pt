@@ -12,7 +12,7 @@ export function LocationSection() {
             Location
           </span>
           <h2 className="mb-6 text-balance text-3xl font-bold text-foreground md:text-4xl">
-            마인드 휘트니스 한림점
+            마인드 휘트니스 노형점
           </h2>
           <p className="mx-auto max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
             편리한 접근성과 쾌적한 시설로 여러분을 기다립니다
@@ -25,7 +25,7 @@ export function LocationSection() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
             <Image
               src="/images/map-location.jpg"
-              alt="마인드 휘트니스 한림점 위치"
+              alt="마인드 휘트니스 노형점 위치"
               fill
               className="object-cover"
             />
@@ -74,9 +74,9 @@ export function LocationSection() {
                 <div>
                   <h3 className="font-semibold text-foreground">주소</h3>
                   <p className="text-muted-foreground">
-                    제주 제주시 한림읍 한림남1길 3
+                    제주 제주시 월랑로 1 
                     <br />
-                    상두거리 몽돌스테이 3층
+                    8층, 9층 마인드휘트니스 노형점
                   </p>
                 </div>
               </div>
@@ -101,7 +101,7 @@ export function LocationSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">전화번호</h3>
-                  <p className="text-muted-foreground">0507-1320-2245</p>
+                  <p className="text-muted-foreground">0507-1439-0799</p>
                 </div>
               </div>
 
@@ -165,7 +165,7 @@ export function LocationSection() {
                 <div>
                   <h3 className="font-semibold text-foreground">주차안내</h3>
                   <p className="text-muted-foreground">
-                    건물 외부 주변 주차 가능 (30대)
+                    건물 주변 주차장 이용 가능 
                   </p>
                 </div>
               </div>
