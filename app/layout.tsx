@@ -35,7 +35,7 @@ export default function RootLayout({
           `
         }} />
 
-        {/* ── 노형점 전용 Meta Pixel (891686733924318) ── */}
+        {/* ── 노형점 전용 Meta Pixel (931401023110366) ── */}
         <Script id="meta-pixel" strategy="afterInteractive" dangerouslySetInnerHTML={{
           __html: `
             !function(f,b,e,v,n,t,s)
@@ -46,7 +46,7 @@ export default function RootLayout({
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '891686733924318');
+            fbq('init', '931401023110366');
             fbq('track', 'PageView');
           `
         }} />
@@ -65,7 +65,7 @@ export default function RootLayout({
             height="1"
             width="1"
             style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=891686733924318&ev=PageView&noscript=1"
+            src="https://www.facebook.com/tr?id=931401023110366&ev=PageView&noscript=1"
             alt=""
           />
         </noscript>
