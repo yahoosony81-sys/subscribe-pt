@@ -117,7 +117,10 @@ export function PromotionNhRetargetCoffee() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-sm mx-auto sm:max-w-none">
           <button
-            onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => {
+              if (typeof window !== 'undefined' && (window as any).fbq) (window as any).fbq('track', 'Lead');
+              document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+            }}
             className={nikeButtonStyle}
           >
             무료체험 신청
@@ -155,7 +158,10 @@ export function PromotionNhRetargetCoffee() {
             </ul>
             <div className="flex flex-col sm:flex-row gap-3">
               <button
-                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => {
+                  if (typeof window !== 'undefined' && (window as any).fbq) (window as any).fbq('track', 'Lead');
+                  document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className={nikeButtonStyle}
               >
                 체험시간 예약하기
@@ -234,7 +240,10 @@ export function PromotionNhRetargetCoffee() {
 
           <div className="flex justify-center w-full mt-12 pb-10">
             <button
-              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => {
+                if (typeof window !== 'undefined' && (window as any).fbq) (window as any).fbq('track', 'Lead');
+                document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+              }}
               className="w-[320px] sm:w-[450px] bg-black text-white py-5 text-xl font-black rounded-xl hover:bg-slate-800 transition-all shadow-xl"
             >
               체험시간 예약하기
@@ -470,7 +479,10 @@ export function PromotionNhRetargetCoffee() {
             {copyData.darkDesc}
           </p>
           <button
-            onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => {
+              if (typeof window !== 'undefined' && (window as any).fbq) (window as any).fbq('track', 'Lead');
+              document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+            }}
             className="border-2 border-white bg-transparent px-8 py-3 text-sm font-bold text-white transition-colors hover:bg-white hover:text-black uppercase tracking-wider"
           >
             무료체험 신청

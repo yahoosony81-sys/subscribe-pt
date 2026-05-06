@@ -55,7 +55,15 @@ const RESERVED_SLOTS: Record<string, string[]> = {
 /* ─────────────────────────────────────────────
    📌 메인 컴포넌트
    ───────────────────────────────────────────── */
-export function RegistrationSection() {
+export function RegistrationSection({
+  title = "무료체험 신청하기",
+  branch = "한림점",
+  hideTimePicker = false
+}: {
+  title?: string;
+  branch?: string;
+  hideTimePicker?: boolean;
+} = {}) {
   // ── 폼 데이터 상태 ──
   const [formData, setFormData] = useState({
     name: "",
@@ -126,7 +134,7 @@ export function RegistrationSection() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
-          branch: "한림점",
+          branch: branch,
           timestamp: new Date().toISOString(),
         }),
       })
@@ -198,7 +206,7 @@ export function RegistrationSection() {
         <div className="mx-auto max-w-xl px-4">
           {/* 섹션 헤더 */}
           <div className="mb-10 text-center">
-            <h2 className="mb-3 text-2xl font-bold text-slate-900">무료체험 신청하기</h2>
+            <h2 className="mb-3 text-2xl font-bold text-slate-900">{title}</h2>
             <p className="text-base text-slate-600">
               궁금한 점이 있으시다면 정보를 남겨주세요. 확인 후 바로 연락드리겠습니다.
             </p>
@@ -239,27 +247,29 @@ export function RegistrationSection() {
               {/* ─────────────────────────────────────
                   3. 체험 희망 날짜와 시간 (★ 고도화 영역)
                   ───────────────────────────────────── */}
-              <div>
-                <label className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
-                  <Clock className="h-4 w-4 text-orange-500" />
-                  체험 희망 날짜와 시간
-                </label>
+              {!hideTimePicker && (
+                <div>
+                  <label className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
+                    <Clock className="h-4 w-4 text-orange-500" />
+                    체험 희망 날짜와 시간
+                  </label>
 
-                {/* 선택된 값 표시 또는 "선택하기" 버튼 */}
-                <button
-                  type="button"
-                  onClick={() => setShowPicker(true)}
-                  className="flex w-full items-center justify-between rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-left transition-all hover:border-orange-400 hover:bg-orange-50 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
-                >
-                  <span className={formData.preferredTime ? "text-slate-900 font-medium" : "text-slate-400"}>
-                    {formData.preferredTime || "날짜와 시간을 선택해주세요"}
-                  </span>
-                  <CalendarDays className="h-5 w-5 text-orange-500 shrink-0" />
-                </button>
+                  {/* 선택된 값 표시 또는 "선택하기" 버튼 */}
+                  <button
+                    type="button"
+                    onClick={() => setShowPicker(true)}
+                    className="flex w-full items-center justify-between rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-left transition-all hover:border-orange-400 hover:bg-orange-50 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+                  >
+                    <span className={formData.preferredTime ? "text-slate-900 font-medium" : "text-slate-400"}>
+                      {formData.preferredTime || "날짜와 시간을 선택해주세요"}
+                    </span>
+                    <CalendarDays className="h-5 w-5 text-orange-500 shrink-0" />
+                  </button>
 
-                {/* 숨겨진 input (폼 데이터 전송용) */}
-                <input type="hidden" name="preferredTime" value={formData.preferredTime} />
-              </div>
+                  {/* 숨겨진 input (폼 데이터 전송용) */}
+                  <input type="hidden" name="preferredTime" value={formData.preferredTime} />
+                </div>
+              )}
 
               {/* 4. 기타 문의 사항 */}
               <div>
@@ -298,6 +308,9 @@ export function RegistrationSection() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
+                onClick={() => {
+                  if (typeof window !== 'undefined' && (window as any).fbq) (window as any).fbq('track', 'CompleteRegistration');
+                }}
                 className="relative mt-4 w-full overflow-hidden rounded-lg bg-orange-500 py-6 text-base font-bold text-white transition-all hover:bg-orange-600 disabled:opacity-50"
               >
                 <span className="absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
