@@ -10,8 +10,12 @@ const notoSansKr = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: '마인드 휘트니스 노형점 | 5월 가정의 달 프로모션',
-  description: '어머니 아버님께 근육을 선물하세요! 마인드 휘트니스 노형점 5월 가정의 달 특별 프로모션',
+  title: '마인드휘트니스 프로모션',
+  description: '마인드휘트니스에서 준비한 특별한 프로모션을 확인해보세요!',
+  openGraph: {
+    title: '마인드휘트니스 프로모션',
+    description: '마인드휘트니스에서 준비한 특별한 프로모션을 확인해보세요!',
+  },
   generator: 'v0.app',
 }
 
