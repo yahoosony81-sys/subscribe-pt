@@ -197,13 +197,18 @@ export function PromotionBodychallenge() {
             <p className="text-slate-600 text-lg font-medium whitespace-pre-line mb-10 leading-relaxed">
               {copyData.packageDesc}
             </p>
-            <button 
-              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-              className={`${themeColor} text-white font-bold px-8 py-4 flex items-center justify-center gap-3 transition-transform hover:-translate-y-1 w-full md:w-auto`}
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
-              온라인 참가 신청하기
-            </button>
+            <div className="flex flex-col items-center md:items-start">
+              <button 
+                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+                className={`${themeColor} text-white font-bold px-8 py-4 flex items-center justify-center gap-3 transition-transform hover:-translate-y-1 w-full md:w-auto`}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
+                온라인 참가 신청하기
+              </button>
+              <p className={`mt-3 font-bold ${textColorTheme} text-sm md:text-base`}>
+                (온라인 신청시 참가비 10%가 할인됩니다)
+              </p>
+            </div>
           </div>
         </div>
       </section>
