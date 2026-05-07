@@ -1,15 +1,15 @@
 import { PromotionBodychallenge } from "@/components/promotions/promotion-bodychallenge"
-import { LocationSection } from "@/components/location-section"
+import { LocationSectionBodychallenge } from "@/components/location-section-bodychallenge"
 import { RegistrationSection } from "@/components/registration-section"
-import { Footer } from "@/components/footer"
+import { FooterBodychallenge } from "@/components/footer-bodychallenge"
 
 export default function PromoBodychallengePage() {
   return (
     <main className="min-h-screen">
       <PromotionBodychallenge />
-      <LocationSection />
+      <LocationSectionBodychallenge />
       <RegistrationSection title="온라인 참가 신청하기" branch="도남점" hideTimePicker={true} />
-      <Footer />
+      <FooterBodychallenge />
     </main>
   )
 }
