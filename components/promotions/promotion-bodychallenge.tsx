@@ -168,12 +168,24 @@ export function PromotionBodychallenge() {
       <section className="bg-white py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-16">
           <div className="flex-1 w-full">
-            <div className="aspect-square relative w-full max-w-md mx-auto overflow-hidden rounded-full border border-slate-100 shadow-2xl">
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-50 text-slate-300">
-                <span className="text-6xl mb-4">🎁</span>
-                <span className={`font-bold tracking-widest ${textColorTheme} text-center px-4`}>
-                  1300만원<br/>주인공은?!
-                </span>
+            <div className="mb-6 text-center md:text-left">
+              <h4 className={`text-2xl md:text-3xl font-black ${textColorTheme} tracking-tight`}>
+                바디챌린지 6기<br className="hidden md:block" /> 스페셜 경품 라인업
+              </h4>
+              <p className="text-slate-500 mt-2 font-medium mb-6">총 1300만원 상당의 역대급 혜택!</p>
+            </div>
+            <div className="grid grid-cols-2 gap-3 md:gap-4 max-w-md mx-auto md:mx-0">
+              <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-lg border border-slate-100 aspect-square flex items-center justify-center bg-slate-50">
+                <img src="/KakaoTalk_20260427_153639093.png" alt="스페셜 경품 1" className="w-full h-full object-cover" />
+              </div>
+              <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-lg border border-slate-100 aspect-square flex items-center justify-center bg-slate-50">
+                <img src="/KakaoTalk_20260427_153639093_01.png" alt="스페셜 경품 2" className="w-full h-full object-cover" />
+              </div>
+              <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-lg border border-slate-100 aspect-square flex items-center justify-center bg-slate-50">
+                <img src="/KakaoTalk_20260427_153639093_02.png" alt="스페셜 경품 3" className="w-full h-full object-cover" />
+              </div>
+              <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-lg border border-slate-100 aspect-square flex items-center justify-center bg-slate-50">
+                <img src="/KakaoTalk_20260427_153639093_03.png" alt="스페셜 경품 4" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
