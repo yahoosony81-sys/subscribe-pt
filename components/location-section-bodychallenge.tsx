@@ -73,9 +73,27 @@ export function LocationSectionBodychallenge() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">주소</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground mb-3">
                     대구 북구 도남중앙로7길 20-4 601호
                   </p>
+                  <div className="flex flex-wrap gap-2">
+                    <a 
+                      href="https://map.naver.com/p/entry/place/1552558325?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605071458&locale=ko&svcName=map_pcv5"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-[#FEE500] border border-black text-black font-semibold text-sm px-4 py-2 rounded-lg hover:bg-[#FEE500]/90 transition-colors inline-block"
+                    >
+                      지점 위치 보기
+                    </a>
+                    <a 
+                      href="https://map.naver.com/p/entry/place/1552558325?c=15.00,0,0,0,dh&placePath=/photo?fromPanelNum=1&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605071649&locale=ko&svcName=map_pcv5&additionalHeight=76&timestamp=202605071458&locale=ko&svcName=map_pcv5&fromPanelNum=1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-[#FEE500] border border-black text-black font-semibold text-sm px-4 py-2 rounded-lg hover:bg-[#FEE500]/90 transition-colors inline-block"
+                    >
+                      지점 내부 둘러보기
+                    </a>
+                  </div>
                 </div>
               </div>
 
