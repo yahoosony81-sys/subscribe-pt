@@ -244,7 +244,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Brand & Logo */}
           <div className="text-center md:text-left">
-            <h3 className="text-lg font-bold text-white">마인드휘트니스 PT&필라테스</h3>
+            <h3 className="text-lg font-bold text-white">마인드휘트니스 한림점</h3>
             <p className="mt-1 text-sm text-slate-400">Mind Fitness 한림점</p>
             
             {/* Social Links */}
@@ -293,7 +293,7 @@ export function Footer() {
             <h4 className="mb-3 text-sm font-semibold text-white">사업자 정보</h4>
             <ul className="space-y-1.5 text-slate-400">
               <li>
-                <span className="text-slate-500">상호명:</span> 마인드휘트니스 PT&필라테스 한림점
+                <span className="text-slate-500">상호명:</span> 마인드휘트니스 한림점
               </li>
               <li>
                 <span className="text-slate-500">대표자:</span> 문정준
@@ -347,7 +347,7 @@ export function Footer() {
 
         {/* Bottom Section */}
         <div className="flex flex-col items-center justify-between gap-4 text-center text-xs text-slate-500 md:flex-row">
-          <p>Copyright &copy; 2024 마인드휘트니스 PT&필라테스 한림점. All rights reserved.</p>
+          <p>Copyright &copy; 2024 마인드휘트니스 한림점. All rights reserved.</p>
           <div className="flex gap-4">
             <LegalModal type="termsAndPrivacy" />
             <LegalModal type="refund" />
