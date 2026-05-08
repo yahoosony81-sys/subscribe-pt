@@ -95,22 +95,14 @@ export function PromotionDnGroupPt() {
       </section>
 
       {/* ─────────────────────────────────────────────
-          📌 [2] Solid Break - 노란색 (메시지 강조)
+          📌 [2] 이미지 섹션 - 혼자 운동 왜 실패할까
           ───────────────────────────────────────────── */}
-      <section className="bg-[#FACC15] py-20 md:py-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center text-center">
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-black leading-[1.2] tracking-tighter whitespace-pre-line mb-10">
-            {copyData.themeBreakTitle}
-          </h2>
-          <div className="flex flex-col md:flex-row items-center gap-4 text-black">
-            <svg className="w-10 h-10 md:w-12 md:h-12 transform rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-            <p className="text-lg md:text-2xl font-bold whitespace-pre-line text-left">
-              {copyData.themeBreakSub}
-            </p>
-          </div>
-        </div>
+      <section className="w-full bg-black flex justify-center">
+        <img
+          src="/%EC%99%9C%ED%98%BC%EC%9E%90%EC%8B%A4%ED%8C%A8%EC%88%98%EC%A0%95%EC%9D%B4%EB%AF%B8%EC%A7%80.png"
+          alt="혼자 운동, 왜 항상 실패할까요?"
+          className="w-full max-w-7xl h-auto block"
+        />
       </section>
 
       {/* ─────────────────────────────────────────────
@@ -119,67 +111,52 @@ export function PromotionDnGroupPt() {
       <section className="w-full">
         {/* Row 1 - 그룹PT 특징 */}
         <div className="flex flex-col w-full">
-          <div className="bg-gradient-to-b from-[#0F172A] to-[#1E3A8A] py-20 md:py-32">
-            <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
-              <p className="text-[#FACC15] font-bold text-xl mb-4 tracking-wider">{copyData.section1Super}</p>
-              <div className="bg-[#FACC15] inline-block px-4 md:px-6 py-2 md:py-3 mb-6 rounded-sm shadow-lg">
-                <h3 className="text-4xl md:text-6xl lg:text-7xl font-black text-black leading-[1.2] tracking-tighter whitespace-pre-line uppercase">
-                  {copyData.section1Title}
-                </h3>
-              </div>
-              <p className="text-slate-300 text-lg md:text-xl font-medium whitespace-pre-line leading-relaxed max-w-md">
-                {copyData.section1Desc}
-              </p>
-            </div>
+          <div className="w-full bg-black flex justify-center">
+            <img
+              src="/grouppt2.png"
+              alt="GROUP TRAINING - 한번에 다잡는 운동"
+              className="w-full max-w-7xl h-auto block"
+            />
           </div>
         </div>
 
-        {/* Row 2 - 가격/효과 */}
+        {/* Row 2 - WHY GROUP PT */}
         <div className="flex flex-col w-full">
-          <div className="bg-gradient-to-b from-[#1D4ED8] to-[#1E40AF] py-20 md:py-32">
-            <div className="w-full max-w-7xl mx-auto px-6 md:px-12 flex justify-end">
-              <div className="max-w-lg text-right">
-                <p className="text-[#FACC15] font-bold text-xl mb-4 tracking-wider">{copyData.section2Super}</p>
-                <div className="bg-white inline-block px-4 md:px-6 py-2 md:py-3 mb-6 rounded-sm shadow-lg text-left">
-                  <h3 className="text-4xl md:text-6xl lg:text-7xl font-black text-[#1D4ED8] leading-[1.2] tracking-tighter whitespace-pre-line uppercase">
-                    {copyData.section2Title}
-                  </h3>
-                </div>
-                <p className="text-blue-100 text-lg md:text-xl font-medium whitespace-pre-line leading-relaxed">
-                  {copyData.section2Desc}
-                </p>
-              </div>
-            </div>
+          <div className="w-full bg-black flex justify-center">
+            <img
+              src="/grouppt3.png"
+              alt="WHY GROUP PT - 가격부담은 DOWN 효과는 UP"
+              className="w-full max-w-7xl h-auto block"
+            />
           </div>
         </div>
+
       </section>
 
       {/* ─────────────────────────────────────────────
-          📌 [4] 4가지 이유 카드 섹션 (White Background)
+          📌 [4] 그룹PT 신청 방법 (이미지 재현 및 카드 축소)
           ───────────────────────────────────────────── */}
-      <section className="bg-white py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="text-center mb-16">
-            <p className="text-[#1D4ED8] font-bold tracking-widest mb-4 text-sm uppercase">Why Choose Us</p>
-            <h2 className="text-3xl md:text-5xl font-black text-black leading-tight mb-4">
-              그룹PT를 선택해야 하는<br />
-              <span className="text-[#1D4ED8]">4가지 이유</span>
+      <section className="bg-[#0B1221] py-20 md:py-28">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-black leading-tight">
+              <span className="text-[#FACC15]">그룹PT를</span><br />
+              <span className="text-white">신청하는 방법</span>
             </h2>
           </div>
-          <div className="grid grid-cols-2 gap-6 max-w-3xl mx-auto">
+          
+          <div className="grid grid-cols-2 gap-4 md:gap-6">
             {[
-              { num: "01", title: "빠질 수 없는 환경", desc: "함께하는 동료들이 만들어내는 강력한 동기부여 환경" },
-              { num: "02", title: "몰입되는 분위기", desc: "재미있게 몰입되는 분위기와 에너제틱한 코치 텐션" },
-              { num: "03", title: "짧고 확실한 효과", desc: "하루 40분, 500칼로리 소모 — 짧은 시간 확실한 결과" },
-              { num: "04", title: "합리적인 금액", desc: "개인PT 대비 부담없는 가격으로 전문 코칭 경험" },
+              { num: "01", icon: "👥", title: "그룹PT 인원수 정하기", desc: "함께 운동할 인원수를 결정하세요." },
+              { num: "02", icon: "📅", title: "PT 기간과 시간대 정하기", desc: "원하는 운동 기간과 시간대를 선택하세요." },
+              { num: "03", icon: "📝", title: "아래 온라인 신청서에 작성하기", desc: "온라인 신청서를 빠짐없이 작성해주세요." },
+              { num: "04", icon: "📱", title: "지점 연락 기다리기", desc: "신청 완료 후 지점에서 연락이 올 것입니다." },
             ].map((item) => (
-              <div key={item.num} className="group relative overflow-hidden rounded-2xl border-2 border-slate-100 p-8 hover:border-[#1D4ED8] transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                <div className="mb-6">
-                  <span className="text-6xl font-black text-[#FACC15] leading-none">{item.num}</span>
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-[#1D4ED8] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+              <div key={item.num} className="bg-[#CFE2FF] border-[3px] border-[#FACC15] rounded-2xl p-5 md:p-7 shadow-lg flex flex-col items-start text-left h-full transition-transform hover:scale-[1.02]">
+                <span className="text-2xl font-black text-slate-900 mb-1">{item.num}</span>
+                <div className="text-3xl mb-3">{item.icon}</div>
+                <h3 className="text-base md:text-lg font-black text-slate-900 mb-2 leading-tight">{item.title}</h3>
+                <p className="text-slate-700 text-xs md:text-sm font-medium leading-snug">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -240,33 +217,14 @@ export function PromotionDnGroupPt() {
                 className="mt-8 bg-[#FACC15] text-black font-black px-6 py-4 rounded-lg flex items-center justify-center gap-2 hover:bg-yellow-300 transition-colors"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
-                지금 바로 상담 예약하기
+                지금 바로 온라인 예약하기
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────
-          📌 [6] Final CTA Banner
-          ───────────────────────────────────────────── */}
-      <section className="bg-[#1D4ED8] py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
-          <h3 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[1.2] tracking-tighter whitespace-pre-line mb-8">
-            {copyData.finalTitle}
-          </h3>
-          <p className="text-lg md:text-2xl font-bold text-[#FACC15] whitespace-pre-line mb-10">
-            {copyData.finalSub}
-          </p>
-          <button
-            onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-            className="inline-flex items-center gap-3 bg-[#FACC15] text-black font-black text-lg px-10 py-5 rounded-xl hover:-translate-y-1 transition-transform shadow-2xl"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
-            지금 바로 예약하기 →
-          </button>
-        </div>
-      </section>
+
 
     </div>
   )

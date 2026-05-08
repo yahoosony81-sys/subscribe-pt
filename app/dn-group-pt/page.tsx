@@ -18,7 +18,7 @@ export default function DnGroupPtPage() {
     <main className="min-h-screen">
       <PromotionDnGroupPt />
       <LocationSectionDnGroupPt />
-      <RegistrationSectionDnGroupPt title="무료 상담 예약하기" branch="도남점" hideTimePicker={true} />
+      <RegistrationSectionDnGroupPt title="그룹 PT 온라인 신청서" branch="도남점" hideTimePicker={false} />
       <FooterDnGroupPt />
     </main>
   )

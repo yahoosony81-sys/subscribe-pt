@@ -9,11 +9,9 @@ import { User, Phone, Clock, MessageSquare, MapPin, CalendarDays, X } from "luci
 
 function generateTimeSlots(): string[] {
   const slots: string[] = []
-  for (let hour = 10; hour <= 20; hour++) {
+  for (let hour = 8; hour <= 23; hour++) {
     slots.push(`${String(hour).padStart(2, "0")}:00`)
-    slots.push(`${String(hour).padStart(2, "0")}:30`)
   }
-  slots.push("21:00")
   return slots
 }
 
@@ -22,9 +20,9 @@ const TIME_SLOTS = generateTimeSlots()
 const RESERVED_SLOTS: Record<string, string[]> = {}
 
 export function RegistrationSectionDnGroupPt({
-  title = "무료 상담 예약하기",
+  title = "그룹PT 온라인 예약하기",
   branch = "도남점",
-  hideTimePicker = true
+  hideTimePicker = false
 }: {
   title?: string;
   branch?: string;
@@ -33,6 +31,7 @@ export function RegistrationSectionDnGroupPt({
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
+    headcount: "1명",
     preferredTime: "",
     message: "",
     visitSource: "",
@@ -78,7 +77,7 @@ export function RegistrationSectionDnGroupPt({
     setIsSubmitting(true)
 
     // 🔴 도남점 전용 구글 앱스 스크립트 웹앱 URL
-    const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbwz_HpGHEDD3D0rK3dAqf5QupFf1bCpmnCT_YcJV8JP7GdN8IIRrRdBun3in-13aX2r/exec"
+    const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbyWfEcYQ3euuDwj2aSHjpND-ZdWTPLkEQviN4bqi_CypJCHMSsuWzXU2ron9CSFFEsh/exec"
 
     try {
       await fetch(GOOGLE_SHEETS_URL, {
@@ -95,7 +94,7 @@ export function RegistrationSectionDnGroupPt({
       setShowComplete(true)
       setFadeOut(false)
 
-      setFormData({ name: "", phone: "", preferredTime: "", message: "", visitSource: "" })
+      setFormData({ name: "", phone: "", headcount: "1명", preferredTime: "", message: "", visitSource: "" })
       setSelectedDate(undefined)
       setSelectedTime("")
     } catch (error) {
@@ -145,28 +144,50 @@ export function RegistrationSectionDnGroupPt({
             <div className="space-y-5">
               <div>
                 <label htmlFor="name" className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
-                  <User className="h-4 w-4 text-orange-500" /> 성함 <span className="text-orange-500">*</span>
+                  <User className="h-4 w-4 text-[#1D4ED8]" /> 성함 <span className="text-red-500">*</span>
                 </label>
-                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 transition-all placeholder:text-slate-400 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20" placeholder="홍길동" />
+                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 transition-all placeholder:text-slate-400 focus:border-[#1D4ED8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20" placeholder="홍길동" />
               </div>
 
               <div>
                 <label htmlFor="phone" className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
-                  <Phone className="h-4 w-4 text-orange-500" /> 연락처 <span className="text-orange-500">*</span>
+                  <Phone className="h-4 w-4 text-[#1D4ED8]" /> 연락처 <span className="text-red-500">*</span>
                 </label>
-                <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 transition-all placeholder:text-slate-400 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20" placeholder="010-1234-5678" />
+                <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 transition-all placeholder:text-slate-400 focus:border-[#1D4ED8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20" placeholder="010-1234-5678" />
+              </div>
+
+              <div>
+                <label className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
+                  <User className="h-4 w-4 text-[#1D4ED8]" /> 인원수 <span className="text-red-500">*</span>
+                </label>
+                <div className="grid grid-cols-4 gap-2">
+                  {["1명", "2명", "3명", "4명"].map((num) => (
+                    <button
+                      key={num}
+                      type="button"
+                      onClick={() => setFormData(prev => ({ ...prev, headcount: num }))}
+                      className={`rounded-lg border py-3 text-sm font-bold transition-all ${
+                        formData.headcount === num
+                          ? "border-[#1D4ED8] bg-[#1D4ED8] text-white shadow-md"
+                          : "border-slate-200 bg-slate-50 text-slate-600 hover:border-[#1D4ED8]/50"
+                      }`}
+                    >
+                      {num}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               {!hideTimePicker && (
                 <div>
                   <label className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
-                    <Clock className="h-4 w-4 text-orange-500" /> 체험 희망 날짜와 시간
+                    <CalendarDays className="h-4 w-4 text-[#1D4ED8]" /> 원하는 날짜와 시간 <span className="text-red-500">*</span>
                   </label>
-                  <button type="button" onClick={() => setShowPicker(true)} className="flex w-full items-center justify-between rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-left transition-all hover:border-orange-400 hover:bg-orange-50 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20">
+                  <button type="button" onClick={() => setShowPicker(true)} className="flex w-full items-center justify-between rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-left transition-all hover:border-[#1D4ED8] hover:bg-blue-50 focus:border-[#1D4ED8] focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20">
                     <span className={formData.preferredTime ? "text-slate-900 font-medium" : "text-slate-400"}>
                       {formData.preferredTime || "날짜와 시간을 선택해주세요"}
                     </span>
-                    <CalendarDays className="h-5 w-5 text-orange-500 shrink-0" />
+                    <Clock className="h-5 w-5 text-[#1D4ED8] shrink-0" />
                   </button>
                   <input type="hidden" name="preferredTime" value={formData.preferredTime} />
                 </div>
@@ -174,16 +195,16 @@ export function RegistrationSectionDnGroupPt({
 
               <div>
                 <label htmlFor="message" className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
-                  <MessageSquare className="h-4 w-4 text-orange-500" /> 기타 문의 사항(선택)
+                  <MessageSquare className="h-4 w-4 text-[#1D4ED8]" /> 기타 문의 사항
                 </label>
-                <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={3} className="w-full resize-none rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 transition-all placeholder:text-slate-400 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20" placeholder="궁금하신 내용을 적어주세요" />
+                <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={3} className="w-full resize-none rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 transition-all placeholder:text-slate-400 focus:border-[#1D4ED8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20" placeholder="궁금하신 내용을 적어주세요" />
               </div>
 
               <div>
                 <label htmlFor="visitSource" className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
-                  <MapPin className="h-4 w-4 text-orange-500" /> 방문 경로
+                  <MapPin className="h-4 w-4 text-[#1D4ED8]" /> 방문 경로
                 </label>
-                <select id="visitSource" name="visitSource" value={formData.visitSource} onChange={handleChange} className="w-full cursor-pointer rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 transition-all focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20">
+                <select id="visitSource" name="visitSource" value={formData.visitSource} onChange={handleChange} className="w-full cursor-pointer rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 transition-all focus:border-[#1D4ED8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20">
                   <option value="">선택해주세요</option>
                   <option value="블로그">블로그</option>
                   <option value="인스타그램">인스타그램</option>
@@ -192,7 +213,7 @@ export function RegistrationSectionDnGroupPt({
                 </select>
               </div>
 
-              <Button type="submit" disabled={isSubmitting} onClick={() => { if (typeof window !== 'undefined' && (window as any).fbq) (window as any).fbq('track', 'CompleteRegistration'); }} className="relative mt-4 w-full overflow-hidden rounded-lg bg-orange-500 py-6 text-base font-bold text-white transition-all hover:bg-orange-600 disabled:opacity-50">
+              <Button type="submit" disabled={isSubmitting} onClick={() => { if (typeof window !== 'undefined' && (window as any).fbq) (window as any).fbq('track', 'CompleteRegistration'); }} className="relative mt-4 w-full overflow-hidden rounded-lg bg-[#1D4ED8] py-6 text-base font-bold text-white transition-all hover:bg-blue-700 disabled:opacity-50">
                 <span className="absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                 <span className="relative">
                   {isSubmitting ? (
@@ -204,7 +225,7 @@ export function RegistrationSectionDnGroupPt({
                       신청 중...
                     </span>
                   ) : (
-                    "신청 완료하기"
+                    "온라인 예약 신청하기"
                   )}
                 </span>
               </Button>
@@ -228,7 +249,7 @@ export function RegistrationSectionDnGroupPt({
             </button>
             <h3 className="mb-4 text-center text-lg font-bold text-slate-900">날짜와 시간 선택</h3>
             <div className="flex justify-center">
-              <DayPicker mode="single" selected={selectedDate} onSelect={handleDateSelect} locale={ko} disabled={{ before: new Date() }} className="!font-sans" classNames={{ months: "flex flex-col", month: "space-y-3", month_caption: "flex justify-center items-center pt-1", caption_label: "text-base font-bold text-slate-900", nav: "flex items-center gap-1", button_previous: "absolute left-2 top-3 h-8 w-8 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition-colors", button_next: "absolute right-2 top-3 h-8 w-8 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition-colors", month_grid: "w-full border-collapse", weekdays: "flex", weekday: "w-10 h-10 flex items-center justify-center text-xs font-semibold text-slate-400", week: "flex", day: "w-10 h-10 flex items-center justify-center text-sm rounded-full cursor-pointer transition-colors hover:bg-orange-50 text-slate-700", day_button: "w-10 h-10 flex items-center justify-center rounded-full transition-colors", selected: "!bg-orange-500 !text-white font-bold hover:!bg-orange-600", today: "font-bold text-orange-500 ring-1 ring-orange-300 rounded-full", disabled: "text-slate-300 cursor-not-allowed hover:bg-transparent", outside: "text-slate-300" }} />
+              <DayPicker mode="single" selected={selectedDate} onSelect={handleDateSelect} locale={ko} disabled={{ before: new Date() }} className="!font-sans" classNames={{ months: "flex flex-col", month: "space-y-3", month_caption: "flex justify-center items-center pt-1", caption_label: "text-base font-bold text-slate-900", nav: "flex items-center gap-1", button_previous: "absolute left-2 top-3 h-8 w-8 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition-colors", button_next: "absolute right-2 top-3 h-8 w-8 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition-colors", month_grid: "w-full border-collapse", weekdays: "flex", weekday: "w-10 h-10 flex items-center justify-center text-xs font-semibold text-slate-400", week: "flex", day: "w-10 h-10 flex items-center justify-center text-sm rounded-full cursor-pointer transition-colors hover:bg-blue-50 text-slate-700", day_button: "w-10 h-10 flex items-center justify-center rounded-full transition-colors", selected: "!bg-[#1D4ED8] !text-white font-bold hover:!bg-blue-700", today: "font-bold text-[#1D4ED8] ring-1 ring-blue-300 rounded-full", disabled: "text-slate-300 cursor-not-allowed hover:bg-transparent", outside: "text-slate-300" }} />
             </div>
             {selectedDate && (
               <div className="mt-5 border-t border-slate-100 pt-5">
@@ -238,7 +259,7 @@ export function RegistrationSectionDnGroupPt({
                     const isReserved = reservedTimes.includes(time)
                     const isSelected = selectedTime === time
                     return (
-                      <button key={time} type="button" disabled={isReserved} onClick={() => handleTimeSelect(time)} className={`relative rounded-lg border px-2 py-2.5 text-sm font-medium transition-all ${isReserved ? "cursor-not-allowed border-slate-200 bg-slate-100 text-slate-300" : isSelected ? "border-orange-500 bg-orange-500 text-white shadow-md" : "border-slate-200 bg-white text-slate-700 hover:border-orange-400 hover:bg-orange-50"}`}>
+                      <button key={time} type="button" disabled={isReserved} onClick={() => handleTimeSelect(time)} className={`relative rounded-lg border px-2 py-2.5 text-sm font-medium transition-all ${isReserved ? "cursor-not-allowed border-slate-200 bg-slate-100 text-slate-300" : isSelected ? "border-[#1D4ED8] bg-[#1D4ED8] text-white shadow-md" : "border-slate-200 bg-white text-slate-700 hover:border-[#1D4ED8] hover:bg-blue-50"}`}>
                         {time}
                         {isReserved && <span className="mt-0.5 block text-[10px] font-bold text-red-400">예약완료</span>}
                       </button>
@@ -248,7 +269,7 @@ export function RegistrationSectionDnGroupPt({
               </div>
             )}
             <div className="mt-5">
-              <button type="button" onClick={confirmDateTime} disabled={!selectedDate || !selectedTime} className="w-full rounded-lg bg-orange-500 py-3 text-sm font-bold text-white transition-all hover:bg-orange-600 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-400">
+              <button type="button" onClick={confirmDateTime} disabled={!selectedDate || !selectedTime} className="w-full rounded-lg bg-[#1D4ED8] py-3 text-sm font-bold text-white transition-all hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-400">
                 {selectedDate && selectedTime ? `${format(selectedDate, "M/d")} ${selectedTime} 선택 완료` : "날짜와 시간을 선택해주세요"}
               </button>
             </div>
