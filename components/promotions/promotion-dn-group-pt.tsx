@@ -45,54 +45,18 @@ export function PromotionDnGroupPt() {
       {/* ─────────────────────────────────────────────
           📌 [1] 히어로 이미지 섹션 (이미지 전체 표시)
           ───────────────────────────────────────────── */}
-      <section className="w-full bg-black flex justify-center">
-        <img
-          src="/%EB%8F%84%EB%82%A8%EC%A0%90%20%EA%B7%B8%EB%A3%B9PT%EC%82%AC%EC%A7%841.png"
-          alt="마인드휘트니스 도남점 그룹PT"
-          className="w-full max-w-7xl h-auto block"
-        />
-      </section>
-
-      {/* ─────────────────────────────────────────────
-          📌 [1-2] 히어로 텍스트 섹션 (이미지 아래)
-          ───────────────────────────────────────────── */}
-      <section className="w-full bg-gradient-to-b from-[#0F172A] to-[#1E3A8A] py-16 md:py-24">
-        <div className="px-6 md:px-12 max-w-7xl mx-auto w-full">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-10">
-            <div className="w-full">
-              {/* Badge */}
-              <div className="mb-6 inline-flex items-center gap-3">
-                <span className="bg-[#FACC15] text-black font-black text-xs px-3 py-1 rounded-full tracking-widest">
-                  {copyData.badge}
-                </span>
-                <p className="text-sm md:text-base font-bold text-blue-200 tracking-widest">
-                  {copyData.heroSuper}
-                </p>
-              </div>
-              <h1 className="text-6xl md:text-[8rem] lg:text-[10rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
-                <div>{copyData.heroTitle1}</div>
-                <div className="text-[#FACC15]">{copyData.heroTitle2}</div>
-                <div className="flex items-center gap-2 md:gap-4 text-white text-4xl md:text-6xl lg:text-7xl mt-4">
-                  <span>{copyData.heroTitle3}</span>
-                </div>
-              </h1>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm border-t-4 border-[#FACC15] p-6 md:p-10 w-full max-w-sm rounded-xl shadow-2xl">
-              <div className="flex gap-1 mb-4">
-                <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
-                <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
-                <div className="w-1.5 h-1.5 bg-[#FACC15] rounded-full"></div>
-              </div>
-              <p className="text-xl md:text-2xl font-bold text-white leading-tight">
-                {copyData.heroBoxText1}<br />
-                <span className="text-[#FACC15]">{copyData.heroBoxText2}</span><br />
-                {copyData.heroBoxText3}
-              </p>
-            </div>
-          </div>
+      <section className="w-full bg-black flex justify-center overflow-hidden">
+        <div className="w-full max-w-7xl overflow-hidden">
+          <img
+            src="/%EB%8F%84%EB%82%A8%EC%A0%90%20%EA%B7%B8%EB%A3%B9PT%EC%82%AC%EC%A7%841.png"
+            alt="마인드휘트니스 도남점 그룹PT"
+            className="w-full h-auto block"
+            style={{ marginBottom: '-20.1%' }}
+          />
         </div>
       </section>
+
+
 
       {/* ─────────────────────────────────────────────
           📌 [2] 이미지 섹션 - 혼자 운동 왜 실패할까
@@ -148,7 +112,7 @@ export function PromotionDnGroupPt() {
           <div className="grid grid-cols-2 gap-4 md:gap-6">
             {[
               { num: "01", icon: "👥", title: "그룹PT 인원수 정하기", desc: "함께 운동할 인원수를 결정하세요." },
-              { num: "02", icon: "📅", title: "PT 기간과 시간대 정하기", desc: "원하는 운동 기간과 시간대를 선택하세요." },
+              { num: "02", icon: "📅", title: "PT 날짜와 시간대 정하기", desc: "원하는 운동 기간과 시간대를 선택하세요." },
               { num: "03", icon: "📝", title: "아래 온라인 신청서에 작성하기", desc: "온라인 신청서를 빠짐없이 작성해주세요." },
               { num: "04", icon: "📱", title: "지점 연락 기다리기", desc: "신청 완료 후 지점에서 연락이 올 것입니다." },
             ].map((item) => (
