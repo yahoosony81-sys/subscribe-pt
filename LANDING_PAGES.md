@@ -12,6 +12,11 @@
     *   주소: https://mindfitness-hallim.com/promo-bodychallenge
     *   주요 내용: 2026 상반기 바디챌린지 모집 랜딩
 
+## 📍 한림점 (Hallim)
+*   **버닝 케어 멤버십 (고민부위 리셋)**
+    *   주소: https://mindfitness-hallim.com/hl-burning-caremember
+    *   주요 내용: 팔뚝살, 허벅지살 다이어트 전 리셋 프로그램 (월 9.9만원)
+
 ## 📍 노형점 (Nohyeong)
 *   **커피 증정 리타겟팅 랜딩**
     *   주소: https://mindfitness-hallim.com/nh-retarget-coffeelanding

@@ -97,14 +97,64 @@ export function PromotionDnGroupPt() {
 
       </section>
 
+
       {/* ─────────────────────────────────────────────
-          📌 [4] 그룹PT 신청 방법 (이미지 재현 및 카드 축소)
+          📌 [4] 5월 가정의 달 혜택 섹션
+          ───────────────────────────────────────────── */}
+      <section className="w-full bg-white py-20 md:py-28 border-t border-slate-100">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="inline-block bg-red-500 text-white text-xs md:text-sm font-black px-4 py-1.5 rounded-full mb-4 tracking-tighter animate-bounce">
+              MAY EVENT ❤️
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black text-slate-900 leading-tight">
+              5월 가정의 달<br />
+              <span className="text-[#1D4ED8]">등록 시 특별 혜택!</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Benefit 1 */}
+            <div className="relative bg-slate-50 rounded-3xl p-8 md:p-10 border-2 border-slate-100 flex flex-col items-center text-center group hover:border-[#1D4ED8] transition-all duration-300">
+              <div className="w-20 h-20 bg-[#1D4ED8] text-white rounded-2xl flex items-center justify-center text-4xl mb-6 shadow-lg shadow-blue-200 group-hover:scale-110 transition-transform">
+                🎁
+              </div>
+              <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-3">그룹PT 무료체험</h3>
+              <p className="text-slate-600 font-medium leading-relaxed">
+                부담 없이 먼저 경험해보세요.<br />
+                직접 겪어보시면 왜 다른지 알게 됩니다.
+              </p>
+              <div className="absolute -top-3 -right-3 bg-[#FACC15] text-black text-xs font-black px-4 py-2 rounded-lg shadow-md transform rotate-12">
+                FREE
+              </div>
+            </div>
+
+            {/* Benefit 2 */}
+            <div className="relative bg-slate-50 rounded-3xl p-8 md:p-10 border-2 border-slate-100 flex flex-col items-center text-center group hover:border-[#1D4ED8] transition-all duration-300">
+              <div className="w-20 h-20 bg-[#FACC15] text-black rounded-2xl flex items-center justify-center text-4xl mb-6 shadow-lg shadow-yellow-100 group-hover:scale-110 transition-transform">
+                🏷️
+              </div>
+              <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-3">10% 추가 할인</h3>
+              <p className="text-slate-600 font-medium leading-relaxed">
+                체험 후 당일 등록 시<br />
+                수강료 <span className="text-red-500 font-black">10% 즉시 할인</span> 혜택!
+              </p>
+              <div className="absolute -top-3 -right-3 bg-[#1D4ED8] text-white text-xs font-black px-4 py-2 rounded-lg shadow-md transform rotate-12">
+                OFF
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────
+          📌 [5] 그룹 PT 체험 신청하는 방법 (이미지 재현 및 카드 축소)
           ───────────────────────────────────────────── */}
       <section className="bg-[#0B1221] py-20 md:py-28">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-black leading-tight">
-              <span className="text-[#FACC15]">그룹PT를</span><br />
+              <span className="text-[#FACC15]">그룹 PT 체험</span><br />
               <span className="text-white">신청하는 방법</span>
             </h2>
           </div>
@@ -128,7 +178,7 @@ export function PromotionDnGroupPt() {
       </section>
 
       {/* ─────────────────────────────────────────────
-          📌 [5] Impact / CTA Section
+          📌 [6] Impact / CTA Section
           ───────────────────────────────────────────── */}
       <section className="bg-[#F8FAFC] py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -181,7 +231,7 @@ export function PromotionDnGroupPt() {
                 className="mt-8 bg-[#FACC15] text-black font-black px-6 py-4 rounded-lg flex items-center justify-center gap-2 hover:bg-yellow-300 transition-colors"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
-                지금 바로 온라인 예약하기
+                지금 바로 그룹 PT 체험 신청하기
               </button>
             </div>
           </div>
