@@ -59,10 +59,10 @@ export function PromotionHlBurningCare() {
       </section>
 
       {/* ─────────────────────────────────────────────
-          📌 [1.5] 추가 이미지 섹션 (히어로 하단 버튼/워터마크 가리기)
+          📌 [1.5] 추가 이미지 섹션 (히어로 바로 아래)
           ───────────────────────────────────────────── */}
       <section className="w-full flex flex-col items-center">
-        <div className="w-full relative z-10 -mt-[18%] sm:-mt-[15%] md:-mt-[10%] lg:-mt-[8%]">
+        <div className="w-full">
           <img
             src={encodeURI("/images/힉스필드수정본.png")}
             alt="힉스필드수정본"
@@ -71,10 +71,8 @@ export function PromotionHlBurningCare() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────
-          📌 [3] Best Investment (힉스필드 AI 워터마크 가리기)
-          ───────────────────────────────────────────── */}
-      <section className="bg-white py-24 text-slate-900 overflow-hidden relative z-20 -mt-[8%] sm:-mt-[6%] md:-mt-[4%] rounded-t-[2.5rem] shadow-[0_-20px_40px_rgba(0,0,0,0.05)]">
+
+      <section className="bg-white py-24 text-slate-900 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-red-600 font-black text-sm tracking-widest uppercase mb-4 inline-block">Best Investment</span>
@@ -112,11 +110,11 @@ export function PromotionHlBurningCare() {
                     </div>
                     <button
                       onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-                      className="w-full bg-black text-white font-black py-5 rounded-2xl text-lg hover:bg-red-600 transition-all shadow-xl"
+                      className="w-full bg-black text-white font-black py-4 md:py-5 rounded-2xl text-base sm:text-lg hover:bg-red-600 transition-all shadow-xl break-keep"
                     >
                       지금 케어 멤버십 체험 신청하기
                     </button>
-                    <p className="mt-4 text-xs text-slate-400 font-medium">* 1:1 상담 후 개인별 맞춤 플랜이 구성됩니다.</p>
+                    <p className="mt-4 text-xs text-slate-400 font-medium break-keep">* 1:1 상담 후 개인별 맞춤 플랜이 구성됩니다.</p>
                   </div>
                 </div>
               </div>
@@ -187,10 +185,10 @@ export function PromotionHlBurningCare() {
           </p>
           <button
             onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-red-600 text-white font-black px-10 py-5 rounded-full text-xl md:text-2xl hover:bg-red-700 transition-all hover:scale-105 shadow-2xl flex items-center gap-3 mx-auto"
+            className="bg-red-600 text-white font-black px-6 md:px-10 py-4 md:py-5 rounded-full text-base sm:text-xl md:text-2xl hover:bg-red-700 transition-all hover:scale-105 shadow-2xl flex items-center gap-2 md:gap-3 mx-auto break-keep"
           >
             지금 케어 멤버십 체험 신청하기
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            <svg className="w-5 h-5 md:w-6 md:h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </button>
         </div>
       </section>
