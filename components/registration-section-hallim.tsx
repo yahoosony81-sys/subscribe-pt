@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import { DayPicker } from "react-day-picker"
+import { Calendar } from "@/components/ui/calendar"
 import { format } from "date-fns"
 import { ko } from "date-fns/locale"
 import { Button } from "@/components/ui/button"
@@ -249,13 +249,13 @@ export function RegistrationSectionHallim({
             </button>
             <h3 className="mb-4 text-center text-lg font-bold text-slate-900">날짜와 시간 선택</h3>
             <div className="flex justify-center">
-              <DayPicker
+              <Calendar
                 mode="single"
                 selected={selectedDate}
                 onSelect={handleDateSelect}
                 locale={ko}
                 disabled={{ before: new Date() }}
-                className="!font-sans"
+                className="rounded-xl border border-slate-100 shadow-sm p-2"
               />
             </div>
             {selectedDate && (
