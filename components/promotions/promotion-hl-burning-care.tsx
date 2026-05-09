@@ -74,11 +74,29 @@ export function PromotionHlBurningCare() {
 
       <section className="bg-white py-24 text-slate-900 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-red-600 font-black text-sm tracking-widest uppercase mb-4 inline-block">Best Investment</span>
-            <h2 className="text-4xl md:text-6xl font-black mb-6 leading-tight whitespace-pre-line">
-              {copyData.offerTitle}
-            </h2>
+          <div className="text-center mb-16 flex flex-col items-center">
+            {/* 눈에 확 띄는 예열기간 문구 */}
+            <div className="mb-16 relative w-full max-w-3xl">
+              <div className="absolute -inset-1.5 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 rounded-3xl blur-lg opacity-60 animate-pulse"></div>
+              <div className="relative bg-white border-2 border-white rounded-3xl px-6 py-10 md:px-12 md:py-12 shadow-2xl transform transition-transform hover:scale-[1.02] overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-100 rounded-full mix-blend-multiply filter blur-2xl opacity-50"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-red-100 rounded-full mix-blend-multiply filter blur-2xl opacity-50"></div>
+                
+                <h3 className="relative z-10 text-3xl md:text-5xl font-[900] bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent mb-4 tracking-tighter break-keep leading-tight">
+                  🔥 불을 짚히는 예열기간!
+                </h3>
+                <p className="relative z-10 text-2xl md:text-4xl font-black text-slate-800 tracking-tight break-keep leading-tight">
+                  케어 멤버십이면 충분합니다
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-2">
+              <span className="text-red-600 font-black text-sm md:text-base tracking-widest uppercase mb-4 inline-block">Best Investment</span>
+              <h2 className="text-4xl md:text-6xl font-black mb-6 leading-tight whitespace-pre-line">
+                {copyData.offerTitle}
+              </h2>
+            </div>
           </div>
 
           <div className="max-w-4xl mx-auto">
