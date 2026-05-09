@@ -13,6 +13,7 @@ export function GtmProvider() {
   const isNhLanding = pathname.startsWith('/nh-retarget-coffeelanding');
   const isBodyChallenge = pathname.startsWith('/promo-bodychallenge');
   const isHallimLanding = pathname.startsWith('/hl-burning-caremember');
+  const isDnGroupPt = pathname.startsWith('/dn-group-pt');
 
   // 조건에 맞게 GTM 아이디 할당
   let gtmId = "GTM-5VB56Q69"; // 기본/한림 GTM
@@ -23,6 +24,7 @@ export function GtmProvider() {
   let pixelId = "931401023110366"; // 기본/한림 픽셀
   if (isNhLanding) pixelId = "891686733924318"; // 노형점 픽셀
   if (isBodyChallenge) pixelId = "26658899260438637"; // 바디챌린지 픽셀
+  if (isDnGroupPt) pixelId = "26658899260438637"; // dn-group-pt 픽셀
 
   return (
     <>
