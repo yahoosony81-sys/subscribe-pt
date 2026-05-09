@@ -32,7 +32,7 @@ const copyData = {
     "4. 맞춤 운동량 & 식단 & 향후 플랜 상담"
   ],
 
-  finalTitle: "딱 2달만 먼저 관리하세요!",
+  finalTitle: "딱 2달만\n먼저 관리하세요!",
   finalSub: "케어 멤버십으로 고민 부위를 예열하면,\n당신이 원하던 부위부터 빠지는 신기한 결과를 얻을 수 있습니다.",
 }
 
@@ -142,7 +142,7 @@ export function PromotionHlBurningCare() {
                 🎁 5월 가정의 달 특별 이벤트 🎁
               </span>
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
-                케어 멤버십 결제 하시는 분들께<br />
+                케어 멤버십<br /> 결제 하시는 분들께<br />
                 <span className="text-[#FACC15] drop-shadow-md">혜택이 쏟아집니다!</span>
               </h2>
             </div>
@@ -177,7 +177,7 @@ export function PromotionHlBurningCare() {
           ───────────────────────────────────────────── */}
       <section className="bg-white py-24 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-6xl font-black text-black leading-tight mb-8">
+          <h2 className="text-4xl md:text-6xl font-black text-black leading-tight mb-8 whitespace-pre-line">
             {copyData.finalTitle}
           </h2>
           <p className="text-xl md:text-2xl text-slate-600 font-medium mb-12 whitespace-pre-line">

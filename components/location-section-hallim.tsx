@@ -15,7 +15,7 @@ export function LocationSectionHallim() {
             마인드 휘트니스 한림점
           </h2>
           <p className="mx-auto max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            편리한 접근성과 쾌적한 시설로 여러분을 기다립니다
+            편리한 접근성과 쾌적한 시설로<br /> 여러분을 기다립니다
           </p>
         </div>
 
