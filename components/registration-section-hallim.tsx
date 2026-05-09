@@ -80,7 +80,7 @@ export function RegistrationSectionHallim({
     e.preventDefault()
     setIsSubmitting(true)
 
-    const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbzfAMUkKIeoSrv8sIDZMO6SoviFwEbaS9ma4TxVsRE6v9Ej-rBDEFEK6hGAraLmenDe/exec"
+    const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbwJJ9exLHsiL3-QvOk7RmOhqqo2sqaeBZ9rju4j04AWolAHVLDPCM7eeh3sUXVe4FKo/exec"
 
     try {
       await fetch(GOOGLE_SHEETS_URL, {
