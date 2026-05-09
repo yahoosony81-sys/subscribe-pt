@@ -8,7 +8,7 @@ export default function HlBurningCarePage() {
     <main className="min-h-screen">
       <PromotionHlBurningCare />
       <LocationSectionHallim />
-      <RegistrationSectionHallim title="케어 멤버십 무료 상담 신청" />
+      <RegistrationSectionHallim title="케어 멤버십 체험 신청" />
       <FooterHallim />
     </main>
   )

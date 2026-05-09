@@ -139,7 +139,7 @@ export function RegistrationSectionHallim({
         <div className="mx-auto max-w-xl px-4">
           <div className="mb-10 text-center">
             <h2 className="mb-3 text-2xl font-bold text-slate-900">{title}</h2>
-            <p className="text-base text-slate-600">궁금한 점이 있으시다면 정보를 남겨주세요. 확인 후 바로 연락드리겠습니다.</p>
+            <p className="text-base text-slate-600">신청 완료 후 지점에서 안내 문자를 발송해 드립니다.</p>
           </div>
 
           <form onSubmit={handleSubmit} className="rounded-2xl bg-white p-8 shadow-sm">

@@ -49,55 +49,39 @@ export function PromotionHlBurningCare() {
           ───────────────────────────────────────────── */}
       <section className="w-full bg-black flex justify-center overflow-hidden">
         <div className="w-full max-w-7xl">
+          {/* 모바일에서는 높이를 강제로 주어 이미지가 확대(crop)되도록 처리하여 텍스트 가독성 확보 */}
           <img
             src="/images/caremembership-burnning-hero.png"
             alt="Burning Care Membership"
-            className="w-full h-auto block"
+            className="w-full h-[150vw] sm:h-[120vw] md:h-auto object-cover object-top block"
           />
         </div>
       </section>
 
       {/* ─────────────────────────────────────────────
-          📌 [2] Pain Point & Solution 섹션 (통이미지 대체)
+          📌 [1.5] 추가 이미지 섹션 (히어로 바로 아래)
           ───────────────────────────────────────────── */}
-      <section className="w-full bg-[#f8f9fa] flex justify-center">
+      <section className="w-full flex flex-col items-center">
         <div className="w-full">
           <img
-            src="/images/스크린샷 2026-05-09 152029.png"
-            alt="고민 부위 원인과 해결책"
+            src={encodeURI("/images/힉스필드수정본.png")}
+            alt="힉스필드수정본"
+            className="w-full h-auto block object-cover"
+          />
+          <img
+            src={encodeURI("/images/한림상완운동녀-평온-켑컷수정본.png")}
+            alt="한림상완운동녀"
+            className="w-full h-auto block object-cover"
+          />
+          <img
+            src={encodeURI("/images/한림점 허벅지날씬여-캡컷수정.png")}
+            alt="한림점 허벅지날씬여"
             className="w-full h-auto block object-cover"
           />
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────
-          📌 [3-2] Why Sequence Matters (순서의 중요성)
-          ───────────────────────────────────────────── */}
-      <section className="py-24 bg-slate-900 text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-red-600/10 skew-x-12 translate-x-20"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black mb-4">왜 '순서'가 중요할까요?</h2>
-            <p className="text-slate-400 text-lg">무작정 굶는 다이어트는 실패할 확률이 높습니다.</p>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { step: "01", title: "부위별 리셋", desc: "순환이 정체된 팔뚝, 허벅지 조직을 부드럽게 이완하고 자극합니다." },
-              { step: "02", title: "에너지 활성", desc: "해당 부위의 근육을 활성화하여 지방이 연소되기 쉬운 상태로 만듭니다." },
-              { step: "03", title: "본격 다이어트", desc: "예열된 고민 부위는 전신 감량 시 가장 먼저 반응하기 시작합니다." },
-            ].map((item, idx) => (
-              <div key={idx} className="bg-white/5 border border-white/10 p-10 rounded-3xl hover:bg-white/10 transition-all group">
-                <div className="text-red-500 text-6xl font-black mb-6 opacity-30 group-hover:opacity-100 transition-opacity italic">
-                  {item.step}
-                </div>
-                <h3 className="text-2xl font-black mb-4">{item.title}</h3>
-                <p className="text-slate-400 font-medium leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
       <section className="bg-white py-24 text-slate-900 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -138,13 +122,62 @@ export function PromotionHlBurningCare() {
                       onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
                       className="w-full bg-black text-white font-black py-5 rounded-2xl text-lg hover:bg-red-600 transition-all shadow-xl"
                     >
-                      지금 신청하기
+                      지금 케어 멤버십 체험 신청하기
                     </button>
                     <p className="mt-4 text-xs text-slate-400 font-medium">* 1:1 상담 후 개인별 맞춤 플랜이 구성됩니다.</p>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────
+          📌 [4] 5월 이벤트 섹션 (추가됨)
+          ───────────────────────────────────────────── */}
+      <section className="w-full bg-slate-50 py-24 border-t border-slate-100 relative overflow-hidden">
+        {/* 장식용 배경 요소 */}
+        <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-red-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+        <div className="absolute bottom-0 left-0 w-[40rem] h-[40rem] bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
+
+        <div className="max-w-5xl mx-auto px-6 relative z-10">
+          <div className="bg-gradient-to-br from-red-600 via-red-500 to-orange-500 rounded-[2.5rem] p-8 md:p-14 shadow-2xl transform transition-transform hover:scale-[1.01] text-white relative overflow-hidden">
+            {/* 내부 장식 */}
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-white opacity-10 rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-yellow-300 opacity-20 rounded-full blur-2xl"></div>
+
+            <div className="text-center mb-12 relative z-10">
+              <span className="inline-block bg-[#FACC15] text-red-900 font-black px-6 py-2.5 rounded-full text-sm md:text-base tracking-widest mb-6 shadow-xl animate-bounce">
+                🎁 5월 가정의 달 특별 이벤트 🎁
+              </span>
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
+                케어 멤버십 결제 하시는 분들께<br />
+                <span className="text-[#FACC15] drop-shadow-md">혜택이 쏟아집니다!</span>
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 relative z-10">
+              <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-10 border border-white/20 text-center flex flex-col items-center hover:bg-white/20 transition-colors">
+                <div className="w-16 h-16 bg-white text-red-600 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-lg font-black">
+                  1
+                </div>
+                <h3 className="text-xl md:text-2xl font-black mb-3">~ 5월 15일 이전 결제 시</h3>
+                <p className="text-3xl md:text-5xl font-black text-[#FACC15] drop-shadow-sm">관리 2회 추가</p>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-10 border border-white/20 text-center flex flex-col items-center hover:bg-white/20 transition-colors">
+                <div className="w-16 h-16 bg-white text-red-600 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-lg font-black">
+                  2
+                </div>
+                <h3 className="text-xl md:text-2xl font-black mb-3">5월 15일 ~ 30일 결제 시</h3>
+                <p className="text-3xl md:text-5xl font-black text-[#FACC15] drop-shadow-sm">관리 1회 추가</p>
+              </div>
+            </div>
+            
+            <p className="text-center mt-10 text-white/90 font-medium text-sm md:text-base relative z-10 bg-black/10 inline-block px-6 py-3 rounded-full mx-auto flex w-max max-w-full">
+              * 본 혜택은 기간 내 결제 완료 시 적용되며, 선착순 마감될 수 있습니다.
+            </p>
           </div>
         </div>
       </section>
@@ -164,7 +197,7 @@ export function PromotionHlBurningCare() {
             onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
             className="bg-red-600 text-white font-black px-10 py-5 rounded-full text-xl md:text-2xl hover:bg-red-700 transition-all hover:scale-105 shadow-2xl flex items-center gap-3 mx-auto"
           >
-            지금 바로 무료 상담 예약하기
+            지금 케어 멤버십 체험 신청하기
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </button>
         </div>
