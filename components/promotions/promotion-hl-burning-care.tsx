@@ -59,30 +59,22 @@ export function PromotionHlBurningCare() {
       </section>
 
       {/* ─────────────────────────────────────────────
-          📌 [1.5] 추가 이미지 섹션 (히어로 바로 아래)
+          📌 [1.5] 추가 이미지 섹션 (히어로 하단 버튼/워터마크 가리기)
           ───────────────────────────────────────────── */}
       <section className="w-full flex flex-col items-center">
-        <div className="w-full">
+        <div className="w-full relative z-10 -mt-[18%] sm:-mt-[15%] md:-mt-[10%] lg:-mt-[8%]">
           <img
             src={encodeURI("/images/힉스필드수정본.png")}
             alt="힉스필드수정본"
             className="w-full h-auto block object-cover"
           />
-          <img
-            src={encodeURI("/images/한림상완운동녀-평온-켑컷수정본.png")}
-            alt="한림상완운동녀"
-            className="w-full h-auto block object-cover"
-          />
-          <img
-            src={encodeURI("/images/한림점 허벅지날씬여-캡컷수정.png")}
-            alt="한림점 허벅지날씬여"
-            className="w-full h-auto block object-cover"
-          />
         </div>
       </section>
 
-
-      <section className="bg-white py-24 text-slate-900 overflow-hidden">
+      {/* ─────────────────────────────────────────────
+          📌 [3] Best Investment (힉스필드 AI 워터마크 가리기)
+          ───────────────────────────────────────────── */}
+      <section className="bg-white py-24 text-slate-900 overflow-hidden relative z-20 -mt-[8%] sm:-mt-[6%] md:-mt-[4%] rounded-t-[2.5rem] shadow-[0_-20px_40px_rgba(0,0,0,0.05)]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-red-600 font-black text-sm tracking-widest uppercase mb-4 inline-block">Best Investment</span>
