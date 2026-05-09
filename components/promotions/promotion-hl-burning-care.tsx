@@ -76,7 +76,7 @@ export function PromotionHlBurningCare() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-red-600 font-black text-sm tracking-widest uppercase mb-4 inline-block">Best Investment</span>
-            <h2 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
+            <h2 className="text-4xl md:text-6xl font-black mb-6 leading-tight whitespace-pre-line">
               {copyData.offerTitle}
             </h2>
           </div>
