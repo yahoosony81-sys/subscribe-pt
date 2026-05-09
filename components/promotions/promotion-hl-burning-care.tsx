@@ -45,58 +45,67 @@ export function PromotionHlBurningCare() {
     <div id="promo-hl-burning-care" className="promotion-hl-container bg-white font-sans text-slate-900 tracking-tight">
 
       {/* ─────────────────────────────────────────────
-          📌 [1] 히어로 이미지 섹션
+          📌 [1] 히어로 섹션 (이미지 배경)
           ───────────────────────────────────────────── */}
-      <section className="w-full bg-black flex justify-center">
-        <img
-          src="/images/%ED%95%9C%EB%A6%BC%EC%A0%90%20%ED%97%88%EB%B2%A1%EC%A7%80%ED%8C%94%EB%9A%9D%20%ED%9E%88%EC%96%B4%EB%A1%9C%EC%9D%B4%EB%AF%B8%EC%A7%80.png"
-          alt="마인드휘트니스 한림점 버닝 케어"
-          className="w-full max-w-7xl h-auto block"
-        />
-      </section>
+      <section className="relative w-full min-h-[600px] md:min-h-[850px] flex items-center overflow-hidden bg-black">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/hl-hero-burning.png"
+            alt="Burning Care Membership"
+            className="w-full h-full object-cover object-center md:object-right-top opacity-80"
+          />
+          {/* Overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent md:from-black/80 md:via-black/30 md:to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#7F1D1D]/40 to-transparent"></div>
+        </div>
 
-      {/* ─────────────────────────────────────────────
-          📌 [1-2] 히어로 텍스트 섹션 (이미지 아래)
-          ───────────────────────────────────────────── */}
-      <section className="w-full bg-gradient-to-b from-[#7F1D1D] to-[#B91C1C] py-16 md:py-24 text-white">
-        <div className="px-6 md:px-12 max-w-7xl mx-auto w-full">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-10">
-            <div className="w-full">
+        <div className="relative z-10 px-6 md:px-12 max-w-7xl mx-auto w-full py-20">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-10">
+            <div className="w-full text-center md:text-left">
               {/* Badge */}
-              <div className="mb-6 inline-flex items-center gap-3">
-                <span className="bg-[#FACC15] text-black font-black text-xs px-3 py-1 rounded-full tracking-widest uppercase">
+              <div className="mb-8 inline-flex items-center gap-3">
+                <span className="bg-[#FACC15] text-black font-black text-xs px-4 py-1.5 rounded-full tracking-widest uppercase shadow-lg shadow-yellow-500/20">
                   {copyData.badge}
                 </span>
-                <p className="text-sm md:text-base font-bold text-red-100 tracking-widest">
+                <p className="text-sm md:text-base font-bold text-white/90 tracking-widest drop-shadow-md">
                   MIND FITNESS HALLIM
                 </p>
               </div>
-              <h1 className="text-5xl md:text-[7rem] lg:text-[8.5rem] font-black leading-[0.85] tracking-tighter uppercase mb-6">
+              <h1 className="text-6xl md:text-[8rem] lg:text-[9.5rem] font-black leading-[0.8] tracking-tighter uppercase mb-8 drop-shadow-2xl text-white">
                 <div>{copyData.heroTitle1}</div>
                 <div className="text-[#FACC15]">{copyData.heroTitle2}</div>
-                <div className="text-4xl md:text-6xl lg:text-7xl mt-4">
+                <div className="text-4xl md:text-6xl lg:text-7xl mt-4 opacity-90">
                   {copyData.heroTitle3}
                 </div>
               </h1>
-              <p className="text-xl md:text-2xl font-bold text-red-100 max-w-2xl leading-snug mb-8">
+              <p className="text-xl md:text-3xl font-black text-white max-w-2xl leading-tight mb-10 drop-shadow-lg">
                 {copyData.heroSuper}
               </p>
-              <div className="text-lg md:text-xl text-white/80 font-medium leading-relaxed whitespace-pre-line border-l-4 border-[#FACC15] pl-6 py-2">
+              <div className="text-lg md:text-xl text-white/90 font-bold leading-relaxed whitespace-pre-line border-l-4 border-[#FACC15] pl-6 py-3 bg-black/20 backdrop-blur-sm rounded-r-xl inline-block text-left">
                 {copyData.heroHook}
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-md border-t-4 border-[#FACC15] p-6 md:p-10 w-full max-w-sm rounded-2xl shadow-2xl">
-              <div className="flex gap-1.5 mb-4">
-                <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
-                <div className="w-2 h-2 bg-red-400 rounded-full"></div>
-                <div className="w-2 h-2 bg-[#FACC15] rounded-full"></div>
+            {/* Info Box Card */}
+            <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 md:p-12 w-full max-w-sm rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-[#FACC15]"></div>
+              <div className="flex gap-2 mb-6">
+                <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                <div className="w-3 h-3 bg-white/20 rounded-full"></div>
+                <div className="w-3 h-3 bg-[#FACC15] rounded-full"></div>
               </div>
-              <p className="text-xl md:text-2xl font-bold text-white leading-tight">
+              <p className="text-2xl md:text-3xl font-black text-white leading-tight mb-8">
                 {copyData.heroBoxText1}<br />
-                <span className="text-[#FACC15]">{copyData.heroBoxText2}</span><br />
+                <span className="text-[#FACC15] underline decoration-4 underline-offset-8">{copyData.heroBoxText2}</span><br />
                 {copyData.heroBoxText3}
               </p>
+              <button 
+                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+                className="w-full bg-white text-black font-black py-4 rounded-2xl hover:bg-[#FACC15] transition-all transform group-hover:scale-105"
+              >
+                상담 예약하기
+              </button>
             </div>
           </div>
         </div>
@@ -121,7 +130,7 @@ export function PromotionHlBurningCare() {
             </div>
             <div className="order-1 md:order-2 rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="/images/%ED%95%9C%EB%A6%BC%EC%A0%90%20%ED%97%88%EB%B2%A1%EC%A7%80%EB%82%A0%EC%94%AC%EC%97%AC.png"
+                src="/images/hl-thigh-care.png"
                 alt="고민 부위 분석"
                 className="w-full h-auto"
               />
@@ -138,7 +147,7 @@ export function PromotionHlBurningCare() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="/images/%ED%95%9C%EB%A6%BC%EC%A0%90%20%EC%83%81%EC%99%84%EC%9A%B4%EB%8F%99%EB%82%A0%EC%94%AC%EC%97%AC.png"
+                src="/images/hl-arm-care.png"
                 alt="해결책 제안"
                 className="w-full h-auto"
               />
