@@ -40,130 +40,33 @@ export function PromotionHlBurningCare() {
   const themeColor = "bg-[#B91C1C]"       // 빨간색 (버닝 테마)
   const themeAccent = "bg-[#FACC15]"      // 노란색
   const textColorTheme = "text-[#B91C1C]"
-  
+
   return (
     <div id="promo-hl-burning-care" className="promotion-hl-container bg-white font-sans text-slate-900 tracking-tight">
 
       {/* ─────────────────────────────────────────────
           📌 [1] 히어로 섹션 (이미지 배경)
           ───────────────────────────────────────────── */}
-      <section className="relative w-full min-h-[600px] md:min-h-[850px] flex items-center overflow-hidden bg-black">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
+      <section className="w-full bg-black flex justify-center overflow-hidden">
+        <div className="w-full max-w-7xl">
           <img
-            src="/images/hl-hero-burning.png"
+            src="/images/caremembership-burnning-hero.png"
             alt="Burning Care Membership"
-            className="w-full h-full object-cover object-center md:object-right-top opacity-80"
+            className="w-full h-auto block"
           />
-          {/* Overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent md:from-black/80 md:via-black/30 md:to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#7F1D1D]/40 to-transparent"></div>
-        </div>
-
-        <div className="relative z-10 px-6 md:px-12 max-w-7xl mx-auto w-full py-20">
-          <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-10">
-            <div className="w-full text-center md:text-left">
-              {/* Badge */}
-              <div className="mb-8 inline-flex items-center gap-3">
-                <span className="bg-[#FACC15] text-black font-black text-xs px-4 py-1.5 rounded-full tracking-widest uppercase shadow-lg shadow-yellow-500/20">
-                  {copyData.badge}
-                </span>
-                <p className="text-sm md:text-base font-bold text-white/90 tracking-widest drop-shadow-md">
-                  MIND FITNESS HALLIM
-                </p>
-              </div>
-              <h1 className="text-6xl md:text-[8rem] lg:text-[9.5rem] font-black leading-[0.8] tracking-tighter uppercase mb-8 drop-shadow-2xl text-white">
-                <div>{copyData.heroTitle1}</div>
-                <div className="text-[#FACC15]">{copyData.heroTitle2}</div>
-                <div className="text-4xl md:text-6xl lg:text-7xl mt-4 opacity-90">
-                  {copyData.heroTitle3}
-                </div>
-              </h1>
-              <p className="text-xl md:text-3xl font-black text-white max-w-2xl leading-tight mb-10 drop-shadow-lg">
-                {copyData.heroSuper}
-              </p>
-              <div className="text-lg md:text-xl text-white/90 font-bold leading-relaxed whitespace-pre-line border-l-4 border-[#FACC15] pl-6 py-3 bg-black/20 backdrop-blur-sm rounded-r-xl inline-block text-left">
-                {copyData.heroHook}
-              </div>
-            </div>
-
-            {/* Info Box Card */}
-            <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 md:p-12 w-full max-w-sm rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
-              <div className="absolute top-0 left-0 w-full h-1.5 bg-[#FACC15]"></div>
-              <div className="flex gap-2 mb-6">
-                <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                <div className="w-3 h-3 bg-white/20 rounded-full"></div>
-                <div className="w-3 h-3 bg-[#FACC15] rounded-full"></div>
-              </div>
-              <p className="text-2xl md:text-3xl font-black text-white leading-tight mb-8">
-                {copyData.heroBoxText1}<br />
-                <span className="text-[#FACC15] underline decoration-4 underline-offset-8">{copyData.heroBoxText2}</span><br />
-                {copyData.heroBoxText3}
-              </p>
-              <button 
-                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-                className="w-full bg-white text-black font-black py-4 rounded-2xl hover:bg-[#FACC15] transition-all transform group-hover:scale-105"
-              >
-                상담 예약하기
-              </button>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* ─────────────────────────────────────────────
-          📌 [2] Pain Point 섹션
+          📌 [2] Pain Point & Solution 섹션 (통이미지 대체)
           ───────────────────────────────────────────── */}
-      <section className="py-20 md:py-32 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="order-2 md:order-1">
-              <div className="inline-block bg-black text-white text-xs font-black px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-                Pain Point
-              </div>
-              <h2 className="text-4xl md:text-6xl font-black leading-[1.1] mb-8 whitespace-pre-line">
-                {copyData.painTitle}
-              </h2>
-              <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed whitespace-pre-line">
-                {copyData.painSub}
-              </p>
-            </div>
-            <div className="order-1 md:order-2 rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src="/images/hl-thigh-care.png"
-                alt="고민 부위 분석"
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─────────────────────────────────────────────
-          📌 [3] Solution 섹션
-          ───────────────────────────────────────────── */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src="/images/hl-arm-care.png"
-                alt="해결책 제안"
-                className="w-full h-auto"
-              />
-            </div>
-            <div>
-              <div className="inline-block bg-red-600 text-white text-xs font-black px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-                The Solution
-              </div>
-              <h2 className="text-4xl md:text-6xl font-black leading-[1.1] mb-8 whitespace-pre-line">
-                {copyData.solutionTitle}
-              </h2>
-              <p className="text-lg md:text-xl text-slate-700 font-bold leading-relaxed whitespace-pre-line">
-                {copyData.solutionDesc}
-              </p>
-            </div>
-          </div>
+      <section className="w-full bg-[#f8f9fa] flex justify-center">
+        <div className="w-full">
+          <img
+            src="/images/스크린샷 2026-05-09 152029.png"
+            alt="고민 부위 원인과 해결책"
+            className="w-full h-auto block object-cover"
+          />
         </div>
       </section>
 
@@ -208,7 +111,7 @@ export function PromotionHlBurningCare() {
             <div className="relative group">
               {/* Background Glow */}
               <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-yellow-500 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-              
+
               <div className="relative bg-white border border-slate-200 rounded-[2rem] p-8 md:p-16 shadow-2xl overflow-hidden">
                 <div className="grid md:grid-cols-5 gap-12 items-center">
                   <div className="md:col-span-3 space-y-8">
