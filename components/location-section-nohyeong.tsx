@@ -80,7 +80,7 @@ export function LocationSectionNohyeong() {
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <a 
-                      href="https://map.naver.com/p/search/%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4%20%EB%85%B8%ED%98%95/place/1485921447?c=15.00,0,0,0,dh&placePath=/home?bk_query=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4%20%EB%85%B8%ED%98%95&entry=bmp&fromPanelNum=2&timestamp=202605101721&locale=ko&svcName=map_pcv5&searchText=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4%20%EB%85%B8%ED%98%95&entry=bmp&fromPanelNum=2&timestamp=202605101721&locale=ko&svcName=map_pcv5&searchText=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4%20%EB%85%B8%ED%98%95&from=map"
+                      href="https://map.naver.com/p/entry/place/1485921447?c=15.00,0,0,0,dh&placePath=/home?fromPanelNum=1&additionalHeight=76&timestamp=202605101725&locale=ko&svcName=map_pcv5&fromPanelNum=1&additionalHeight=76&timestamp=202605101725&locale=ko&svcName=map_pcv5"
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => {
@@ -92,7 +92,7 @@ export function LocationSectionNohyeong() {
                       지점위치 보기
                     </a>
                     <a 
-                      href="https://map.naver.com/p/search/%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4%20%EB%85%B8%ED%98%95/place/1485921447?c=15.00,0,0,0,dh&placePath=/photo?bk_query=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4%20%EB%85%B8%ED%98%95&entry=bmp&fromPanelNum=2&timestamp=202605101721&locale=ko&svcName=map_pcv5&searchText=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4%20%EB%85%B8%ED%98%95&entry=bmp&fromPanelNum=2&timestamp=202605101721&locale=ko&svcName=map_pcv5&searchText=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4%20%EB%85%B8%ED%98%95&from=map"
+                      href="https://map.naver.com/p/entry/place/1485921447?c=15.00,0,0,0,dh&placePath=/photo?fromPanelNum=1&additionalHeight=76&timestamp=202605101725&locale=ko&svcName=map_pcv5&additionalHeight=76&timestamp=202605101725&locale=ko&svcName=map_pcv5&fromPanelNum=1"
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => {
