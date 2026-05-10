@@ -21,6 +21,9 @@
 *   **커피 증정 리타겟팅 랜딩**
     *   주소: https://mindfitness-hallim.com/nh-retarget-coffeelanding
     *   주요 내용: 방문 시 커피 쿠폰 증정 이벤트
+*   **버닝 케어 멤버십 (고민부위 리셋)**
+    *   주소: https://mindfitness-hallim.com/nh-burning-care
+    *   주요 내용: 노형점 팔뚝살, 허벅지살 다이어트 전 리셋 프로그램 (월 9.9만원)
 
 ## 📍 통합/기타 프로모션
 *   **프로모션 A (Nike Style)**
