@@ -225,7 +225,7 @@ export function RegistrationSectionNohyeong({
                 type="submit"
                 disabled={isSubmitting}
                 onClick={() => {
-                  if (typeof window !== 'undefined' && (window as any).fbq) (window as any).fbq('track', 'CompleteRegistration');
+                  if (typeof window !== 'undefined' && (window as any).fbq) (window as any).fbq('track', 'SubmitApplication');
                 }}
                 className="relative mt-4 w-full overflow-hidden rounded-lg bg-orange-500 py-6 text-base font-bold text-white transition-all hover:bg-orange-600 disabled:opacity-50"
               >

@@ -173,7 +173,10 @@ export function PromotionNhBurningCare() {
                       <span className="text-xl text-slate-400 font-bold ml-1">/ {copyData.offerPrice.split(' ')[0]}</span>
                     </div>
                     <button
-                      onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+                      onClick={() => {
+                        if (typeof window !== 'undefined' && (window as any).fbq) (window as any).fbq('track', 'Lead');
+                        document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })
+                      }}
                       className="w-full bg-black text-white font-black py-4 md:py-5 rounded-2xl text-base sm:text-lg hover:bg-red-600 transition-all shadow-xl break-keep"
                     >
                       지금 케어 멤버십 체험 신청하기
@@ -248,7 +251,10 @@ export function PromotionNhBurningCare() {
             {copyData.finalSub}
           </p>
           <button
-            onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => {
+              if (typeof window !== 'undefined' && (window as any).fbq) (window as any).fbq('track', 'Lead');
+              document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })
+            }}
             className="bg-red-600 text-white font-black px-6 md:px-10 py-4 md:py-5 rounded-full text-base sm:text-xl md:text-2xl hover:bg-red-700 transition-all hover:scale-105 shadow-2xl flex items-center gap-2 md:gap-3 mx-auto break-keep"
           >
             지금 케어 멤버십 체험 신청하기
