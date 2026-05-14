@@ -80,7 +80,7 @@ export function RegistrationSectionNohyeong({
     e.preventDefault()
     setIsSubmitting(true)
 
-    const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbwJJ9exLHsiL3-QvOk7RmOhqqo2sqaeBZ9rju4j04AWolAHVLDPCM7eeh3sUXVe4FKo/exec"
+    const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbxVhINsDHa7tyKQjEes8DQ_Kyri3umEV5A1wjS9MxmC5mV5zxVCUFi9ZYUXJV4jzrAH/exec"
 
     try {
       await fetch(GOOGLE_SHEETS_URL, {
