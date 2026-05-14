@@ -20,7 +20,8 @@ export const pixelMap: Record<string, string> = {
 export function getPixelId(branch: string): string | undefined {
   if (!branch) return undefined;
   const key = branch.trim().toLowerCase();
-  return pixelMap[key] ?? pixelMap[translateKoreanBranch(key)];
+  const mappedKey = translateKoreanBranch(key);
+  return pixelMap[key] ?? (mappedKey ? pixelMap[mappedKey] : undefined);
 }
 
 // Helper that translates Korean branch names to the map keys.

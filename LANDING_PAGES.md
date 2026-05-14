@@ -24,6 +24,9 @@
 *   **버닝 케어 멤버십 (고민부위 리셋)**
     *   주소: https://mindfitness-hallim.com/nh-burning-care
     *   주요 내용: 노형점 팔뚝살, 허벅지살 다이어트 전 리셋 프로그램 (월 9.9만원)
+*   **통증 케어 멤버십**
+    *   주소: https://mindfitness-hallim.com/nh-pain-membership
+    *   주요 내용: 노형점 통증 케어 멤버십
 
 ## 📍 통합/기타 프로모션
 *   **프로모션 A (Nike Style)**

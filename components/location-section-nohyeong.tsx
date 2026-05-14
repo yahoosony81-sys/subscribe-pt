@@ -80,7 +80,7 @@ export function LocationSectionNohyeong() {
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <a 
-                      href="https://map.naver.com/p/entry/place/1485921447?c=15.00,0,0,0,dh&placePath=/home?fromPanelNum=1&additionalHeight=76&timestamp=202605101725&locale=ko&svcName=map_pcv5&fromPanelNum=1&additionalHeight=76&timestamp=202605101725&locale=ko&svcName=map_pcv5"
+                      href="https://map.naver.com/p/search/%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4/place/1485921447?c=15.00,0,0,0,dh&placePath=/home?bk_query=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4&entry=bmp&from=map&fromPanelNum=2&timestamp=202605141458&locale=ko&svcName=map_pcv5&searchText=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4"
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => {
@@ -92,7 +92,7 @@ export function LocationSectionNohyeong() {
                       지점위치 보기
                     </a>
                     <a 
-                      href="https://map.naver.com/p/entry/place/1485921447?c=15.00,0,0,0,dh&placePath=/photo?fromPanelNum=1&additionalHeight=76&timestamp=202605101725&locale=ko&svcName=map_pcv5&additionalHeight=76&timestamp=202605101725&locale=ko&svcName=map_pcv5&fromPanelNum=1"
+                      href="https://map.naver.com/p/search/%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4/place/1485921447?c=15.00,0,0,0,dh&placePath=/photo?bk_query=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4&entry=bmp&fromPanelNum=2&timestamp=202605141458&locale=ko&svcName=map_pcv5&searchText=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4&entry=bmp&from=map&fromPanelNum=2&timestamp=202605141458&locale=ko&svcName=map_pcv5&searchText=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4"
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => {
