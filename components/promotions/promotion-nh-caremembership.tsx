@@ -95,7 +95,7 @@ export function PromotionNhCaremembership() {
             </div>
             <div className="w-1/2 flex items-center justify-start text-left px-1 md:px-2">
               <p className="text-xl sm:text-3xl md:text-5xl font-[900] text-black break-keep leading-[1.3] md:leading-[1.4]">
-                혼자 꾸준히<br /> <span>운동할 자신이<br className="hidden sm:block"/> 없는 분</span>
+                혼자 꾸준히<br /> <span>운동할 자신이<br /> 없는 분</span>
               </p>
             </div>
           </div>
@@ -110,7 +110,7 @@ export function PromotionNhCaremembership() {
             </div>
             <div className="w-1/2 flex items-center justify-end text-right px-1 md:px-2">
               <p className="text-xl sm:text-3xl md:text-5xl font-[900] text-black break-keep leading-[1.3] md:leading-[1.4]">
-                맨날 런닝머신만<br /> <span>하다가<br className="hidden sm:block"/> 끝나시는 분</span>
+                맨날 런닝머신만<br /> <span>하다가<br /> 끝나시는 분</span>
               </p>
             </div>
           </div>
@@ -125,7 +125,7 @@ export function PromotionNhCaremembership() {
             </div>
             <div className="w-1/2 flex items-center justify-start text-left px-1 md:px-2">
               <p className="text-xl sm:text-3xl md:text-5xl font-[900] text-black break-keep leading-[1.3] md:leading-[1.4]">
-                비싼 PT<br /> <span>신청할까봐<br className="hidden sm:block"/> 겁나시는 분</span>
+                비싼 PT<br /> <span>신청할까봐<br /> 겁나시는 분</span>
               </p>
             </div>
           </div>
