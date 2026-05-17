@@ -27,6 +27,9 @@
 *   **통증 케어 멤버십**
     *   주소: https://mindfitness-hallim.com/nh-pain-membership
     *   주요 내용: 노형점 통증 케어 멤버십
+*   **구독형 케어 멤버십**
+    *   주소: https://mindfitness-hallim.com/nh-caremembership
+    *   주요 내용: 노형점 월 5회 25분 구독형 케어 멤버십
 
 ## 📍 통합/기타 프로모션
 *   **프로모션 A (Nike Style)**
