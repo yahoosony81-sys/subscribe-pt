@@ -16,6 +16,9 @@
 *   **버닝 케어 멤버십 (고민부위 리셋)**
     *   주소: https://mindfitness-hallim.com/hl-burning-caremember
     *   주요 내용: 팔뚝살, 허벅지살 다이어트 전 리셋 프로그램 (월 9.9만원)
+*   **구독형 케어 멤버십**
+    *   주소: https://mindfitness-hallim.com/hl-caremembership
+    *   주요 내용: 한림점 월 5회 25분 구독형 케어 멤버십
 
 ## 📍 노형점 (Nohyeong)
 *   **커피 증정 리타겟팅 랜딩**

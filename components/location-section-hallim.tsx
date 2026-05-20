@@ -80,7 +80,7 @@ export function LocationSectionHallim() {
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <a 
-                      href="https://map.naver.com/p/entry/place/1549272067?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605091653&locale=ko&svcName=map_pcv5"
+                      href="https://map.naver.com/p/search/%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4/place/1549272067?c=15.00,0,0,0,dh&placePath=/home?bk_query=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4&entry=bmp&from=map&fromPanelNum=2&timestamp=202605201538&locale=ko&svcName=map_pcv5&searchText=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-[#FEE500] border-2 border-black text-black font-black text-sm px-4 py-2.5 rounded-lg hover:bg-[#FACC15] transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-none flex items-center gap-2"
@@ -89,7 +89,7 @@ export function LocationSectionHallim() {
                       지점위치 보기
                     </a>
                     <a 
-                      href="https://map.naver.com/p/entry/place/1549272067?c=15.00,0,0,0,dh&placePath=/photo?fromPanelNum=1&additionalHeight=76&timestamp=202605091653&locale=ko&svcName=map_pcv5&fromPanelNum=1&additionalHeight=76&timestamp=202605091653&locale=ko&svcName=map_pcv5"
+                      href="https://map.naver.com/p/search/%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4/place/1549272067?c=15.00,0,0,0,dh&placePath=/photo?bk_query=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4&entry=bmp&fromPanelNum=2&timestamp=202605201538&locale=ko&svcName=map_pcv5&searchText=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4&entry=bmp&from=map&fromPanelNum=2&timestamp=202605201538&locale=ko&svcName=map_pcv5&searchText=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-[#FEE500] border-2 border-black text-black font-black text-sm px-4 py-2.5 rounded-lg hover:bg-[#FACC15] transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-none flex items-center gap-2"

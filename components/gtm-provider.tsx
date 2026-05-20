@@ -12,19 +12,21 @@ export function GtmProvider() {
   // 각 랜딩 페이지별 경로 확인
   const isNhLanding = pathname.startsWith('/nh-retarget-coffeelanding') || pathname.startsWith('/nh-burning-care') || pathname.startsWith('/nh-pain-membership');
   const isBodyChallenge = pathname.startsWith('/promo-bodychallenge');
-  const isHallimLanding = pathname.startsWith('/hl-burning-caremember');
+  const isHallimLanding = pathname.startsWith('/hl-burning-caremember') || pathname.startsWith('/hl-caremembership');
   const isDnGroupPt = pathname.startsWith('/dn-group-pt');
 
   // 조건에 맞게 GTM 아이디 할당
   let gtmId = "";
   if (isNhLanding) gtmId = "GTM-TGKR77FL"; // 노형점 GTM
   if (isBodyChallenge) gtmId = "GTM-KQR8JJ44"; // 도남점 바디챌린지 GTM
+  if (isHallimLanding) gtmId = "GTM-5VB56Q69"; // 한림점 GTM
 
   // 조건에 맞게 픽셀 아이디 할당
   let pixelId = "";
   if (isNhLanding) pixelId = "891686733924318"; // 노형점 픽셀
   if (isBodyChallenge) pixelId = "26658899260438637"; // 바디챌린지 픽셀
   if (isDnGroupPt) pixelId = "26658899260438637"; // dn-group-pt 픽셀
+  if (isHallimLanding) pixelId = "931401023110366"; // 한림점 픽셀
 
   return (
     <>
