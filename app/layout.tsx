@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Noto_Sans_KR } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { GtmProvider } from '@/components/gtm-provider'
 import './globals.css'
 
 const notoSansKr = Noto_Sans_KR({
@@ -29,8 +30,7 @@ export default function RootLayout({
       <head>
       </head>
       <body className={`${notoSansKr.variable} font-sans antialiased`}>
-
-
+        <GtmProvider />
         {children}
         <Analytics />
       </body>
