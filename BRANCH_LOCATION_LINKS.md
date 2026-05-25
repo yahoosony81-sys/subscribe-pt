@@ -43,3 +43,17 @@
     *   ```
     https://map.naver.com/p/search/%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4/place/1552558325?c=15.00,0,0,0,dh&placePath=/photo?bk_query=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4&entry=bmp&fromPanelNum=2&timestamp=202605201652&locale=ko&svcName=map_pcv5&searchText=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4&entry=bmp&from=map&fromPanelNum=2&timestamp=202605201652&locale=ko&svcName=map_pcv5&searchText=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4
     ```
+
+---
+
+## 📍 부산명지점 (Myeongji)
+
+*   **지점위치 보기**
+    *   ```
+    https://map.naver.com/p/search/%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4/place/1613463253?c=15.00,0,0,0,dh&placePath=/home?bk_query=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4&entry=bmp&fromPanelNum=2&timestamp=202605251627&locale=ko&svcName=map_pcv5&searchText=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4&entry=bmp&from=map&fromPanelNum=2&timestamp=202605251627&locale=ko&svcName=map_pcv5&searchText=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4
+    ```
+
+*   **센터내부 둘러보기**
+    *   ```
+    https://map.naver.com/p/search/%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4/place/1613463253?c=15.00,0,0,0,dh&placePath=/photo?bk_query=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4&entry=bmp&fromPanelNum=2&timestamp=202605251627&locale=ko&svcName=map_pcv5&searchText=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4&entry=bmp&fromPanelNum=2&timestamp=202605251627&locale=ko&svcName=map_pcv5&searchText=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4&from=map
+    ```

@@ -30,6 +30,10 @@
 *   **통증 케어 멤버십**
     *   주소: https://mindfitness-hallim.com/hl-pain-membership
 
+## 📍 부산명지점 (Myeongji)
+*   **케어 멤버십 프로모션**
+    *   주소: https://mindfitness-hallim.com/mg-promtion
+
 ## 📍 노형점 (Nohyeong)
 *   **커피 증정 리타겟팅 랜딩**
     *   주소: https://mindfitness-hallim.com/nh-retarget-coffeelanding
