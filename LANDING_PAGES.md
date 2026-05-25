@@ -19,6 +19,16 @@
 *   **구독형 케어 멤버십**
     *   주소: https://mindfitness-hallim.com/hl-caremembership
     *   주요 내용: 한림점 월 5회 25분 구독형 케어 멤버십
+*   **프로모션 A**
+    *   주소: https://mindfitness-hallim.com/promo-a
+*   **프로모션 B**
+    *   주소: https://mindfitness-hallim.com/promo-b
+*   **프로모션 C**
+    *   주소: https://mindfitness-hallim.com/promo-c
+*   **프로모션 D**
+    *   주소: https://mindfitness-hallim.com/promo-d
+*   **통증 케어 멤버십**
+    *   주소: https://mindfitness-hallim.com/hl-pain-membership
 
 ## 📍 노형점 (Nohyeong)
 *   **커피 증정 리타겟팅 랜딩**

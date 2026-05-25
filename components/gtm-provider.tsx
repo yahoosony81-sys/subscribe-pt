@@ -12,7 +12,7 @@ export function GtmProvider() {
   // 각 랜딩 페이지별 경로 확인
   const isNhLanding = pathname.startsWith('/nh-retarget-coffeelanding') || pathname.startsWith('/nh-burning-care') || pathname.startsWith('/nh-pain-membership');
   const isBodyChallenge = pathname.startsWith('/promo-bodychallenge');
-  const isHallimLanding = pathname.startsWith('/hl-burning-caremember') || pathname.startsWith('/hl-caremembership');
+  const isHallimLanding = pathname.startsWith('/hl-burning-caremember') || pathname.startsWith('/hl-caremembership') || pathname.startsWith('/hl-pain-membership');
   const isDnGroupPt = pathname.startsWith('/dn-group-pt');
 
   // 조건에 맞게 GTM 아이디 할당
