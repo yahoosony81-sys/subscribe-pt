@@ -28,7 +28,7 @@ export function PromotionHlCaremembership() {
       <section className="w-full bg-black flex justify-center overflow-hidden">
         <div className="w-full max-w-7xl">
           <img
-            src={encodeURI("/images/케어멤버십히어로이미지최종.png")}
+            src={encodeURI("/images/케어멤버십 히어로 최종2.png")}
             alt="케어 멤버십 히어로"
             className="w-full h-auto object-cover object-top block"
           />

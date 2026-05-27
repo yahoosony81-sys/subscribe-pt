@@ -18,7 +18,9 @@ export function GtmProvider() {
 
   // 조건에 맞게 GTM 아이디 할당
   let gtmId = "";
-  if (isNhLanding) gtmId = "GTM-TGKR77FL"; // 노형점 GTM
+  if (isNhLanding) {
+    gtmId = pathname.startsWith('/nh-caremembership') ? "GTM-5VB56Q69" : "GTM-TGKR77FL";
+  }
   if (isBodyChallenge) gtmId = "GTM-KQR8JJ44"; // 도남점 바디챌린지 GTM
   if (isHallimLanding) gtmId = "GTM-5VB56Q69"; // 한림점 GTM
   if (isMyeongjiLanding) gtmId = "GTM-TXNCJPBS"; // 부산명지점 GTM
