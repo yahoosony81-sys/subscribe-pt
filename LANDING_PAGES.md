@@ -35,6 +35,8 @@
     *   주소: https://mindfitness-hallim.com/mg-promtion
 
 ## 📍 노형점 (Nohyeong)
+*   **키피pt**
+    *   주소: https://www.nh-coffee.mindfitness-hallim.com
 *   **커피 증정 리타겟팅 랜딩**
     *   주소: https://mindfitness-hallim.com/nh-retarget-coffeelanding
     *   주요 내용: 방문 시 커피 쿠폰 증정 이벤트
