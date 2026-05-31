@@ -11,6 +11,7 @@ export default function HlBurningCarePage() {
       <RegistrationSectionHallim
         title="케어 멤버십 체험 신청"
         googleSheetUrl="https://script.google.com/macros/s/AKfycbxLXeaQDRUNllYG0-FpzvIVqy5m9lKfkz0Eq5HcmZsPQ1ZWkm1K55Xv_S1-zfJRPH4j/exec"
+        sheetName="한림점버닝케어"
       />
       <FooterHallim />
     </main>

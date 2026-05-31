@@ -25,7 +25,10 @@ export default function NhCareMembershipPage() {
     <main className="min-h-screen bg-slate-50">
       <PromotionNhCaremembership />
       <LocationSectionNohyeong />
-      <RegistrationSectionNohyeong googleSheetUrl="https://script.google.com/macros/s/AKfycbzbEE1tfamHU4n_rnz0XMiw-YA-GGCq8PkHRL6pekDkW6haGG7OaCjHvcLelm5vQ238/exec" />
+      <RegistrationSectionNohyeong 
+        googleSheetUrl="https://script.google.com/macros/s/AKfycbzbEE1tfamHU4n_rnz0XMiw-YA-GGCq8PkHRL6pekDkW6haGG7OaCjHvcLelm5vQ238/exec"
+        sheetName="노형점케어멤버십"
+      />
       <Footer />
     </main>
   )

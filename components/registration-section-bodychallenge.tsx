@@ -88,6 +88,7 @@ export function RegistrationSectionBodychallenge({
         body: JSON.stringify({
           ...formData,
           branch: branch,
+          sheetName: "도남점바디챌린지",
           timestamp: new Date().toISOString(),
         }),
       })

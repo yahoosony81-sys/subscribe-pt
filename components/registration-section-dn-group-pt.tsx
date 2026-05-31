@@ -87,6 +87,7 @@ export function RegistrationSectionDnGroupPt({
         body: JSON.stringify({
           ...formData,
           branch: branch,
+          sheetName: "도남점그룹pt",
           timestamp: new Date().toISOString(),
         }),
       })
