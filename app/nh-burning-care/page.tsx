@@ -8,7 +8,10 @@ export default function NhBurningCarePage() {
     <main className="min-h-screen">
       <PromotionNhBurningCare />
       <LocationSectionNohyeong />
-      <RegistrationSectionNohyeong title="케어 멤버십 체험 신청" />
+      <RegistrationSectionNohyeong 
+        title="케어 멤버십 체험 신청" 
+        googleSheetUrl="https://script.google.com/macros/s/AKfycbzYNXHxm0LbD-w60SKZgIFce4IGxvlhhFnS-wcc8GXj7d5H2ehZ2WwDRHV0ChqMYH5p/exec"
+      />
       <FooterNohyeong />
     </main>
   )

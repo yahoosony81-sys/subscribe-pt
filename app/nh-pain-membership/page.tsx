@@ -8,7 +8,10 @@ export default function NhPainMembershipPage() {
     <main className="min-h-screen">
       <PromotionNhPainMembership />
       <LocationSectionNohyeong />
-      <RegistrationSectionNohyeong title="통증 케어 멤버십 체험 신청" />
+      <RegistrationSectionNohyeong 
+        title="통증 케어 멤버십 체험 신청" 
+        googleSheetUrl="https://script.google.com/macros/s/AKfycbx_WPx_8tUXxnA_75aGnNwyr-vT4vT9YrMajn23R90QqHhLGe6u_nP9nk0D9WOGqxy-/exec"
+      />
       <FooterNohyeong />
     </main>
   )

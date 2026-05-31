@@ -8,7 +8,7 @@ export default function HlCareMembershipPage() {
     <main className="min-h-screen">
       <PromotionHlCaremembership />
       <LocationSectionHallim />
-      <RegistrationSectionHallim />
+      <RegistrationSectionHallim googleSheetUrl="https://script.google.com/macros/s/AKfycbyBQTYaL6LWxu-N6_emvRDt-b1ltDxFGVkZvO8aj0djKyhmceMa_duJcFSdRI3R_UE/exec" />
       <FooterHallim />
     </main>
   )

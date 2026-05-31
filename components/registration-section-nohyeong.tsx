@@ -27,11 +27,15 @@ const RESERVED_SLOTS: Record<string, string[]> = {
 export function RegistrationSectionNohyeong({
   title = "무료체험 신청하기",
   branch = "노형점",
-  hideTimePicker = false
+  hideTimePicker = false,
+  googleSheetUrl,
+  sheetName
 }: {
   title?: string;
   branch?: string;
   hideTimePicker?: boolean;
+  googleSheetUrl?: string;
+  sheetName?: string;
 } = {}) {
   const [formData, setFormData] = useState({
     name: "",
@@ -80,16 +84,17 @@ export function RegistrationSectionNohyeong({
     e.preventDefault()
     setIsSubmitting(true)
 
-    const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbxVhINsDHa7tyKQjEes8DQ_Kyri3umEV5A1wjS9MxmC5mV5zxVCUFi9ZYUXJV4jzrAH/exec"
+    const submitUrl = googleSheetUrl || "https://script.google.com/macros/s/AKfycbxVhINsDHa7tyKQjEes8DQ_Kyri3umEV5A1wjS9MxmC5mV5zxVCUFi9ZYUXJV4jzrAH/exec"
 
     try {
-      await fetch(GOOGLE_SHEETS_URL, {
+      await fetch(submitUrl, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
           branch: branch,
+          sheetName: sheetName || branch,
           timestamp: new Date().toISOString(),
         }),
       })

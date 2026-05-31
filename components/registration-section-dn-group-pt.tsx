@@ -77,7 +77,7 @@ export function RegistrationSectionDnGroupPt({
     setIsSubmitting(true)
 
     // 🔴 도남점 전용 구글 앱스 스크립트 웹앱 URL
-    const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbyWfEcYQ3euuDwj2aSHjpND-ZdWTPLkEQviN4bqi_CypJCHMSsuWzXU2ron9CSFFEsh/exec"
+    const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbxMPHccBmxHdPdGo5aK7yTFwXWW-ir8-MJRM06TvKv9FQa0SWcynMWJGSTVYZozvbeG/exec"
 
     try {
       await fetch(GOOGLE_SHEETS_URL, {
