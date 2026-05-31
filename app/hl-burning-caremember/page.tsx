@@ -8,7 +8,10 @@ export default function HlBurningCarePage() {
     <main className="min-h-screen">
       <PromotionHlBurningCare />
       <LocationSectionHallim />
-      <RegistrationSectionHallim title="케어 멤버십 체험 신청" />
+      <RegistrationSectionHallim 
+        title="케어 멤버십 체험 신청" 
+        googleSheetUrl="https://script.google.com/macros/s/AKfycbwU7KLOJ8lko7i0KE8KLXY3X1CEGXeB4ONf9-8uYTGL3YrM_4oPIbcOD4IgyFdp_MJ4/exec"
+      />
       <FooterHallim />
     </main>
   )

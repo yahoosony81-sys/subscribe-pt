@@ -27,11 +27,13 @@ const RESERVED_SLOTS: Record<string, string[]> = {
 export function RegistrationSectionHallim({
   title = "무료체험 신청하기",
   branch = "한림점",
-  hideTimePicker = false
+  hideTimePicker = false,
+  googleSheetUrl
 }: {
   title?: string;
   branch?: string;
   hideTimePicker?: boolean;
+  googleSheetUrl?: string;
 } = {}) {
   const [formData, setFormData] = useState({
     name: "",
@@ -80,10 +82,10 @@ export function RegistrationSectionHallim({
     e.preventDefault()
     setIsSubmitting(true)
 
-    const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbz-g8hTTcME9BuQ-w1NKFeodErXhVeWJ16gyUZFDCWb5sSp-aRpgt33MOBylENV_48/exec"
+    const submitUrl = googleSheetUrl || "https://script.google.com/macros/s/AKfycbwJJ9exLHsiL3-QvOk7RmOhqqo2sqaeBZ9rju4j04AWolAHVLDPCM7eeh3sUXVe4FKo/exec"
 
     try {
-      await fetch(GOOGLE_SHEETS_URL, {
+      await fetch(submitUrl, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
