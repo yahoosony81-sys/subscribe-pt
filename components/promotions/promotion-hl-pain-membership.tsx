@@ -14,7 +14,7 @@ const copyData = {
     "근감소증이 걱정되는 시니어",
     "부모님께 건강한 하루를 선물하고 싶은 자녀"
   ],
-  coreBenefits: "1:1 통증 부위 집중 관리 + 근력 유지 맞춤 운동 + 영양 식단 가이드\n(월 5회 방문 관리)",
+  coreBenefits: "1:1 통증 부위 집중 관리 + 근력 유지 맞춤 운동 + 영양 식단 가이드\n(1개월 센터 무료 이용 + 5회 전문 트레이너 밀착 관리)",
 
   processTitle: "월 5회차\n정밀 케어 프로세스",
   processes: [
@@ -175,7 +175,7 @@ export function PromotionHlPainMembership() {
                 </div>
                 
                 <div className="mt-6 bg-teal-50 rounded-2xl p-6 border border-teal-100 text-left">
-                  <p className="font-bold text-teal-900 mb-2">✨ 핵심 혜택</p>
+                  <p className="inline-block text-xl font-extrabold tracking-tight bg-gradient-to-r from-teal-500 to-emerald-400 text-transparent bg-clip-text mb-3 drop-shadow-sm">✨ 핵심 혜택</p>
                   <p className="text-teal-800 font-medium text-lg leading-relaxed whitespace-pre-line break-keep">
                     {copyData.coreBenefits}
                   </p>
