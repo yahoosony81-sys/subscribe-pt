@@ -175,7 +175,7 @@ export function PromotionHlPainMembership() {
                 </div>
                 
                 <div className="mt-6 bg-teal-50 rounded-2xl p-6 border border-teal-100 text-left">
-                  <p className="inline-block text-xl font-extrabold tracking-tight bg-gradient-to-r from-teal-500 to-emerald-400 text-transparent bg-clip-text mb-3 drop-shadow-sm">✨ 핵심 혜택</p>
+                  <p className="inline-block text-4xl font-extrabold tracking-tight bg-gradient-to-r from-red-500 to-rose-400 text-transparent bg-clip-text mb-3 drop-shadow-sm">✨ 핵심 혜택</p>
                   <p className="text-teal-800 font-medium text-lg leading-relaxed whitespace-pre-line break-keep">
                     {copyData.coreBenefits}
                   </p>
