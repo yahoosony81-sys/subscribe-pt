@@ -28,12 +28,14 @@ export function RegistrationSectionHallim({
   title = "무료체험 신청하기",
   branch = "한림점",
   hideTimePicker = false,
-  googleSheetUrl
+  googleSheetUrl,
+  sheetName
 }: {
   title?: string;
   branch?: string;
   hideTimePicker?: boolean;
   googleSheetUrl?: string;
+  sheetName?: string;
 } = {}) {
   const [formData, setFormData] = useState({
     name: "",
@@ -92,6 +94,7 @@ export function RegistrationSectionHallim({
         body: JSON.stringify({
           ...formData,
           branch: branch,
+          sheetName: sheetName || branch,
           timestamp: new Date().toISOString(),
         }),
       })
