@@ -69,3 +69,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 ```
 
 *   **메타 픽셀 ID**: 1496854795228095
+
+---
+
+## 📋 지점별 메타 픽셀 ID 전체 현황
+
+> 픽셀 ID는 `utils/pixelConfig.ts` 에서 중앙 관리됩니다.
+> 아래 표는 빠른 참조용입니다.
+
+| 지점 | URL Prefix | 픽셀 ID | GTM ID |
+|------|-----------|---------|--------|
+| 한림점 | `/hl-` | `931401023110366` | `GTM-5VB56Q69` |
+| 노형점 | `/nh-` | `891686733924318` | `GTM-TGKR77FL` |
+| 도남점 | `/dn-`, `/promo-bodychallenge` | `26658899260438637` | `GTM-KQR8JJ44` |
+| 부산명지점 | `/mg-` | `1496854795228095` | `GTM-TXNCJPBS` |
+| 천곡점 | `/cg-` | `2040091883572538` | 미설정 |

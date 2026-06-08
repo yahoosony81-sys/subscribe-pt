@@ -9,6 +9,42 @@
 -구글 시트 탭 이름: [기존에 만들어둔 탭 이름 (띄어쓰기 포함)]
 -웹앱 URL: https://script.google.com/macros/s/.../exec
 
+---
+
+## 📡 메타 CAPI (서버 사이드 전환 API) 자동 적용 안내
+
+> 2026-06-08 구축 완료. 새 랜딩을 만들때 아래 내용을 반드시 확인할 것!
+
+### ✅ 기존 지점(hl/nh/dn/mg/cg)의 새 랜딩 — 추가 작업 없음
+URL이 `/hl-`, `/nh-`, `/dn-`, `/mg-`, `/cg-` 로 시작하면
+**proxy.ts 미들웨어가 자동으로 CAPI PageView를 발사함.**
+page.tsx 파일에 아무것도 추가할 필요 없음.
+
+### ⚠️ 완전히 새로운 지점을 추가할 때만 — 아래 4단계 작업 필요
+
+**안티그레비티에게 알려줄 정보:**
+- 새 지점 이름 (한글/영문)
+- 메타 픽셀 ID (메타 이벤트 관리자에서 확인)
+- 메타 액세스 토큰 (메타 이벤트 관리자 → CAPI 설정에서 발급)
+- 랜딩 URL prefix (예: `/xx-`)
+
+**안티그레비티가 처리할 코드 작업 4곳:**
+1. `utils/pixelConfig.ts` → BRANCH_PIXELS 배열에 픽셀 정보 추가
+2. `lib/meta-capi.ts` → TOKEN_MAP 배열에 토큰 envKey 추가
+3. `proxy.ts` → matcher 배열에 `/xx-:path*` 추가
+4. `components/gtm-provider.tsx` → GTM ID 조건 추가
+
+**Vercel 대시보드 작업:**
+- Settings → Environment Variables → 새 토큰 추가 (XX_ACCESS_TOKEN)
+
+### 관련 파일 위치
+| 파일 | 역할 |
+|------|------|
+| `utils/pixelConfig.ts` | 지점별 픽셀 ID 중앙 관리 |
+| `lib/meta-capi.ts` | CAPI 전송 공통 함수 |
+| `proxy.ts` | 모든 랜딩 자동 감지·발사 미들웨어 |
+| `.env` | 지점별 액세스 토큰 (Vercel에도 동일하게 등록) |
+
 
 <광고등록시 확인사항>
 1. 지점 위치 반경 및 맞춤타겟/ 제외타겟 재확인
