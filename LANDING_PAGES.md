@@ -5,6 +5,10 @@
 ---
 
 ## 📍 도남점 (Donam)
+*   **TEAM MIND 그룹PT (영상 히어로)**
+    *   주소: https://mindfitness-hallim.com/dn-teammind
+    *   주요 내용: 팀버핏 감성 영상 히어로 + 첫 방문 무료 체험 예약
+    *   GTM: GTM-KQR8JJ44 | 픽셀: 26658899260438637 (도남) ✅
 *   **그룹PT 오픈 프로모션**
     *   주소: https://mindfitness-hallim.com/dn-group-pt
     *   주요 내용: 10년차 강사 직접 진행, 선착순 12명 마감 이벤트
