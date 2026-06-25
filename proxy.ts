@@ -81,5 +81,7 @@ export const config = {
     '/mg-:path*',
     // 천곡점 랜딩 (새 지점 — 픽셀 ID는 .env의 CG_PIXEL_ID 설정 후 활성화)
     '/cg-:path*',
+    // 리마인드스트레칭 마곡점
+    '/remindstretching-MG:path*',
   ],
 };

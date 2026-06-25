@@ -22,6 +22,7 @@ const TOKEN_MAP: Array<{ prefixes: string[]; tokenEnvKey: string; name: string }
   { prefixes: ['/dn-', '/promo-bodychallenge'], tokenEnvKey: 'DN_ACCESS_TOKEN', name: '도남점' },
   { prefixes: ['/mg-'],                         tokenEnvKey: 'MG_ACCESS_TOKEN', name: '부산명지점' },
   { prefixes: ['/cg-'],                         tokenEnvKey: 'CG_ACCESS_TOKEN', name: '천곡점' },
+  { prefixes: ['/remindstretching-MG'],         tokenEnvKey: 'RM_ACCESS_TOKEN', name: '리마인드스트레칭 마곡점' },
 ];
 
 

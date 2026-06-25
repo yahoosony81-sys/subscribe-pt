@@ -61,6 +61,12 @@ export const BRANCH_PIXELS: BranchPixelInfo[] = [
     code: 'cg',
     urlPrefixes: ['/cg-'],
   },
+  {
+    pixelId: '2040091883572538',
+    nameKo: '리마인드스트레칭 마곡점',
+    code: 'rm',
+    urlPrefixes: ['/remindstretching-MG'],
+  },
 ];
 
 // ──────────────────────────────────────────────────────────────
@@ -104,4 +110,5 @@ export function getPixelId(code: string): string | undefined {
 //  도남점        | dn      | 26658899260438637
 //  부산명지점    | mg      | 1496854795228095
 //  천곡점        | cg      | 2040091883572538
+//  리마인드마곡  | rm      | 2040091883572538
 //
