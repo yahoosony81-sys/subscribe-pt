@@ -64,7 +64,14 @@
 *   **프로모션 D (무료체험 신청)**
     *   주소: https://mindfitness-hallim.com/promo-d
 
+## 📍 리마인드스트레칭 마곡점 (Remind Stretching - Magok)
+*   **리마인드스트레칭 랜딩페이지**
+    *   주소: https://mindfitness.com/remindstretching-MG
+    *   주요 내용: 프리미엄 웰니스 스트레칭 클리닉 랜딩 (4가지 프로그램 소개, 통증 데이터, 지점 안내)
+    *   브랜드: 리마인드스트레칭 (Remind-stretching)
+
 ---
 
 > [!TIP]
 > 위 주소들은 현재 라이브 도메인(`mindfitness-hallim.com`) 기준으로 작성되었습니다. 로컬 테스트 시에는 `https://mindfitness-hallim.com` 부분을 `http://localhost:3000`으로 바꿔서 접속하세요.
+
