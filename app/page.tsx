@@ -19,6 +19,6 @@
 import { redirect } from "next/navigation"
 
 export default function Home() {
-  // 사용자가 메인 도메인으로 접속하면 자동으로 첫 번째 프로모션 탭으로 이동시킵니다.
-  redirect("/promo-a")
+  // 사용자가 메인 도메인으로 접속하면 자동으로 리마인드스트레칭 마곡점으로 이동시킵니다.
+  redirect("/remindstretching-MG")
 }

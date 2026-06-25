@@ -84,3 +84,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 | 도남점 | `/dn-`, `/promo-bodychallenge` | `26658899260438637` | `GTM-KQR8JJ44` |
 | 부산명지점 | `/mg-` | `1496854795228095` | `GTM-TXNCJPBS` |
 | 천곡점 | `/cg-` | `2040091883572538` | 미설정 |
+| 리마인드스트레칭 마곡점 | `/remindstretching-MG` | `2040091883572538` | 미설정 (CAPI용 RM_ACCESS_TOKEN도 추후 발급 시 설정 필요) |

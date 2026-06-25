@@ -1,4 +1,4 @@
-# 📊 마인드휘트니스 구글 시트 연결 정보 (Apps Script URL)
+﻿# 📊 마인드휘트니스 구글 시트 연결 정보 (Apps Script URL)
 
 각 지점 및 프로모션 랜딩페이지별로 연결된 구글 시트(Apps Script Web App URL) 목록과 연결 방법 매뉴얼입니다.
 
@@ -25,7 +25,7 @@
 
 ### AI에게 알려줄 정보 (2가지만!)
 ```
-1. 랜딩페이지 주소: mindfitness-hallim.com/[페이지명]
+1. 랜딩페이지 주소: mindfitness.com/[페이지명]
 2. 연결할 구글 시트 탭 이름: [탭이름] (띄어쓰기 포함 정확하게)
 3. 웹앱 URL: https://script.google.com/macros/s/.../exec
 ```
