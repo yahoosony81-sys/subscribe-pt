@@ -286,25 +286,33 @@ export function RemindStretchingLanding() {
             </h1>
           </div>
           <div ref={principleAnim1.ref} className={`rs-core-principle__questions rs-anim ${principleAnim1.isVisible ? 'rs-in' : ''}`}>
-            <h2 style={{ textShadow: '0 2px 12px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)' }}>
-              "유튜브 보고 따라 하는 스트레칭은<br />
-              왜 시원하기보다 아프기만 할까요?"<br />
+            <h2 style={{ textShadow: '0 2px 12px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)', wordBreak: 'keep-all' }}>
+              "유튜브 보고 따라 하는<br />
+              스트레칭은 왜 시원하기보다<br />
+              아프기만 할까요?"<br />
               <br />
-              "마사지를 세게 받아도 왜 다음 날이면<br />
-              똑같이 목과 어깨가 딱딱해질까요?"
+              "마사지를 세게 받아도<br />
+              왜 다음 날이면 똑같이<br />
+              목과 어깨가 딱딱해질까요?"
             </h2>
           </div>
           
           <div ref={principleAnim2.ref} className={`rs-core-principle__theory rs-anim rs-anim-delay-1 ${principleAnim2.isVisible ? 'rs-in' : ''}`}>
             <h3 className="rs-core-principle__subtitle">핵심 원리</h3>
-            <p>
-              우리 몸의 근육은 여러 겹으로 복잡하게 얽혀 있으며,<br />
-              관절과 뼈를 보호하기 위해 스스로를 지키려는<br />
+            <p style={{ wordBreak: 'keep-all', lineHeight: '1.8' }}>
+              우리 몸의 근육은 여러 겹으로<br />
+              복잡하게 얽혀 있으며,<br />
+              <br />
+              관절과 뼈를 보호하기 위해<br />
+              스스로를 지키려는<br />
               <strong>'방어 기전'</strong>을 가지고 있습니다.<br />
               <br />
-              해부학을 모른 채 무작정 몸을 찢거나<br />
+              해부학을 모른 채<br />
+              무작정 몸을 찢거나<br />
               겉 근육만 강하게 누르면,<br />
-              오히려 근육이 긴장하여 <strong>더 단단하게 굳어버립니다.</strong>
+              <br />
+              오히려 근육이 긴장하여<br />
+              <strong>더 단단하게 굳어버립니다.</strong>
             </p>
           </div>
         </div>
@@ -360,13 +368,19 @@ export function RemindStretchingLanding() {
 
           <div ref={promiseAnim.ref} className={`rs-philosophy__promise rs-anim ${promiseAnim.isVisible ? 'rs-in' : ''}`}>
             <h3>전문가가 약속하는 변화</h3>
-            <p>
-              철저한 신체 평가를 통해<br />당신의 뼈와 근육 구조에 딱 맞는 가동 범위를 찾아드립니다.<br />
+            <p style={{ wordBreak: 'keep-all' }}>
+              철저한 신체 평가를 통해<br />
+              당신의 뼈와 근육 구조에 딱 맞는<br />
+              가동 범위를 찾아드립니다.<br />
               <br />
-              억지로 아프게 찢지 않기에 안전하며,<br />관리 직후 마법처럼 가벼워진 전신을 눈으로 직접 확인하실 수 있습니다.<br />
+              억지로 아프게 찢지 않기에 안전하며,<br />
+              관리 직후 마법처럼 가벼워진 전신을<br />
+              눈으로 직접 확인하실 수 있습니다.<br />
               <br />
-              <strong>100% 수동형(Passive) 케어</strong>로 전문가의 손길을 느껴보세요.<br />
-              당신은 가만히 힘을 빼고 누워만 계시면 내 몸이 가벼워 지는 것을 느끼실 수 있습니다.
+              <strong>100% 수동형(Passive) 케어</strong>로<br />
+              전문가의 손길을 느껴보세요.<br />
+              당신은 가만히 힘을 빼고 누워만 계시면<br />
+              내 몸이 가벼워지는 것을 느끼실 수 있습니다.
             </p>
           </div>
         </div>
