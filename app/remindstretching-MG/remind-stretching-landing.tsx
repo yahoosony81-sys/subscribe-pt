@@ -320,14 +320,14 @@ export function RemindStretchingLanding() {
           <Image src="/images/remindstretching/hero-bg.png" alt="" fill style={{ objectFit: 'cover' }} />
         </div>
         <div className="rs-about__bg-right">
-          <Image src="/images/remindstretching/about-stretching.png" alt="" fill style={{ objectFit: 'cover' }} />
+          <Image src="/images/REMINDMIDDLE.png" alt="" fill style={{ objectFit: 'cover' }} />
         </div>
 
         <div ref={aboutAnim.ref} className="rs-about__inner">
           <div className={`rs-about__image-wrap rs-anim-left ${aboutAnim.isVisible ? 'rs-in' : ''}`}>
             <div className="rs-about__image">
               <Image
-                src="/images/remindstretching/about-stretching.png"
+                src="/images/REMINDMIDDLE.png"
                 alt="리마인드 스트레칭 케어"
                 fill
                 style={{ objectFit: 'cover' }}
@@ -474,13 +474,23 @@ export function RemindStretchingLanding() {
         <div className="rs-curiosity__circle rs-curiosity__circle--2" />
         <div className="rs-curiosity__circle rs-curiosity__circle--3" />
 
-        <div ref={curiosityAnim.ref}>
+        <div ref={curiosityAnim.ref} className="rs-curiosity__content">
           <p className={`rs-curiosity__small rs-anim ${curiosityAnim.isVisible ? 'rs-in' : ''}`}>
             그 변화가
           </p>
           <p className={`rs-curiosity__big rs-anim rs-anim-delay-1 ${curiosityAnim.isVisible ? 'rs-in' : ''}`}>
             궁금하신가요?
           </p>
+          
+          <div className={`rs-curiosity__image rs-fade rs-anim-delay-2 ${curiosityAnim.isVisible ? 'rs-in' : ''}`}>
+            <Image 
+              src="/images/REMINDEND5.png" 
+              alt="리마인드 스트레칭 비포애프터" 
+              width={800} 
+              height={500} 
+              style={{ width: '100%', height: 'auto', maxWidth: '800px', margin: '40px auto 0', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
+            />
+          </div>
         </div>
       </section>
 
