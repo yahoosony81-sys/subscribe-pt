@@ -714,10 +714,7 @@ export function RemindStretchingLanding() {
       {/* ═══ 8. FLOATING CTA ═══ */}
       <button 
         className="rs-floating-cta"
-        onClick={() => {
-          const el = document.getElementById('rs-booking');
-          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }}
+        onClick={openForm}
         aria-label="지금 체험 신청하기"
       >
         지금 체험 신청하기
