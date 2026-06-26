@@ -16,7 +16,6 @@ export function GtmProvider() {
   const isHallimLanding = pathname.startsWith('/hl-burning-caremember') || pathname.startsWith('/hl-caremembership') || pathname.startsWith('/hl-pain-membership');
   const isDnGroupPt = pathname.startsWith('/dn-group-pt');
   const isMyeongjiLanding = pathname.startsWith('/mg-');
-  const isCheongokLanding = pathname.startsWith('/cg-');
 
   // 조건에 맞게 GTM 아이디 할당
   let gtmId = "";
@@ -26,7 +25,7 @@ export function GtmProvider() {
   if (isBodyChallenge) gtmId = "GTM-KQR8JJ44"; // 도남점 바디챌린지 GTM
   if (isHallimLanding) gtmId = "GTM-5VB56Q69"; // 한림점 GTM
   if (isMyeongjiLanding) gtmId = "GTM-TXNCJPBS"; // 부산명지점 GTM
-  // 천곡점 GTM 아이디가 생기면 아래에 추가: if (isCheongokLanding) gtmId = "GTM-XXXXXXXX";
+
 
   // 픽셀 ID를 utils/pixelConfig.ts 에서 자동 조회
   const pixelId = getPixelInfoByPath(pathname)?.pixelId ?? "";

@@ -937,6 +937,32 @@
   margin-top: 20px;
 }
 
+.rs-intro__more-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 14px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  color: var(--rs-white);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+}
+
+.rs-intro__more-btn:hover {
+  background: var(--rs-white);
+  color: var(--rs-navy-dark);
+  border-color: var(--rs-white);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
 /* ═══ 3. VALUE / ABOUT SECTION (2-column: round-image left + text right) ═══ */
 .rs-about {
   padding: 140px 40px;
@@ -1431,4 +1457,264 @@
   .rs-program-card {
     aspect-ratio: 2/3;
   }
+}
+
+
+/* ═══ 8. PHILOSOPHY SECTION (About Page) ═══ */
+.rs-philosophy {
+  position: relative;
+  padding: 160px 40px 120px;
+  background: var(--rs-navy-dark);
+  color: var(--rs-white);
+  text-align: center;
+  overflow: hidden;
+}
+
+.rs-philosophy__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.rs-philosophy__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(8px) brightness(0.3);
+  transform: scale(1.05); /* prevent blurred edges */
+}
+
+.rs-philosophy__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rs-philosophy__title {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 80px;
+  line-height: 1.4;
+}
+
+.rs-philosophy__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.rs-philosophy__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rs-philosophy__item-en {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #7AA288;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+
+.rs-philosophy__item-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.rs-philosophy__item-desc {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  word-break: keep-all;
+}
+
+.rs-philosophy__promise {
+  margin-top: 100px;
+  padding: 60px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rs-philosophy__promise h3 {
+  font-size: 1.6rem;
+  color: var(--rs-accent-gold);
+  margin-bottom: 20px;
+}
+
+.rs-philosophy__promise p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .rs-philosophy__grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+
+/* ═══ 9. CORE PRINCIPLE SECTION (About Page) ═══ */
+.rs-core-principle {
+  padding: 120px 40px;
+  background: var(--rs-white);
+  color: var(--rs-charcoal);
+}
+
+.rs-core-principle__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.rs-core-principle__questions {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.rs-core-principle__questions h2 {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 700;
+  color: var(--rs-navy);
+  line-height: 1.7;
+  letter-spacing: -0.02em;
+}
+
+.rs-core-principle__subtitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--rs-accent-gold);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.rs-core-principle__theory {
+  background: var(--rs-cream);
+  padding: 48px 40px;
+  border-radius: 16px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.rs-core-principle__theory p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--rs-charcoal);
+  margin: 0;
+  word-break: keep-all;
+}
+
+.rs-core-principle__theory strong {
+  color: var(--rs-navy);
+  font-weight: 700;
+}
+
+.rs-core-principle__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.rs-core-principle__card {
+  background: var(--rs-white);
+  border: 1px solid rgba(27, 42, 74, 0.08);
+  padding: 40px 32px;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rs-core-principle__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(27, 42, 74, 0.08);
+}
+
+.rs-core-principle__num {
+  display: inline-block;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 700;
+  color: rgba(201, 169, 110, 0.3);
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.rs-core-principle__card h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--rs-navy);
+  margin-bottom: 16px;
+  word-break: keep-all;
+}
+
+.rs-core-principle__card p {
+  font-size: 0.95rem;
+  color: var(--rs-charcoal-light);
+  line-height: 1.6;
+  margin: 0;
+  word-break: keep-all;
+}
+
+@media (max-width: 768px) {
+  .rs-core-principle__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+
+/* ═══ 15. FLOATING CTA ═══ */
+.rs-floating-cta {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 99;
+  background: var(--rs-accent-gold);
+  color: var(--rs-navy-dark);
+  padding: 16px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+}
+
+.rs-floating-cta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  background: var(--rs-white);
+}
+
+@media (max-width: 768px) {
+  .rs-floating-cta {
+    right: 16px;
+    bottom: 16px;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+
+/* ═══ 16. HERO DARK OVERRIDE ═══ */
+.rs-hero-dark {
+  background: var(--rs-navy-dark) !important;
+}
+.rs-hero-dark .rs-core-principle__questions h2 {
+  color: var(--rs-white);
 }

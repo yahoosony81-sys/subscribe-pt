@@ -28,8 +28,7 @@ function useScrollReveal(threshold = 0.15) {
 /* ─── 네비게이션 링크 데이터 ─── */
 const navLinks = [
   { label: "홈", href: "#rs-hero" },
-  { label: "리마인드 스트레칭이란?", href: "#rs-intro" },
-  { label: "소개", href: "#rs-about" },
+  { label: "추천 대상", href: "#rs-philosophy" },
   { label: "프로그램", href: "#rs-programs" },
   { label: "예약하기", href: "#rs-booking" },
 ]
@@ -90,6 +89,11 @@ export function RemindStretchingLanding() {
   const heroAnim = useScrollReveal(0.1)
   const introAnim = useScrollReveal(0.15)
   const aboutAnim = useScrollReveal(0.12)
+  const philosophyAnim = useScrollReveal(0.12)
+  const promiseAnim = useScrollReveal(0.12)
+  const principleAnim1 = useScrollReveal(0.12)
+  const principleAnim2 = useScrollReveal(0.12)
+  const principleAnim3 = useScrollReveal(0.12)
   const programAnim = useScrollReveal(0.1)
   const curiosityAnim = useScrollReveal(0.2)
   const bookingAnim = useScrollReveal(0.2)
@@ -200,6 +204,10 @@ export function RemindStretchingLanding() {
   /* 앵커 이동 시 부드러운 스크롤 + 메뉴 닫기 */
   const handleNavClick = (href: string) => {
     setMenuOpen(false)
+    if (href.startsWith('/')) {
+      window.location.href = href
+      return
+    }
     const id = href.replace('#', '')
     const el = document.getElementById(id)
     if (el) {
@@ -261,104 +269,105 @@ export function RemindStretchingLanding() {
 
 
       {/* ═══ 1. HERO ═══ */}
-      <section className="rs-hero" id="rs-hero">
-        <div className="rs-hero__container">
-          <div className="rs-hero__media">
-            <Image
-              src="/images/remindstretching/hero-bg.png"
-              alt="리마인드스트레칭 1:1 전문 케어"
-              fill
-              priority
-              style={{ objectFit: 'cover' }}
-            />
-          </div>
-          <div className="rs-hero__overlay" />
-          <div ref={heroAnim.ref} className={`rs-hero__text rs-anim ${heroAnim.isVisible ? 'rs-in' : ''}`}>
-            <h1 className="rs-hero__title">
-              Return to<br />
-              <strong>YOUR LIFE.</strong>
+      <section className="rs-core-principle rs-hero-dark" id="rs-hero" style={{ paddingTop: '160px', paddingBottom: '120px', position: 'relative' }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 1, zIndex: 0, pointerEvents: 'none' }}>
+          <Image
+            src="/images/image copy 3.png"
+            alt="히어로 배경"
+            fill
+            style={{ objectFit: 'cover' }}
+            priority
+          />
+        </div>
+        <div className="rs-core-principle__inner" style={{ position: 'relative', zIndex: 1 }}>
+          <div ref={heroAnim.ref} className={`rs-anim ${heroAnim.isVisible ? 'rs-in' : ''}`}>
+            <h1 style={{ textAlign: 'center', fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, color: 'var(--rs-white)', marginBottom: '80px', letterSpacing: '-0.02em', wordBreak: 'keep-all', textShadow: '0 4px 24px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,0.8)' }}>
+              왜 <span style={{ color: 'var(--rs-accent-gold)', textShadow: '0 4px 24px rgba(0,0,0,0.9)' }}>리마인드 스트레칭</span>일까?
             </h1>
           </div>
-          <div className="rs-hero__watermark">Rm</div>
+          <div ref={principleAnim1.ref} className={`rs-core-principle__questions rs-anim ${principleAnim1.isVisible ? 'rs-in' : ''}`}>
+            <h2 style={{ textShadow: '0 2px 12px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)' }}>
+              "유튜브 보고 따라 하는 스트레칭은<br />
+              왜 시원하기보다 아프기만 할까요?"<br />
+              <br />
+              "마사지를 세게 받아도 왜 다음 날이면<br />
+              똑같이 목과 어깨가 딱딱해질까요?"
+            </h2>
+          </div>
+          
+          <div ref={principleAnim2.ref} className={`rs-core-principle__theory rs-anim rs-anim-delay-1 ${principleAnim2.isVisible ? 'rs-in' : ''}`}>
+            <h3 className="rs-core-principle__subtitle">핵심 원리</h3>
+            <p>
+              우리 몸의 근육은 여러 겹으로 복잡하게 얽혀 있으며,<br />
+              관절과 뼈를 보호하기 위해 스스로를 지키려는<br />
+              <strong>'방어 기전'</strong>을 가지고 있습니다.<br />
+              <br />
+              해부학을 모른 채 무작정 몸을 찢거나<br />
+              겉 근육만 강하게 누르면,<br />
+              오히려 근육이 긴장하여 <strong>더 단단하게 굳어버립니다.</strong>
+            </p>
+          </div>
         </div>
       </section>
 
-
-      {/* ═══ 2. INTRO ═══ */}
-      <section className="rs-intro" id="rs-intro">
-        <div className="rs-intro__bg">
+      {/* ═══ 2. PHILOSOPHY ═══ */}
+      <section className="rs-philosophy" id="rs-philosophy">
+        <div className="rs-philosophy__bg">
           <Image
             src="/images/remindstretching/intro-nature-bg.png"
             alt="자연 배경"
             fill
             style={{ objectFit: 'cover' }}
           />
-          <div className="rs-intro__bg-overlay" />
         </div>
-        <div ref={introAnim.ref} className={`rs-intro__content rs-anim ${introAnim.isVisible ? 'rs-in' : ''}`}>
-          <h2 className="rs-intro__title">
-            일반 마사지로는 부족한<br />
-            진짜 회복의 시작
+        <div className="rs-philosophy__inner">
+          <h2 ref={philosophyAnim.ref} className={`rs-philosophy__title rs-anim ${philosophyAnim.isVisible ? 'rs-in' : ''}`}>
+            이런 분들에게<br />
+            전문가의 손길이<br />
+            절대적으로 필요합니다.
           </h2>
-          <p className="rs-intro__desc">
-            리마인드 스트레칭은 혼자선 어려운 깊은 이완을<br />
-            전문가가 안전하고 과학적으로 도와주는 스트레칭입니다.
-          </p>
-          <p className="rs-intro__desc">
-            마사지와 달리, 근육과 관절을 근본부터 풀어주는 새로운 방식.
-          </p>
-          <p className="rs-intro__highlight rs-anim rs-anim-delay-2" style={ introAnim.isVisible ? { opacity: 1, transform: 'translateY(0)' } : {} }>
-            리마인드 스트레칭만의 이유, 여기에 있습니다.
-          </p>
-        </div>
-      </section>
 
-
-      {/* ═══ 3. ABOUT ═══ */}
-      <section className="rs-about" id="rs-about">
-        <div className="rs-about__bg-left">
-          <Image src="/images/remindstretching/hero-bg.png" alt="" fill style={{ objectFit: 'cover' }} />
-        </div>
-        <div className="rs-about__bg-right">
-          <Image src="/images/REMINDMIDDLE.png" alt="" fill style={{ objectFit: 'cover' }} />
-        </div>
-
-        <div ref={aboutAnim.ref} className="rs-about__inner">
-          <div className={`rs-about__image-wrap rs-anim-left ${aboutAnim.isVisible ? 'rs-in' : ''}`}>
-            <div className="rs-about__image">
-              <Image
-                src="/images/REMINDMIDDLE.png"
-                alt="리마인드 스트레칭 케어"
-                fill
-                style={{ objectFit: 'cover' }}
-              />
+          <div className="rs-philosophy__grid">
+            <div className={`rs-philosophy__item rs-anim-scale rs-anim-delay-1 ${philosophyAnim.isVisible ? 'rs-in' : ''}`}>
+              <div className="rs-philosophy__item-en">Flexibility</div>
+              <h3 className="rs-philosophy__item-title">굳어버린 몸</h3>
+              <p className="rs-philosophy__item-desc">
+                유연성이 너무 부족해<br />
+                혼자서는 올바른 스트레칭 자세가<br />
+                전혀 안 나오시는 분
+              </p>
+            </div>
+            
+            <div className={`rs-philosophy__item rs-anim-scale rs-anim-delay-2 ${philosophyAnim.isVisible ? 'rs-in' : ''}`}>
+              <div className="rs-philosophy__item-en">Intensive Care</div>
+              <h3 className="rs-philosophy__item-title">단단해진 근육</h3>
+              <p className="rs-philosophy__item-desc">
+                거북목, 라운드숄더 등으로<br />
+                특정 관절과 단단해진 근육 집중 케어가 필요하신 분
+              </p>
+            </div>
+            
+            <div className={`rs-philosophy__item rs-anim-scale rs-anim-delay-3 ${philosophyAnim.isVisible ? 'rs-in' : ''}`}>
+              <div className="rs-philosophy__item-en">Performance</div>
+              <h3 className="rs-philosophy__item-title">운동 가동범위 제한</h3>
+              <p className="rs-philosophy__item-desc">
+                운동 가동 범위가 나오지 않아<br />
+                부상 위험을 느끼거나<br />
+                정체기를 겪고 계신 분
+              </p>
             </div>
           </div>
-          <div className={`rs-about__text rs-anim ${aboutAnim.isVisible ? 'rs-in' : ''}`}>
-            <h2>
-              몸을 되돌리는 시간,<br />
-              리마인드 스트레칭
-            </h2>
-            <div className="rs-about__text-block">
-              <p>
-                하루의 무게를 이끌고<br />
-                굳어진 근육 위를 지나<br />
-                우리는 다시 나를 마주합니다.
-              </p>
-            </div>
-            <div className="rs-about__text-block">
-              <p>
-                리마인드 스트레칭은,<br />
-                단지 스트레칭이 아닙니다.
-              </p>
-            </div>
-            <div className="rs-about__text-block">
-              <p>
-                몸의 흐름을 깨우고<br />
-                호흡의 결을 따라<br />
-                움직임의 본질에 닿는 시간.
-              </p>
-            </div>
+
+          <div ref={promiseAnim.ref} className={`rs-philosophy__promise rs-anim ${promiseAnim.isVisible ? 'rs-in' : ''}`}>
+            <h3>전문가가 약속하는 변화</h3>
+            <p>
+              철저한 신체 평가를 통해<br />당신의 뼈와 근육 구조에 딱 맞는 가동 범위를 찾아드립니다.<br />
+              <br />
+              억지로 아프게 찢지 않기에 안전하며,<br />관리 직후 마법처럼 가벼워진 전신을 눈으로 직접 확인하실 수 있습니다.<br />
+              <br />
+              <strong>100% 수동형(Passive) 케어</strong>로 전문가의 손길을 느껴보세요.<br />
+              당신은 가만히 힘을 빼고 누워만 계시면 내 몸이 가벼워 지는 것을 느끼실 수 있습니다.
+            </p>
           </div>
         </div>
       </section>
@@ -481,16 +490,6 @@ export function RemindStretchingLanding() {
           <p className={`rs-curiosity__big rs-anim rs-anim-delay-1 ${curiosityAnim.isVisible ? 'rs-in' : ''}`}>
             궁금하신가요?
           </p>
-          
-          <div className={`rs-curiosity__image rs-fade rs-anim-delay-2 ${curiosityAnim.isVisible ? 'rs-in' : ''}`}>
-            <Image 
-              src="/images/REMINDEND5.png" 
-              alt="리마인드 스트레칭 비포애프터" 
-              width={800} 
-              height={500} 
-              style={{ width: '100%', height: 'auto', maxWidth: '800px', margin: '40px auto 0', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
-            />
-          </div>
         </div>
       </section>
 
@@ -499,14 +498,14 @@ export function RemindStretchingLanding() {
       <section className="rs-booking" id="rs-booking">
         <div ref={bookingAnim.ref}>
           <p className={`rs-booking__title rs-anim ${bookingAnim.isVisible ? 'rs-in' : ''}`}>
-            지금 온라인신청으로 <strong>체험 예약하기</strong>
+            지금 온라인으로 <strong>체험 신청하기</strong>
           </p>
           <button
             type="button"
             onClick={openForm}
             className={`rs-booking__btn rs-anim rs-anim-delay-1 ${bookingAnim.isVisible ? 'rs-in' : ''}`}
           >
-            체험 예약 신청하기
+            지금 체험 신청하기
           </button>
         </div>
       </section>
@@ -697,6 +696,18 @@ export function RemindStretchingLanding() {
           © {new Date().getFullYear()} REMIND STRETCHING. ALL RIGHTS RESERVED.
         </div>
       </footer>
+
+      {/* ═══ 8. FLOATING CTA ═══ */}
+      <button 
+        className="rs-floating-cta"
+        onClick={() => {
+          const el = document.getElementById('rs-booking');
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }}
+        aria-label="지금 체험 신청하기"
+      >
+        지금 체험 신청하기
+      </button>
 
     </div>
   )
