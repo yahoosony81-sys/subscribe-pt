@@ -24,6 +24,8 @@
   line-height: 1.7;
   overflow-x: hidden;
   background: var(--rs-cream);
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 /* ── Scroll Animations ── */
@@ -1109,6 +1111,27 @@
   font-size: 0.7rem;
   color: rgba(255,255,255,0.6);
   letter-spacing: 0.05em;
+}
+
+.rs-program-card__view-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  font-size: 0.7rem;
+  color: var(--rs-white);
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.rs-program-card:hover .rs-program-card__view-btn {
+  background: var(--rs-accent-gold);
+  border-color: var(--rs-accent-gold);
+  color: var(--rs-navy-dark);
 }
 
 /* Expanded program detail (on hover/click) */

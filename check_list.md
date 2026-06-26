@@ -5,7 +5,7 @@
 4. 지점위치 확인/ 센터내부 둘러보기 링크연결 확인
 5. GTM 변수, 트리서, 테그 설정하기
 6. 구글시트 웹앱 url 연결하기(아래3가지정보를 알려주면 안티그레비티가 알아서 연결해줌)
-- 랜딩페이지 주소: mindfitness.com/[페이지명]
+- 랜딩페이지 주소: mindfitness-hallim.com/[페이지명]
 -구글 시트 탭 이름: [기존에 만들어둔 탭 이름 (띄어쓰기 포함)]
 -웹앱 URL: https://script.google.com/macros/s/.../exec
 
@@ -69,5 +69,5 @@ page.tsx 파일에 아무것도 추가할 필요 없음.
 1. 특정 페이지 서버 캐시 삭제 (인스타 브라우저 등에서 변경사항 적용 안 될 때)
 - 인터넷 주소창에 아래와 같이 입력하고 접속
 - 형식: `https://mindfitness-[지점도메인].com/api/revalidate?path=/[랜딩경로]&secret=mindfitness123!`
-- 예시 (한림점 케어멤버십): `https://mindfitness.com/api/revalidate?path=/hl-caremembership&secret=mindfitness123!`
+- 예시 (한림점 케어멤버십): `https://mindfitness-hallim.com/api/revalidate?path=/hl-caremembership&secret=mindfitness123!`
 - 성공 시 `{"revalidated":true...}` 메시지가 뜨며 캐시 즉시 비워짐

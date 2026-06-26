@@ -398,6 +398,7 @@ export function RemindStretchingLanding() {
               />
               <div className="rs-program-card__overlay">
                 <span className="rs-program-card__name">{p.title}</span>
+                <span className="rs-program-card__view-btn">자세히 보기 &rarr;</span>
               </div>
               <div className="rs-program-card__detail">
                 <div className="rs-program-card__detail-title">{p.title}</div>
