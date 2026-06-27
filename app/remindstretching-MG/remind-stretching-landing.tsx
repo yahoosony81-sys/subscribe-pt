@@ -542,14 +542,17 @@ export function RemindStretchingLanding() {
                     <path d="M20 6 9 17l-5-5" />
                   </svg>
                 </div>
-                <h3>신청이 완료되었습니다</h3>
-                <p>확인 후 안내 문자를 보내드리겠습니다</p>
+                <h3>체험접수가 완료되었습니다</h3>
+                <p>신청확인 후 순차적으로 안내 드리겠습니다</p>
               </div>
             ) : (
               <form onSubmit={handleFormSubmit} className="rs-form">
                 <div className="rs-form__header">
                   <p className="rs-form__notice">온라인 신청폼 작성시 체험이 가능합니다</p>
                   <h2 className="rs-form__title">체험 예약 신청</h2>
+                  <p style={{ fontSize: '0.85rem', color: '#ff4d4f', fontWeight: 'bold', marginTop: '10px', textAlign: 'center', wordBreak: 'keep-all' }}>
+                    체험은 최소 2일 전에 신청해 주시기 바랍니다
+                  </p>
                 </div>
 
                 <div className="rs-form__body">
@@ -589,7 +592,6 @@ export function RemindStretchingLanding() {
                       <option value="등·허리">등·허리</option>
                       <option value="골반·고관절">골반·고관절</option>
                       <option value="무릎·하체">무릎·하체</option>
-                      <option value="전신">전신</option>
                       <option value="기타">기타</option>
                     </select>
                   </div>
