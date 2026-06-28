@@ -1,4 +1,4 @@
-﻿<새로운 랜딩 제작시 체크리스트>
+<새로운 랜딩 제작시 체크리스트>
 1. 지점 픽셀 삽입 확인
 2. GTM 코드 삽입 확인(GTM head/body)와 메타픽셀만 안티에 알려주면 알아서 세팅함!
 3. 메타 이벤트 생성
@@ -27,12 +27,14 @@ page.tsx 파일에 아무것도 추가할 필요 없음.
 - 메타 픽셀 ID (메타 이벤트 관리자에서 확인)
 - 메타 액세스 토큰 (메타 이벤트 관리자 → CAPI 설정에서 발급)
 - 랜딩 URL prefix (예: `/xx-`)
+- **(중요)** "폼 제출 시 작동하는 CAPI 전환 이벤트 전송 로직도 코드에 함께 심어줘" 라고 꼭 요청하기 (전환 데이터 누락 방지용)
 
-**안티그레비티가 처리할 코드 작업 4곳:**
+**안티그레비티가 처리할 코드 작업 4곳 (+ 폼 전송 로직):**
 1. `utils/pixelConfig.ts` → BRANCH_PIXELS 배열에 픽셀 정보 추가
 2. `lib/meta-capi.ts` → TOKEN_MAP 배열에 토큰 envKey 추가
 3. `proxy.ts` → matcher 배열에 `/xx-:path*` 추가
 4. `components/gtm-provider.tsx` → GTM ID 조건 추가
+5. (요청 시) 랜딩 폼 제출 컴포넌트에 `/api/capi` 호출 로직 추가 (CompleteRegistration 등)
 
 **Vercel 대시보드 작업:**
 - Settings → Environment Variables → 새 토큰 추가 (XX_ACCESS_TOKEN)
