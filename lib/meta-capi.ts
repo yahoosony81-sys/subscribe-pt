@@ -96,6 +96,7 @@ export async function sendPageViewCAPI({
         },
       },
     ],
+    test_event_code: 'TEST72730', // 메타 이벤트 테스트 코드
   };
 
   const apiUrl = `https://graph.facebook.com/v21.0/${pixelId}/events?access_token=${accessToken}`;
@@ -169,6 +170,7 @@ export async function sendCustomEventCAPI({
         },
       },
     ],
+    test_event_code: 'TEST72730', // 메타 이벤트 테스트 코드
   };
 
   const apiUrl = `https://graph.facebook.com/v21.0/${pixelId}/events?access_token=${accessToken}`;
