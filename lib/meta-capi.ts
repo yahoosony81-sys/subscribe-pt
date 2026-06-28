@@ -117,3 +117,76 @@ export async function sendPageViewCAPI({
     console.error(`[CAPI] 네트워크 오류 (${branchName}):`, err);
   }
 }
+
+/**
+ * 메타 CAPI를 통해 커스텀 이벤트를 서버에서 직접 전송합니다.
+ */
+export async function sendCustomEventCAPI({
+  config,
+  eventName,
+  eventSourceUrl,
+  clientIp,
+  userAgent,
+  eventId,
+  phone,
+}: {
+  config: BranchConfig;
+  eventName: string;
+  eventSourceUrl: string;
+  clientIp?: string;
+  userAgent?: string;
+  eventId?: string;
+  phone?: string;
+}): Promise<void> {
+  const { pixelId, accessToken, branchName } = config;
+
+  // 전화번호 해싱 (CAPI 요구사항: SHA256)
+  let hashedPhone;
+  if (phone) {
+    const cleanedPhone = phone.replace(/[^0-9]/g, '');
+    if (cleanedPhone) {
+      // Node.js 환경에서 crypto 사용을 위해 Web Crypto API 사용
+      const encoder = new TextEncoder();
+      const data = encoder.encode(cleanedPhone);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      hashedPhone = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+  }
+
+  const payload = {
+    data: [
+      {
+        event_name: eventName,
+        event_time: Math.floor(Date.now() / 1000),
+        event_id: eventId,
+        event_source_url: eventSourceUrl,
+        action_source: 'website',
+        user_data: {
+          client_ip_address: clientIp || '',
+          client_user_agent: userAgent || '',
+          ...(hashedPhone ? { ph: [hashedPhone] } : {}),
+        },
+      },
+    ],
+  };
+
+  const apiUrl = `https://graph.facebook.com/v21.0/${pixelId}/events?access_token=${accessToken}`;
+
+  try {
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`[CAPI] ${eventName} 전송 실패 (${branchName}) [HTTP ${response.status}]:`, errorText);
+    } else {
+      console.log(`[CAPI] ✅ ${eventName} 전송 성공 | 지점: ${branchName}`);
+    }
+  } catch (err) {
+    console.error(`[CAPI] ${eventName} 네트워크 오류 (${branchName}):`, err);
+  }
+}

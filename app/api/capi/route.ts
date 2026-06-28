@@ -1,0 +1,35 @@
+import { NextRequest, NextResponse } from 'next/server';
+import { getBranchConfig, sendCustomEventCAPI } from '@/lib/meta-capi';
+
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json();
+    const { eventName, pathname, phone, eventSourceUrl } = body;
+
+    if (!eventName || !pathname) {
+      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+    }
+
+    const config = getBranchConfig(pathname);
+    if (!config) {
+      return NextResponse.json({ error: 'Invalid branch configuration' }, { status: 400 });
+    }
+
+    const clientIp = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || request.headers.get('x-real-ip') || '';
+    const userAgent = request.headers.get('user-agent') || '';
+
+    await sendCustomEventCAPI({
+      config,
+      eventName,
+      eventSourceUrl: eventSourceUrl || request.url,
+      clientIp,
+      userAgent,
+      phone,
+    });
+
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error('[CAPI API] Error:', error);
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+  }
+}

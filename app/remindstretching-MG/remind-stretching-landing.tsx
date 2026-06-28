@@ -179,6 +179,23 @@ export function RemindStretchingLanding() {
         }),
       })
       if (typeof window !== 'undefined' && (window as any).fbq) (window as any).fbq('track', 'CompleteRegistration')
+      
+      // 메타 CAPI로 이벤트 전송 (서버 사이드)
+      try {
+        await fetch('/api/capi', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            eventName: 'CompleteRegistration',
+            pathname: window.location.pathname,
+            eventSourceUrl: window.location.href,
+            phone: formData.phone,
+          }),
+        });
+      } catch (capiErr) {
+        console.error('CAPI Error:', capiErr);
+      }
+
       setShowComplete(true)
       setFormData({ name: '', phone: '', bodyArea: '', time: '' })
       setSelectedDate(null)
