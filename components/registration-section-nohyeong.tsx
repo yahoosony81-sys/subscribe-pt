@@ -90,7 +90,7 @@ export function RegistrationSectionNohyeong({
               </svg>
             </div>
             <h3 className="mb-2 text-xl font-bold text-slate-900">신청이 완료되었습니다</h3>
-            <p className="text-sm text-slate-600 leading-relaxed">지점에서 예약 확인 문자를<br />보내드리겠습니다</p>
+            <p className="text-sm text-slate-600 leading-relaxed">센터 이용 시 월 2만원의<br />추가 혜택이 제공됩니다.</p>
           </div>
         </div>
       )}
