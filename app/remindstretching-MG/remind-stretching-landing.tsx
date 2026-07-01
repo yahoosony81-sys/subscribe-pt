@@ -163,6 +163,22 @@ export function RemindStretchingLanding() {
     e.preventDefault()
     setIsSubmitting(true)
     const dateStr = selectedDate ? format(selectedDate, 'yyyy년 M월 d일 (EEE)', { locale: ko }) : ''
+
+    // 메타 CAPI 및 fbq 이벤트 전송 (버튼 클릭 시 즉시 비동기 전송하여 이탈 방지)
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'CompleteRegistration')
+    }
+    fetch('/api/capi', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        eventName: 'CompleteRegistration',
+        pathname: window.location.pathname,
+        eventSourceUrl: window.location.href,
+        phone: formData.phone,
+      }),
+    }).catch(capiErr => console.error('CAPI Error:', capiErr))
+
     try {
       await fetch('https://script.google.com/macros/s/AKfycbyCZFMF4ssh5Zfkm3VeBV7UB3UcK8xQao2D_tbZ_12vejN6p-t9jXfFKTgg9d5aWDLw/exec', {
         method: 'POST',
@@ -178,23 +194,6 @@ export function RemindStretchingLanding() {
           timestamp: new Date().toISOString(),
         }),
       })
-      if (typeof window !== 'undefined' && (window as any).fbq) (window as any).fbq('track', 'CompleteRegistration')
-      
-      // 메타 CAPI로 이벤트 전송 (서버 사이드)
-      try {
-        await fetch('/api/capi', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            eventName: 'CompleteRegistration',
-            pathname: window.location.pathname,
-            eventSourceUrl: window.location.href,
-            phone: formData.phone,
-          }),
-        });
-      } catch (capiErr) {
-        console.error('CAPI Error:', capiErr);
-      }
 
       setShowComplete(true)
       setFormData({ name: '', phone: '', bodyArea: '', time: '' })

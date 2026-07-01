@@ -18,7 +18,7 @@ export type BranchConfig = {
 // ──────────────────────────────────────────────────────────────
 const TOKEN_MAP: Array<{ prefixes: string[]; tokenEnvKey: string; name: string }> = [
   { prefixes: ['/hl-'],                         tokenEnvKey: 'HL_ACCESS_TOKEN', name: '한림점' },
-  { prefixes: ['/nh-'],                         tokenEnvKey: 'NH_ACCESS_TOKEN', name: '노형점' },
+  { prefixes: ['/nh-', '/caremembership-jejusi'], tokenEnvKey: 'NH_ACCESS_TOKEN', name: '노형점' },
   { prefixes: ['/dn-', '/promo-bodychallenge'], tokenEnvKey: 'DN_ACCESS_TOKEN', name: '도남점' },
   { prefixes: ['/mg-'],                         tokenEnvKey: 'MG_ACCESS_TOKEN', name: '부산명지점' },
 

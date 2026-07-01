@@ -41,7 +41,7 @@ export const BRANCH_PIXELS: BranchPixelInfo[] = [
     pixelId: '891686733924318',
     nameKo: '노형점',
     code: 'nh',
-    urlPrefixes: ['/nh-'],
+    urlPrefixes: ['/nh-', '/caremembership-jejusi'],
   },
   {
     pixelId: '26658899260438637',

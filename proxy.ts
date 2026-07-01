@@ -73,6 +73,8 @@ export const config = {
     '/hl-:path*',
     // 노형점 랜딩
     '/nh-:path*',
+    // 제주 노형 케어멤버십 랜딩
+    '/caremembership-jejusi:path*',
     // 도남점 랜딩
     '/dn-:path*',
     // 도남점 바디챌린지

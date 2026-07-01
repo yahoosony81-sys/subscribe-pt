@@ -29,13 +29,17 @@ export function RegistrationSectionNohyeong({
   branch = "노형점",
   hideTimePicker = false,
   googleSheetUrl,
-  sheetName
+  sheetName,
+  isModal = false,
+  onSuccess
 }: {
   title?: string;
   branch?: string;
   hideTimePicker?: boolean;
   googleSheetUrl?: string;
   sheetName?: string;
+  isModal?: boolean;
+  onSuccess?: () => void;
 } = {}) {
   const [formData, setFormData] = useState({
     name: "",
@@ -104,6 +108,9 @@ export function RegistrationSectionNohyeong({
       setFormData({ name: "", phone: "", preferredTime: "", message: "", visitSource: "" })
       setSelectedDate(undefined)
       setSelectedTime("")
+      if (onSuccess) {
+        setTimeout(onSuccess, 3000)
+      }
     } catch (error) {
       console.error("Error submitting form:", error)
       alert("신청 중 오류가 발생했습니다. 다시 시도해주세요.")
@@ -140,14 +147,16 @@ export function RegistrationSectionNohyeong({
         </div>
       )}
 
-      <section id="contact-form" className="bg-slate-50 py-20">
-        <div className="mx-auto max-w-xl px-4">
-          <div className="mb-10 text-center">
-            <h2 className="mb-3 text-2xl font-bold text-slate-900">{title}</h2>
-            <p className="text-base text-slate-600">신청 완료 후 지점에서 안내 문자를 발송해 드립니다.</p>
-          </div>
+      <section id="contact-form" className={isModal ? "p-0 bg-transparent" : "bg-slate-50 py-20"}>
+        <div className={isModal ? "w-full" : "mx-auto max-w-xl px-4"}>
+          {!isModal && (
+            <div className="mb-10 text-center">
+              <h2 className="mb-3 text-2xl font-bold text-slate-900">{title}</h2>
+              <p className="text-base text-slate-600">신청 완료 후 지점에서 안내 문자를 발송해 드립니다.</p>
+            </div>
+          )}
 
-          <form onSubmit={handleSubmit} className="rounded-2xl bg-white p-8 shadow-sm">
+          <form onSubmit={handleSubmit} className={isModal ? "w-full p-0 shadow-none bg-transparent" : "rounded-2xl bg-white p-8 shadow-sm"}>
             <div className="space-y-5">
               <div>
                 <label htmlFor="name" className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
