@@ -8,6 +8,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog"
 import { RegistrationSectionNohyeong } from "@/components/registration-section-nohyeong"
 
@@ -164,7 +165,6 @@ export function CareMembershipJejusiLanding() {
             이젠 헬스/PT도 부담없는 시대,<br />
             나를 위한 변화! 지금 케어멤버십을 시작하세요
           </p>
-          <button className="cm-hero__cta" type="button" onClick={handleCtaClick}>지금 케어 멤버십 온라인 신청하기 &rarr;</button>
         </div>
 
         <div className="cm-hero__dots" role="tablist" aria-label="슬라이드 인디케이터">
@@ -258,18 +258,14 @@ export function CareMembershipJejusiLanding() {
         className={`cm-why ${secWhy.visible ? "cm-why--visible" : ""}`}
         aria-label="왜 케어 멤버십인가"
       >
-        <div className="cm-why__container">
-          <div className="cm-why__image-wrap">
-            <Image
-              src="/images/caremembership-jejusi/왜케어멤버십인가.png"
-              alt="왜 케어 멤버십인가 안내"
-              width={1200}
-              height={1500}
-              style={{ width: "100%", height: "auto", display: "block" }}
-              priority
-            />
-          </div>
-        </div>
+        <Image
+          src="/images/caremembership-jejusi/주황색 핑크색 및 노란색 세련된 패션 인스타그램 게시물(45) (1).png"
+          alt="왜 케어 멤버십인가 안내"
+          width={1920}
+          height={1080}
+          style={{ width: "100%", height: "auto", display: "block" }}
+          priority
+        />
       </section>
 
       {/* ═══ MEMBERSHIP PACKAGES SECTION ═══ */}
@@ -303,7 +299,8 @@ export function CareMembershipJejusiLanding() {
       {/* ═══ STICKY BOTTOM CTA BUTTON ═══ */}
       <div className="cm-sticky-cta-wrap">
         <button className="cm-sticky-cta" type="button" onClick={handleCtaClick}>
-          지금 케어 멤버십 온라인 신청하기 &rarr;
+          <span>지금 케어 멤버십 온라인 신청하기 &rarr;</span>
+          <span className="cm-sticky-cta__sub">온라인 신청시 월 2만원 혜택 추가</span>
         </button>
       </div>
 
@@ -314,6 +311,9 @@ export function CareMembershipJejusiLanding() {
             <DialogTitle className="text-xl font-bold text-slate-900 text-center">
               케어 멤버십 온라인 신청
             </DialogTitle>
+            <DialogDescription className="text-center text-sm font-medium text-orange-500 mt-2">
+              온라인 신청시 월 2만원의 혜택이 추가로 제공됩니다
+            </DialogDescription>
           </DialogHeader>
           <RegistrationSectionNohyeong 
             googleSheetUrl="https://script.google.com/macros/s/AKfycbzbEE1tfamHU4n_rnz0XMiw-YA-GGCq8PkHRL6pekDkW6haGG7OaCjHvcLelm5vQ238/exec"

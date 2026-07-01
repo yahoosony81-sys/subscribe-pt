@@ -1,33 +1,12 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
-import { Calendar } from "@/components/ui/calendar"
-import { format } from "date-fns"
-import { ko } from "date-fns/locale"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { User, Phone, Clock, MessageSquare, MapPin, CalendarDays, X, ChevronLeft, ChevronRight } from "lucide-react"
-
-function generateTimeSlots(): string[] {
-  const slots: string[] = []
-  for (let hour = 10; hour <= 20; hour++) {
-    slots.push(`${String(hour).padStart(2, "0")}:00`)
-    slots.push(`${String(hour).padStart(2, "0")}:30`)
-  }
-  slots.push("21:00")
-  return slots
-}
-
-const TIME_SLOTS = generateTimeSlots()
-
-const RESERVED_SLOTS: Record<string, string[]> = {
-  "2026-05-01": ["10:00", "10:30", "14:00", "15:30"],
-  "2026-05-02": ["11:00", "13:00", "13:30", "18:00"],
-}
+import { User, Phone, MessageSquare, ClipboardList } from "lucide-react"
 
 export function RegistrationSectionNohyeong({
   title = "무료체험 신청하기",
   branch = "노형점",
-  hideTimePicker = false,
   googleSheetUrl,
   sheetName,
   isModal = false,
@@ -35,7 +14,7 @@ export function RegistrationSectionNohyeong({
 }: {
   title?: string;
   branch?: string;
-  hideTimePicker?: boolean;
+  hideTimePicker?: boolean; // kept for backward compatibility if any parent passes it
   googleSheetUrl?: string;
   sheetName?: string;
   isModal?: boolean;
@@ -44,44 +23,17 @@ export function RegistrationSectionNohyeong({
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    preferredTime: "",
+    careMembership: "",
     message: "",
-    visitSource: "",
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [showPicker, setShowPicker] = useState(false)
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined)
-  const [selectedTime, setSelectedTime] = useState<string>("")
   const [showComplete, setShowComplete] = useState(false)
   const [fadeOut, setFadeOut] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
-  }
-
-  const handleDateSelect = (date: Date | undefined) => {
-    setSelectedDate(date)
-    setSelectedTime("")
-  }
-
-  const handleTimeSelect = (time: string) => {
-    setSelectedTime(time)
-  }
-
-  const confirmDateTime = useCallback(() => {
-    if (selectedDate && selectedTime) {
-      const displayStr = `${format(selectedDate, "yyyy년 M월 d일 (EEE)", { locale: ko })} ${selectedTime}`
-      setFormData(prev => ({ ...prev, preferredTime: displayStr }))
-      setShowPicker(false)
-    }
-  }, [selectedDate, selectedTime])
-
-  const getReservedTimes = (): string[] => {
-    if (!selectedDate) return []
-    const key = format(selectedDate, "yyyy-MM-dd")
-    return RESERVED_SLOTS[key] || []
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -105,9 +57,7 @@ export function RegistrationSectionNohyeong({
 
       setShowComplete(true)
       setFadeOut(false)
-      setFormData({ name: "", phone: "", preferredTime: "", message: "", visitSource: "" })
-      setSelectedDate(undefined)
-      setSelectedTime("")
+      setFormData({ name: "", phone: "", careMembership: "", message: "" })
       if (onSuccess) {
         setTimeout(onSuccess, 3000)
       }
@@ -128,8 +78,6 @@ export function RegistrationSectionNohyeong({
     }, 3000)
     return () => { clearTimeout(fadeTimer); clearTimeout(removeTimer) }
   }, [showComplete])
-
-  const reservedTimes = getReservedTimes()
 
   return (
     <>
@@ -184,25 +132,22 @@ export function RegistrationSectionNohyeong({
                 />
               </div>
 
-              {!hideTimePicker && (
-                <div>
-                  <label className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
-                    <Clock className="h-4 w-4 text-orange-500" />
-                    체험 희망 날짜와 시간
-                  </label>
-                  <button
-                    type="button"
-                    onClick={() => setShowPicker(true)}
-                    className="flex w-full items-center justify-between rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-left transition-all hover:border-orange-400 hover:bg-orange-50 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
-                  >
-                    <span className={formData.preferredTime ? "text-slate-900 font-medium" : "text-slate-400"}>
-                      {formData.preferredTime || "날짜와 시간을 선택해주세요"}
-                    </span>
-                    <CalendarDays className="h-5 w-5 text-orange-500 shrink-0" />
-                  </button>
-                  <input type="hidden" name="preferredTime" value={formData.preferredTime} />
-                </div>
-              )}
+              <div>
+                <label htmlFor="careMembership" className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
+                  <ClipboardList className="h-4 w-4 text-orange-500" />
+                  케어 멤버십 선택 <span className="text-orange-500">*</span>
+                </label>
+                <select
+                  id="careMembership" name="careMembership"
+                  value={formData.careMembership} onChange={handleChange} required
+                  className="w-full cursor-pointer rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 transition-all focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+                >
+                  <option value="">선택해주세요</option>
+                  <option value="1개월 케어 멤버십(19만원/월)">1개월 케어 멤버십(19만원/월)</option>
+                  <option value="3개월 케어 멤버십(15만원/월)">3개월 케어 멤버십(15만원/월)</option>
+                  <option value="6개월 케어 멤버십(11만5천원/월)">6개월 케어 멤버십(11만5천원/월)</option>
+                </select>
+              </div>
 
               <div>
                 <label htmlFor="message" className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
@@ -215,24 +160,6 @@ export function RegistrationSectionNohyeong({
                   className="w-full resize-none rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 transition-all placeholder:text-slate-400 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20"
                   placeholder="궁금하신 내용을 적어주세요"
                 />
-              </div>
-
-              <div>
-                <label htmlFor="visitSource" className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
-                  <MapPin className="h-4 w-4 text-orange-500" />
-                  방문 경로
-                </label>
-                <select
-                  id="visitSource" name="visitSource"
-                  value={formData.visitSource} onChange={handleChange}
-                  className="w-full cursor-pointer rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 transition-all focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20"
-                >
-                  <option value="">선택해주세요</option>
-                  <option value="블로그">블로그</option>
-                  <option value="인스타그램">인스타그램</option>
-                  <option value="지인추천">지인추천</option>
-                  <option value="기타">기타</option>
-                </select>
               </div>
 
               <Button
@@ -254,56 +181,6 @@ export function RegistrationSectionNohyeong({
         </div>
         <style jsx>{`@keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }`}</style>
       </section>
-
-      {showPicker && (
-        <div className="fixed inset-0 z-[9998] flex items-center justify-center bg-black/50 px-4" onClick={() => setShowPicker(false)}>
-          <div className="relative w-full max-w-md max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-5 shadow-2xl" onClick={(e) => e.stopPropagation()}>
-            <button type="button" onClick={() => setShowPicker(false)} className="absolute right-3 top-3 rounded-full p-1.5 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700">
-              <X className="h-5 w-5" />
-            </button>
-            <h3 className="mb-4 text-center text-lg font-bold text-slate-900">날짜와 시간 선택</h3>
-            <div className="flex justify-center">
-              <Calendar
-                mode="single"
-                selected={selectedDate}
-                onSelect={handleDateSelect}
-                locale={ko}
-                disabled={{ before: new Date() }}
-                className="rounded-xl border border-slate-100 shadow-sm p-2"
-              />
-            </div>
-            {selectedDate && (
-              <div className="mt-5 border-t border-slate-100 pt-5">
-                <p className="mb-3 text-center text-sm font-semibold text-slate-700">📅 {format(selectedDate, "M월 d일 (EEE)", { locale: ko })} 시간 선택</p>
-                <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
-                  {TIME_SLOTS.map((time) => {
-                    const isReserved = reservedTimes.includes(time)
-                    const isSelected = selectedTime === time
-                    return (
-                      <button
-                        key={time} type="button" disabled={isReserved}
-                        onClick={() => handleTimeSelect(time)}
-                        className={`relative rounded-lg border px-2 py-2.5 text-sm font-medium transition-all ${isReserved ? "cursor-not-allowed border-slate-200 bg-slate-100 text-slate-300" : isSelected ? "border-orange-500 bg-orange-500 text-white shadow-md" : "border-slate-200 bg-white text-slate-700 hover:border-orange-400 hover:bg-orange-50"}`}
-                      >
-                        {time}
-                        {isReserved && <span className="mt-0.5 block text-[10px] font-bold text-red-400">예약완료</span>}
-                      </button>
-                    )
-                  })}
-                </div>
-              </div>
-            )}
-            <div className="mt-5">
-              <button
-                type="button" onClick={confirmDateTime} disabled={!selectedDate || !selectedTime}
-                className="w-full rounded-lg bg-orange-500 py-3 text-sm font-bold text-white transition-all hover:bg-orange-600 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-400"
-              >
-                {selectedDate && selectedTime ? `${format(selectedDate, "M/d")} ${selectedTime} 선택 완료` : "날짜와 시간을 선택해주세요"}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   )
 }
