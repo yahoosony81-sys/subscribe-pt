@@ -253,7 +253,7 @@ export function CareMembershipJejusiLanding() {
       </section>
 
       {/* ═══ WHY CARE MEMBERSHIP SECTION ═══ */}
-      <section 
+      <section
         ref={secWhy.ref}
         className={`cm-why ${secWhy.visible ? "cm-why--visible" : ""}`}
         aria-label="왜 케어 멤버십인가"
@@ -269,18 +269,26 @@ export function CareMembershipJejusiLanding() {
       </section>
 
       {/* ═══ MEMBERSHIP PACKAGES SECTION ═══ */}
-      <section 
+      <section
         ref={secPackages.ref}
         className={`cm-packages ${secPackages.visible ? "cm-packages--visible" : ""}`}
         aria-label="케어 멤버십 패키지 안내"
       >
         <div className="cm-packages__container">
-          <div className="cm-packages__image-wrap">
+          <div className="cm-packages__image-wrap" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <Image
-              src="/images/caremembership-jejusi/hf_20260701_081321_be20bbaa-1061-47c1-8e6f-2c5fbe006af2.png"
-              alt="케어 멤버십 회원권 패키지 안내"
+              src="/images/caremembership-jejusi/1.png"
+              alt="케어 멤버십 회원권 안내"
               width={1200}
-              height={675}
+              height={1200}
+              style={{ width: "100%", height: "auto", display: "block" }}
+              priority
+            />
+            <Image
+              src="/images/caremembership-jejusi/2.png"
+              alt="케어 PT 충전권 안내"
+              width={1200}
+              height={1200}
               style={{ width: "100%", height: "auto", display: "block" }}
               priority
             />
@@ -315,7 +323,7 @@ export function CareMembershipJejusiLanding() {
               온라인 신청시 월 2만원의 혜택이 추가로 제공됩니다
             </DialogDescription>
           </DialogHeader>
-          <RegistrationSectionNohyeong 
+          <RegistrationSectionNohyeong
             googleSheetUrl="https://script.google.com/macros/s/AKfycbzbEE1tfamHU4n_rnz0XMiw-YA-GGCq8PkHRL6pekDkW6haGG7OaCjHvcLelm5vQ238/exec"
             sheetName="노형점케어멤버십"
             isModal={true}
