@@ -21,7 +21,7 @@ const HERO_IMAGES = [
   "/images/KakaoTalk_20260422_141917629.jpg",
 ]
 
-const SLIDE_DURATION = 5000
+const SLIDE_DURATION = 1500
 
 /* ─── Scroll Reveal Hook ─── */
 function useScrollReveal(threshold = 0.18) {
@@ -69,7 +69,7 @@ const ZIGZAG_ITEMS = [
     tag: "TARGET CARE",
     tagColor: "#c8a96e",
     title: "원하는 부위만 쏙!\n타겟 집중 케어",
-    lead: "\"전신 PT 말고,\n내가 원하는 부위만\n집중 케어 받으세요.\"",
+    lead: "\"전신 케어PT 말고,\n내가 원하는 부위만\n집중 케어 받으세요.\"",
     body: "정체되고 안 빠지는 부위(허벅지/팔뚝)는 다이어트 전 미리 예열하는 기간이 반드시 필요합니다. 매달 합리적인 가격으로 헬스장 이용은 기본, 빼고 싶은 부위만 1:1 집중 케어하는 케어 멤버십.",
     cta: "마인드휘트니스 노형점의 집중 관리 케어 멤버십으로 매달 고민되는 부위를 집중적으로 관리하세요.",
     highlight: "헬스장 이용권 + 케어 PT 결합",
@@ -253,11 +253,7 @@ export function CareMembershipJejusiLanding() {
       </section>
 
       {/* ═══ WHY CARE MEMBERSHIP SECTION ═══ */}
-      <section
-        ref={secWhy.ref}
-        className={`cm-why ${secWhy.visible ? "cm-why--visible" : ""}`}
-        aria-label="왜 케어 멤버십인가"
-      >
+      <section aria-label="왜 케어 멤버십인가">
         <Image
           src="/images/caremembership-jejusi/주황색 핑크색 및 노란색 세련된 패션 인스타그램 게시물(45) (1).png"
           alt="왜 케어 멤버십인가 안내"
@@ -277,7 +273,7 @@ export function CareMembershipJejusiLanding() {
         <div className="cm-packages__container">
           <div className="cm-packages__image-wrap" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <Image
-              src="/images/caremembership-jejusi/1.png"
+              src="/images/caremembership-jejusi/케어pt.png"
               alt="케어 멤버십 회원권 안내"
               width={1200}
               height={1200}
