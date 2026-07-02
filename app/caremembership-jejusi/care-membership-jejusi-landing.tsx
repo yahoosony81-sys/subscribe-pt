@@ -70,7 +70,7 @@ const ZIGZAG_ITEMS = [
     tagColor: "#c8a96e",
     title: "원하는 부위만 쏙!\n타겟 집중 케어",
     lead: "\"전신 케어PT 말고,\n내가 원하는 부위만\n집중 케어 받으세요.\"",
-    body: "정체되고 안 빠지는 부위(허벅지/팔뚝)는 다이어트 전 미리 예열하는 기간이 반드시 필요합니다. 매달 합리적인 가격으로 헬스장 이용은 기본, 빼고 싶은 부위만 1:1 집중 케어하는 케어 멤버십.",
+    body: "정체되고 안 빠지는 부위(허벅지/팔뚝)는 다이어트 전 미리 예열하는 기간이 반드시 필요합니다. 1~2달 미리 예열 후 본격적으로 전신 운동시 허벅지, 팔뚝살이 함께 빠지는 놀라운 경험을 하실거예요!! 비싼 PT도 좋지만, 매달 합리적인 가격으로 헬스장 이용은 기본, 빼고 싶은 부위만 1:1 집중 케어하는 케어 멤버십.",
     cta: "마인드휘트니스 노형점의 집중 관리 케어 멤버십으로 매달 고민되는 부위를 집중적으로 관리하세요.",
     highlight: "헬스장 이용권 + 케어 PT 결합",
     reverse: false,
@@ -315,8 +315,9 @@ export function CareMembershipJejusiLanding() {
             <DialogTitle className="text-xl font-bold text-slate-900 text-center">
               케어 멤버십 온라인 신청
             </DialogTitle>
-            <DialogDescription className="text-center text-sm font-medium text-orange-500 mt-2">
-              온라인 신청시 월 2만원의 혜택이 추가로 제공됩니다
+            <DialogDescription className="text-center text-sm mt-2 flex flex-col gap-1">
+              <span className="font-medium text-orange-500">온라인 신청시 월 2만원의 혜택이 추가로 제공됩니다</span>
+              <span className="font-normal text-slate-600">신청 확인 후 지점에서 순차적으로 안내 드리겠습니다.</span>
             </DialogDescription>
           </DialogHeader>
           <RegistrationSectionNohyeong
