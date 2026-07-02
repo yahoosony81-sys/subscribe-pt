@@ -166,13 +166,13 @@ export function RemindStretchingLanding() {
 
     // 메타 CAPI 및 fbq 이벤트 전송 (버튼 클릭 시 즉시 비동기 전송하여 이탈 방지)
     if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'CompleteRegistration')
+      (window as any).fbq('track', 'SubmitApplication')
     }
     fetch('/api/capi', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        eventName: 'CompleteRegistration',
+        eventName: 'SubmitApplication',
         pathname: window.location.pathname,
         eventSourceUrl: window.location.href,
         phone: formData.phone,
