@@ -321,7 +321,7 @@ export function CareMembershipJejusiLanding() {
             </DialogDescription>
           </DialogHeader>
           <RegistrationSectionNohyeong
-            googleSheetUrl="https://script.google.com/macros/s/AKfycbzbEE1tfamHU4n_rnz0XMiw-YA-GGCq8PkHRL6pekDkW6haGG7OaCjHvcLelm5vQ238/exec"
+            googleSheetUrl="https://script.google.com/macros/s/AKfycbyNmVek0v-6H65jnlLpM_TQyOqKA9MEZJ0CqVEO5nvOY1Z1Y8yBvtE40sqv3mQ3iQqP/exec"
             sheetName="노형점케어멤버십"
             isModal={true}
             onSuccess={() => setIsFormOpen(false)}

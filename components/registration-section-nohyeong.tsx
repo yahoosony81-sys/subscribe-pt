@@ -166,7 +166,20 @@ export function RegistrationSectionNohyeong({
                 type="submit"
                 disabled={isSubmitting}
                 onClick={() => {
-                  if (typeof window !== 'undefined' && (window as any).fbq) (window as any).fbq('track', 'SubmitApplication');
+                  if (typeof window !== 'undefined' && (window as any).fbq) {
+                    (window as any).fbq('track', 'SubmitApplication');
+                  }
+                  // 서버 CAPI 전송 (비동기)
+                  fetch('/api/capi', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                      eventName: 'SubmitApplication',
+                      pathname: window?.location?.pathname || '',
+                      eventSourceUrl: window?.location?.href || '',
+                      phone: formData.phone,
+                    }),
+                  }).catch(capiErr => console.error('CAPI Error:', capiErr));
                 }}
                 className="relative mt-4 w-full overflow-hidden rounded-lg bg-orange-500 py-6 text-base font-bold text-white transition-all hover:bg-orange-600 disabled:opacity-50"
               >
