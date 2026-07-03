@@ -254,7 +254,7 @@ export function CareMembershipHallimLanding() {
       {/* ═══ WHY CARE MEMBERSHIP SECTION ═══ */}
       <section aria-label="왜 케어 멤버십인가">
         <Image
-          src="/images/caremembership-jejusi/주황색 핑크색 및 노란색 세련된 패션 인스타그램 게시물(45) (1).png"
+          src="/images/caremembership-jejusi/케어멤버십설명.png"
           alt="왜 케어 멤버십인가 안내"
           width={1920}
           height={1080}
