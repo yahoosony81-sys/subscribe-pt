@@ -47,6 +47,10 @@ export async function proxy(request: NextRequest) {
     // 이벤트 소스 URL (전체 URL)
     const eventSourceUrl = request.url;
 
+    // 메타 픽셀 쿠키 (fbp, fbc) 추출
+    const fbp = request.cookies.get('_fbp')?.value || '';
+    const fbc = request.cookies.get('_fbc')?.value || '';
+
     // CAPI 전송 (비동기 — 응답 지연 없음)
     // Vercel Edge Runtime은 응답 후에도 pending Promise를 완료시킵니다.
     sendPageViewCAPI({
@@ -55,6 +59,8 @@ export async function proxy(request: NextRequest) {
       clientIp,
       userAgent,
       eventId,
+      fbp,
+      fbc,
     }).catch((err) =>
       console.error('[CAPI] 미들웨어에서 전송 오류:', err)
     );

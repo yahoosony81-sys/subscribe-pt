@@ -72,12 +72,16 @@ export async function sendPageViewCAPI({
   clientIp,
   userAgent,
   eventId,
+  fbp,
+  fbc,
 }: {
   config: BranchConfig;
   eventSourceUrl: string;
   clientIp?: string;
   userAgent?: string;
   eventId: string;
+  fbp?: string;
+  fbc?: string;
 }): Promise<void> {
   const { pixelId, accessToken, branchName } = config;
 
@@ -93,6 +97,8 @@ export async function sendPageViewCAPI({
           // IP와 UA를 포함하면 메타의 매칭 품질이 향상됩니다.
           client_ip_address: clientIp || '',
           client_user_agent: userAgent || '',
+          ...(fbp ? { fbp } : {}),
+          ...(fbc ? { fbc } : {}),
         },
       },
     ],
@@ -130,6 +136,8 @@ export async function sendCustomEventCAPI({
   userAgent,
   eventId,
   phone,
+  fbp,
+  fbc,
 }: {
   config: BranchConfig;
   eventName: string;
@@ -138,6 +146,8 @@ export async function sendCustomEventCAPI({
   userAgent?: string;
   eventId?: string;
   phone?: string;
+  fbp?: string;
+  fbc?: string;
 }): Promise<void> {
   const { pixelId, accessToken, branchName } = config;
 
@@ -167,6 +177,8 @@ export async function sendCustomEventCAPI({
           client_ip_address: clientIp || '',
           client_user_agent: userAgent || '',
           ...(hashedPhone ? { ph: [hashedPhone] } : {}),
+          ...(fbp ? { fbp } : {}),
+          ...(fbc ? { fbc } : {}),
         },
       },
     ],
