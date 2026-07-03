@@ -13,7 +13,7 @@ export function GtmProvider() {
   // 각 랜딩 페이지별 경로 확인
   const isNhLanding = pathname.startsWith('/nh-retarget-coffeelanding') || pathname.startsWith('/nh-burning-care') || pathname.startsWith('/nh-pain-membership') || pathname.startsWith('/nh-caremembership') || pathname.startsWith('/caremembership-jejusi');
   const isBodyChallenge = pathname.startsWith('/promo-bodychallenge');
-  const isHallimLanding = pathname.startsWith('/hl-burning-caremember') || pathname.startsWith('/hl-caremembership') || pathname.startsWith('/hl-pain-membership');
+  const isHallimLanding = pathname.startsWith('/hl-burning-caremember') || pathname.startsWith('/hl-caremembership') || pathname.startsWith('/hl-pain-membership') || pathname.startsWith('/caremembership-hallim');
   const isDnGroupPt = pathname.startsWith('/dn-group-pt');
   const isMyeongjiLanding = pathname.startsWith('/mg-');
 

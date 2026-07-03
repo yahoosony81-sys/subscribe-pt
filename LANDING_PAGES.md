@@ -23,6 +23,9 @@
 *   **구독형 케어 멤버십**
     *   주소: https://mindfitness-hallim.com/hl-caremembership
     *   주요 내용: 한림점 월 5회 25분 구독형 케어 멤버십
+*   **프리미엄 케어 멤버십 (제주시 - 한림)**
+    *   주소: https://mindfitness-hallim.com/caremembership-hallim
+    *   주요 내용: 한림점 프리미엄 케어 멤버십 랜딩페이지 (어반필드 스타일)
 *   **프로모션 A**
     *   주소: https://mindfitness-hallim.com/promo-a
 *   **프로모션 B**
