@@ -18,7 +18,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getBranchConfig, sendPageViewCAPI } from '@/lib/meta-capi';
 
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   // ── 브라우저의 실제 페이지 요청(HTML 탐색)인지 확인 ──
