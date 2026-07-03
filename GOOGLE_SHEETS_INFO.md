@@ -1,4 +1,4 @@
-﻿# 📊 마인드휘트니스 구글 시트 연결 정보 (Apps Script URL)
+# 📊 마인드휘트니스 구글 시트 연결 정보 (Apps Script URL)
 
 각 지점 및 프로모션 랜딩페이지별로 연결된 구글 시트(Apps Script Web App URL) 목록과 연결 방법 매뉴얼입니다.
 
@@ -8,7 +8,7 @@
 
 | 랜딩페이지 URL | 구글 시트 탭 이름 | 웹앱 URL (끝 6자리) |
 |:---|:---|:---|
-| `/hl-caremembership` | `한림점케어멤버십` | `...R_UE/exec` |
+| `/hl-caremembership` | `한림점케어멤버십` | `...R_eyp/exec` |
 | `/hl-burning-caremember` | `한림점버닝케어` | `...PH4j/exec` |
 | `/nh-caremembership` | `노형점케어멤버십` | `...Q238/exec` |
 | `/nh-burning-care` | `노형점버닝케어` | `...YH5p/exec` |
