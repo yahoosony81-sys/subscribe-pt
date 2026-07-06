@@ -40,9 +40,12 @@ export function RegistrationSectionJejusi({
     e.preventDefault()
     setIsSubmitting(true)
 
+    // 고유 이벤트 ID 생성 (프론트엔드 픽셀과 서버사이드 CAPI 중복 제거용)
+    const eventId = crypto.randomUUID();
+
     // 메타 CAPI 및 fbq 이벤트 전송 (필수 입력 검증 통과 시에만 발생)
     if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'SubmitApplication');
+      (window as any).fbq('track', 'SubmitApplication', {}, { eventID: eventId });
     }
     fetch('/api/capi', {
       method: 'POST',
@@ -52,6 +55,7 @@ export function RegistrationSectionJejusi({
         pathname: window?.location?.pathname || '',
         eventSourceUrl: window?.location?.href || '',
         phone: formData.phone,
+        eventId: eventId,
       }),
     }).catch(capiErr => console.error('CAPI Error:', capiErr));
 

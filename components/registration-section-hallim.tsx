@@ -40,6 +40,25 @@ export function RegistrationSectionHallim({
     e.preventDefault()
     setIsSubmitting(true)
 
+    // 고유 이벤트 ID 생성 (프론트엔드 픽셀과 서버사이드 CAPI 중복 제거용)
+    const eventId = crypto.randomUUID();
+
+    // 메타 CAPI 및 fbq 이벤트 전송 (필수 입력 검증 통과 시에만 발생)
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'SubmitApplication', {}, { eventID: eventId });
+    }
+    fetch('/api/capi', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        eventName: 'SubmitApplication',
+        pathname: window?.location?.pathname || '',
+        eventSourceUrl: window?.location?.href || '',
+        phone: formData.phone,
+        eventId: eventId,
+      }),
+    }).catch(capiErr => console.error('CAPI Error:', capiErr));
+
     // 한림점 기존 URL
     const submitUrl = googleSheetUrl || "https://script.google.com/macros/s/AKfycbxeg3Xv-71_zndb8IYqGCPDLinJm0c2wMxwGCuMtY5O7Uhxf9RBwem4d6Thg9sR_eyp/exec"
 
@@ -166,22 +185,6 @@ export function RegistrationSectionHallim({
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                onClick={() => {
-                  if (typeof window !== 'undefined' && (window as any).fbq) {
-                    (window as any).fbq('track', 'SubmitApplication');
-                  }
-                  // 서버 CAPI 전송 (비동기)
-                  fetch('/api/capi', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                      eventName: 'SubmitApplication',
-                      pathname: window?.location?.pathname || '',
-                      eventSourceUrl: window?.location?.href || '',
-                      phone: formData.phone,
-                    }),
-                  }).catch(capiErr => console.error('CAPI Error:', capiErr));
-                }}
                 className="relative mt-4 w-full overflow-hidden rounded-lg bg-orange-500 py-6 text-base font-bold text-white transition-all hover:bg-orange-600 disabled:opacity-50"
               >
                 <span className="absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
