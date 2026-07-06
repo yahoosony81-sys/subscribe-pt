@@ -1,6 +1,5 @@
 import { CareMembershipJejusiLanding } from "./care-membership-jejusi-landing"
 import { LocationSectionNohyeong } from "@/components/location-section-nohyeong"
-import { RegistrationSectionNohyeong } from "@/components/registration-section-nohyeong"
 import { FooterNohyeong } from "@/components/footer-nohyeong"
 
 export const metadata = {

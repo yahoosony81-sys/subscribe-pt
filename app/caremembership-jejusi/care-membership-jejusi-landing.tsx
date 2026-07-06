@@ -10,7 +10,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog"
-import { RegistrationSectionNohyeong } from "@/components/registration-section-nohyeong"
+import { RegistrationSectionJejusi } from "@/components/registration-section-jejusi"
 
 /* ─── 슬라이드쇼 이미지 목록 ─── */
 const HERO_IMAGES = [
@@ -320,7 +320,7 @@ export function CareMembershipJejusiLanding() {
               <span className="font-normal text-slate-600">신청 확인 후 지점에서 순차적으로 안내 드리겠습니다.</span>
             </DialogDescription>
           </DialogHeader>
-          <RegistrationSectionNohyeong
+          <RegistrationSectionJejusi
             googleSheetUrl="https://script.google.com/macros/s/AKfycbyNmVek0v-6H65jnlLpM_TQyOqKA9MEZJ0CqVEO5nvOY1Z1Y8yBvtE40sqv3mQ3iQqP/exec"
             sheetName="노형점케어멤버십"
             isModal={true}
