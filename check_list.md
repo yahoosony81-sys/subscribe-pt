@@ -9,6 +9,7 @@
 -구글 시트 탭 이름: [기존에 만들어둔 탭 이름 (띄어쓰기 포함)]
 -웹앱 URL: https://script.google.com/macros/s/.../exec
 7. 메타에 전환이벤트 이름과(예:잠재고객, 요청제출...), 안티그레비티 CAPI 이벤트 호출 명이 같은지 반드시 확인할것!! 안그러면 요청제출이 들어와도 메타 대시보드에 집게가 안됨!!
+8. 폼 제출 컴포넌트 작업 시, 메타 전환 이벤트 전송 로직(프론트엔드 fbq 및 백엔드 /api/capi)에 반드시 고유 `event_id`(`crypto.randomUUID()`)를 동시에 전달하도록 설정하여 **중복 제거(Deduplication)** 기능이 누락되지 않도록 주의할 것!!
 
 ---
 
@@ -55,7 +56,7 @@ page.tsx 파일에 아무것도 추가할 필요 없음.
 2. `lib/meta-capi.ts` → TOKEN_MAP 배열에 토큰 envKey 추가
 3. `proxy.ts` → matcher 배열에 `/xx-:path*` 추가
 4. `components/gtm-provider.tsx` → GTM ID 조건 추가
-5. (요청 시) 랜딩 폼 제출 컴포넌트에 `/api/capi` 호출 로직 추가 (CompleteRegistration 등)
+5. (요청 시) 랜딩 폼 제출 컴포넌트에 `/api/capi` 호출 로직 추가 (전환 이벤트 발송 시 `event_id` 고유 식별자를 프론트와 백엔드 양쪽에 필수 포함하여 중복제거 완벽 적용)
 
 **Vercel 대시보드 작업:**
 - Settings → Environment Variables → 새 토큰 추가 (XX_ACCESS_TOKEN)
