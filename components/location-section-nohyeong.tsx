@@ -159,11 +159,11 @@ export function LocationSectionNohyeong() {
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <span className="inline-block w-24 rounded bg-primary/10 px-2 py-0.5 text-center text-xs font-medium text-primary">토요일</span>
-                      <span>08:00 ~ 20:00</span>
+                      <span>10:00 ~ 19:00</span>
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <span className="inline-block w-24 rounded bg-primary/10 px-2 py-0.5 text-center text-xs font-medium text-primary">일요일/공휴일</span>
-                      <span>10:00 ~ 18:00</span>
+                      <span>10:00 ~ 19:00</span>
                     </div>
                   </div>
                 </div>
