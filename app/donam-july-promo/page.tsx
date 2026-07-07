@@ -1,6 +1,6 @@
 import { DonamJulyPromoLanding } from "./donam-july-promo-landing"
-import { LocationSectionDonamGroupPt } from "@/components/location-section-dn-group-pt"
-import { FooterDonamGroupPt } from "@/components/footer-dn-group-pt"
+import { LocationSectionDnGroupPt } from "@/components/location-section-dn-group-pt"
+import { FooterDnGroupPt } from "@/components/footer-dn-group-pt"
 
 export const metadata = {
   title: "마인드휘트니스 도남점 | 7월 이벤트",
@@ -23,8 +23,8 @@ export default function DonamJulyPromoPage() {
   return (
     <main className="min-h-screen bg-slate-50">
       <DonamJulyPromoLanding />
-      <LocationSectionDonamGroupPt />
-      <FooterDonamGroupPt />
+      <LocationSectionDnGroupPt />
+      <FooterDnGroupPt />
     </main>
   )
 }
