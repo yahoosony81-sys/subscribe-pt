@@ -42,7 +42,7 @@ function useScrollReveal(threshold = 0.18) {
 /* ─── 지그재그 섹션 데이터 ─── */
 const ZIGZAG_ITEMS = [
   {
-    image: "/images/KakaoTalk_20260429_140040742_03.jpg",
+    image: "/images/image copy 4.png",
     tag: "FACILITY",
     tagColor: "#c8a96e",
     title: "웨이트존 / 유산소존 분리\n기구 간 간격 여유 있는 구조",
