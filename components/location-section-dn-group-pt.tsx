@@ -144,16 +144,8 @@ export function LocationSectionDnGroupPt() {
                   <h3 className="font-semibold text-foreground">운영시간</h3>
                   <div className="mt-2 space-y-1.5">
                     <div className="flex items-center gap-2 text-muted-foreground">
-                      <span className="inline-block w-24 rounded bg-primary/10 px-2 py-0.5 text-center text-xs font-medium text-primary">평일</span>
-                      <span>06:00 ~ 24:00</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <span className="inline-block w-24 rounded bg-primary/10 px-2 py-0.5 text-center text-xs font-medium text-primary">토요일</span>
-                      <span>06:00 ~ 24:00</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <span className="inline-block w-24 rounded bg-primary/10 px-2 py-0.5 text-center text-xs font-medium text-primary">일요일/공휴일</span>
-                      <span>06:00 ~ 24:00</span>
+                      <span className="inline-block w-24 rounded bg-primary/10 px-2 py-0.5 text-center text-xs font-medium text-primary">연중무휴</span>
+                      <span>24시간 운영</span>
                     </div>
                   </div>
                 </div>

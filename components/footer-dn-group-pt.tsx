@@ -318,13 +318,7 @@ export function FooterDnGroupPt() {
                 <span className="text-slate-500">이메일:</span> mindfitness@naver.com
               </li>
               <li className="pt-2">
-                <span className="text-slate-500">평일:</span> 06:00 ~ 24:00
-              </li>
-              <li>
-                <span className="text-slate-500">토요일:</span> 06:00 ~ 24:00
-              </li>
-              <li>
-                <span className="text-slate-500">일요일/공휴일:</span> 06:00 ~ 24:00
+                <span className="text-slate-500">연중무휴:</span> 24시간 운영
               </li>
             </ul>
           </div>
