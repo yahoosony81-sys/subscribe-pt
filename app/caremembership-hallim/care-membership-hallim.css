@@ -230,12 +230,18 @@
 .cm-hero__desc {
   font-family: 'Noto Sans KR', sans-serif;
   font-size: clamp(16px, 3vw, 22px);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.85;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.95);
   letter-spacing: 0.04em;
   margin-bottom: 44px;
   word-break: keep-all;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+.cm-hero__desc-highlight {
+  font-weight: 700;
+  color: var(--cm-gold);
 }
 
 /* ─── CTA 버튼 ─── */

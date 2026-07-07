@@ -170,7 +170,7 @@ export function CareMembershipJejusiLanding() {
           </div>
           <p className="cm-hero__desc">
             이젠 헬스/PT도 부담없는 시대,<br />
-            나를 위한 변화! 지금 케어멤버십을 시작하세요
+            나를 위한 변화! 지금 <span className="cm-hero__desc-highlight">케어멤버십</span>을 시작하세요
           </p>
         </div>
 
