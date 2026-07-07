@@ -11,6 +11,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog"
 import { RegistrationSectionHallim } from "@/components/registration-section-hallim"
+import { CheckCircle2, AlertCircle, Plus } from "lucide-react"
 
 /* ─── 슬라이드쇼 이미지 목록 ─── */
 const HERO_IMAGES = [
@@ -86,7 +87,7 @@ export function CareMembershipHallimLanding() {
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [textVisible, setTextVisible] = useState(false)
   const [isFormOpen, setIsFormOpen] = useState(false)
-  const [isPriceModalOpen, setIsPriceModalOpen] = useState(false)
+  const [isDetailsOpen, setIsDetailsOpen] = useState(false)
 
   const sec1 = useScrollReveal()
   const sec2 = useScrollReveal()
@@ -141,6 +142,11 @@ export function CareMembershipHallimLanding() {
 
   const handleCtaClick = () => {
     setIsFormOpen(true)
+  }
+
+  const handleOpenRegistrationFromDetails = () => {
+    setIsDetailsOpen(false)
+    setTimeout(() => setIsFormOpen(true), 300)
   }
 
   return (
@@ -237,6 +243,11 @@ export function CareMembershipHallimLanding() {
                   <div className="cm-target-row__image-tag" style={{ borderColor: item.tagColor, color: item.tagColor }}>
                     {item.tag}
                   </div>
+                  {/* 자세히보기 버튼 추가 */}
+                  <button className="cm-target-row__detail-btn" onClick={() => setIsDetailsOpen(true)} type="button" aria-label="멤버십 상세 보기">
+                    <Plus className="w-4 h-4" />
+                    <span>자세히 보기</span>
+                  </button>
                 </div>
               </div>
 
@@ -271,7 +282,7 @@ export function CareMembershipHallimLanding() {
       </section>
 
       {/* ═══ WHY CARE MEMBERSHIP SECTION ═══ */}
-      <section aria-label="왜 케어 멤버십인가" className="relative">
+      <section aria-label="왜 케어 멤버십인가">
         <Image
           src="/images/caremembership-jejusi/케어멤버십설명.png"
           alt="왜 케어 멤버십인가 안내"
@@ -280,14 +291,6 @@ export function CareMembershipHallimLanding() {
           style={{ width: "100%", height: "auto", display: "block" }}
           priority
         />
-        <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-full max-w-[280px]">
-          <button 
-            onClick={() => setIsPriceModalOpen(true)}
-            className="w-full bg-slate-900/90 backdrop-blur-sm text-white font-bold py-4 px-6 rounded-full shadow-2xl hover:bg-slate-800 transition-all flex items-center justify-center gap-2 border border-white/20"
-          >
-            패키지 자세히 보기 <span>&rarr;</span>
-          </button>
-        </div>
       </section>
 
       {/* ═══ MEMBERSHIP PACKAGES SECTION ═══ */}
@@ -327,15 +330,14 @@ export function CareMembershipHallimLanding() {
       </section>
 
       {/* ═══ STICKY BOTTOM CTA BUTTON ═══ */}
-      <div className="cm-sticky-cta-wrap" style={{ zIndex: 9999, pointerEvents: 'auto' }}>
-        <button className="cm-sticky-cta" type="button" onClick={() => {
-          setIsPriceModalOpen(false)
-          handleCtaClick()
-        }}>
-          <span>지금 케어 멤버십 온라인 신청하기 &rarr;</span>
-          <span className="cm-sticky-cta__sub">온라인 신청시 월 2만원 혜택 추가</span>
-        </button>
-      </div>
+      {(!isDetailsOpen && !isFormOpen) && (
+        <div className="cm-sticky-cta-wrap">
+          <button className="cm-sticky-cta" type="button" onClick={handleCtaClick}>
+            <span>지금 케어 멤버십 온라인 신청하기 &rarr;</span>
+            <span className="cm-sticky-cta__sub">온라인 신청시 월 2만원 혜택 추가</span>
+          </button>
+        </div>
+      )}
 
       {/* ═══ REGISTRATION MODAL ═══ */}
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
@@ -358,33 +360,96 @@ export function CareMembershipHallimLanding() {
         </DialogContent>
       </Dialog>
 
-      {/* ═══ PRICE MODAL ═══ */}
-      <Dialog open={isPriceModalOpen} onOpenChange={setIsPriceModalOpen}>
-        <DialogContent className="max-h-[90vh] overflow-y-auto bg-slate-50 sm:max-w-lg p-0 border-0 rounded-2xl">
-          <DialogHeader className="p-5 bg-white sticky top-0 z-10 border-b shadow-sm">
-            <DialogTitle className="text-xl font-bold text-slate-900 text-center">
-              케어 멤버십 패키지 안내
-            </DialogTitle>
-          </DialogHeader>
-          <div className="p-4 flex flex-col gap-4 pb-32">
-            <Image
-              src="/images/caremembership-jejusi/케어pt.png"
-              alt="케어 멤버십 회원권 안내"
-              width={1200}
-              height={1200}
-              style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px", boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)" }}
-            />
-            <Image
-              src="/images/caremembership-jejusi/2.png"
-              alt="케어 PT 충전권 안내"
-              width={1200}
-              height={1200}
-              style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px", boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)" }}
-            />
+      {/* ═══ DETAILS MODAL ═══ */}
+      <Dialog open={isDetailsOpen} onOpenChange={setIsDetailsOpen}>
+        <DialogContent className="max-h-[90vh] overflow-y-auto bg-white sm:max-w-2xl p-0 rounded-2xl border-0 shadow-2xl z-[100]">
+          <div className="bg-slate-50 p-6 sm:p-8 rounded-t-2xl border-b border-slate-100 relative">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-2">케어 멤버십 패키지 안내</h2>
+            <p className="text-center text-slate-600 font-medium">합리적인 가격으로 프리미엄 케어를 경험하세요</p>
+          </div>
+          
+          <div className="p-6 sm:p-8 space-y-8 bg-white">
+            {/* 멤버십 회원권 */}
+            <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+              <div className="bg-[#c8a96e] text-white py-3 px-5 font-bold text-lg flex items-center justify-between">
+                <span>케어 멤버십 회원권</span>
+                <span className="text-xs sm:text-sm font-medium bg-white/20 px-2 py-1 rounded">정기 결제</span>
+              </div>
+              <div className="p-4 sm:p-5 space-y-4">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-slate-100 pb-3 gap-1">
+                  <span className="font-semibold text-slate-800 text-base">1개월 케어 멤버십</span>
+                  <div className="text-left sm:text-right">
+                    <div className="font-bold text-[#c8a96e] text-lg">총 190,000원</div>
+                    <div className="text-sm text-slate-500 font-medium">월 190,000원</div>
+                  </div>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-slate-100 pb-3 gap-1">
+                  <span className="font-semibold text-slate-800 text-base">3개월 케어 멤버십</span>
+                  <div className="text-left sm:text-right">
+                    <div className="font-bold text-[#c8a96e] text-lg">총 450,000원</div>
+                    <div className="text-sm text-slate-500 font-medium">월 150,000원</div>
+                  </div>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                  <span className="font-semibold text-slate-800 text-base">6개월 케어 멤버십</span>
+                  <div className="text-left sm:text-right">
+                    <div className="font-bold text-[#c8a96e] text-lg">총 690,000원</div>
+                    <div className="text-sm text-slate-500 font-medium">월 115,000원</div>
+                  </div>
+                </div>
+                <div className="mt-4 bg-slate-50 p-3 rounded-lg flex items-start gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                  <p className="text-sm text-slate-600 leading-relaxed break-keep">매월 헬스장 이용권 기본 제공 + 월 5회 (회당 25분) 1:1 케어 PT 포함</p>
+                </div>
+              </div>
+            </div>
+
+            {/* 충전권 */}
+            <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+              <div className="bg-slate-800 text-white py-3 px-5 font-bold text-lg flex items-center justify-between">
+                <span>케어 PT 충전권</span>
+                <span className="text-xs sm:text-sm font-medium bg-white/20 px-2 py-1 rounded">멤버십 회원 전용</span>
+              </div>
+              <div className="p-4 sm:p-5 space-y-4">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-slate-100 pb-3 gap-1">
+                  <span className="font-semibold text-slate-800 text-base">10회 충전권</span>
+                  <span className="font-bold text-slate-700 text-lg">330,000원</span>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-slate-100 pb-3 gap-1">
+                  <span className="font-semibold text-slate-800 text-base">20회 충전권</span>
+                  <span className="font-bold text-slate-700 text-lg">550,000원</span>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                  <span className="font-semibold text-slate-800 text-base">30회 충전권</span>
+                  <span className="font-bold text-slate-700 text-lg">770,000원</span>
+                </div>
+                <div className="mt-4 bg-orange-50 p-3 rounded-lg flex items-start gap-2">
+                  <AlertCircle className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" />
+                  <p className="text-sm text-slate-700 leading-relaxed break-keep">위 충전권은 <strong>케어 멤버십 회원에 한하여</strong> 저렴하게 추가 구매 가능한 상품입니다.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* 유의사항 */}
+            <div className="text-xs text-slate-500 bg-slate-50 p-4 rounded-lg break-keep leading-relaxed space-y-1">
+              <p>· 본 케어 멤버십은 노형점/한림점 전용 상품으로 타 지점에서는 이용이 불가합니다.</p>
+              <p>· 특별 할인가 상품으로 휴회 및 양도가 불가하오니 이 점 양해 부탁드립니다.</p>
+            </div>
+          </div>
+          
+          {/* 하단 고정 액션 버튼 */}
+          <div className="sticky bottom-0 bg-white border-t border-slate-200 p-4 sm:p-6 rounded-b-2xl shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
+            <button 
+              type="button"
+              onClick={handleOpenRegistrationFromDetails}
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl text-lg transition-colors flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30"
+            >
+              지금 케어 멤버십 온라인 신청하기 &rarr;
+            </button>
+            <p className="text-center text-xs text-slate-400 mt-3 font-medium">온라인 신청 시 월 2만원 추가 혜택!</p>
           </div>
         </DialogContent>
       </Dialog>
-
     </div>
   )
 }
