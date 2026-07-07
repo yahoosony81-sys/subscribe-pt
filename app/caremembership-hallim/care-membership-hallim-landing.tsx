@@ -86,6 +86,7 @@ export function CareMembershipHallimLanding() {
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [textVisible, setTextVisible] = useState(false)
   const [isFormOpen, setIsFormOpen] = useState(false)
+  const [isPriceModalOpen, setIsPriceModalOpen] = useState(false)
 
   const sec1 = useScrollReveal()
   const sec2 = useScrollReveal()
@@ -270,7 +271,7 @@ export function CareMembershipHallimLanding() {
       </section>
 
       {/* ═══ WHY CARE MEMBERSHIP SECTION ═══ */}
-      <section aria-label="왜 케어 멤버십인가">
+      <section aria-label="왜 케어 멤버십인가" className="relative">
         <Image
           src="/images/caremembership-jejusi/케어멤버십설명.png"
           alt="왜 케어 멤버십인가 안내"
@@ -279,6 +280,14 @@ export function CareMembershipHallimLanding() {
           style={{ width: "100%", height: "auto", display: "block" }}
           priority
         />
+        <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-full max-w-[280px]">
+          <button 
+            onClick={() => setIsPriceModalOpen(true)}
+            className="w-full bg-slate-900/90 backdrop-blur-sm text-white font-bold py-4 px-6 rounded-full shadow-2xl hover:bg-slate-800 transition-all flex items-center justify-center gap-2 border border-white/20"
+          >
+            패키지 자세히 보기 <span>&rarr;</span>
+          </button>
+        </div>
       </section>
 
       {/* ═══ MEMBERSHIP PACKAGES SECTION ═══ */}
@@ -318,8 +327,11 @@ export function CareMembershipHallimLanding() {
       </section>
 
       {/* ═══ STICKY BOTTOM CTA BUTTON ═══ */}
-      <div className="cm-sticky-cta-wrap">
-        <button className="cm-sticky-cta" type="button" onClick={handleCtaClick}>
+      <div className="cm-sticky-cta-wrap" style={{ zIndex: 9999, pointerEvents: 'auto' }}>
+        <button className="cm-sticky-cta" type="button" onClick={() => {
+          setIsPriceModalOpen(false)
+          handleCtaClick()
+        }}>
           <span>지금 케어 멤버십 온라인 신청하기 &rarr;</span>
           <span className="cm-sticky-cta__sub">온라인 신청시 월 2만원 혜택 추가</span>
         </button>
@@ -343,6 +355,33 @@ export function CareMembershipHallimLanding() {
             isModal={true}
             onSuccess={() => setIsFormOpen(false)}
           />
+        </DialogContent>
+      </Dialog>
+
+      {/* ═══ PRICE MODAL ═══ */}
+      <Dialog open={isPriceModalOpen} onOpenChange={setIsPriceModalOpen}>
+        <DialogContent className="max-h-[90vh] overflow-y-auto bg-slate-50 sm:max-w-lg p-0 border-0 rounded-2xl">
+          <DialogHeader className="p-5 bg-white sticky top-0 z-10 border-b shadow-sm">
+            <DialogTitle className="text-xl font-bold text-slate-900 text-center">
+              케어 멤버십 패키지 안내
+            </DialogTitle>
+          </DialogHeader>
+          <div className="p-4 flex flex-col gap-4 pb-32">
+            <Image
+              src="/images/caremembership-jejusi/케어pt.png"
+              alt="케어 멤버십 회원권 안내"
+              width={1200}
+              height={1200}
+              style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px", boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)" }}
+            />
+            <Image
+              src="/images/caremembership-jejusi/2.png"
+              alt="케어 PT 충전권 안내"
+              width={1200}
+              height={1200}
+              style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px", boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)" }}
+            />
+          </div>
         </DialogContent>
       </Dialog>
 
