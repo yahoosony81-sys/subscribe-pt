@@ -87,6 +87,8 @@ export const config = {
     '/dn-:path*',
     // 도남점 바디챌린지
     '/promo-bodychallenge:path*',
+    // 도남점 7월 프로모션
+    '/donam-july-promo:path*',
     // 부산명지점 랜딩
     '/mg-:path*',
     // 천곡점 랜딩 (새 지점 — 픽셀 ID는 .env의 CG_PIXEL_ID 설정 후 활성화)

@@ -47,7 +47,7 @@ export const BRANCH_PIXELS: BranchPixelInfo[] = [
     pixelId: '26658899260438637',
     nameKo: '도남점',
     code: 'dn',
-    urlPrefixes: ['/dn-', '/promo-bodychallenge'],
+    urlPrefixes: ['/dn-', '/promo-bodychallenge', '/donam-july-promo'],
   },
   {
     pixelId: '1496854795228095',
