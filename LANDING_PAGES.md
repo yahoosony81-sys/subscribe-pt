@@ -26,10 +26,6 @@
 *   **프리미엄 케어 멤버십 (제주시 - 한림)**
     *   주소: https://mindfitness-hallim.com/caremembership-hallim
     *   주요 내용: 한림점 프리미엄 케어 멤버십 랜딩페이지 (어반필드 스타일)
-    *   **[광고세팅용 앵커 URL (자동 스크롤)]**
-        - 주부/여성 타겟: https://mindfitness-hallim.com/caremembership-hallim#woman
-        - 수트 핏(남성): https://mindfitness-hallim.com/caremembership-hallim#suit-fit
-        - 타겟 케어(허벅지/팔뚝): https://mindfitness-hallim.com/caremembership-hallim#target-care
 *   **프로모션 A**
     *   주소: https://mindfitness-hallim.com/promo-a
 *   **프로모션 B**
@@ -64,10 +60,6 @@
 *   **프리미엄 케어 멤버십 (제주시)**
     *   주소: https://mindfitness-hallim.com/caremembership-jejusi
     *   주요 내용: 제주시 노형점 케어 멤버십 랜딩페이지 (어반필드 스타일)
-    *   **[광고세팅용 앵커 URL (자동 스크롤)]**
-        - 주부/여성 타겟: https://mindfitness-hallim.com/caremembership-jejusi#woman
-        - 수트 핏(남성): https://mindfitness-hallim.com/caremembership-jejusi#suit-fit
-        - 타겟 케어(허벅지/팔뚝): https://mindfitness-hallim.com/caremembership-jejusi#target-care
 
 ## 📍 통합/기타 프로모션
 *   **프로모션 A (Nike Style)**

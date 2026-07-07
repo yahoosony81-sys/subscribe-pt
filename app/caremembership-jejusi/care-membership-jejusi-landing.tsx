@@ -44,7 +44,6 @@ function useScrollReveal(threshold = 0.18) {
 /* ─── 지그재그 섹션 데이터 ─── */
 const ZIGZAG_ITEMS = [
   {
-    id: "woman",
     image: "/images/caremembership-jejusi/section-urbanfield.jpg",
     tag: "FOR WOMEN",
     tagColor: "#c8a96e",
@@ -56,7 +55,6 @@ const ZIGZAG_ITEMS = [
     reverse: false,
   },
   {
-    id: "suit-fit",
     image: "/images/caremembership-jejusi/section-man-suit.jpg",
     tag: "FOR MEN",
     tagColor: "#7a8fa6",
@@ -68,7 +66,6 @@ const ZIGZAG_ITEMS = [
     reverse: true,
   },
   {
-    id: "target-care",
     image: "/images/caremembership-jejusi/hf_20260701_061740_bc567781-5781-4a7c-9793-356ae3dd8d4f.png",
     tag: "TARGET CARE",
     tagColor: "#c8a96e",
@@ -125,20 +122,6 @@ export function CareMembershipJejusiLanding() {
   useEffect(() => {
     const t = setTimeout(() => setTextVisible(true), 300)
     return () => clearTimeout(t)
-  }, [])
-
-  // 해시 앵커 스크롤 처리 (광고 URL로 직접 유입 시)
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.location.hash) {
-      const hash = window.location.hash
-      const element = document.querySelector(hash)
-      if (element) {
-        // 이미지가 로드될 시간을 약간 주고 스크롤
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: "smooth", block: "start" })
-        }, 500)
-      }
-    }
   }, [])
 
   const handleCtaClick = () => {
@@ -222,7 +205,6 @@ export function CareMembershipJejusiLanding() {
           return (
             <div
               key={idx}
-              id={item.id}
               ref={ref}
               className={[
                 "cm-target-row",
