@@ -15,6 +15,9 @@
 *   **바디챌린지 6기 모집**
     *   주소: https://mindfitness-hallim.com/promo-bodychallenge
     *   주요 내용: 2026 상반기 바디챌린지 모집 랜딩
+*   **7월 프로모션 (대구도남점)**
+    *   주소: https://mindfitness-hallim.com/donam-july-promo
+    *   주요 내용: 대구도남점 7월 한정 프로모션 안내 및 신청 랜딩페이지
 
 ## 📍 한림점 (Hallim)
 *   **버닝 케어 멤버십 (고민부위 리셋)**
