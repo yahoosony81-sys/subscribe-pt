@@ -42,14 +42,14 @@ function useScrollReveal(threshold = 0.18) {
 /* ─── 지그재그 섹션 데이터 ─── */
 const ZIGZAG_ITEMS = [
   {
-    image: "/images/image copy 4.png",
-    tag: "FACILITY",
-    tagColor: "#c8a96e",
-    title: "웨이트존 / 유산소존 분리\n기구 간 간격 여유 있는 구조",
-    lead: "쾌적한 환경에서 운동에만 집중하실 수 있도록 구성했습니다.",
-    body: "마인드 휘트니스 도남점은 웨이트존과 유산소존을 효율적으로 분리하고, 기구 간 간격도 넉넉하게 배치하였습니다. 또한 스트레칭 존이 넓게 구비되어있고 유산소, 웨이트 존 둘 다 정수기와 개수대가 구비되어있습니다!",
-    cta: "회원님의 건강한 일상을 위해 항상 최선을 다하고 있습니다.",
-    highlight: "최적의 운동 환경 제공",
+    image: "/images/랜딩사진가격.png",
+    tag: "PROMOTION",
+    tagColor: "#f97316",
+    title: "이 모든 혜택이\n연 299,000원에 가능합니다!",
+    lead: "마인드 휘트니스 도남점 7월 한정 혜택",
+    body: "• 24시간 운영으로 언제든 이용가능\n• 연중무휴, 주차 3시간 무료\n• 샤워실 완비\n• 웨이트존 / 유산소존 완벽 분리\n• 기구 간 간격 여유 있는 쾌적한 구조\n• 탈의실·샤워실 상시 청결 관리\n• 헬스만 등록하셔도 PT 2회 무료!",
+    cta: "빠르게 7월 이벤트 혜택이 소진되고 있어요!",
+    highlight: "7월 한정 연간권 특가",
     reverse: false,
   },
   {
@@ -245,7 +245,11 @@ export function DonamJulyPromoLanding() {
                     <span key={i}>{line}{i < item.lead.split("\n").length - 1 && <br />}</span>
                   ))}
                 </p>
-                <p className="cm-target-row__body">{item.body}</p>
+                <p className="cm-target-row__body">
+                  {item.body.split("\n").map((line, i) => (
+                    <span key={i}>{line}{i < item.body.split("\n").length - 1 && <br />}</span>
+                  ))}
+                </p>
                 <div className="cm-target-row__cta-box">
                   <p className="cm-target-row__cta-text">
                     {item.cta.split("\n").map((line, i) => (
