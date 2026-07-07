@@ -51,6 +51,9 @@ const ZIGZAG_ITEMS = [
     cta: "빠르게 7월 이벤트 혜택이 소진되고 있어요!",
     highlight: "7월 한정 연간권 특가",
     reverse: false,
+    objectFit: "contain" as const,
+    backgroundColor: "#fff",
+    objectPosition: "center",
   },
   {
     image: "/images/KakaoTalk_20260429_140040742_04.jpg",
@@ -217,7 +220,11 @@ export function DonamJulyPromoLanding() {
                     src={item.image}
                     alt={item.title.replace(/\n/g, " ")}
                     fill
-                    style={{ objectFit: "cover", objectPosition: item.objectPosition || "center top" }}
+                    style={{ 
+                      objectFit: (item.objectFit as "cover" | "contain") || "cover", 
+                      objectPosition: item.objectPosition || "center top",
+                      backgroundColor: (item as any).backgroundColor || "transparent" 
+                    }}
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   {/* 이미지 위 태그 배지 */}

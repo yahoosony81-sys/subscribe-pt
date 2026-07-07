@@ -697,7 +697,8 @@
 
   /* 모든 행에서 이미지 항상 위 */
   .cm-target-row__image-wrap {
-    height: 320px;
+    height: auto;
+    aspect-ratio: 4/5;
     position: relative;
     order: 1;
   }
