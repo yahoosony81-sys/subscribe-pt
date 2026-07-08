@@ -69,6 +69,7 @@ const ZIGZAG_ITEMS = [
     objectFit: "contain" as const,
     backgroundColor: "#fff",
     objectPosition: "center",
+    btnText: "연간회원권 신청하고 PT 2회 무료로 받기",
   },
   {
     image: "/images/도남점GX무료체험.jpg",
@@ -80,6 +81,7 @@ const ZIGZAG_ITEMS = [
     cta: "나에게 맞는 GX 프로그램 7월 무료체험 가능하니\n이 기회를 놓치지 마세요",
     highlight: "7월 GX 무료체험",
     reverse: true,
+    btnText: "그룹수업 시간표 보고 체험신청하기",
   },
   {
     image: "/images/caremembership-jejusi/hf_20260701_061740_bc567781-5781-4a7c-9793-356ae3dd8d4f.png",
@@ -92,6 +94,7 @@ const ZIGZAG_ITEMS = [
     highlight: "헬스장 이용권 + 케어 PT 결합",
     reverse: false,
     objectPosition: "center 60%",
+    btnText: "1:1 집중 케어 멤버십 신청하기",
   },
 ]
 
@@ -337,10 +340,10 @@ export function DonamJulyPromoLanding() {
                   <div className="cm-target-row__image-tag" style={{ borderColor: item.tagColor, color: item.tagColor }}>
                     {item.tag}
                   </div>
-                  {/* 자세히보기 버튼 추가 */}
-                  <button className="cm-target-row__detail-btn" onClick={() => setIsDetailsOpen(true)} type="button" aria-label="멤버십 상세 보기">
+                   {/* 자세히보기 버튼 추가 */}
+                  <button className="cm-target-row__detail-btn" onClick={() => setIsFormOpen(true)} type="button" aria-label="멤버십 상세 보기">
                     <Plus className="w-4 h-4" />
-                    <span>자세히 보기</span>
+                    <span>{(item as any).btnText || "자세히 보기"}</span>
                   </button>
                 </div>
               </div>
@@ -427,15 +430,7 @@ export function DonamJulyPromoLanding() {
         </div>
       </section>
 
-      {/* ═══ STICKY BOTTOM CTA BUTTON ═══ */}
-      {(!isDetailsOpen && !isFormOpen) && (
-        <div className="cm-sticky-cta-wrap">
-          <button className="cm-sticky-cta" type="button" onClick={handleCtaClick}>
-            <span>지금 7월 프로모션 신청하기 &rarr;</span>
-            <span className="cm-sticky-cta__sub">빠르게 7월 혜택을 선점하세요</span>
-          </button>
-        </div>
-      )}
+
 
       {/* ═══ REGISTRATION MODAL ═══ */}
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
