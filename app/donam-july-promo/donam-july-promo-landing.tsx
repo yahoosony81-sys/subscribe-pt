@@ -314,6 +314,7 @@ export function DonamJulyPromoLanding() {
               ref={ref}
               className={[
                 "cm-target-row",
+                `cm-target-row--${idx}`,
                 item.reverse ? "cm-target-row--reverse" : "",
                 visible ? "cm-target-row--visible" : "",
               ].join(" ")}

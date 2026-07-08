@@ -891,6 +891,11 @@
     position: relative;
     order: 1;
   }
+
+  /* 2번째 GX 프로그램의 1:1 이미지 비율이 모바일에서 짤리지 않도록 조정 */
+  .cm-target-row--1 .cm-target-row__image-wrap {
+    aspect-ratio: 1 / 1;
+  }
   .cm-target-row__image-inner {
     position: absolute;
     inset: 0;
