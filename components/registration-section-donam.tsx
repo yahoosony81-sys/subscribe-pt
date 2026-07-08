@@ -152,7 +152,7 @@ export function RegistrationSectionDonam({
               <div>
                 <label htmlFor="careMembership" className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
                   <ClipboardList className="h-4 w-4 text-orange-500" />
-                  케어 멤버십 선택 <span className="text-orange-500">*</span>
+                  관심상품 선택 <span className="text-orange-500">*</span>
                 </label>
                 <select
                   id="careMembership" name="careMembership"
@@ -160,10 +160,12 @@ export function RegistrationSectionDonam({
                   className="w-full cursor-pointer rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 transition-all focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20"
                 >
                   <option value="">선택해주세요</option>
-                  <option value="1개월 케어 멤버십(19만원/월)">1개월 케어 멤버십(19만원/월)</option>
-                  <option value="3개월 케어 멤버십(15만원/월)">3개월 케어 멤버십(15만원/월)</option>
-                  <option value="6개월 케어 멤버십(11만5천원/월)">6개월 케어 멤버십(11만5천원/월)</option>
+                  <option value="299000원 연간회원권 신청">299000원 연간회원권 신청</option>
+                  <option value="그룹수업(줌바, 스피닝,그룹PT) 체험 신청">그룹수업(줌바, 스피닝,그룹PT) 체험 신청</option>
                 </select>
+                <p className="mt-1.5 text-xs text-slate-500 ml-1">
+                  * 그룹수업 종류는 기타문의 사항에 적어주세요
+                </p>
               </div>
 
               <div>
@@ -184,7 +186,7 @@ export function RegistrationSectionDonam({
                 disabled={isSubmitting}
                 className="w-full h-12 text-lg font-bold"
               >
-                {isSubmitting ? "신청 중..." : "대구도남점 7월 프로모션 신청하기"}
+                {isSubmitting ? "제출 중..." : "신청폼 제출하기"}
               </Button>
             </div>
             <p className="mt-5 text-center text-xs text-slate-400">30초면 신청 가능합니다. 개인정보는 상담 외 목적으로 사용되지 않습니다.</p>
