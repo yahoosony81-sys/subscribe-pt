@@ -57,7 +57,7 @@ function useScrollReveal(threshold = 0.18) {
 /* ─── 지그재그 섹션 데이터 ─── */
 const ZIGZAG_ITEMS = [
   {
-    image: "/images/랜딩사진가격.png",
+    image: "/images/하단브랜드지운 이미지.png",
     tag: "PROMOTION",
     tagColor: "#f97316",
     title: "이 모든 혜택이\n연 299,000원에 가능합니다!",
@@ -72,7 +72,7 @@ const ZIGZAG_ITEMS = [
     btnText: "연간회원권 신청하고 PT 2회 무료로 받기",
   },
   {
-    image: "/images/도남점GX무료체험.jpg",
+    image: "/images/도남그룹수업하단삭제.png",
     tag: "GX PROGRAM",
     tagColor: "#e65c00",
     title: "다양한 GX 프로그램을\n7월 무료로 체험하세요!",
