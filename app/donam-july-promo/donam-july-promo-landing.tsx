@@ -83,19 +83,6 @@ const ZIGZAG_ITEMS = [
     reverse: true,
     btnText: "그룹수업 시간표 보고 체험신청하기",
   },
-  {
-    image: "/images/caremembership-jejusi/hf_20260701_061740_bc567781-5781-4a7c-9793-356ae3dd8d4f.png",
-    tag: "TARGET CARE",
-    tagColor: "#c8a96e",
-    title: "원하는 부위만 쏙!\n타겟 집중 케어",
-    lead: "\"전신 케어PT 말고,\n내가 원하는 부위만\n집중 케어 받으세요.\"",
-    body: "정체되고 안 빠지는 부위(허벅지/팔뚝)는 다이어트 전 미리 예열하는 기간이 반드시 필요합니다. 1~2달 미리 예열 후 본격적으로 전신 운동시 허벅지, 팔뚝살이 함께 빠지는 놀라운 경험을 하실거예요!! 비싼 PT도 좋지만, 매달 합리적인 가격으로 헬스장 이용은 기본, 빼고 싶은 부위만 1:1 집중 케어하는 케어 멤버십.",
-    cta: "마인드휘트니스 노형점의 집중 관리 케어 멤버십으로 매달 고민되는 부위를 집중적으로 관리하세요.",
-    highlight: "헬스장 이용권 + 케어 PT 결합",
-    reverse: false,
-    objectPosition: "center 60%",
-    btnText: "1:1 집중 케어 멤버십 신청하기",
-  },
 ]
 
 export function DonamJulyPromoLanding() {
@@ -114,11 +101,8 @@ export function DonamJulyPromoLanding() {
 
   const sec1 = useScrollReveal()
   const sec2 = useScrollReveal()
-  const sec3 = useScrollReveal()
-  const secPackages = useScrollReveal()
-  const secWhy = useScrollReveal()
   const secFacility = useScrollReveal(0.1)
-  const secRefs = [sec1, sec2, sec3]
+  const secRefs = [sec1, sec2]
 
   /* ─── 슬라이드 이동 ─── */
   const goToSlide = useCallback(
@@ -380,54 +364,6 @@ export function DonamJulyPromoLanding() {
             </div>
           )
         })}
-      </section>
-
-      {/* ═══ WHY CARE MEMBERSHIP SECTION ═══ */}
-      <section aria-label="왜 케어 멤버십인가">
-        <Image
-          src="/images/caremembership-jejusi/주황색 핑크색 및 노란색 세련된 패션 인스타그램 게시물(45) (1).png"
-          alt="왜 케어 멤버십인가 안내"
-          width={1920}
-          height={1080}
-          style={{ width: "100%", height: "auto", display: "block" }}
-          priority
-        />
-      </section>
-
-      {/* ═══ MEMBERSHIP PACKAGES SECTION ═══ */}
-      <section
-        ref={secPackages.ref}
-        className={`cm-packages ${secPackages.visible ? "cm-packages--visible" : ""}`}
-        aria-label="케어 멤버십 패키지 안내"
-      >
-        <div className="cm-packages__container">
-          <div className="cm-packages__image-wrap" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <Image
-              src="/images/caremembership-jejusi/케어pt.png"
-              alt="케어 멤버십 회원권 안내"
-              width={1200}
-              height={1200}
-              style={{ width: "100%", height: "auto", display: "block" }}
-              priority
-            />
-            <Image
-              src="/images/caremembership-jejusi/2.png"
-              alt="케어 PT 충전권 안내"
-              width={1200}
-              height={1200}
-              style={{ width: "100%", height: "auto", display: "block" }}
-              priority
-            />
-          </div>
-          <div className="cm-packages__notice">
-            <p className="cm-packages__notice-text">
-              * <strong>&quot;케어 멤버십 회원&quot;</strong>에 한하여 저렴한 <strong>&quot;케어 PT 충전권&quot;</strong> 구매가 가능합니다.
-            </p>
-            <p className="cm-packages__notice-text" style={{ fontSize: "clamp(12px, 1.4vw, 13px)", color: "#888", fontWeight: 400 }}>
-              * 케어 멤버십 상품은 노형점/한림점 전용 상품으로 타 지점에서는 이용이 불가한 점 양해 부탁드립니다. 더불어 휴회와 양도가 불가함도 알려드립니다.
-            </p>
-          </div>
-        </div>
       </section>
 
 
