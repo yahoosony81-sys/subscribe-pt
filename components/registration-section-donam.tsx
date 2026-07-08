@@ -106,8 +106,8 @@ export function RegistrationSectionDonam({
                 <path d="M20 6 9 17l-5-5" />
               </svg>
             </div>
-            <h3 className="mb-2 text-xl font-bold text-slate-900">신청이 완료되었습니다</h3>
-            <p className="text-sm text-slate-600 leading-relaxed">센터 이용 시 월 2만원의<br />추가 혜택이 제공됩니다.</p>
+            <h3 className="mb-2 text-xl font-bold text-slate-900">제출이 완료되었습니다</h3>
+            <p className="text-sm text-slate-600 leading-relaxed">신청건은 지점에서 순차적으로<br />확인 후 안내드리겠습니다.</p>
           </div>
         </div>
       )}
