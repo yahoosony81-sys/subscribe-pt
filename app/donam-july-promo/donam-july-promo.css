@@ -458,6 +458,195 @@
   margin: 0 auto;
 }
 
+/* ═══════════════════════════════════════════════════
+   FACILITY IMAGE SLIDER
+   ═══════════════════════════════════════════════════ */
+
+.cm-facility-slider {
+  max-width: 900px;
+  margin: 0 auto 72px;
+  padding: 0 24px;
+
+  /* Scroll Reveal */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cm-facility-slider--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── 뷰포트 (고정 비율 영역) ─── */
+.cm-facility-slider__viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #e8e6e2;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.10),
+              0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ─── 슬라이드 ─── */
+.cm-facility-slider__slide {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+/* ── Forward (→): 현재 슬라이드가 오른쪽에서 들어옴 ── */
+.cm-facility-slider__viewport--fwd .cm-facility-slider__slide--active {
+  z-index: 2;
+  animation: cm-fac-enter-right 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.cm-facility-slider__viewport--fwd .cm-facility-slider__slide--exit {
+  z-index: 1;
+  animation: cm-fac-exit-left 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ── Backward (←): 현재 슬라이드가 왼쪽에서 들어옴 ── */
+.cm-facility-slider__viewport--bwd .cm-facility-slider__slide--active {
+  z-index: 2;
+  animation: cm-fac-enter-left 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.cm-facility-slider__viewport--bwd .cm-facility-slider__slide--exit {
+  z-index: 1;
+  animation: cm-fac-exit-right 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ── Keyframes ── */
+@keyframes cm-fac-enter-right {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes cm-fac-exit-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+@keyframes cm-fac-enter-left {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes cm-fac-exit-right {
+  from { transform: translateX(0); }
+  to   { transform: translateX(100%); }
+}
+
+/* ─── 좌우 화살표 ─── */
+.cm-facility-slider__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  backdrop-filter: blur(6px);
+}
+
+.cm-facility-slider__arrow:hover {
+  background: rgba(200, 169, 110, 0.50);
+  border-color: var(--cm-gold);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.cm-facility-slider__arrow--prev { left: 16px; }
+.cm-facility-slider__arrow--next { right: 16px; }
+
+/* ─── 도트 인디케이터 ─── */
+.cm-facility-slider__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.cm-facility-slider__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cm-facility-slider__dot--active {
+  background: var(--cm-gold, #c8a96e);
+  width: 24px;
+}
+
+/* ─── 캡션 ─── */
+.cm-facility-slider__caption {
+  text-align: center;
+  margin-top: 14px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: clamp(13px, 1.5vw, 15px);
+  font-weight: 500;
+  color: #777;
+  letter-spacing: 0.03em;
+  transition: opacity 0.4s ease;
+}
+
+/* ─── 반응형: 모바일 ─── */
+@media (max-width: 768px) {
+  .cm-facility-slider {
+    padding: 0 16px;
+    margin-bottom: 48px;
+  }
+
+  .cm-facility-slider__viewport {
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+  }
+
+  .cm-facility-slider__arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .cm-facility-slider__arrow--prev { left: 10px; }
+  .cm-facility-slider__arrow--next { right: 10px; }
+
+  .cm-facility-slider__dots {
+    gap: 6px;
+    margin-top: 16px;
+  }
+
+  .cm-facility-slider__dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .cm-facility-slider__dot--active {
+    width: 20px;
+  }
+
+  .cm-facility-slider__caption {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+}
+
 /* ─── 지그재그 행 ─── */
 .cm-target-row {
   display: grid;

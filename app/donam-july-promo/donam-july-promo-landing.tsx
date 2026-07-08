@@ -11,7 +11,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog"
 import { RegistrationSectionDonam } from "@/components/registration-section-donam"
-import { CheckCircle2, AlertCircle, Plus } from "lucide-react"
+import { CheckCircle2, AlertCircle, Plus, ChevronLeft, ChevronRight } from "lucide-react"
 
 /* ─── 슬라이드쇼 이미지 목록 ─── */
 const HERO_IMAGES = [
@@ -21,6 +21,21 @@ const HERO_IMAGES = [
 ]
 
 const SLIDE_DURATION = 1500
+
+/* ─── 도남점 시설 사진 목록 ─── */
+const FACILITY_IMAGES = [
+  { src: "/images/KakaoTalk_20260429_140040742_01.jpg", alt: "도남점 시설 1" },
+  { src: "/images/KakaoTalk_20260429_140040742_02.jpg", alt: "도남점 시설 2" },
+  { src: "/images/KakaoTalk_20260429_140040742_03.jpg", alt: "도남점 시설 3" },
+  { src: "/images/KakaoTalk_20260429_140040742_04.jpg", alt: "도남점 시설 4" },
+  { src: "/images/KakaoTalk_20260429_140040742_05.jpg", alt: "도남점 시설 5" },
+  { src: "/images/KakaoTalk_20260429_140040742.jpg", alt: "도남점 시설 6" },
+  { src: "/images/도남스트레칭룸.png", alt: "도남점 스트레칭룸" },
+  { src: "/images/도남시설2.png", alt: "도남점 시설" },
+  { src: "/images/도남샤워실2.png", alt: "도남점 샤워실" },
+]
+
+const FACILITY_SLIDE_DURATION = 3000
 
 /* ─── Scroll Reveal Hook ─── */
 function useScrollReveal(threshold = 0.18) {
@@ -56,14 +71,14 @@ const ZIGZAG_ITEMS = [
     objectPosition: "center",
   },
   {
-    image: "/images/KakaoTalk_20260429_140040742_04.jpg",
-    tag: "CLEAN",
-    tagColor: "#7a8fa6",
-    title: "탈의실·샤워실 상시 청결 관리\n칸막이 샤워실 완비",
-    lead: "물이 튀거나 눈치 보지 않고 편안하게!",
-    body: "칸막이와 개인 샤워 공간 확보로 인해 다른 사람들의 눈치를 보지 않고 사용 할 수 있어 많은 회원님들의 만족도가 높습니다 :)",
-    cta: "프라이빗한 공간에서 개운하게 마무리하세요.",
-    highlight: "프라이빗 샤워 시설",
+    image: "/images/도남점GX무료체험.jpg",
+    tag: "GX PROGRAM",
+    tagColor: "#e65c00",
+    title: "다양한 GX 프로그램을\n7월 무료로 체험하세요!",
+    lead: "마인드 휘트니스 도남점에서는\n그룹PT, 줌바, 스피닝 등\n다양한 GX 프로그램을 운영하고 있어\n혼자 운동하는 것이 부담스러운 분들도\n즐겁게 참여하실 수 있어요!",
+    body: "전문 강사와 함께하는 수업으로 올바른 운동 습관을 기를 수 있으며,\n함께 운동하는 분위기 속에서 더욱 높은 운동 효과와 꾸준한 동기부여까지 얻을 수 있습니다.\n\n체력 향상, 다이어트, 스트레스 해소까지!",
+    cta: "나에게 맞는 GX 프로그램 7월 무료체험 가능하니\n이 기회를 놓치지 마세요",
+    highlight: "7월 GX 무료체험",
     reverse: true,
   },
   {
@@ -88,11 +103,18 @@ export function DonamJulyPromoLanding() {
   const [isFormOpen, setIsFormOpen] = useState(false)
   const [isDetailsOpen, setIsDetailsOpen] = useState(false)
 
+  /* ─── 시설 슬라이더 상태 ─── */
+  const [facilitySlide, setFacilitySlide] = useState(0)
+  const [facilityPrev, setFacilityPrev] = useState<number | null>(null)
+  const [facilityTransitioning, setFacilityTransitioning] = useState(false)
+  const [facilityDirection, setFacilityDirection] = useState<1 | -1>(1) // 1=forward(→), -1=backward(←)
+
   const sec1 = useScrollReveal()
   const sec2 = useScrollReveal()
   const sec3 = useScrollReveal()
   const secPackages = useScrollReveal()
   const secWhy = useScrollReveal()
+  const secFacility = useScrollReveal(0.1)
   const secRefs = [sec1, sec2, sec3]
 
   /* ─── 슬라이드 이동 ─── */
@@ -124,6 +146,32 @@ export function DonamJulyPromoLanding() {
     const t = setTimeout(() => setTextVisible(true), 300)
     return () => clearTimeout(t)
   }, [])
+
+  /* ─── 시설 슬라이더 자동 전환 ─── */
+  const goToFacilitySlide = useCallback(
+    (index: number, dir: 1 | -1 = 1) => {
+      if (facilityTransitioning) return
+      setFacilityDirection(dir)
+      setFacilityTransitioning(true)
+      setFacilityPrev(facilitySlide)
+      setFacilitySlide(index)
+      setTimeout(() => { setFacilityPrev(null); setFacilityTransitioning(false) }, 600)
+    },
+    [facilitySlide, facilityTransitioning]
+  )
+
+  const nextFacilitySlide = useCallback(() => {
+    goToFacilitySlide((facilitySlide + 1) % FACILITY_IMAGES.length, 1)
+  }, [facilitySlide, goToFacilitySlide])
+
+  const prevFacilitySlide = useCallback(() => {
+    goToFacilitySlide((facilitySlide - 1 + FACILITY_IMAGES.length) % FACILITY_IMAGES.length, -1)
+  }, [facilitySlide, goToFacilitySlide])
+
+  useEffect(() => {
+    const timer = setInterval(nextFacilitySlide, FACILITY_SLIDE_DURATION)
+    return () => clearInterval(timer)
+  }, [nextFacilitySlide])
 
   const handleCtaClick = () => {
     setIsFormOpen(true)
@@ -198,6 +246,63 @@ export function DonamJulyPromoLanding() {
             <span>완벽한 첫걸음</span>
           </h2>
           <div className="cm-targets__header-line" />
+        </div>
+
+        {/* ═══ 도남점 시설 사진 슬라이더 ═══ */}
+        <div
+          ref={secFacility.ref}
+          className={`cm-facility-slider ${secFacility.visible ? "cm-facility-slider--visible" : ""}`}
+        >
+          <div className={`cm-facility-slider__viewport ${facilityDirection === 1 ? "cm-facility-slider__viewport--fwd" : "cm-facility-slider__viewport--bwd"}`}>
+            {/* 이전 슬라이드 (왼쪽으로 슬라이드아웃) */}
+            {facilityPrev !== null && (
+              <div className="cm-facility-slider__slide cm-facility-slider__slide--exit" key={`fac-prev-${facilityPrev}`}>
+                <Image
+                  src={FACILITY_IMAGES[facilityPrev].src}
+                  alt={FACILITY_IMAGES[facilityPrev].alt}
+                  fill
+                  style={{ objectFit: "cover", objectPosition: "center" }}
+                  sizes="(max-width: 768px) 100vw, 900px"
+                />
+              </div>
+            )}
+            {/* 현재 슬라이드 (오른쪽에서 슬라이드인) */}
+            <div className="cm-facility-slider__slide cm-facility-slider__slide--active" key={`fac-cur-${facilitySlide}`}>
+              <Image
+                src={FACILITY_IMAGES[facilitySlide].src}
+                alt={FACILITY_IMAGES[facilitySlide].alt}
+                fill
+                style={{ objectFit: "cover", objectPosition: "center" }}
+                sizes="(max-width: 768px) 100vw, 900px"
+                priority
+              />
+            </div>
+
+            {/* 좌우 화살표 */}
+            <button className="cm-facility-slider__arrow cm-facility-slider__arrow--prev" onClick={prevFacilitySlide} aria-label="이전 시설 사진">
+              <ChevronLeft size={22} />
+            </button>
+            <button className="cm-facility-slider__arrow cm-facility-slider__arrow--next" onClick={nextFacilitySlide} aria-label="다음 시설 사진">
+              <ChevronRight size={22} />
+            </button>
+          </div>
+
+          {/* 도트 인디케이터 */}
+          <div className="cm-facility-slider__dots">
+            {FACILITY_IMAGES.map((_, i) => (
+              <button
+                key={i}
+                className={`cm-facility-slider__dot ${i === facilitySlide ? "cm-facility-slider__dot--active" : ""}`}
+                onClick={() => goToFacilitySlide(i, i > facilitySlide ? 1 : -1)}
+                aria-label={`시설 사진 ${i + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* 캡션 */}
+          <p className="cm-facility-slider__caption">
+            {FACILITY_IMAGES[facilitySlide].alt}
+          </p>
         </div>
 
         {/* 지그재그 아이템 */}
