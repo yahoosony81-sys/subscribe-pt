@@ -530,7 +530,7 @@ export function DonamJulyPromoLanding() {
           </DialogHeader>
           <RegistrationSectionDonam
             isModal={true}
-            googleSheetUrl="https://script.google.com/macros/s/AKfycbzbEE1tfamHU4n_rnz0XMiw-YA-GGCq8PkHRL6pekDkW6haGG7OaCjHvcLelm5vQ238/exec"
+            googleSheetUrl="https://script.google.com/macros/s/AKfycbx7UauhwasJKBLoiVrHrpa-TAEP-zw5ndiWn7YfqwaBB4YeU9CzyUbsIwZ5az7zpsOY/exec"
             sheetName="도남점7월프로모션"
             onSuccess={() => setIsFormOpen(false)}
           />
