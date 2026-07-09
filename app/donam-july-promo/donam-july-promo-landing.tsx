@@ -57,7 +57,7 @@ function useScrollReveal(threshold = 0.18) {
 /* ─── 지그재그 섹션 데이터 ─── */
 const ZIGZAG_ITEMS = [
   {
-    image: "/images/하단브랜드지운 이미지.png",
+    images: ["/images/하단브랜드지운 이미지.png"],
     tag: "PROMOTION",
     tagColor: "#f97316",
     title: "이 모든 혜택이\n연 299,000원에 가능합니다!",
@@ -72,7 +72,10 @@ const ZIGZAG_ITEMS = [
     btnText: "연간회원권 신청하고 PT 2회 무료로 받기",
   },
   {
-    image: "/images/도남그룹수업하단삭제.png",
+    images: [
+      "/images/도남그룹수업하단삭제.png",
+      "/images/스크린샷 2026-07-08 144009.png"
+    ],
     tag: "GX PROGRAM",
     tagColor: "#e65c00",
     title: "다양한 GX 프로그램을\n7월 무료로 체험하세요!",
@@ -81,9 +84,138 @@ const ZIGZAG_ITEMS = [
     cta: "나에게 맞는 GX 프로그램 7월 무료체험 가능하니\n이 기회를 놓치지 마세요",
     highlight: "7월 GX 무료체험",
     reverse: true,
-    btnText: "그룹수업 시간표 보고 체험신청하기",
+    btnText: "그룹수업 체험 신청하기",
   },
 ]
+
+/* ─── 지그재그 이미지 슬라이더 컴포넌트 ─── */
+function ZigzagImageSlider({
+  images,
+  alt,
+  objectFit = "cover",
+  objectPosition = "center top",
+  backgroundColor = "transparent",
+  tag,
+  tagColor,
+  btnText,
+  onCtaClick,
+}: {
+  images: string[]
+  alt: string
+  objectFit?: "cover" | "contain"
+  objectPosition?: string
+  backgroundColor?: string
+  tag: string
+  tagColor: string
+  btnText: string
+  onCtaClick: () => void
+}) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [transitioning, setTransitioning] = useState(false)
+
+  const next = useCallback(() => {
+    if (transitioning || images.length <= 1) return
+    setTransitioning(true)
+    setCurrentIndex((prev) => (prev + 1) % images.length)
+    setTimeout(() => setTransitioning(false), 500)
+  }, [transitioning, images.length])
+
+  const prev = useCallback(() => {
+    if (transitioning || images.length <= 1) return
+    setTransitioning(true)
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+    setTimeout(() => setTransitioning(false), 500)
+  }, [transitioning, images.length])
+
+  useEffect(() => {
+    if (images.length <= 1) return
+    const timer = setInterval(next, 4000)
+    return () => clearInterval(timer)
+  }, [next, images.length])
+
+  return (
+    <div className="relative w-full h-full overflow-hidden group">
+      {/* 슬라이드 컨테이너 */}
+      <div
+        className="flex h-full transition-transform duration-500 ease-in-out"
+        style={{
+          width: `${images.length * 100}%`,
+          transform: `translateX(-${currentIndex * (100 / images.length)}%)`,
+        }}
+      >
+        {images.map((img, idx) => {
+          const isSchedule = img.includes("스크린샷") || img.includes("schedule")
+          const currentFit = isSchedule ? "contain" : objectFit
+          const currentBg = isSchedule ? "#ffffff" : backgroundColor
+          return (
+            <div key={idx} className="relative h-full" style={{ width: `${100 / images.length}%`, flexShrink: 0, backgroundColor: currentBg }}>
+              <Image
+                src={img}
+                alt={`${alt} 슬라이드 ${idx + 1}`}
+                fill
+                style={{ objectFit: currentFit, objectPosition, backgroundColor: currentBg }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority={idx === 0}
+              />
+            </div>
+          )
+        })}
+      </div>
+
+      {/* 이미지 위 태그 배지 */}
+      <div className="cm-target-row__image-tag" style={{ borderColor: tagColor, color: tagColor }}>
+        {tag}
+      </div>
+
+      {/* 좌우 내비게이션 화살표 */}
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              prev()
+            }}
+            className="cm-zigzag-slider__arrow cm-zigzag-slider__arrow--prev"
+            aria-label="이전 이미지"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              next()
+            }}
+            className="cm-zigzag-slider__arrow cm-zigzag-slider__arrow--next"
+            aria-label="다음 이미지"
+          >
+            <ChevronRight size={20} />
+          </button>
+
+          {/* 페이지네이션 도트 */}
+          <div className="cm-zigzag-slider__dots">
+            {images.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setCurrentIndex(idx)
+                }}
+                className={`cm-zigzag-slider__dot ${idx === currentIndex ? "cm-zigzag-slider__dot--active" : ""}`}
+                aria-label={`이미지 ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+
+      {/* 자세히보기/CTA 버튼 */}
+      <button className="cm-target-row__detail-btn" onClick={onCtaClick} type="button" aria-label="멤버십 상세 보기">
+        <Plus className="w-4 h-4" />
+        <span>{btnText || "자세히 보기"}</span>
+      </button>
+    </div>
+  )
+}
 
 export function DonamJulyPromoLanding() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -197,7 +329,7 @@ export function DonamJulyPromoLanding() {
         <div className={`cm-hero__content ${textVisible ? "cm-hero__content--visible" : ""}`}>
           <div className="cm-hero__badge"><span>MIND FITNESS</span></div>
           <p className="cm-hero__subtitle">대구북구헬스 7월 이벤트</p>
-          <h1 className="cm-hero__title" style={{ marginBottom: "16px" }}>DONAM<br />PROMO</h1>
+          <h1 className="cm-hero__title" style={{ marginBottom: "16px", fontSize: "clamp(38px, 9.5vw, 110px)" }}>MINDFITNESS<br />DONAM</h1>
           <p className="cm-hero__branch">도남점</p>
           <div className="cm-hero__divider">
             <span className="cm-hero__divider-line" />
@@ -309,26 +441,42 @@ export function DonamJulyPromoLanding() {
               {/* 이미지 패널 */}
               <div className="cm-target-row__image-wrap">
                 <div className="cm-target-row__image-inner">
-                  <Image
-                    src={item.image}
-                    alt={item.title.replace(/\n/g, " ")}
-                    fill
-                    style={{ 
-                      objectFit: (item.objectFit as "cover" | "contain") || "cover", 
-                      objectPosition: item.objectPosition || "center top",
-                      backgroundColor: (item as any).backgroundColor || "transparent" 
-                    }}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  {/* 이미지 위 태그 배지 */}
-                  <div className="cm-target-row__image-tag" style={{ borderColor: item.tagColor, color: item.tagColor }}>
-                    {item.tag}
-                  </div>
-                   {/* 자세히보기 버튼 추가 */}
-                  <button className="cm-target-row__detail-btn" onClick={() => setIsFormOpen(true)} type="button" aria-label="멤버십 상세 보기">
-                    <Plus className="w-4 h-4" />
-                    <span>{(item as any).btnText || "자세히 보기"}</span>
-                  </button>
+                  {item.images && item.images.length > 1 ? (
+                    <ZigzagImageSlider
+                      images={item.images}
+                      alt={item.title.replace(/\n/g, " ")}
+                      objectFit={(item as any).objectFit || "cover"}
+                      objectPosition={(item as any).objectPosition || "center top"}
+                      backgroundColor={(item as any).backgroundColor || "transparent"}
+                      tag={item.tag}
+                      tagColor={item.tagColor}
+                      btnText={(item as any).btnText}
+                      onCtaClick={() => setIsFormOpen(true)}
+                    />
+                  ) : (
+                    <>
+                      <Image
+                        src={item.images ? item.images[0] : (item as any).image}
+                        alt={item.title.replace(/\n/g, " ")}
+                        fill
+                        style={{ 
+                          objectFit: ((item as any).objectFit as "cover" | "contain") || "cover", 
+                          objectPosition: (item as any).objectPosition || "center top",
+                          backgroundColor: (item as any).backgroundColor || "transparent" 
+                        }}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                      {/* 이미지 위 태그 배지 */}
+                      <div className="cm-target-row__image-tag" style={{ borderColor: item.tagColor, color: item.tagColor }}>
+                        {item.tag}
+                      </div>
+                       {/* 자세히보기 버튼 추가 */}
+                      <button className="cm-target-row__detail-btn" onClick={() => setIsFormOpen(true)} type="button" aria-label="멤버십 상세 보기">
+                        <Plus className="w-4 h-4" />
+                        <span>{(item as any).btnText || "자세히 보기"}</span>
+                      </button>
+                    </>
+                  )}
                 </div>
               </div>
 

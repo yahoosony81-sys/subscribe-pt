@@ -1126,3 +1126,84 @@
 footer {
   padding-bottom: 96px !important;
 }
+
+/* ─── ZIGZAG ROW IMAGE SLIDER ─── */
+.cm-zigzag-slider__dots {
+  position: absolute;
+  bottom: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 6px 12px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+
+.cm-zigzag-slider__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.cm-zigzag-slider__dot--active {
+  background: #ffffff;
+  width: 16px;
+  border-radius: 999px;
+}
+
+.cm-zigzag-slider__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.cm-zigzag-slider__arrow:hover {
+  background: rgba(0, 0, 0, 0.6);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.cm-zigzag-slider__arrow--prev {
+  left: 16px;
+}
+
+.cm-zigzag-slider__arrow--next {
+  right: 16px;
+}
+
+@media (max-width: 768px) {
+  .cm-zigzag-slider__dots {
+    bottom: 76px;
+  }
+  .cm-zigzag-slider__arrow {
+    width: 36px;
+    height: 36px;
+  }
+  .cm-zigzag-slider__arrow--prev {
+    left: 12px;
+  }
+  .cm-zigzag-slider__arrow--next {
+    right: 12px;
+  }
+}
+
