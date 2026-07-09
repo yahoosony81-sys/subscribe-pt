@@ -7,8 +7,8 @@ import { User, Phone, MessageSquare, ClipboardList } from "lucide-react"
 export function RegistrationSectionDonam({
   title = "무료체험 신청하기",
   branch = "대구도남점",
-  googleSheetUrl = "https://script.google.com/macros/s/AKfycbzI8sU7TfP-1S9xQkGj3zQ8pPzB2t2T6T5U5x0L6kL9Q8xN1N1N1N1N1N1N1N1N1N1N1/exec",
-  sheetName = "대구도남점",
+  googleSheetUrl = "https://script.google.com/macros/s/AKfycbzbEE1tfamHU4n_rnz0XMiw-YA-GGCq8PkHRL6pekDkW6haGG7OaCjHvcLelm5vQ238/exec",
+  sheetName = "도남점7월프로모션",
   isModal = false,
   onSuccess
 }: {

@@ -15,6 +15,7 @@
 | `/nh-pain-membership` | `노형점통증케어` | `...qxy-/exec` |
 | `/promo-bodychallenge` | `도남점바디챌린지` | `...ya9W/exec` |
 | `/dn-group-pt` | `도남점그룹pt` | `...beG/exec` |
+| `/donam-july-promo` | `도남점7월프로모션` | `...Q238/exec` (노형점케어멤버십과 공유) |
 | `/remindstretching-MG` | `리마인드스트레칭마곡점` | `...WDLw/exec` |
 
 ---
