@@ -6,7 +6,7 @@ export const runtime = 'edge';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { eventName, pathname, phone, eventSourceUrl, eventId } = body;
+    const { eventName, pathname, phone, name, eventSourceUrl, eventId } = body;
 
     if (!eventName || !pathname) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
@@ -31,6 +31,7 @@ export async function POST(request: NextRequest) {
       userAgent,
       eventId,
       phone,
+      name,
       fbp,
       fbc,
     });

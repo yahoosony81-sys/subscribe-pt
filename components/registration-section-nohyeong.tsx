@@ -178,6 +178,7 @@ export function RegistrationSectionNohyeong({
                       pathname: window?.location?.pathname || '',
                       eventSourceUrl: window?.location?.href || '',
                       phone: formData.phone,
+                      name: formData.name,
                     }),
                   }).catch(capiErr => console.error('CAPI Error:', capiErr));
                 }}

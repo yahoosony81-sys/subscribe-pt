@@ -53,6 +53,7 @@ export function RegistrationSectionDonam({
         pathname: window?.location?.pathname || '',
         eventSourceUrl: window?.location?.href || '',
         phone: formData.phone,
+        name: formData.name,
         eventId: eventId,
       }),
     }).catch(capiErr => console.error('CAPI Error:', capiErr));

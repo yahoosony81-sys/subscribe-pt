@@ -136,6 +136,7 @@ export async function sendCustomEventCAPI({
   userAgent,
   eventId,
   phone,
+  name,
   fbp,
   fbc,
 }: {
@@ -146,6 +147,7 @@ export async function sendCustomEventCAPI({
   userAgent?: string;
   eventId?: string;
   phone?: string;
+  name?: string;
   fbp?: string;
   fbc?: string;
 }): Promise<void> {
@@ -156,12 +158,24 @@ export async function sendCustomEventCAPI({
   if (phone) {
     const cleanedPhone = phone.replace(/[^0-9]/g, '');
     if (cleanedPhone) {
-      // Node.js 환경에서 crypto 사용을 위해 Web Crypto API 사용
       const encoder = new TextEncoder();
       const data = encoder.encode(cleanedPhone);
       const hashBuffer = await crypto.subtle.digest('SHA-256', data);
       const hashArray = Array.from(new Uint8Array(hashBuffer));
       hashedPhone = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+  }
+
+  // 이름 해싱 (CAPI 요구사항: SHA256)
+  let hashedName;
+  if (name) {
+    const cleanedName = name.trim().toLowerCase();
+    if (cleanedName) {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(cleanedName);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      hashedName = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
     }
   }
 
@@ -177,6 +191,7 @@ export async function sendCustomEventCAPI({
           client_ip_address: clientIp || '',
           client_user_agent: userAgent || '',
           ...(hashedPhone ? { ph: [hashedPhone] } : {}),
+          ...(hashedName ? { fn: [hashedName] } : {}),
           ...(fbp ? { fbp } : {}),
           ...(fbc ? { fbc } : {}),
         },
