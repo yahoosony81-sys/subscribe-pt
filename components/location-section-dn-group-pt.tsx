@@ -2,6 +2,27 @@
 
 import Image from "next/image"
 
+const handleFindLocationClick = () => {
+  // Meta FindLocation 이벤트 발생 (브라우저 픽셀 + 서버사이드 CAPI)
+  const eventId = crypto.randomUUID();
+
+  if (typeof window !== 'undefined' && (window as any).fbq) {
+    (window as any).fbq('track', 'FindLocation', {}, { eventID: eventId });
+  }
+
+  // 서버사이드 CAPI 전송 (iOS 사용자 대응)
+  fetch('/api/capi', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      eventName: 'FindLocation',
+      pathname: window?.location?.pathname || '',
+      eventSourceUrl: window?.location?.href || '',
+      eventId,
+    }),
+  }).catch(err => console.error('CAPI FindLocation Error:', err));
+}
+
 export function LocationSectionDnGroupPt() {
   return (
     <section className="bg-secondary py-24">
@@ -81,6 +102,7 @@ export function LocationSectionDnGroupPt() {
                       href="https://map.naver.com/p/entry/place/1552558325?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605071458&locale=ko&svcName=map_pcv5"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={handleFindLocationClick}
                       className="bg-[#FEE500] border border-black text-black font-semibold text-sm px-4 py-2 rounded-lg hover:bg-[#FEE500]/90 transition-colors inline-block"
                     >
                       지점 위치 보기
@@ -89,6 +111,7 @@ export function LocationSectionDnGroupPt() {
                       href="https://map.naver.com/p/entry/place/1552558325?c=15.00,0,0,0,dh&placePath=/photo?fromPanelNum=1&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605071649&locale=ko&svcName=map_pcv5&additionalHeight=76&timestamp=202605071458&locale=ko&svcName=map_pcv5&fromPanelNum=1"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={handleFindLocationClick}
                       className="bg-[#FEE500] border border-black text-black font-semibold text-sm px-4 py-2 rounded-lg hover:bg-[#FEE500]/90 transition-colors inline-block"
                     >
                       지점 내부 둘러보기

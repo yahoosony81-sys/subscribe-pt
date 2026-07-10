@@ -293,6 +293,25 @@ export function DonamJulyPromoLanding() {
   }, [nextFacilitySlide])
 
   const handleCtaClick = () => {
+    // Meta Lead 이벤트 발생 (브라우저 픽셀 + 서버사이드 CAPI)
+    const eventId = crypto.randomUUID();
+
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Lead', {}, { eventID: eventId });
+    }
+
+    // 서버사이드 CAPI 전송 (iOS 사용자 대응)
+    fetch('/api/capi', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        eventName: 'Lead',
+        pathname: window?.location?.pathname || '',
+        eventSourceUrl: window?.location?.href || '',
+        eventId,
+      }),
+    }).catch(err => console.error('CAPI Lead Error:', err));
+
     setIsFormOpen(true)
   }
 
@@ -451,7 +470,7 @@ export function DonamJulyPromoLanding() {
                       tag={item.tag}
                       tagColor={item.tagColor}
                       btnText={(item as any).btnText}
-                      onCtaClick={() => setIsFormOpen(true)}
+                      onCtaClick={handleCtaClick}
                     />
                   ) : (
                     <>
@@ -471,7 +490,7 @@ export function DonamJulyPromoLanding() {
                         {item.tag}
                       </div>
                        {/* 자세히보기 버튼 추가 */}
-                      <button className="cm-target-row__detail-btn" onClick={() => setIsFormOpen(true)} type="button" aria-label="멤버십 상세 보기">
+                      <button className="cm-target-row__detail-btn" onClick={handleCtaClick} type="button" aria-label="멤버십 상세 보기">
                         <Plus className="w-4 h-4" />
                         <span>{(item as any).btnText || "자세히 보기"}</span>
                       </button>
