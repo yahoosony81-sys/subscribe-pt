@@ -58,7 +58,7 @@ export function GtmProvider() {
       {/* ── 메타 픽셀 스크립트 ── */}
       {pixelId && (
         <>
-          <Script id="meta-pixel" strategy="beforeInteractive" dangerouslySetInnerHTML={{
+          <Script id="meta-pixel" strategy="afterInteractive" dangerouslySetInnerHTML={{
             __html: `
               !function(f,b,e,v,n,t,s)
               {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
