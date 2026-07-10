@@ -23,9 +23,9 @@
 ### 2. 핵심 아키텍처 규칙 (Core Rules)
 
 #### 규칙 A. 표준 이벤트 명칭의 통일
-* **프론트엔드 버튼 클릭 시점:** `CompleteRegistration` (등록 완료)
-* **백엔드 땡큐 카드/DB 저장 시점:** `CompleteRegistration` (등록 완료)
-* *주의:* 과거에 사용하던 `Lead (요청 제출)` 또는 `AddToCart` 등 다른 이름과 혼용하지 않고, 반드시 **`CompleteRegistration` 하나로 바구니를 통일**합니다.
+* **프론트엔드 버튼 클릭 시점:** `SubmitApplication` (요청 제출)
+* **백엔드 땡큐 카드/DB 저장 시점:** `SubmitApplication` (요청 제출)
+* *주의:* 과거에 사용하던 `CompleteRegistration (등록 완료)` 또는 `AddToCart` 등 다른 이름과 혼용하지 않고, 반드시 **`SubmitApplication` 하나로 바구니를 통일**합니다.
 
 #### 규칙 B. 고유 이벤트 ID를 통한 중복 제거 (Deduplication)
 * 프론트엔드 픽셀이 발송하는 신호와 백엔드 서버(CAPI)가 발송하는 신호에 반드시 **동일한 구조의 고유 `event_id`**를 생성하여 매칭해야 합니다.

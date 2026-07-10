@@ -12,9 +12,8 @@ export function GtmProvider() {
 
   // 각 랜딩 페이지별 경로 확인
   const isNhLanding = pathname.startsWith('/nh-retarget-coffeelanding') || pathname.startsWith('/nh-burning-care') || pathname.startsWith('/nh-pain-membership') || pathname.startsWith('/nh-caremembership') || pathname.startsWith('/caremembership-jejusi');
-  const isBodyChallenge = pathname.startsWith('/promo-bodychallenge');
+  const isDnLanding = pathname.startsWith('/dn-') || pathname.startsWith('/promo-bodychallenge') || pathname.startsWith('/donam-july-promo');
   const isHallimLanding = pathname.startsWith('/hl-burning-caremember') || pathname.startsWith('/hl-caremembership') || pathname.startsWith('/hl-pain-membership') || pathname.startsWith('/caremembership-hallim');
-  const isDnGroupPt = pathname.startsWith('/dn-group-pt');
   const isMyeongjiLanding = pathname.startsWith('/mg-');
 
   // 조건에 맞게 GTM 아이디 할당
@@ -22,7 +21,7 @@ export function GtmProvider() {
   if (isNhLanding) {
     gtmId = pathname.startsWith('/nh-caremembership') ? "GTM-5VB56Q69" : "GTM-TGKR77FL";
   }
-  if (isBodyChallenge) gtmId = "GTM-KQR8JJ44"; // 도남점 바디챌린지 GTM
+  if (isDnLanding) gtmId = "GTM-KQR8JJ44"; // 도남점 GTM
   if (isHallimLanding) gtmId = "GTM-5VB56Q69"; // 한림점 GTM
   if (isMyeongjiLanding) gtmId = "GTM-TXNCJPBS"; // 부산명지점 GTM
 
