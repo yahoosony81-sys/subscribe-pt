@@ -2,8 +2,6 @@
 
 import { useEffect, useRef, useState, useCallback } from "react"
 import Image from "next/image"
-import Script from "next/script"
-import { getPixelId } from "@/utils/pixelConfig"
 import "./donam-july-promo.css"
 import {
   Dialog,
@@ -220,7 +218,6 @@ function ZigzagImageSlider({
 }
 
 export function DonamJulyPromoLanding() {
-  const pixelId = getPixelId("dn");
   const [currentSlide, setCurrentSlide] = useState(0)
   const [prevSlide, setPrevSlide] = useState<number | null>(null)
   const [isTransitioning, setIsTransitioning] = useState(false)
@@ -306,34 +303,6 @@ export function DonamJulyPromoLanding() {
 
   return (
     <div className="cm-landing">
-      {/* ── 메타 픽셀 (다른 도남점 랜딩과 동일 패턴) ── */}
-      {pixelId && (
-        <>
-          <Script id="meta-pixel-donam-july" strategy="afterInteractive" dangerouslySetInnerHTML={{
-            __html: `
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '${pixelId}');
-              fbq('track', 'PageView');
-            `
-          }} />
-          <noscript>
-            <img
-              height="1"
-              width="1"
-              style={{ display: 'none' }}
-              src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}
-              alt=""
-            />
-          </noscript>
-        </>
-      )}
 
       {/* ═══ HERO SECTION ═══ */}
       <section className="cm-hero" aria-label="메인 히어로 섹션">
