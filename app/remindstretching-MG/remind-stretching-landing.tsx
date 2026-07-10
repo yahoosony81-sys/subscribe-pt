@@ -566,8 +566,10 @@ export function RemindStretchingLanding() {
                 <div className="rs-form__header">
                   <p className="rs-form__notice">온라인 신청폼 작성시 체험이 가능합니다</p>
                   <h2 className="rs-form__title">체험 예약 신청</h2>
-                  <p style={{ fontSize: '0.85rem', color: '#ff4d4f', fontWeight: 'bold', marginTop: '10px', textAlign: 'center', wordBreak: 'keep-all' }}>
-                    현재 체험 신청 대기가 많아 8월부터 체험이 가능합니다. 8월 이후 날짜로 신청 바랍니다.
+                  <p style={{ fontSize: '0.85rem', color: '#ff4d4f', fontWeight: 'bold', marginTop: '10px', textAlign: 'center', wordBreak: 'keep-all', lineHeight: '1.5' }}>
+                    현재 체험 신청 대기가 많아<br />
+                    8월부터 체험이 가능합니다.<br />
+                    8월 이후 날짜로 신청 바랍니다.
                   </p>
                 </div>
 
