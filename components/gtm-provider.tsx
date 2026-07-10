@@ -58,26 +58,18 @@ export function GtmProvider() {
       {/* ── 메타 픽셀 스크립트 ── */}
       {pixelId && (
         <>
-          <Script id="meta-pixel" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          <Script id="meta-pixel" strategy="beforeInteractive" dangerouslySetInnerHTML={{
             __html: `
-              if (!window.fbq) {
-                !function(f,b,e,v,n,t,s)
-                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-                n.queue=[];t=b.createElement(e);t.async=!0;
-                t.src=v;s=b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t,s)}(window, document,'script',
-                'https://connect.facebook.net/en_US/fbevents.js');
-              }
-              if (!window._fb_loaded_pixels) {
-                window._fb_loaded_pixels = {};
-              }
-              if (!window._fb_loaded_pixels['${pixelId}']) {
-                fbq('init', '${pixelId}');
-                fbq('track', 'PageView');
-                window._fb_loaded_pixels['${pixelId}'] = true;
-              }
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '${pixelId}');
+              fbq('track', 'PageView');
             `
           }} />
           <noscript>
