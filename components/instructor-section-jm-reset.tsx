@@ -59,7 +59,7 @@ export function InstructorSectionJmReset() {
             }}
           >
             리셋 프로그램{" "}
-            <span style={{ color: "#a8cc00" }}>강사소개</span>
+            <span style={{ color: "#7ba600" }}>강사소개</span>
           </h2>
           <div
             style={{

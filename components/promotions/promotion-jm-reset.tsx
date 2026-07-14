@@ -261,7 +261,7 @@ export function PromotionJmReset() {
             style={{
               fontFamily: "'Barlow Condensed', 'Oswald', sans-serif",
               fontWeight: 900,
-              fontSize: "clamp(2.5rem, 7vw, 6rem)",
+              fontSize: "clamp(2rem, 5.6vw, 4.8rem)",
               letterSpacing: "-0.01em",
             }}
           >
@@ -269,11 +269,13 @@ export function PromotionJmReset() {
             <br />
             <span style={{ color: "#CCFF00" }}>환경</span>이 바꿉니다.
           </h2>
-          <p className="mt-8 text-white/60 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-medium">
-            혼자서는 3일도 못 가는 운동,{" "}
+          <p className="mt-8 text-white/60 text-base md:text-xl leading-relaxed max-w-2xl mx-auto font-medium" style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>
+            혼자서는 3일도 못 가는 운동,
+            <br className="md:hidden" />{" "}
             <span className="text-white font-bold">팀 리셋</span>과 함께하면 달라집니다.
             <br />
-            10년차 전문강사가 직접 이끌어 드리는{" "}
+            10년차 전문강사가 직접 이끌어 드리는
+            <br className="md:hidden" />{" "}
             <span className="text-[#CCFF00] font-bold">100일 그룹 트레이닝</span>을 경험해보세요.
           </p>
 

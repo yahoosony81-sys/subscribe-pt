@@ -233,7 +233,20 @@ export function ProgramSectionJmReset() {
 
             {/* 텍스트 패널 */}
             <div className="jm-zz-text" style={{ background: textBg }}>
-              <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 10, fontWeight: 600, letterSpacing: "0.25em", color: item.tagColor, textTransform: "uppercase", marginBottom: 16 }}>
+              <p style={{
+                fontFamily: "'Inter',sans-serif",
+                fontSize: 10,
+                fontWeight: 700,
+                letterSpacing: "0.25em",
+                color: item.tagColor,
+                textTransform: "uppercase",
+                marginBottom: 16,
+                background: "rgba(17, 17, 17, 0.9)",
+                padding: "4px 10px",
+                borderRadius: "4px",
+                width: "fit-content",
+                display: "inline-block"
+              }}>
                 {item.tag}
               </p>
               <h3 style={{ fontFamily: "'Barlow Condensed','Noto Sans KR',sans-serif", fontWeight: 900, fontSize: "clamp(1.8rem,3vw,2.8rem)", lineHeight: 1.2, color: "#111", marginBottom: 24, letterSpacing: "-0.01em", textTransform: "uppercase" }}>
@@ -249,7 +262,18 @@ export function ProgramSectionJmReset() {
               <p className="jm-zz-body">{item.body}</p>
               <div className="jm-zz-cta-box">
                 <p className="jm-zz-cta-text">{item.cta}</p>
-                <span style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 700, fontSize: "clamp(14px,1.5vw,16px)", color: item.tagColor, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+                <span style={{
+                  fontFamily: "'Barlow Condensed',sans-serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(13px,1.4vw,15px)",
+                  color: item.tagColor,
+                  letterSpacing: "0.04em",
+                  textTransform: "uppercase",
+                  background: "rgba(17, 17, 17, 0.9)",
+                  padding: "4px 10px",
+                  borderRadius: "4px",
+                  display: "inline-block"
+                }}>
                   {item.highlight}
                 </span>
               </div>
@@ -364,7 +388,7 @@ export function ProgramSectionJmReset() {
               lineHeight: 1.1,
               wordBreak: "keep-all",
             }}>
-              주간 프로그램 <span style={{ color: "#a8cc00" }}>구성</span>
+              주간 프로그램 <span style={{ color: "#7ba600" }}>구성</span>
             </h2>
             <p style={{
               fontFamily: "'Noto Sans KR', sans-serif",
