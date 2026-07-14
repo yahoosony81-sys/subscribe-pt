@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 import { PromotionJmReset } from "@/components/promotions/promotion-jm-reset"
+import { ProgramSectionJmReset } from "@/components/program-section-jm-reset"
 import { LocationSectionJmReset } from "@/components/location-section-jm-reset"
-import { RegistrationSectionJmReset } from "@/components/registration-section-jm-reset"
 import { FooterJmReset } from "@/components/footer-jm-reset"
 
 export const metadata: Metadata = {
@@ -19,12 +19,8 @@ export default function JmResetPage() {
   return (
     <main className="min-h-screen bg-black">
       <PromotionJmReset />
+      <ProgramSectionJmReset />
       <LocationSectionJmReset />
-      <RegistrationSectionJmReset
-        title="첫 방문 무료 체험 예약하기"
-        branch="리셋 중문점"
-        hideTimePicker={false}
-      />
       <FooterJmReset />
     </main>
   )

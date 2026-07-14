@@ -23,14 +23,18 @@ export function RegistrationSectionJmReset({
   title = "그룹PT 온라인 예약하기",
   branch = "리셋 중문점",
   hideTimePicker = false,
-  googleSheetUrl = "", // 프롭으로 시트 URL을 받을 수 있도록 함 (추후 전달 가능)
-  sheetName = "중문점그룹pt" // 프롭으로 시트 탭 이름을 받을 수 있도록 함
+  googleSheetUrl = "",
+  sheetName = "중문점그룹pt",
+  isModal = false,
+  onClose
 }: {
   title?: string;
   branch?: string;
   hideTimePicker?: boolean;
   googleSheetUrl?: string;
   sheetName?: string;
+  isModal?: boolean;
+  onClose?: () => void;
 } = {}) {
   const [formData, setFormData] = useState({
     name: "",
@@ -129,9 +133,10 @@ export function RegistrationSectionJmReset({
     const removeTimer = setTimeout(() => {
       setShowComplete(false)
       setFadeOut(false)
+      if (onClose) onClose()
     }, 3000)
     return () => { clearTimeout(fadeTimer); clearTimeout(removeTimer) }
-  }, [showComplete])
+  }, [showComplete, onClose])
 
   const reservedTimes = getReservedTimes()
 
@@ -151,14 +156,16 @@ export function RegistrationSectionJmReset({
         </div>
       )}
 
-      <section id="contact-form" className="bg-slate-50 py-20">
-        <div className="mx-auto max-w-xl px-4">
-          <div className="mb-10 text-center">
-            <h2 className="mb-3 text-2xl font-bold text-slate-900">{title}</h2>
-            <p className="text-base text-slate-600">궁금한 점이 있으시다면 정보를 남겨주세요. 확인 후 바로 연락드리겠습니다.</p>
+      <section id={isModal ? undefined : "contact-form"} className={isModal ? "w-full" : "bg-slate-50 py-20"}>
+        <div className={isModal ? "w-full" : "mx-auto max-w-xl px-4"}>
+          <div className={isModal ? "mb-6 text-center" : "mb-10 text-center"}>
+            <h2 className={isModal ? "text-xl font-bold text-slate-900" : "mb-3 text-2xl font-bold text-slate-900"}>{title}</h2>
+            <p className={isModal ? "text-sm text-slate-600" : "text-base text-slate-600"}>
+              {isModal ? "궁금한 점이 있으시다면 정보를 남겨주세요." : "궁금한 점이 있으시다면 정보를 남겨주세요. 확인 후 바로 연락드리겠습니다."}
+            </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="rounded-2xl bg-white p-8 shadow-sm">
+          <form onSubmit={handleSubmit} className={isModal ? "p-1 bg-white" : "rounded-2xl bg-white p-8 shadow-sm"}>
             <div className="space-y-5">
               <div>
                 <label htmlFor="name" className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700">

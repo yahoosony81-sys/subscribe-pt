@@ -89,8 +89,8 @@ const legalContent = {
 
 제11조 [운영시간 및 시설 이용]
 1. 센터의 기본 운영시간은 다음과 같습니다.
-   1) 평일 : 06:00 ~ 24:00
-   2) 주말 및 공휴일 : 10:00 ~ 19:00
+   1) 평일 : 09:00 ~ 20:30 (휴게시간 11:00 ~ 17:30)
+   2) 주말 및 공휴일 : 정기휴무 (매주 토요일, 일요일)
 2. 운영시간은 지점 사정, 시설 점검, 공사, 천재지변, 법정 점검, 내부 행사, 시스템 점검 등에 따라 변경될 수 있으며, 변경 시 사전 공지함을 원칙으로 합니다.
 3. 회원은 운영시간 내에서만 시설 및 서비스를 이용할 수 있습니다.
 4. 회원은 센터가 지정한 출입 방식, 라커 사용 방식, 시설 이용 수칙을 준수하여야 합니다.
@@ -318,7 +318,13 @@ export function FooterJmReset() {
                 <span className="text-slate-500">이메일:</span> mindfitness@naver.com
               </li>
               <li className="pt-2">
-                <span className="text-slate-500">연중무휴:</span> 24시간 운영
+                <span className="text-slate-500">운영시간:</span> 평일 09:00 ~ 20:30
+              </li>
+              <li>
+                <span className="text-slate-500">휴게시간:</span> 11:00 ~ 17:30
+              </li>
+              <li>
+                <span className="text-slate-500">정기휴무:</span> 매주 토요일, 일요일
               </li>
             </ul>
           </div>

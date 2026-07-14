@@ -142,10 +142,17 @@ export function LocationSectionJmReset() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">운영시간</h3>
-                  <div className="mt-2 space-y-1.5">
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <span className="inline-block w-24 rounded bg-primary/10 px-2 py-0.5 text-center text-xs font-medium text-primary">연중무휴</span>
-                      <span>24시간 운영</span>
+                  <div className="mt-2 space-y-2 text-sm text-muted-foreground">
+                    <div className="flex items-start gap-2">
+                      <span className="inline-block w-16 shrink-0 rounded bg-primary/10 px-2 py-0.5 text-center text-xs font-semibold text-primary">평 일</span>
+                      <div>
+                        <p className="font-medium text-foreground">09:00 - 20:30</p>
+                        <p className="text-xs text-muted-foreground/80 mt-0.5">휴게시간: 11:00 - 17:30</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="inline-block w-16 shrink-0 rounded bg-muted px-2 py-0.5 text-center text-xs font-semibold text-muted-foreground">토 · 일</span>
+                      <p className="font-medium text-foreground">정기휴무</p>
                     </div>
                   </div>
                 </div>

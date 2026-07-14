@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { Dialog, DialogContent } from "@/components/ui/dialog"
+import { RegistrationSectionJmReset } from "../registration-section-jm-reset"
 
 /**
  * ============================================================
@@ -20,8 +22,10 @@ export function PromotionJmReset() {
     return () => clearTimeout(timer)
   }, [])
 
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   const scrollToForm = () => {
-    document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })
+    setIsModalOpen(true)
   }
 
   return (
@@ -159,7 +163,7 @@ export function PromotionJmReset() {
             <span className="text-white">WORKOUT</span>
           </h1>
 
-          {/* 라인 2: WE ARE TEAM MIND */}
+          {/* 라인 2: WE ARE TEAM RESET */}
           <h2
             className="animate-fadeSlideUp-3 leading-none uppercase mt-4"
             style={{
@@ -171,7 +175,7 @@ export function PromotionJmReset() {
             }}
           >
             <span className="text-white">WE ARE TEAM </span>
-            <span className="neon-green">MIND</span>
+            <span className="neon-green">RESET</span>
           </h2>
 
           {/* 구분선 */}
@@ -213,7 +217,7 @@ export function PromotionJmReset() {
             onMouseDown={(e) => { e.currentTarget.style.transform = "scale(0.97)" }}
             onMouseUp={(e) => { e.currentTarget.style.transform = "scale(1.03)" }}
           >
-            첫 방문 무료 체험 예약하기
+            리셋 무료 체험 신청하기
           </button>
         </div>
 
@@ -250,7 +254,7 @@ export function PromotionJmReset() {
             className="text-[#CCFF00] text-xs tracking-[0.35em] font-bold mb-6 uppercase"
             style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
           >
-            Why Team Mind
+            Why Team Reset
           </p>
           <h2
             className="font-black uppercase leading-tight text-white"
@@ -267,7 +271,7 @@ export function PromotionJmReset() {
           </h2>
           <p className="mt-8 text-white/60 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-medium">
             혼자서는 3일도 못 가는 운동,{" "}
-            <span className="text-white font-bold">팀 마인드</span>와 함께하면 달라집니다.
+            <span className="text-white font-bold">팀 리셋</span>과 함께하면 달라집니다.
             <br />
             10년차 전문 강사 2인이 직접 이끌어드리는{" "}
             <span className="text-[#CCFF00] font-bold">그룹 트레이닝</span>을 경험해보세요.
@@ -342,7 +346,7 @@ export function PromotionJmReset() {
           >
             JOIN
             <br />
-            TEAM MIND
+            TEAM RESET
           </h2>
           <p className="mt-6 text-black/70 text-base md:text-lg font-bold leading-relaxed">
             인원수 12명 제한 프로그램 — 지금 바로 서둘러 예약해주세요!
@@ -371,10 +375,22 @@ export function PromotionJmReset() {
               e.currentTarget.style.color = "#CCFF00"
             }}
           >
-            첫 방문 무료 체험 예약하기
+            리셋 무료 체험 신청하기
           </button>
         </div>
       </section>
+
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="max-w-xl p-0 bg-transparent border-none max-h-[90vh] overflow-y-auto">
+          <RegistrationSectionJmReset
+            title="리셋 무료 체험 신청하기"
+            branch="리셋 중문점"
+            hideTimePicker={false}
+            isModal={true}
+            onClose={() => setIsModalOpen(false)}
+          />
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }
