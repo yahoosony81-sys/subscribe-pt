@@ -156,7 +156,7 @@ export function RegistrationSectionJmReset({
         </div>
       )}
 
-      <section id={isModal ? undefined : "contact-form"} className={isModal ? "w-full" : "bg-slate-50 py-20"}>
+      <section id={isModal ? undefined : "contact-form"} className={isModal ? "w-full bg-white rounded-2xl p-6 md:p-8" : "bg-slate-50 py-20"}>
         <div className={isModal ? "w-full" : "mx-auto max-w-xl px-4"}>
           <div className={isModal ? "mb-6 text-center" : "mb-10 text-center"}>
             <h2 className={isModal ? "text-xl font-bold text-slate-900" : "mb-3 text-2xl font-bold text-slate-900"}>{title}</h2>
