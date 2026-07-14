@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import { PromotionJmReset } from "@/components/promotions/promotion-jm-reset"
 import { ProgramSectionJmReset } from "@/components/program-section-jm-reset"
 import { LocationSectionJmReset } from "@/components/location-section-jm-reset"
+import { InstructorSectionJmReset } from "@/components/instructor-section-jm-reset"
 import { FooterJmReset } from "@/components/footer-jm-reset"
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default function JmResetPage() {
     <main className="min-h-screen bg-black">
       <PromotionJmReset />
       <ProgramSectionJmReset />
+      <InstructorSectionJmReset />
       <LocationSectionJmReset />
       <FooterJmReset />
     </main>

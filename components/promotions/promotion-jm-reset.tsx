@@ -273,112 +273,14 @@ export function PromotionJmReset() {
             혼자서는 3일도 못 가는 운동,{" "}
             <span className="text-white font-bold">팀 리셋</span>과 함께하면 달라집니다.
             <br />
-            10년차 전문 강사 2인이 직접 이끌어드리는{" "}
-            <span className="text-[#CCFF00] font-bold">그룹 트레이닝</span>을 경험해보세요.
+            10년차 전문강사가 직접 이끌어 드리는{" "}
+            <span className="text-[#CCFF00] font-bold">100일 그룹 트레이닝</span>을 경험해보세요.
           </p>
 
-          <div className="mt-16 grid md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: "💪",
-                label: "STRENGTH",
-                title: "근력 + 유산소 + 기능성",
-                desc: "하루 딱 40분, 500칼로리 소모",
-              },
-              {
-                icon: "🔥",
-                label: "INTENSITY",
-                title: "빠질 수 없는 환경",
-                desc: "함께하는 분위기와 코치 텐션이 만드는 몰입",
-              },
-              {
-                icon: "🎯",
-                label: "RESULT",
-                title: "확실한 체형 변화",
-                desc: "다이어트 · 체형개선 · 라인개선까지",
-              },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="border border-white/10 bg-white/5 p-8 text-left transition-all duration-300 hover:border-[#CCFF00]/50 hover:bg-white/10 group"
-                style={{ backdropFilter: "blur(8px)" }}
-              >
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <p
-                  className="text-[#CCFF00] text-xs tracking-[0.25em] font-bold mb-2 uppercase"
-                  style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
-                >
-                  {item.label}
-                </p>
-                <h3
-                  className="text-white font-black text-xl mb-3"
-                  style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.02em" }}
-                >
-                  {item.title}
-                </h3>
-                <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════
-          📌 [3] 하단 CTA 섹션
-          ═══════════════════════════════════════════════ */}
-      <section className="py-20 md:py-28" style={{ background: "#CCFF00" }}>
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <p
-            className="text-black/50 text-xs tracking-[0.35em] font-bold mb-4 uppercase"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
-          >
-            Limited Spots — 12명 선착순
-          </p>
-          <h2
-            className="text-black font-black uppercase leading-none"
-            style={{
-              fontFamily: "'Barlow Condensed', 'Oswald', sans-serif",
-              fontWeight: 900,
-              fontSize: "clamp(3rem, 10vw, 8.5rem)",
-              letterSpacing: "-0.025em",
-              lineHeight: 0.9,
-            }}
-          >
-            JOIN
-            <br />
-            TEAM RESET
-          </h2>
-          <p className="mt-6 text-black/70 text-base md:text-lg font-bold leading-relaxed">
-            인원수 12명 제한 프로그램 — 지금 바로 서둘러 예약해주세요!
-          </p>
-          <button
-            id="bottom-cta-btn"
-            onClick={scrollToForm}
-            className="mt-10 font-black uppercase tracking-widest transition-all duration-200 active:scale-95 hover:scale-105"
-            style={{
-              fontFamily: "'Barlow Condensed', 'Oswald', sans-serif",
-              fontWeight: 900,
-              fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
-              letterSpacing: "0.15em",
-              background: "#000000",
-              color: "#CCFF00",
-              padding: "1.1rem 2.8rem",
-              border: "3px solid #000",
-              cursor: "pointer",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "#111111"
-              e.currentTarget.style.color = "#FFFFFF"
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "#000000"
-              e.currentTarget.style.color = "#CCFF00"
-            }}
-          >
-            리셋 무료 체험 신청하기
-          </button>
-        </div>
-      </section>
+
 
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogContent className="max-w-xl p-0 bg-transparent border-none max-h-[90vh] overflow-y-auto">

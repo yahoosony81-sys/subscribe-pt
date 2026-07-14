@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
+import { Dialog, DialogContent } from "@/components/ui/dialog"
+import { RegistrationSectionJmReset } from "./registration-section-jm-reset"
 
 function useScrollReveal(threshold = 0.18) {
   const ref = useRef<HTMLDivElement>(null)
@@ -21,7 +23,7 @@ function useScrollReveal(threshold = 0.18) {
 
 const ZIGZAG_ITEMS = [
   {
-    image: "/images/group-training-1.jpg",
+    image: "/images/KakaoTalk_20260714_152432447_03.png",
     tag: "RECOVERY & GROWTH",
     tagColor: "#CCFF00",
     title: "기본 건강 회복,\n지속적으로 성장",
@@ -32,7 +34,7 @@ const ZIGZAG_ITEMS = [
     reverse: false,
   },
   {
-    image: "/images/group-training-2.jpg",
+    image: "/images/KakaoTalk_20260714_152432447_07.png",
     tag: "YOUR OWN PACE",
     tagColor: "#CCFF00",
     title: "나만의 속도로,\n함께 운동합니다",
@@ -41,9 +43,10 @@ const ZIGZAG_ITEMS = [
     cta: "누구나 시작할 수 있고, 누구나 성장할 수 있습니다.",
     highlight: "개인 맞춤 강도 조절",
     reverse: true,
+    objectPosition: "center 30%",
   },
   {
-    image: "/images/group-training-3.jpg",
+    image: "/images/심박계.png",
     tag: "HEART RATE MONITORING",
     tagColor: "#CCFF00",
     title: "심박계로\n안전하고 효율적으로",
@@ -65,6 +68,10 @@ const WEEKLY_PROGRAMS = [
 
 export function ProgramSectionJmReset() {
   const refs = [useScrollReveal(), useScrollReveal(), useScrollReveal()]
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const scrollToForm = () => {
+    setIsModalOpen(true)
+  }
 
   return (
     <div id="program-section" style={{ fontFamily: "'Noto Sans KR', 'Inter', sans-serif" }}>
@@ -196,7 +203,7 @@ export function ProgramSectionJmReset() {
                   src={item.image}
                   alt={item.title.replace(/\n/g, " ")}
                   fill
-                  style={{ objectFit: "cover", objectPosition: "center" }}
+                  style={{ objectFit: "cover", objectPosition: item.objectPosition || "center" }}
                   sizes="(max-width: 768px) 100vw, 50vw"
                   onError={(e) => {
                     // 이미지 없으면 그라디언트 폴백
@@ -251,84 +258,388 @@ export function ProgramSectionJmReset() {
         )
       })}
 
-      {/* ═══ 주간 프로그램 — 짙은 배경 ═══ */}
-      <section style={{ background: "#111111", padding: "96px 24px" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: "0.3em", color: "#CCFF00", textTransform: "uppercase", marginBottom: 16 }}>Weekly Schedule</p>
-            <h2 style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(2.2rem,6vw,5rem)", letterSpacing: "-0.02em", color: "#fff", textTransform: "uppercase", marginBottom: 16 }}>
-              주간 프로그램 <span style={{ color: "#CCFF00" }}>구성</span>
+      {/* ═══ 주간 프로그램 — 밝은 배경 (이미지 디자인) ═══ */}
+      <style>{`
+        .jm-weekly-section {
+          background: #f0f2f5;
+          padding: 96px 24px;
+        }
+        .jm-weekly-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
+          margin-bottom: 16px;
+        }
+        .jm-weekly-grid-bottom {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+          max-width: calc(66.666% + 8px);
+        }
+        .jm-weekly-card-light {
+          background: #ffffff;
+          border-radius: 20px;
+          padding: 28px 24px 24px;
+          box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .jm-weekly-card-light:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+        }
+        .jm-weekly-card-light .jm-card-day {
+          font-family: 'Inter', 'Barlow Condensed', sans-serif;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.15em;
+          color: #6b7280;
+          text-transform: uppercase;
+        }
+        .jm-weekly-card-light .jm-card-icon {
+          font-size: 1.8rem;
+          line-height: 1;
+        }
+        .jm-weekly-card-light .jm-card-title {
+          font-family: 'Noto Sans KR', 'Inter', sans-serif;
+          font-weight: 700;
+          font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+          color: #111;
+          margin: 10px 0 0;
+          letter-spacing: -0.01em;
+          word-break: keep-all;
+        }
+        .jm-weekly-card-light .jm-card-divider {
+          width: 32px;
+          height: 2.5px;
+          background: #c8f000;
+          border-radius: 2px;
+          margin: 12px 0;
+        }
+        .jm-weekly-card-light .jm-card-desc {
+          font-family: 'Noto Sans KR', sans-serif;
+          font-size: 14px;
+          color: #6b7280;
+          line-height: 1.65;
+          word-break: keep-all;
+        }
+        @media (max-width: 768px) {
+          .jm-weekly-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .jm-weekly-grid-bottom {
+            grid-template-columns: 1fr !important;
+            max-width: 100% !important;
+          }
+        }
+        @media (min-width: 769px) and (max-width: 900px) {
+          .jm-weekly-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+          .jm-weekly-grid-bottom {
+            grid-template-columns: repeat(2, 1fr) !important;
+            max-width: 100% !important;
+          }
+        }
+      `}</style>
+      <section className="jm-weekly-section">
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          {/* 헤더 */}
+          <div style={{ textAlign: "center", marginBottom: 52 }}>
+            <p style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: 11,
+              fontWeight: 700,
+              letterSpacing: "0.3em",
+              color: "#9ca3af",
+              textTransform: "uppercase",
+              marginBottom: 14,
+            }}>Weekly Schedule</p>
+            <h2 style={{
+              fontFamily: "'Noto Sans KR', 'Inter', sans-serif",
+              fontWeight: 900,
+              fontSize: "clamp(2.2rem, 6vw, 3.6rem)",
+              letterSpacing: "-0.02em",
+              color: "#111",
+              marginBottom: 14,
+              lineHeight: 1.1,
+              wordBreak: "keep-all",
+            }}>
+              주간 프로그램 <span style={{ color: "#a8cc00" }}>구성</span>
             </h2>
-            <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 15 }}>일주일이면 전신을 빠짐없이 훈련할 수 있습니다</p>
+            <p style={{
+              fontFamily: "'Noto Sans KR', sans-serif",
+              fontSize: "clamp(14px, 1.8vw, 16px)",
+              color: "#6b7280",
+              lineHeight: 1.7,
+            }}>일주일이면 전신을 빠짐없이 훈련할 수 있습니다</p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 16 }}>
-            {WEEKLY_PROGRAMS.map((p) => (
-              <div key={p.day} className="jm-week-card" style={{ background: "#1a1a1a", borderColor: "rgba(255,255,255,0.08)" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-                  <span style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: 13, letterSpacing: "0.2em", color: "#CCFF00", textTransform: "uppercase" }}>{p.day}</span>
-                  <span style={{ fontSize: "1.6rem" }}>{p.icon}</span>
+
+          {/* 카드 3열 */}
+          <div className="jm-weekly-grid">
+            {WEEKLY_PROGRAMS.slice(0, 3).map((p) => (
+              <div key={p.day} className="jm-weekly-card-light">
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                  <span className="jm-card-day">{p.day}</span>
+                  <span className="jm-card-icon">{p.icon}</span>
                 </div>
-                <h3 style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.2rem,2vw,1.5rem)", color: "#fff", textTransform: "uppercase", letterSpacing: "0.02em", marginBottom: 8 }}>{p.label}</h3>
-                <div style={{ width: 28, height: 2, background: "linear-gradient(90deg,#CCFF00,transparent)", marginBottom: 10 }} />
-                <p style={{ fontSize: 13, color: "rgba(255,255,255,0.45)", lineHeight: 1.7 }}>{p.desc}</p>
+                <h3 className="jm-card-title">{p.label}</h3>
+                <div className="jm-card-divider" />
+                <p className="jm-card-desc">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* 카드 2열 (하단) */}
+          <div className="jm-weekly-grid-bottom">
+            {WEEKLY_PROGRAMS.slice(3).map((p) => (
+              <div key={p.day} className="jm-weekly-card-light">
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                  <span className="jm-card-day">{p.day}</span>
+                  <span className="jm-card-icon">{p.icon}</span>
+                </div>
+                <h3 className="jm-card-title">{p.label}</h3>
+                <div className="jm-card-divider" />
+                <p className="jm-card-desc">{p.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══ 수업 구조 — 밝은 배경 ═══ */}
-      <section style={{ background: "#f9f9f7", padding: "96px 24px" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gap: 64, gridTemplateColumns: "1fr 1fr", alignItems: "center" }}>
-          <div>
-            <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: "0.3em", color: "#888", textTransform: "uppercase", marginBottom: 16 }}>Class Structure</p>
-            <h2 style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(2rem,5vw,4.5rem)", color: "#111", textTransform: "uppercase", letterSpacing: "-0.02em", lineHeight: 0.95, marginBottom: 20 }}>
-              수업<br /><span style={{ color: "#CCFF00", WebkitTextStroke: "1px #aad400" }}>구조</span>
-            </h2>
-            <p style={{ fontSize: 15, color: "#555", lineHeight: 1.8, marginBottom: 40 }}>
-              총 <strong style={{ color: "#111" }}>40~50분</strong> 안에 <strong style={{ color: "#111" }}>8가지 운동</strong>이 완료됩니다.
-            </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
-              {[
-                { step: "01", label: "시범 & 스트레칭", sub: "워밍업", desc: "동작 시범과 워밍업 스트레칭으로 부상 없이 준비합니다." },
-                { step: "02", label: "근력 존", sub: "메인 2 + 보조 2 · 각 4분 3세트", desc: "메인 운동 2가지, 보조 운동 2가지를 순서대로 진행합니다." },
-                { step: "03", label: "유산소 존", sub: "러닝 · 로잉 · 스키에르그 · 각 4분", desc: "러닝 → 로잉 → 러닝 → 스키에르그 순서로 순환합니다." },
-                { step: "04", label: "쿨다운", sub: "마무리 스트레칭", desc: "정리 스트레칭으로 회복을 돕습니다." },
-              ].map((s) => (
-                <div key={s.step} className="jm-class-step">
-                  <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginBottom: 4 }}>
-                    <span style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: 11, letterSpacing: "0.2em", color: "#CCFF00" }}>{s.step}</span>
-                    <span style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1rem,1.8vw,1.3rem)", color: "#111", textTransform: "uppercase", letterSpacing: "0.04em" }}>{s.label}</span>
-                  </div>
-                  <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", color: "#aad400", textTransform: "uppercase", marginBottom: 4 }}>{s.sub}</p>
-                  <p style={{ fontSize: 13, color: "#666", lineHeight: 1.7 }}>{s.desc}</p>
-                </div>
-              ))}
+      {/* ═══════════════════════════════════════════════
+          📌 [3] 하단 CTA 섹션
+          ═══════════════════════════════════════════════ */}
+      <section className="py-20 md:py-28" style={{ background: "#CCFF00" }}>
+        <div style={{ maxWidth: 800, margin: "0 auto", padding: "0 24px", textAlign: "center" }}>
+          <p
+            style={{ fontFamily: "'Barlow Condensed', sans-serif", textTransform: "uppercase", fontSize: 11, fontWeight: 700, letterSpacing: "0.3em", color: "rgba(0,0,0,0.5)", marginBottom: 16 }}
+          >
+            Limited Spots — 12명 선착순
+          </p>
+          <h2
+            style={{
+              fontFamily: "'Barlow Condensed', 'Oswald', 'Noto Sans KR', sans-serif",
+              fontWeight: 900,
+              fontSize: "clamp(3rem, 10vw, 8.5rem)",
+              letterSpacing: "-0.025em",
+              lineHeight: 0.9,
+              color: "#000000",
+              textTransform: "uppercase",
+              margin: 0
+            }}
+          >
+            JOIN
+            <br />
+            TEAM RESET
+          </h2>
+          <p style={{ marginTop: 24, fontSize: "clamp(15px, 2vw, 18px)", fontWeight: 700, color: "rgba(0,0,0,0.7)", lineHeight: 1.6, wordBreak: "keep-all" }}>
+            인원수 12명 제한 프로그램 — 지금 바로 서둘러 예약해주세요!
+          </p>
+          <button
+            id="bottom-cta-btn"
+            onClick={scrollToForm}
+            className="transition-all duration-200 active:scale-95 hover:scale-105"
+            style={{
+              fontFamily: "'Barlow Condensed', 'Oswald', sans-serif",
+              fontWeight: 900,
+              fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
+              letterSpacing: "0.15em",
+              background: "#000000",
+              color: "#CCFF00",
+              padding: "1.1rem 2.8rem",
+              border: "3px solid #000",
+              cursor: "pointer",
+              marginTop: 40,
+              textTransform: "uppercase",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "#111111"
+              e.currentTarget.style.color = "#FFFFFF"
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "#000000"
+              e.currentTarget.style.color = "#CCFF00"
+            }}
+          >
+            리셋 무료 체험 신청하기
+          </button>
+        </div>
+      </section>
+
+      {/* ═══ 수업 구조 — 이미지 디자인과 동일한 다크 스타일 ═══ */}
+      <section style={{
+        background: "radial-gradient(ellipse at 20% 50%, #1a2a0a 0%, #0d0d0d 50%, #000 100%)",
+        padding: "0",
+        position: "relative",
+        overflow: "hidden",
+      }}>
+        <style>{`
+          @keyframes jm-glow-border {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(204,255,0,0); border-color: #CCFF00; }
+            50% { box-shadow: 0 0 24px 4px rgba(204,255,0,0.25); border-color: #CCFF00; }
+          }
+          .jm-strength-card {
+            animation: jm-glow-border 3s ease-in-out infinite;
+          }
+          .jm-class-card {
+            border: 1.5px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            background: rgba(255,255,255,0.04);
+            padding: 28px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            transition: border-color 0.3s ease, background 0.3s ease;
+          }
+          .jm-class-card:hover {
+            border-color: rgba(204,255,0,0.4);
+            background: rgba(204,255,0,0.04);
+          }
+          @media (max-width: 900px) {
+            .jm-class-structure-grid { grid-template-columns: 1fr !important; }
+            .jm-class-title-col { text-align: center !important; }
+          }
+          @media (max-width: 600px) {
+            .jm-class-card { padding: 20px 20px; }
+          }
+        `}</style>
+
+        {/* 배경 장식 그라디언트 */}
+        <div style={{
+          position: "absolute", top: 0, left: 0, right: 0, bottom: 0, pointerEvents: "none",
+          background: "radial-gradient(ellipse 60% 80% at 15% 60%, rgba(100,180,0,0.07) 0%, transparent 70%)",
+        }} />
+
+        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "96px 24px 0" }}>
+          {/* 2컬럼 그리드 */}
+          <div className="jm-class-structure-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: "64px", alignItems: "center" }}>
+
+            {/* 왼쪽: 타이틀 */}
+            <div className="jm-class-title-col">
+              <p style={{ fontFamily: "'Barlow Condensed','Inter',sans-serif", fontWeight: 700, fontSize: 12, letterSpacing: "0.3em", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", marginBottom: 12 }}>
+                CLASS STRUCTURE
+              </p>
+              <h2 style={{
+                fontFamily: "'Noto Sans KR','Barlow Condensed',sans-serif",
+                fontWeight: 900,
+                fontSize: "clamp(2rem,4vw,3.2rem)",
+                lineHeight: 1.1,
+                color: "#fff",
+                letterSpacing: "-0.02em",
+                marginBottom: 28,
+                whiteSpace: "nowrap",
+              }}>
+                수업 구조
+              </h2>
+              <p style={{
+                fontFamily: "'Noto Sans KR',sans-serif",
+                fontSize: "clamp(15px,2vw,18px)",
+                color: "rgba(255,255,255,0.6)",
+                lineHeight: 1.75,
+                wordBreak: "keep-all",
+              }}>
+                총 40~50분 안에 8가지<br />운동이 완료됩니다.
+              </p>
             </div>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            {[
-              { zone: "WARM-UP", label: "준비 & 시범", duration: "5 min", bg: "#f0f0ee", accent: "#888" },
-              { zone: "STRENGTH", label: "근력 존", duration: "20 min", bg: "#111", accent: "#CCFF00" },
-              { zone: "CARDIO", label: "유산소 존", duration: "16 min", bg: "#1a1a1a", accent: "rgba(204,255,0,0.7)" },
-              { zone: "COOL-DOWN", label: "쿨다운", duration: "5 min", bg: "#f0f0ee", accent: "#888" },
-            ].map((b) => (
-              <div key={b.zone} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: b.bg, borderRadius: 14, padding: "20px 28px" }}>
+
+            {/* 오른쪽: 카드 4개 */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {/* WARM-UP */}
+              <div className="jm-class-card">
                 <div>
-                  <span style={{ display: "block", fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: 10, letterSpacing: "0.25em", color: b.accent, textTransform: "uppercase", marginBottom: 4 }}>{b.zone}</span>
-                  <span style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.1rem,2.5vw,1.4rem)", color: b.bg === "#f0f0ee" ? "#111" : "#fff", textTransform: "uppercase", letterSpacing: "0.03em" }}>{b.label}</span>
+                  <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: "0.25em", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", marginBottom: 4 }}>WARM-UP</p>
+                  <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem,3vw,2.2rem)", color: "#CCFF00", letterSpacing: "0.02em", marginBottom: 4 }}>5 min</p>
+                  <p style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: "clamp(1.1rem,2vw,1.5rem)", color: "#fff" }}>준비 &amp; 시범</p>
                 </div>
-                <span style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: 14, letterSpacing: "0.1em", color: b.accent, background: `${b.accent}15`, border: `1px solid ${b.accent}30`, borderRadius: 999, padding: "6px 18px" }}>{b.duration}</span>
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style={{ flexShrink: 0, opacity: 0.7 }}>
+                  <circle cx="24" cy="10" r="5" stroke="#CCFF00" strokeWidth="2" fill="none"/>
+                  <line x1="24" y1="15" x2="24" y2="30" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="24" y1="22" x2="16" y2="18" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="24" y1="22" x2="32" y2="28" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="24" y1="30" x2="19" y2="42" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="24" y1="30" x2="29" y2="42" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
               </div>
-            ))}
-            <div style={{ background: "#CCFF00", borderRadius: 14, padding: "18px 28px", textAlign: "center" }}>
-              <span style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1rem,2vw,1.25rem)", color: "#000", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                Total 40–50 min · 8 Exercises
-              </span>
+
+              {/* STRENGTH — 강조 카드 */}
+              <div className="jm-class-card jm-strength-card" style={{ borderColor: "#CCFF00", background: "rgba(204,255,0,0.06)" }}>
+                <div>
+                  <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: "0.25em", color: "rgba(204,255,0,0.6)", textTransform: "uppercase", marginBottom: 4 }}>STRENGTH</p>
+                  <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem,3vw,2.2rem)", color: "#CCFF00", letterSpacing: "0.02em", marginBottom: 4 }}>20 min</p>
+                  <p style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: "clamp(1.1rem,2vw,1.5rem)", color: "#fff" }}>근력 존</p>
+                </div>
+                <svg width="52" height="52" viewBox="0 0 52 52" fill="none" style={{ flexShrink: 0, opacity: 0.9 }}>
+                  <rect x="4" y="22" width="8" height="8" rx="2" stroke="#CCFF00" strokeWidth="2" fill="none"/>
+                  <rect x="40" y="22" width="8" height="8" rx="2" stroke="#CCFF00" strokeWidth="2" fill="none"/>
+                  <line x1="12" y1="26" x2="18" y2="26" stroke="#CCFF00" strokeWidth="2.5" strokeLinecap="round"/>
+                  <line x1="34" y1="26" x2="40" y2="26" stroke="#CCFF00" strokeWidth="2.5" strokeLinecap="round"/>
+                  <rect x="18" y="18" width="16" height="16" rx="3" stroke="#CCFF00" strokeWidth="2" fill="rgba(204,255,0,0.1)"/>
+                </svg>
+              </div>
+
+              {/* CARDIO */}
+              <div className="jm-class-card">
+                <div>
+                  <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: "0.25em", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", marginBottom: 4 }}>CARDIO</p>
+                  <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem,3vw,2.2rem)", color: "#CCFF00", letterSpacing: "0.02em", marginBottom: 4 }}>16 min</p>
+                  <p style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: "clamp(1.1rem,2vw,1.5rem)", color: "#fff" }}>유산소 존</p>
+                </div>
+                <svg width="52" height="52" viewBox="0 0 52 52" fill="none" style={{ flexShrink: 0, opacity: 0.7 }}>
+                  <circle cx="16" cy="10" r="5" stroke="#CCFF00" strokeWidth="2" fill="none"/>
+                  <path d="M16 15 L14 25 L22 28 L28 38" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                  <line x1="14" y1="25" x2="8" y2="32" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round"/>
+                  <circle cx="38" cy="40" r="5" stroke="#CCFF00" strokeWidth="2" fill="none"/>
+                  <circle cx="28" cy="40" r="5" stroke="#CCFF00" strokeWidth="2" fill="none"/>
+                </svg>
+              </div>
+
+              {/* COOL-DOWN */}
+              <div className="jm-class-card">
+                <div>
+                  <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: "0.25em", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", marginBottom: 4 }}>COOL-DOWN</p>
+                  <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem,3vw,2.2rem)", color: "#CCFF00", letterSpacing: "0.02em", marginBottom: 4 }}>5 min</p>
+                  <p style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: "clamp(1.1rem,2vw,1.5rem)", color: "#fff" }}>쿨다운</p>
+                </div>
+                <svg width="52" height="52" viewBox="0 0 52 52" fill="none" style={{ flexShrink: 0, opacity: 0.7 }}>
+                  <circle cx="26" cy="8" r="5" stroke="#CCFF00" strokeWidth="2" fill="none"/>
+                  <path d="M26 13 L26 28" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M18 20 Q26 16 34 20" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round" fill="none"/>
+                  <path d="M20 28 Q26 40 32 28" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round" fill="none"/>
+                  <line x1="20" y1="44" x2="32" y2="44" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
+
+        {/* 하단 TOTAL 바 */}
+        <div style={{ marginTop: 56, background: "#CCFF00", padding: "22px 24px", textAlign: "center" }}>
+          <span style={{
+            fontFamily: "'Barlow Condensed','Inter',sans-serif",
+            fontWeight: 900,
+            fontSize: "clamp(1.2rem,3.5vw,2rem)",
+            letterSpacing: "0.1em",
+            color: "#000",
+            textTransform: "uppercase",
+          }}>
+            TOTAL 40-50 MIN · 8 EXERCISES
+          </span>
+        </div>
       </section>
+
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="max-w-xl p-0 bg-transparent border-none max-h-[90vh] overflow-y-auto">
+          <RegistrationSectionJmReset
+            title="리셋 무료 체험 신청하기"
+            branch="리셋 중문점"
+            hideTimePicker={false}
+            isModal={true}
+            onClose={() => setIsModalOpen(false)}
+          />
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }
+
