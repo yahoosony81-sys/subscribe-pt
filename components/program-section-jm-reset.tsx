@@ -59,15 +59,29 @@ const ZIGZAG_ITEMS = [
 ]
 
 const WEEKLY_PROGRAMS = [
+<<<<<<< HEAD
   { day: "MON", label: "하체 근력 +유산소운동", desc: "하체 메인 운동 2가지 + 보조 운동 2가지", icon: "🦵" },
   { day: "TUE", label: "상체 당기기 +유산소운동", desc: "당기기 메인 운동 2가지 + 보조 운동 2가지", icon: "🏋️" },
   { day: "WED", label: "상체 밀기 +유산소운동", desc: "밀기 메인 운동 2가지 + 보조 운동 2가지", icon: "💪" },
   { day: "THU", label: "근지구력 +유산소운동", desc: "지치지 않는 몸을 만드는 지구력 중심 훈련", icon: "⚡" },
+=======
+  { day: "MON", label: "하체 근력", desc: "하체 메인 운동 2가지 + 보조 운동 2가지", icon: "🦵" },
+  { day: "TUE", label: "상체 당기기", desc: "당기기 메인 운동 2가지 + 보조 운동 2가지", icon: "🏋️" },
+  { day: "WED", label: "상체 밀기", desc: "밀기 메인 운동 2가지 + 보조 운동 2가지", icon: "💪" },
+  { day: "THU", label: "근지구력", desc: "지치지 않는 몸을 만드는 지구력 중심 훈련", icon: "⚡" },
+>>>>>>> 0b9882fb7a65ebd41e4e5044349ab09babd210ff
   { day: "FRI", label: "전신 운동", desc: "한 주를 마무리하는 전신 복합 훈련", icon: "🔥" },
 ]
 
 export function ProgramSectionJmReset() {
   const refs = [useScrollReveal(), useScrollReveal(), useScrollReveal()]
+<<<<<<< HEAD
+=======
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const scrollToForm = () => {
+    setIsModalOpen(true)
+  }
+>>>>>>> 0b9882fb7a65ebd41e4e5044349ab09babd210ff
 
   return (
     <div id="program-section" style={{ fontFamily: "'Noto Sans KR', 'Inter', sans-serif" }}>
@@ -455,6 +469,37 @@ export function ProgramSectionJmReset() {
           <p style={{ marginTop: 24, fontSize: "clamp(15px, 2vw, 18px)", fontWeight: 700, color: "rgba(0,0,0,0.7)", lineHeight: 1.6, wordBreak: "keep-all" }}>
             인원수 12명 제한 프로그램 — 지금 바로 서둘러 예약해주세요!
           </p>
+<<<<<<< HEAD
+=======
+          <button
+            id="bottom-cta-btn"
+            onClick={scrollToForm}
+            className="transition-all duration-200 active:scale-95 hover:scale-105"
+            style={{
+              fontFamily: "'Barlow Condensed', 'Oswald', sans-serif",
+              fontWeight: 900,
+              fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
+              letterSpacing: "0.15em",
+              background: "#000000",
+              color: "#CCFF00",
+              padding: "1.1rem 2.8rem",
+              border: "3px solid #000",
+              cursor: "pointer",
+              marginTop: 40,
+              textTransform: "uppercase",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "#111111"
+              e.currentTarget.style.color = "#FFFFFF"
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "#000000"
+              e.currentTarget.style.color = "#CCFF00"
+            }}
+          >
+            리셋 무료 체험 신청하기
+          </button>
+>>>>>>> 0b9882fb7a65ebd41e4e5044349ab09babd210ff
         </div>
       </section>
 
@@ -541,8 +586,13 @@ export function ProgramSectionJmReset() {
               <div className="jm-class-card">
                 <div>
                   <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: "0.25em", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", marginBottom: 4 }}>WARM-UP</p>
+<<<<<<< HEAD
                   <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem,3vw,2.2rem)", color: "#CCFF00", letterSpacing: "0.02em", marginBottom: 4 }}>10 min</p>
                   <p style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: "clamp(1.1rem,2vw,1.5rem)", color: "#fff" }}>준비 및 시범</p>
+=======
+                  <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem,3vw,2.2rem)", color: "#CCFF00", letterSpacing: "0.02em", marginBottom: 4 }}>5 min</p>
+                  <p style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: "clamp(1.1rem,2vw,1.5rem)", color: "#fff" }}>준비 &amp; 시범</p>
+>>>>>>> 0b9882fb7a65ebd41e4e5044349ab09babd210ff
                 </div>
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style={{ flexShrink: 0, opacity: 0.7 }}>
                   <circle cx="24" cy="10" r="5" stroke="#CCFF00" strokeWidth="2" fill="none"/>
@@ -558,8 +608,13 @@ export function ProgramSectionJmReset() {
               <div className="jm-class-card jm-strength-card" style={{ borderColor: "#CCFF00", background: "rgba(204,255,0,0.06)" }}>
                 <div>
                   <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: "0.25em", color: "rgba(204,255,0,0.6)", textTransform: "uppercase", marginBottom: 4 }}>STRENGTH</p>
+<<<<<<< HEAD
                   <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem,3vw,2.2rem)", color: "#CCFF00", letterSpacing: "0.02em", marginBottom: 4 }}>18 min</p>
                   <p style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: "clamp(1.1rem,2vw,1.5rem)", color: "#fff" }}>근력존</p>
+=======
+                  <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem,3vw,2.2rem)", color: "#CCFF00", letterSpacing: "0.02em", marginBottom: 4 }}>20 min</p>
+                  <p style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: "clamp(1.1rem,2vw,1.5rem)", color: "#fff" }}>근력 존</p>
+>>>>>>> 0b9882fb7a65ebd41e4e5044349ab09babd210ff
                 </div>
                 <svg width="52" height="52" viewBox="0 0 52 52" fill="none" style={{ flexShrink: 0, opacity: 0.9 }}>
                   <rect x="4" y="22" width="8" height="8" rx="2" stroke="#CCFF00" strokeWidth="2" fill="none"/>
@@ -574,8 +629,13 @@ export function ProgramSectionJmReset() {
               <div className="jm-class-card">
                 <div>
                   <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: "0.25em", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", marginBottom: 4 }}>CARDIO</p>
+<<<<<<< HEAD
                   <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem,3vw,2.2rem)", color: "#CCFF00", letterSpacing: "0.02em", marginBottom: 4 }}>18 min</p>
                   <p style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: "clamp(1.1rem,2vw,1.5rem)", color: "#fff" }}>유산소존</p>
+=======
+                  <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem,3vw,2.2rem)", color: "#CCFF00", letterSpacing: "0.02em", marginBottom: 4 }}>16 min</p>
+                  <p style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: "clamp(1.1rem,2vw,1.5rem)", color: "#fff" }}>유산소 존</p>
+>>>>>>> 0b9882fb7a65ebd41e4e5044349ab09babd210ff
                 </div>
                 <svg width="52" height="52" viewBox="0 0 52 52" fill="none" style={{ flexShrink: 0, opacity: 0.7 }}>
                   <circle cx="16" cy="10" r="5" stroke="#CCFF00" strokeWidth="2" fill="none"/>
@@ -619,6 +679,21 @@ export function ProgramSectionJmReset() {
           </span>
         </div>
       </section>
+<<<<<<< HEAD
+=======
+
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="max-w-xl p-0 bg-transparent border-none max-h-[90vh] overflow-y-auto">
+          <RegistrationSectionJmReset
+            title="리셋 무료 체험 신청하기"
+            branch="리셋 중문점"
+            hideTimePicker={false}
+            isModal={true}
+            onClose={() => setIsModalOpen(false)}
+          />
+        </DialogContent>
+      </Dialog>
+>>>>>>> 0b9882fb7a65ebd41e4e5044349ab09babd210ff
     </div>
   )
 }

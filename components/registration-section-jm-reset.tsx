@@ -20,7 +20,11 @@ const TIME_SLOTS = generateTimeSlots()
 const RESERVED_SLOTS: Record<string, string[]> = {}
 
 export function RegistrationSectionJmReset({
+<<<<<<< HEAD
   title = "리셋 상담 문의하기",
+=======
+  title = "그룹PT 온라인 예약하기",
+>>>>>>> 0b9882fb7a65ebd41e4e5044349ab09babd210ff
   branch = "리셋 중문점",
   hideTimePicker = false,
   googleSheetUrl = "",

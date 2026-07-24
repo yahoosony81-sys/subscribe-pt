@@ -1,7 +1,12 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+<<<<<<< HEAD
 import { ContactModalJmReset } from "../contact-modal-jm-reset"
+=======
+import { Dialog, DialogContent } from "@/components/ui/dialog"
+import { RegistrationSectionJmReset } from "../registration-section-jm-reset"
+>>>>>>> 0b9882fb7a65ebd41e4e5044349ab09babd210ff
 
 /**
  * ============================================================
@@ -182,6 +187,45 @@ export function PromotionJmReset() {
             className="animate-fadeSlideUp-3 mt-10 mb-10 w-20 h-0.5"
             style={{ background: "linear-gradient(90deg, transparent, #CCFF00, transparent)" }}
           />
+<<<<<<< HEAD
+=======
+
+          {/* CTA 버튼 */}
+          <button
+            id="hero-cta-btn"
+            onClick={scrollToForm}
+            className="animate-fadeSlideUp-4 cta-shimmer font-black uppercase"
+            style={{
+              fontFamily: "'Barlow Condensed', 'Oswald', sans-serif",
+              fontWeight: 900,
+              fontSize: "clamp(1rem, 2.8vw, 1.3rem)",
+              letterSpacing: "0.12em",
+              background: "#CCFF00",
+              color: "#000000",
+              padding: "1.1rem 2.8rem",
+              border: "none",
+              cursor: "pointer",
+              boxShadow: "0 0 0 3px #CCFF00, 0 8px 40px rgba(204,255,0,0.35)",
+              transition: "background 0.18s, box-shadow 0.18s, transform 0.1s",
+            }}
+            onMouseEnter={(e) => {
+              const el = e.currentTarget
+              el.style.background = "#FFFFFF"
+              el.style.boxShadow = "0 0 0 3px #FFFFFF, 0 8px 50px rgba(204,255,0,0.55)"
+              el.style.transform = "scale(1.03)"
+            }}
+            onMouseLeave={(e) => {
+              const el = e.currentTarget
+              el.style.background = "#CCFF00"
+              el.style.boxShadow = "0 0 0 3px #CCFF00, 0 8px 40px rgba(204,255,0,0.35)"
+              el.style.transform = "scale(1)"
+            }}
+            onMouseDown={(e) => { e.currentTarget.style.transform = "scale(0.97)" }}
+            onMouseUp={(e) => { e.currentTarget.style.transform = "scale(1.03)" }}
+          >
+            리셋 무료 체험 신청하기
+          </button>
+>>>>>>> 0b9882fb7a65ebd41e4e5044349ab09babd210ff
         </div>
 
         {/* 스크롤 힌트 */}
@@ -211,7 +255,11 @@ export function PromotionJmReset() {
       {/* ═══════════════════════════════════════════════
           📌 [2] 브랜드 메시지 — Why Team Mind
           ═══════════════════════════════════════════════ */}
+<<<<<<< HEAD
       <section className="bg-black py-20 md:py-28 border-t border-white/10 pb-32">
+=======
+      <section className="bg-black py-20 md:py-28 border-t border-white/10">
+>>>>>>> 0b9882fb7a65ebd41e4e5044349ab09babd210ff
         <div className="max-w-5xl mx-auto px-6 text-center">
           <p
             className="text-[#CCFF00] text-xs tracking-[0.35em] font-bold mb-6 uppercase"
@@ -237,7 +285,11 @@ export function PromotionJmReset() {
             <br className="md:hidden" />{" "}
             <span className="text-white font-bold">팀 리셋</span>과 함께하면 달라집니다.
             <br />
+<<<<<<< HEAD
             전문강사가 직접 이끌어 드리는
+=======
+            10년차 전문강사가 직접 이끌어 드리는
+>>>>>>> 0b9882fb7a65ebd41e4e5044349ab09babd210ff
             <br className="md:hidden" />{" "}
             <span className="text-[#CCFF00] font-bold">100일 그룹 트레이닝</span>을 경험해보세요.
           </p>
@@ -245,6 +297,7 @@ export function PromotionJmReset() {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* ── Fixed Sticky CTA Button ── */}
       <div className="fixed bottom-0 left-0 right-0 z-50 p-3 sm:p-4 bg-black/85 backdrop-blur-md border-t border-white/10 flex justify-center items-center">
         <button
@@ -303,6 +356,21 @@ export function PromotionJmReset() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
+=======
+
+
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="max-w-xl p-0 bg-transparent border-none max-h-[90vh] overflow-y-auto">
+          <RegistrationSectionJmReset
+            title="리셋 무료 체험 신청하기"
+            branch="리셋 중문점"
+            hideTimePicker={false}
+            isModal={true}
+            onClose={() => setIsModalOpen(false)}
+          />
+        </DialogContent>
+      </Dialog>
+>>>>>>> 0b9882fb7a65ebd41e4e5044349ab09babd210ff
     </div>
   )
 }
