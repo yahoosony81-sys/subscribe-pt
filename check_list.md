@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <새로운 랜딩 제작시 체크리스트>
 1. 지점 픽셀 삽입 확인
 2. GTM 코드 삽입 확인(GTM head/body)와 메타픽셀만 안티에 알려주면 알아서 세팅함!
@@ -202,10 +201,4 @@ page.tsx 파일에 아무것도 추가할 필요 없음.
 2. 고객의 궁금증 모두 풀어줘라.(FAQ로 먼저 풀어라)
 3. 지금 결제 해야만 하는 혜택보다는 기회상실을 더 강조
 
-<유지보수 및 관리>
-1. 특정 페이지 서버 캐시 삭제 (인스타 브라우저 등에서 변경사항 적용 안 될 때)
-- 인터넷 주소창에 아래와 같이 입력하고 접속
-- 형식: `https://mindfitness-[지점도메인].com/api/revalidate?path=/[랜딩경로]&secret=mindfitness123!`
-- 예시 (한림점 케어멤버십): `https://mindfitness-hallim.com/api/revalidate?path=/hl-caremembership&secret=mindfitness123!`
 - 성공 시 `{"revalidated":true...}` 메시지가 뜨며 캐시 즉시 비워짐
->>>>>>> 0b9882fb7a65ebd41e4e5044349ab09babd210ff
