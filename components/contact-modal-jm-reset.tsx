@@ -1,7 +1,6 @@
 "use client"
 
-import { useState } from "react"
-import { Phone, Copy, Check, Clock, Coffee, X, MapPin, Eye } from "lucide-react"
+import { Phone, MessageSquare, Clock, Coffee, X, MapPin, Eye } from "lucide-react"
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 
 interface ContactModalJmResetProps {
@@ -16,30 +15,7 @@ const JUNGMUN_PHOTO_URL =
   "https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%20%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%EC%84%9C%EA%B7%80%ED%8F%AC%EC%8B%9C%20%EB%8C%80%ED%8F%AC%EC%A4%91%EC%95%99%EB%A1%9C%206-8%203%EC%B8%B5/place/2058980846?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=%2Fphoto%3FfromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607141452%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EC%A0%9C%EC%A3%BC%20%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%EC%84%9C%EA%B7%80%ED%8F%AC%EC%8B%9C%20%EB%8C%80%ED%8F%AC%EC%A4%91%EC%95%99%EB%A1%9C%206-8%203%EC%B8%B5"
 
 export function ContactModalJmReset({ isOpen, onClose }: ContactModalJmResetProps) {
-  const [copied, setCopied] = useState(false)
   const phoneNumber = "010-7526-0792"
-
-  const handleCopy = async () => {
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(phoneNumber)
-      } else {
-        const textArea = document.createElement("textarea")
-        textArea.value = phoneNumber
-        textArea.style.position = "fixed"
-        textArea.style.left = "-999999px"
-        document.body.appendChild(textArea)
-        textArea.focus()
-        textArea.select()
-        document.execCommand("copy")
-        textArea.remove()
-      }
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch (err) {
-      console.error("복사 실패:", err)
-    }
-  }
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => { if (!open) onClose(); }}>
@@ -69,7 +45,7 @@ export function ContactModalJmReset({ isOpen, onClose }: ContactModalJmResetProp
                 상담 가능 연락처
               </DialogTitle>
               <DialogDescription className="text-xs text-white/60 mt-1">
-                전화 연결 및 번호 복사를 쉽게 이용하실 수 있습니다.
+                전화 연결 및 문자 상담을 바로 이용하실 수 있습니다.
               </DialogDescription>
             </div>
 
@@ -82,7 +58,7 @@ export function ContactModalJmReset({ isOpen, onClose }: ContactModalJmResetProp
 
               {/* Mobile Direct Action Buttons */}
               <div className="grid grid-cols-2 gap-2.5 pt-1">
-                {/* Call / Save Contact Link */}
+                {/* Call Link */}
                 <a
                   href={`tel:${phoneNumber}`}
                   className="flex items-center justify-center gap-2 py-3 px-3 rounded-lg bg-[#CCFF00] text-black font-extrabold text-sm hover:bg-white transition-all shadow-md active:scale-95 cursor-pointer no-underline"
@@ -91,27 +67,18 @@ export function ContactModalJmReset({ isOpen, onClose }: ContactModalJmResetProp
                   <span>전화 연결</span>
                 </a>
 
-                {/* Copy Button */}
-                <button
-                  onClick={handleCopy}
-                  className="flex items-center justify-center gap-2 py-3 px-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/15 text-white font-extrabold text-sm transition-all active:scale-95 cursor-pointer"
+                {/* SMS Link */}
+                <a
+                  href={`sms:${phoneNumber}`}
+                  className="flex items-center justify-center gap-2 py-3 px-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/15 text-white font-extrabold text-sm transition-all active:scale-95 cursor-pointer no-underline"
                 >
-                  {copied ? (
-                    <>
-                      <Check className="w-4 h-4 text-[#CCFF00]" />
-                      <span className="text-[#CCFF00]">복사 완료!</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-4 h-4" />
-                      <span>번호 복사</span>
-                    </>
-                  )}
-                </button>
+                  <MessageSquare className="w-4 h-4 text-white" />
+                  <span>문자 상담하기</span>
+                </a>
               </div>
 
               <p className="text-[11px] text-white/40 font-medium">
-                📱 모바일에서는 [전화 연결]을 누르면 즉시 통화 및 연락처 저장이 가능합니다.
+                📱 모바일 환경에서는 버튼 선택 시 통화 또는 문자 전송 화면으로 바로 연결됩니다.
               </p>
             </div>
 
