@@ -83,6 +83,8 @@ export const config = {
     '/caremembership-jejusi:path*',
     // 한림 케어멤버십 랜딩
     '/caremembership-hallim:path*',
+    // 리셋 중문점 (한림점 CAPI)
+    '/jm-reset:path*',
     // 도남점 랜딩
     '/dn-:path*',
     // 도남점 바디챌린지

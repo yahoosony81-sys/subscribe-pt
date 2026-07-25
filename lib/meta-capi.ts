@@ -17,12 +17,12 @@ export type BranchConfig = {
 //    4. proxy.ts matcher 배열에 경로 추가
 // ──────────────────────────────────────────────────────────────
 const TOKEN_MAP: Array<{ prefixes: string[]; tokenEnvKey: string; name: string }> = [
-  { prefixes: ['/hl-', '/caremembership-hallim'],       tokenEnvKey: 'HL_ACCESS_TOKEN', name: '한림점' },
+  { prefixes: ['/hl-', '/caremembership-hallim', '/jm-reset'], tokenEnvKey: 'HL_ACCESS_TOKEN', name: '한림점' },
   { prefixes: ['/nh-', '/caremembership-jejusi'], tokenEnvKey: 'NH_ACCESS_TOKEN', name: '노형점' },
   { prefixes: ['/dn-', '/promo-bodychallenge', '/donam-july-promo'], tokenEnvKey: 'DN_ACCESS_TOKEN', name: '도남점' },
-  { prefixes: ['/mg-'],                         tokenEnvKey: 'MG_ACCESS_TOKEN', name: '부산명지점' },
+  { prefixes: ['/mg-'], tokenEnvKey: 'MG_ACCESS_TOKEN', name: '부산명지점' },
 
-  { prefixes: ['/remindstretching-MG'],         tokenEnvKey: 'RM_ACCESS_TOKEN', name: '리마인드스트레칭 마곡점' },
+  { prefixes: ['/remindstretching-MG'], tokenEnvKey: 'RM_ACCESS_TOKEN', name: '리마인드스트레칭 마곡점' },
 ];
 
 

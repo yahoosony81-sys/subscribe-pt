@@ -13,7 +13,7 @@ export function GtmProvider() {
   // 각 랜딩 페이지별 경로 확인
   const isNhLanding = pathname.startsWith('/nh-retarget-coffeelanding') || pathname.startsWith('/nh-burning-care') || pathname.startsWith('/nh-pain-membership') || pathname.startsWith('/nh-caremembership') || pathname.startsWith('/caremembership-jejusi');
   const isDnLanding = pathname.startsWith('/dn-') || pathname.startsWith('/promo-bodychallenge') || pathname.startsWith('/donam-july-promo');
-  const isHallimLanding = pathname.startsWith('/hl-burning-caremember') || pathname.startsWith('/hl-caremembership') || pathname.startsWith('/hl-pain-membership') || pathname.startsWith('/caremembership-hallim');
+  const isHallimLanding = pathname.startsWith('/hl-burning-caremember') || pathname.startsWith('/hl-caremembership') || pathname.startsWith('/hl-pain-membership') || pathname.startsWith('/caremembership-hallim') || pathname.startsWith('/jm-reset');
   const isMyeongjiLanding = pathname.startsWith('/mg-');
 
   // 조건에 맞게 GTM 아이디 할당
@@ -25,8 +25,9 @@ export function GtmProvider() {
   if (isHallimLanding) gtmId = "GTM-5VB56Q69"; // 한림점 GTM
   if (isMyeongjiLanding) gtmId = "GTM-TXNCJPBS"; // 부산명지점 GTM
 
-  // 픽셀 ID를 utils/pixelConfig.ts 에서 자동 조회
-  const pixelId = getPixelInfoByPath(pathname)?.pixelId ?? "";
+  // 픽셀 ID를 utils/pixelConfig.ts 에서 자동 조회 (단, GTM 내부에 픽셀이 있는 경로는 브라우저 픽셀 직접 주입 차단)
+  const isDirectBrowserPixelExcluded = pathname.startsWith('/jm-reset');
+  const pixelId = isDirectBrowserPixelExcluded ? "" : (getPixelInfoByPath(pathname)?.pixelId ?? "");
 
   return (
     <>

@@ -84,7 +84,7 @@
 *   **TEAM MIND 그룹PT (영상 히어로)**
     *   주소: https://mindfitness-hallim.com/jm-reset
     *   주요 내용: 팀버핏 감성 영상 히어로 + 첫 방문 무료 체험 예약
-    *   GTM: (추후 추가 예정) | 픽셀: (추후 추가 예정)
+    *   GTM: GTM-5VB56Q69 | 픽셀: GTM 태그 내부 포함 (단독 픽셀 미설치) ✅
 
 ---
 
@@ -178,7 +178,7 @@
 *   **TEAM MIND 그룹PT (영상 히어로)**
     *   주소: https://mindfitness-hallim.com/jm-reset
     *   주요 내용: 팀버핏 감성 영상 히어로 + 첫 방문 무료 체험 예약
-    *   GTM: (추후 추가 예정) | 픽셀: (추후 추가 예정)
+    *   GTM: GTM-5VB56Q69 | 픽셀: GTM 태그 내부 포함 (단독 픽셀 미설치) ✅
 
 ---
 
