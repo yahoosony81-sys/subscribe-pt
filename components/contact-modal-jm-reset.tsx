@@ -1,6 +1,6 @@
 "use client"
 
-import { Phone, MessageSquare, Clock, Coffee, X, MapPin, Eye } from "lucide-react"
+import { Phone, MessageSquare, Clock, X, MapPin, Eye } from "lucide-react"
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 
 interface ContactModalJmResetProps {
@@ -83,21 +83,13 @@ export function ContactModalJmReset({ isOpen, onClose }: ContactModalJmResetProp
             </div>
 
             {/* Hours Card */}
-            <div className="bg-[#1C1C1E]/80 border border-white/10 rounded-xl p-4 space-y-3 mb-5 text-xs sm:text-sm">
-              <div className="flex items-center justify-between py-1 border-b border-white/10">
+            <div className="bg-[#1C1C1E]/80 border border-white/10 rounded-xl p-4 mb-5 text-xs sm:text-sm">
+              <div className="flex items-center justify-between py-1">
                 <div className="flex items-center gap-2 text-white/70 font-medium">
                   <Clock className="w-4 h-4 text-[#CCFF00]" />
                   <span>상담가능시간</span>
                 </div>
-                <span className="font-bold text-white">평일 09:00 ~ 20:30</span>
-              </div>
-
-              <div className="flex items-center justify-between py-1">
-                <div className="flex items-center gap-2 text-white/70 font-medium">
-                  <Coffee className="w-4 h-4 text-amber-400" />
-                  <span>휴게시간</span>
-                </div>
-                <span className="font-bold text-white/80">11:00 ~ 17:30</span>
+                <span className="font-bold text-white">평일 09:00 ~ 21:00</span>
               </div>
             </div>
 

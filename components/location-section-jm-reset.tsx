@@ -146,8 +146,7 @@ export function LocationSectionJmReset() {
                     <div className="flex items-start gap-2">
                       <span className="inline-block w-16 shrink-0 rounded bg-primary/10 px-2 py-0.5 text-center text-xs font-semibold text-primary">평 일</span>
                       <div>
-                        <p className="font-medium text-foreground">09:00 - 20:30</p>
-                        <p className="text-xs text-muted-foreground/80 mt-0.5">휴게시간: 11:00 - 17:30</p>
+                        <p className="font-medium text-foreground">09:00 - 21:00</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
