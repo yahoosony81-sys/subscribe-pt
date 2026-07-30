@@ -428,6 +428,24 @@ export function ProgramSectionJmReset() {
       </section>
 
       {/* ═══════════════════════════════════════════════
+          📌 [2.5] 추가 이미지 섹션
+          ═══════════════════════════════════════════════ */}
+      <section style={{ background: "#f0f2f5", padding: "0 24px 96px" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", flexDirection: "column", gap: "24px" }}>
+          <img 
+            src="/images/KakaoTalk_20260729_121636719_01.png" 
+            alt="리셋 안내 이미지 1" 
+            style={{ width: "100%", height: "auto", borderRadius: "20px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }} 
+          />
+          <img 
+            src="/images/KakaoTalk_20260729_121636719.png" 
+            alt="리셋 안내 이미지 2" 
+            style={{ width: "100%", height: "auto", borderRadius: "20px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }} 
+          />
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════
           📌 [3] 하단 CTA 섹션
           ═══════════════════════════════════════════════ */}
       <section className="py-20 md:py-28" style={{ background: "#CCFF00" }}>
