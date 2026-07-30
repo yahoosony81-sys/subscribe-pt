@@ -431,17 +431,48 @@ export function ProgramSectionJmReset() {
           📌 [2.5] 추가 이미지 섹션
           ═══════════════════════════════════════════════ */}
       <section style={{ background: "#f0f2f5", padding: "0 24px 96px" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", flexDirection: "column", gap: "24px" }}>
-          <img 
-            src="/images/KakaoTalk_20260729_121636719_01.png" 
-            alt="리셋 안내 이미지 1" 
-            style={{ width: "100%", height: "auto", borderRadius: "20px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }} 
-          />
-          <img 
-            src="/images/KakaoTalk_20260729_121636719.png" 
-            alt="리셋 안내 이미지 2" 
-            style={{ width: "100%", height: "auto", borderRadius: "20px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }} 
-          />
+        {/* 구분선: 이미지 컨테이너(900px)보다 살짝 길게(1000px) 설정 */}
+        <div style={{ maxWidth: 1000, margin: "0 auto", height: "1px", background: "rgba(0,0,0,0.1)", marginBottom: "64px" }} />
+        
+        <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", flexDirection: "column", gap: "64px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+            <h3 style={{ 
+              fontFamily: "'Noto Sans KR', 'Inter', sans-serif", 
+              fontWeight: 900, 
+              fontSize: "clamp(1.7rem, 4.5vw, 2.4rem)", 
+              color: "#111", 
+              textAlign: "center", 
+              wordBreak: "keep-all",
+              letterSpacing: "-0.02em",
+              lineHeight: 1.3
+            }}>
+              저장 모드와 분해 모드의 <span style={{ color: "#7ba600" }}>차이점</span>
+            </h3>
+            <img 
+              src="/images/KakaoTalk_20260729_121636719_01.png" 
+              alt="저장 모드와 분해 모드의 차이점" 
+              style={{ width: "100%", height: "auto", borderRadius: "20px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }} 
+            />
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+            <h3 style={{ 
+              fontFamily: "'Noto Sans KR', 'Inter', sans-serif", 
+              fontWeight: 900, 
+              fontSize: "clamp(1.7rem, 4.5vw, 2.4rem)", 
+              color: "#111", 
+              textAlign: "center", 
+              wordBreak: "keep-all",
+              letterSpacing: "-0.02em",
+              lineHeight: 1.3
+            }}>
+              리셋 프로그램 식단 적용 및 <span style={{ color: "#7ba600" }}>단식 법칙</span>
+            </h3>
+            <img 
+              src="/images/KakaoTalk_20260729_121636719.png" 
+              alt="리셋 프로그램 식단 적용 및 단식 법칙" 
+              style={{ width: "100%", height: "auto", borderRadius: "20px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }} 
+            />
+          </div>
         </div>
       </section>
 
@@ -565,12 +596,12 @@ export function ProgramSectionJmReset() {
                   <p style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: "clamp(1.1rem,2vw,1.5rem)", color: "#fff" }}>준비 및 시범</p>
                 </div>
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style={{ flexShrink: 0, opacity: 0.7 }}>
-                  <circle cx="24" cy="10" r="5" stroke="#CCFF00" strokeWidth="2" fill="none"/>
-                  <line x1="24" y1="15" x2="24" y2="30" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round"/>
-                  <line x1="24" y1="22" x2="16" y2="18" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round"/>
-                  <line x1="24" y1="22" x2="32" y2="28" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round"/>
-                  <line x1="24" y1="30" x2="19" y2="42" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round"/>
-                  <line x1="24" y1="30" x2="29" y2="42" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round"/>
+                  <circle cx="24" cy="10" r="5" stroke="#CCFF00" strokeWidth="2" fill="none" />
+                  <line x1="24" y1="15" x2="24" y2="30" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round" />
+                  <line x1="24" y1="22" x2="16" y2="18" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round" />
+                  <line x1="24" y1="22" x2="32" y2="28" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round" />
+                  <line x1="24" y1="30" x2="19" y2="42" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round" />
+                  <line x1="24" y1="30" x2="29" y2="42" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round" />
                 </svg>
               </div>
 
@@ -582,11 +613,11 @@ export function ProgramSectionJmReset() {
                   <p style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: "clamp(1.1rem,2vw,1.5rem)", color: "#fff" }}>근력존</p>
                 </div>
                 <svg width="52" height="52" viewBox="0 0 52 52" fill="none" style={{ flexShrink: 0, opacity: 0.9 }}>
-                  <rect x="4" y="22" width="8" height="8" rx="2" stroke="#CCFF00" strokeWidth="2" fill="none"/>
-                  <rect x="40" y="22" width="8" height="8" rx="2" stroke="#CCFF00" strokeWidth="2" fill="none"/>
-                  <line x1="12" y1="26" x2="18" y2="26" stroke="#CCFF00" strokeWidth="2.5" strokeLinecap="round"/>
-                  <line x1="34" y1="26" x2="40" y2="26" stroke="#CCFF00" strokeWidth="2.5" strokeLinecap="round"/>
-                  <rect x="18" y="18" width="16" height="16" rx="3" stroke="#CCFF00" strokeWidth="2" fill="rgba(204,255,0,0.1)"/>
+                  <rect x="4" y="22" width="8" height="8" rx="2" stroke="#CCFF00" strokeWidth="2" fill="none" />
+                  <rect x="40" y="22" width="8" height="8" rx="2" stroke="#CCFF00" strokeWidth="2" fill="none" />
+                  <line x1="12" y1="26" x2="18" y2="26" stroke="#CCFF00" strokeWidth="2.5" strokeLinecap="round" />
+                  <line x1="34" y1="26" x2="40" y2="26" stroke="#CCFF00" strokeWidth="2.5" strokeLinecap="round" />
+                  <rect x="18" y="18" width="16" height="16" rx="3" stroke="#CCFF00" strokeWidth="2" fill="rgba(204,255,0,0.1)" />
                 </svg>
               </div>
 
@@ -598,11 +629,11 @@ export function ProgramSectionJmReset() {
                   <p style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: "clamp(1.1rem,2vw,1.5rem)", color: "#fff" }}>유산소존</p>
                 </div>
                 <svg width="52" height="52" viewBox="0 0 52 52" fill="none" style={{ flexShrink: 0, opacity: 0.7 }}>
-                  <circle cx="16" cy="10" r="5" stroke="#CCFF00" strokeWidth="2" fill="none"/>
-                  <path d="M16 15 L14 25 L22 28 L28 38" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                  <line x1="14" y1="25" x2="8" y2="32" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round"/>
-                  <circle cx="38" cy="40" r="5" stroke="#CCFF00" strokeWidth="2" fill="none"/>
-                  <circle cx="28" cy="40" r="5" stroke="#CCFF00" strokeWidth="2" fill="none"/>
+                  <circle cx="16" cy="10" r="5" stroke="#CCFF00" strokeWidth="2" fill="none" />
+                  <path d="M16 15 L14 25 L22 28 L28 38" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                  <line x1="14" y1="25" x2="8" y2="32" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round" />
+                  <circle cx="38" cy="40" r="5" stroke="#CCFF00" strokeWidth="2" fill="none" />
+                  <circle cx="28" cy="40" r="5" stroke="#CCFF00" strokeWidth="2" fill="none" />
                 </svg>
               </div>
 
@@ -614,11 +645,11 @@ export function ProgramSectionJmReset() {
                   <p style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: "clamp(1.1rem,2vw,1.5rem)", color: "#fff" }}>쿨다운</p>
                 </div>
                 <svg width="52" height="52" viewBox="0 0 52 52" fill="none" style={{ flexShrink: 0, opacity: 0.7 }}>
-                  <circle cx="26" cy="8" r="5" stroke="#CCFF00" strokeWidth="2" fill="none"/>
-                  <path d="M26 13 L26 28" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round"/>
-                  <path d="M18 20 Q26 16 34 20" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round" fill="none"/>
-                  <path d="M20 28 Q26 40 32 28" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round" fill="none"/>
-                  <line x1="20" y1="44" x2="32" y2="44" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round"/>
+                  <circle cx="26" cy="8" r="5" stroke="#CCFF00" strokeWidth="2" fill="none" />
+                  <path d="M26 13 L26 28" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M18 20 Q26 16 34 20" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round" fill="none" />
+                  <path d="M20 28 Q26 40 32 28" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round" fill="none" />
+                  <line x1="20" y1="44" x2="32" y2="44" stroke="#CCFF00" strokeWidth="2" strokeLinecap="round" />
                 </svg>
               </div>
             </div>
