@@ -104,7 +104,7 @@ export function PromotionJmReset() {
       >
         {/* 배경 이미지 (기존 영상 임시 교체) */}
         <img
-          src="/images/리워드랜딩히어로배경사진.png"
+          src="/images/리워드랜딩히어로최종사진.png"
           alt="리셋중문점 히어로"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ zIndex: 0 }}
