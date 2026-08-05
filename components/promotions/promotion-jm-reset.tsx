@@ -305,7 +305,7 @@ export function PromotionJmReset() {
                 className="text-3xl md:text-4xl font-black mb-8 leading-tight"
                 style={{ fontFamily: "'Noto Sans KR', sans-serif", wordBreak: "keep-all" }}
               >
-                8월 10일 리셋 스타트<br />무료제공 패키지
+                리셋 스타트<br />무료제공 패키지
               </h3>
               
               <ul className="space-y-6">
