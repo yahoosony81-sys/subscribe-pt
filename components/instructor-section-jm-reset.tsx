@@ -72,6 +72,18 @@ export function InstructorSectionJmReset() {
           />
         </div>
 
+        {/* 이서진 이사 이미지 */}
+        <div className="jm-instructor-img-wrap" style={{ marginBottom: 40 }}>
+          <Image
+            src="/images/이서진이사프로핌.png"
+            alt="리셋 프로그램 이서진 이사 소개"
+            fill
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            sizes="(max-width: 768px) 100vw, 960px"
+            priority
+          />
+        </div>
+
         {/* 강사 이미지 */}
         <div className="jm-instructor-img-wrap">
           <Image

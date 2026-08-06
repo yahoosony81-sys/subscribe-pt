@@ -279,74 +279,7 @@ export function ProgramSectionJmReset() {
         )
       })}
 
-      {/* ═══════════════════════════════════════════════
-          📌 [2.5] 추가 이미지 섹션
-          ═══════════════════════════════════════════════ */}
-      <section style={{ background: "#f0f2f5", padding: "96px 24px 0" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", flexDirection: "column", gap: "128px" }}>
-          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-            <div style={{ textAlign: "center" }}>
-              <h3 style={{ 
-                fontFamily: "'Noto Sans KR', 'Inter', sans-serif",
-                fontWeight: 900,
-                fontSize: "clamp(2.2rem, 6vw, 3.6rem)",
-                letterSpacing: "-0.02em",
-                color: "#111",
-                marginBottom: 14,
-                lineHeight: 1.1,
-                wordBreak: "keep-all",
-              }}>
-                저장&nbsp;모드와 분해&nbsp;모드의 <span style={{ color: "#7ba600" }}>차이점</span>
-              </h3>
-              <p style={{ 
-                fontFamily: "'Noto Sans KR', sans-serif",
-                fontSize: "clamp(14px, 1.8vw, 16px)",
-                color: "#6b7280",
-                lineHeight: 1.7,
-              }}>
-                우리&nbsp;몸이 체지방을 저장하고 분해하는&nbsp;원리를 이해해보세요.
-              </p>
-            </div>
-            <img 
-              src="/images/KakaoTalk_20260729_121636719_01.png" 
-              alt="저장 모드와 분해 모드의 차이점" 
-              style={{ width: "100%", height: "auto", borderRadius: "20px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }} 
-            />
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-            <div style={{ textAlign: "center" }}>
-              <h3 style={{ 
-                fontFamily: "'Noto Sans KR', 'Inter', sans-serif",
-                fontWeight: 900,
-                fontSize: "clamp(2.2rem, 6vw, 3.6rem)",
-                letterSpacing: "-0.02em",
-                color: "#111",
-                marginBottom: 14,
-                lineHeight: 1.1,
-                wordBreak: "keep-all",
-              }}>
-                리셋&nbsp;프로그램 식단&nbsp;적용&nbsp;및 <span style={{ color: "#7ba600" }}>단식&nbsp;법칙</span>
-              </h3>
-              <p style={{ 
-                fontFamily: "'Noto Sans KR', sans-serif",
-                fontSize: "clamp(14px, 1.8vw, 16px)",
-                color: "#6b7280",
-                lineHeight: 1.7,
-              }}>
-                성공적인&nbsp;리셋을&nbsp;위해 지켜야&nbsp;할 필수&nbsp;식단&nbsp;가이드입니다.
-              </p>
-            </div>
-            <img 
-              src="/images/KakaoTalk_20260729_121636719.png" 
-              alt="리셋 프로그램 식단 적용 및 단식 법칙" 
-              style={{ width: "100%", height: "auto", borderRadius: "20px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }} 
-            />
-          </div>
-        </div>
-        
-        {/* 구분선: 이미지 컨테이너(900px)보다 살짝 길게(1000px) 설정 */}
-        <div style={{ maxWidth: 1000, margin: "64px auto 0", height: "1px", background: "rgba(0,0,0,0.1)" }} />
-      </section>
+
 
       {/* ═══ 주간 프로그램 — 밝은 배경 (이미지 디자인) ═══ */}
       <style>{`
