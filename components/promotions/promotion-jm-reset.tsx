@@ -173,64 +173,7 @@ export function PromotionJmReset() {
             <span className="neon-green">RESET</span>
           </h2>
 
-          {/* 리워드 안내 CTA 버튼 */}
-          <button
-            onClick={() => document.getElementById('reward-section')?.scrollIntoView({ behavior: 'smooth' })}
-            className="animate-fadeSlideUp-4 cta-shimmer flex items-center justify-center gap-2 mt-16 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-xl cursor-pointer"
-            style={{
-              fontFamily: "'Barlow Condensed', 'Oswald', 'Noto Sans KR', sans-serif",
-              fontWeight: 800,
-              fontSize: "clamp(1.1rem, 3.5vw, 1.5rem)",
-              letterSpacing: "0.02em",
-              background: "#CCFF00",
-              color: "#000000",
-              border: "none",
-              boxShadow: "0 8px 30px rgba(204,255,0,0.4)",
-              transition: "transform 0.2s, box-shadow 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.05)"
-              e.currentTarget.style.boxShadow = "0 12px 40px rgba(204,255,0,0.6)"
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "scale(1)"
-              e.currentTarget.style.boxShadow = "0 8px 30px rgba(204,255,0,0.4)"
-            }}
-          >
-            {/* 왼쪽 화살표 */}
-            <svg
-              className="animate-bounce"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              style={{ minWidth: "24px" }}
-            >
-              <path d="M12 4v16M19 13l-7 7-7-7" />
-            </svg>
 
-            <span>8월 10일 시작되는 리셋 리워드 제공상품을 확인하세요</span>
-
-            {/* 오른쪽 화살표 */}
-            <svg
-              className="animate-bounce"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              style={{ minWidth: "24px" }}
-            >
-              <path d="M12 4v16M19 13l-7 7-7-7" />
-            </svg>
-          </button>
 
           {/* 구분선 */}
           <div
@@ -305,7 +248,7 @@ export function PromotionJmReset() {
                 className="text-3xl md:text-4xl font-black mb-8 leading-tight"
                 style={{ fontFamily: "'Noto Sans KR', sans-serif", wordBreak: "keep-all" }}
               >
-                리셋 스타트<br />무료제공 패키지
+                리셋 스타트<br />무료제공 패키지 <span className="text-lg md:text-xl text-red-500 font-bold ml-1 align-baseline tracking-normal">(신청자 전원제공)</span>
               </h3>
               
               <ul className="space-y-6">
