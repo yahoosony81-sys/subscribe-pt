@@ -173,11 +173,29 @@ export function PromotionJmReset() {
             <span className="neon-green">RESET</span>
           </h2>
 
-
+          {/* 환급 프로그램 바로가기 버튼 */}
+          <div className="animate-fadeSlideUp-4 mt-12 cursor-pointer z-20">
+            <button
+              onClick={() => {
+                document.getElementById('reward-section')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="flex items-center justify-center gap-4 px-8 py-4 rounded-full bg-[#CCFF00]/15 hover:bg-[#CCFF00]/30 border border-[#CCFF00]/50 backdrop-blur-md transition-all duration-300 shadow-[0_0_20px_rgba(204,255,0,0.3)] hover:shadow-[0_0_30px_rgba(204,255,0,0.6)]"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#CCFF00] animate-bounce">
+                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span className="text-[#CCFF00] font-black text-xl md:text-2xl tracking-wide drop-shadow-[0_0_8px_rgba(204,255,0,0.8)]" style={{ fontFamily: "'Noto Sans KR', sans-serif" }}>
+                리셋 중문 9월 환급 프로그램 자세히 보기
+              </span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#CCFF00] animate-bounce">
+                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
 
           {/* 구분선 */}
           <div
-            className="animate-fadeSlideUp-3 mt-10 mb-10 w-20 h-0.5"
+            className="animate-fadeSlideUp-4 mt-10 mb-10 w-20 h-0.5"
             style={{ background: "linear-gradient(90deg, transparent, #CCFF00, transparent)" }}
           />
 
@@ -221,7 +239,7 @@ export function PromotionJmReset() {
                 letterSpacing: "-0.01em",
               }}
             >
-              <span className="neon-green">리셋 프로그램</span> 스페셜 혜택
+              <span className="neon-green">9월 환급 프로그램</span> 혜택
             </h2>
           </div>
 
@@ -230,8 +248,8 @@ export function PromotionJmReset() {
             {/* 사진 영역 */}
             <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(204,255,0,0.15)] transition-transform duration-500 hover:scale-[1.02]">
               <img
-                src="/images/KakaoTalk_20260731_131744866.png"
-                alt="무료제공 패키지"
+                src="/images/환급3명엉덩이.png"
+                alt="100% 환급프로그램"
                 className="w-full h-full object-cover"
                 style={{ aspectRatio: '4/3' }}
               />
@@ -242,45 +260,51 @@ export function PromotionJmReset() {
                 className="text-[#CCFF00] font-bold text-xs tracking-[0.2em] mb-4 uppercase inline-block border border-[#CCFF00] rounded-full px-4 py-1"
                 style={{ fontFamily: "'Inter', sans-serif", width: "fit-content" }}
               >
-                FREE PACKAGE
+                100% CASHBACK
               </div>
               <h3
-                className="text-3xl md:text-4xl font-black mb-8 leading-tight"
+                className="text-3xl md:text-4xl font-black mb-2 leading-tight"
                 style={{ fontFamily: "'Noto Sans KR', sans-serif", wordBreak: "keep-all" }}
               >
-                리셋 스타트<br />무료제공 패키지 <span className="text-lg md:text-xl text-red-500 font-bold ml-1 align-baseline tracking-normal">(신청자 전원제공)</span>
+                100% 환급프로그램
               </h3>
+              <p
+                className="text-white/80 font-medium text-sm md:text-base mb-8"
+                style={{ fontFamily: "'Noto Sans KR', sans-serif", wordBreak: "keep-all" }}
+              >
+                (한 달 동안 운동도 하고, 돈도 받고)
+              </p>
               
               <ul className="space-y-6">
                 <li className="flex flex-col border-l-[3px] border-[#CCFF00] pl-5">
-                  <span className="text-xl font-bold mb-1">⚖️ 체중계</span>
+                  <span className="text-xl font-bold mb-1">🔥 출석률 90% 달성 시 전액 환급</span>
                   <span className="text-white/60 text-sm md:text-base leading-relaxed word-break-keep">
-                    매일 아침 공복 체중을 기록하며 건강한 변화를 눈으로 직접 확인하세요.
+                    한 달 동안 오직 출석만 90% 완료하면 수업료를 100% 환급해 드립니다. 운동을 시작하고, 지속하는 습관을 만드는 프로그램입니다.
                   </span>
                 </li>
                 <li className="flex flex-col border-l-[3px] border-[#CCFF00] pl-5">
-                  <span className="text-xl font-bold mb-1">📝 100일 체중변화 기록지</span>
+                  <span className="text-xl font-bold mb-1">🏃 코치의 밀착 출석 관리</span>
                   <span className="text-white/60 text-sm md:text-base leading-relaxed word-break-keep">
-                    단순한 숫자 변화가 아닌, 100일간 달라지는 몸과 습관의 성장을 기록합니다.
+                    코치의 출석 관리 및 독려가 이루어집니다. <span className="text-[#CCFF00] font-bold">(선착순 3명 모집)</span> 20일 기준 18일 출석!
                   </span>
                 </li>
                 <li className="flex flex-col border-l-[3px] border-[#CCFF00] pl-5">
-                  <span className="text-xl font-bold mb-1">☕ 방탄커피 패키지</span>
+                  <span className="text-xl font-bold mb-1">💰 19만원 결제 후 19만원 페이백</span>
                   <span className="text-white/60 text-sm md:text-base leading-relaxed word-break-keep">
-                    아침 공복을 든든하게 채워주고 신진대사 에너지를 부스팅 해주는 세트입니다.
+                    1개월권 19만원 결제 후 출석 완료 시 19만원을 환급해 드립니다. (추후 환급 또는 회원권 등록 금액에서 19만원 차감 형태로 진행)
                   </span>
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* 2. 목표달성시 리워드 제공 내용 (텍스트 좌, 이미지 우) */}
+          {/* 2. 일반 등록 회원 혜택 (텍스트 좌, 이미지 우) */}
           <div className="flex flex-col md:flex-row-reverse items-stretch gap-10">
             {/* 사진 영역 */}
             <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(204,255,0,0.15)] transition-transform duration-500 hover:scale-[1.02]">
               <img
-                src="/images/KakaoTalk_20260731_131326295_01.png"
-                alt="목표달성 리워드"
+                src="/images/코치님만세.png"
+                alt="일반 등록 회원 혜택"
                 className="w-full h-full object-cover"
                 style={{ aspectRatio: '4/3' }}
               />
@@ -291,43 +315,43 @@ export function PromotionJmReset() {
                 className="text-[#CCFF00] font-bold text-xs tracking-[0.2em] mb-4 uppercase inline-block border border-[#CCFF00] rounded-full px-4 py-1"
                 style={{ fontFamily: "'Inter', sans-serif", width: "fit-content" }}
               >
-                ACHIEVEMENT REWARD
+                MEMBER BENEFITS
               </div>
               <h3
-                className="text-3xl md:text-4xl font-black mb-3 leading-tight"
+                className="text-3xl md:text-4xl font-black mb-2 leading-tight"
                 style={{ fontFamily: "'Noto Sans KR', sans-serif", wordBreak: "keep-all" }}
               >
-                100일 목표 달성 시<br />특별 리워드 제공
+                일반 등록 회원 혜택
               </h3>
               <p
-                className="text-red-500 font-bold text-sm md:text-base mb-8"
-                style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
+                className="text-white/80 font-medium text-sm md:text-base mb-8"
+                style={{ fontFamily: "'Noto Sans KR', sans-serif", wordBreak: "keep-all" }}
               >
-                (8월 10일 이전 신청자 적용)
+                (선착순 제외자)
               </p>
               
-              <ul className="space-y-6 relative">
-                <div className="absolute -left-3 -top-3 text-[#CCFF00] font-bold text-sm tracking-wider opacity-80">
-                  (아래 혜택 중 택 1)
-                </div>
+              <ul className="space-y-8">
+                <li className="flex flex-col border-l-[3px] border-[#CCFF00] pl-5">
+                  <span className="text-xl font-bold mb-1">🎁 웰컴 패키지 <span className="text-[#CCFF00] font-bold text-lg">(택 1)</span></span>
+                  <span className="text-white/60 text-sm md:text-base leading-relaxed word-break-keep">
+                    한달 체중변화 기록지, 방탄커피 패키지, 체중계 중 1가지를 선택하여 받아보실 수 있습니다.
+                  </span>
+                </li>
                 
-                <li className="flex flex-col border-l-[3px] border-[#CCFF00] pl-5 mt-8">
-                  <span className="text-xl font-bold mb-1">🎟️ 리셋 1개월 무료이용권</span>
-                  <span className="text-white/60 text-sm md:text-base leading-relaxed word-break-keep">
-                    꾸준한 습관을 이어나갈 수 있도록 1개월 추가 연장 혜택을 드립니다.
-                  </span>
-                </li>
                 <li className="flex flex-col border-l-[3px] border-[#CCFF00] pl-5">
-                  <span className="text-xl font-bold mb-1">💪 20만원 상당 PT 이용권</span>
-                  <span className="text-white/60 text-sm md:text-base leading-relaxed word-break-keep">
-                    더 디테일한 체형 분석과 전문적인 1:1 관리를 경험해 보세요.
+                  <span className="text-[#CCFF00] font-bold text-xs tracking-[0.1em] mb-2 uppercase inline-block border border-[#CCFF00] rounded-md px-2 py-0.5 w-fit">
+                    SPECIAL OFFER
                   </span>
-                </li>
-                <li className="flex flex-col border-l-[3px] border-[#CCFF00] pl-5">
-                  <span className="text-xl font-bold mb-1">📸 바디프로필 촬영권</span>
+                  <span className="text-xl font-bold mb-2">🔥 3개월 등록 회원 특별 혜택</span>
                   <span className="text-white/60 text-sm md:text-base leading-relaxed word-break-keep">
-                    100일간의 피땀 흘린 멋진 성과를 인생 사진으로 영구 소장해 보세요.
+                    단, 3개월 등록 회원은 <span className="text-white font-bold">위 3가지 웰컴 패키지를 모두 제공</span>해 드립니다!<br/>
+                    추가로 아래 특별 리워드 중 <span className="text-[#CCFF00] font-bold">택 1 제공</span>:
                   </span>
+                  <ul className="mt-3 space-y-2 text-sm md:text-base text-white/80">
+                    <li className="flex items-center gap-2"><span className="text-[#CCFF00] font-bold">✔</span> 바디프로필 촬영권</li>
+                    <li className="flex items-center gap-2"><span className="text-[#CCFF00] font-bold">✔</span> 리셋 1개월 무료 이용권</li>
+                    <li className="flex items-center gap-2"><span className="text-[#CCFF00] font-bold">✔</span> 20만원 상당 PT 이용권</li>
+                  </ul>
                 </li>
               </ul>
             </div>
@@ -410,7 +434,7 @@ export function PromotionJmReset() {
               lineHeight: 1.2,
             }}
           >
-            리셋 상담 가능한 연락처 보기
+            리셋 상담(문자/전화) 가능한 연락처 보기
           </span>
           <span
             style={{
