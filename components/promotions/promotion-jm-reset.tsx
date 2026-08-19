@@ -332,9 +332,9 @@ export function PromotionJmReset() {
               
               <ul className="space-y-8">
                 <li className="flex flex-col border-l-[3px] border-[#CCFF00] pl-5">
-                  <span className="text-xl font-bold mb-1">🎁 웰컴 패키지 <span className="text-[#CCFF00] font-bold text-lg">(택 1)</span></span>
+                  <span className="text-xl font-bold mb-1">🎁 웰컴 패키지 <span className="text-[#CCFF00] font-bold text-lg">(2개 제공)</span></span>
                   <span className="text-white/60 text-sm md:text-base leading-relaxed word-break-keep">
-                    한달 체중변화 기록지, 방탄커피 패키지, 체중계 중 1가지를 선택하여 받아보실 수 있습니다.
+                    한달 체중변화 기록지, 체중계 2가지를 모두 받아보실 수 있습니다.
                   </span>
                 </li>
                 
@@ -342,16 +342,14 @@ export function PromotionJmReset() {
                   <span className="text-[#CCFF00] font-bold text-xs tracking-[0.1em] mb-2 uppercase inline-block border border-[#CCFF00] rounded-md px-2 py-0.5 w-fit">
                     SPECIAL OFFER
                   </span>
-                  <span className="text-xl font-bold mb-2">🔥 3개월 등록 회원 특별 혜택</span>
-                  <span className="text-white/60 text-sm md:text-base leading-relaxed word-break-keep">
-                    단, 3개월 등록 회원은 <span className="text-white font-bold">위 3가지 웰컴 패키지를 모두 제공</span>해 드립니다!<br/>
-                    추가로 아래 특별 리워드 중 <span className="text-[#CCFF00] font-bold">택 1 제공</span>:
-                  </span>
-                  <ul className="mt-3 space-y-2 text-sm md:text-base text-white/80">
-                    <li className="flex items-center gap-2"><span className="text-[#CCFF00] font-bold">✔</span> 바디프로필 촬영권</li>
-                    <li className="flex items-center gap-2"><span className="text-[#CCFF00] font-bold">✔</span> 리셋 1개월 무료 이용권</li>
-                    <li className="flex items-center gap-2"><span className="text-[#CCFF00] font-bold">✔</span> 20만원 상당 PT 이용권</li>
-                  </ul>
+                  <div className="mt-1 mb-2 flex items-center flex-wrap gap-x-3 gap-y-2">
+                    <span className="text-2xl md:text-3xl font-black">🔥 3개월 등록 회원 특별 혜택</span>
+                    <div className="flex items-center gap-2 whitespace-nowrap">
+                      <span className="text-white/50 line-through text-xl md:text-2xl font-bold">57만원</span>
+                      <span className="text-white/50 text-xl font-bold">→</span>
+                      <span className="text-[#CCFF00] text-3xl md:text-4xl font-black tracking-tight">45만원(20%할인)</span>
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>
