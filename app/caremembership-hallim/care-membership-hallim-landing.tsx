@@ -57,6 +57,7 @@ type ZigzagItem = {
 const ZIGZAG_ITEMS: ZigzagItem[] = [
   {
     image: "/images/애플힙케어.png",
+    objectPosition: "center bottom",
     tag: "APPLE HIP CARE",
     tagColor: "#c8a96e",
     title: "애플힙 케어\n멤버십",
@@ -68,6 +69,7 @@ const ZIGZAG_ITEMS: ZigzagItem[] = [
   },
   {
     image: "/images/코어핏케어.png",
+    objectPosition: "center bottom",
     tag: "CORE FIT CARE",
     tagColor: "#7a8fa6",
     title: "코어핏 케어\n멤버십",
@@ -101,6 +103,7 @@ const ZIGZAG_ITEMS: ZigzagItem[] = [
   },
   {
     image: "/images/라이트레스케어.png",
+    objectPosition: "center bottom",
     tag: "LIGHT LEG CARE",
     tagColor: "#c8a96e",
     title: "라이트레그 케어\n멤버십",
@@ -207,13 +210,13 @@ export function CareMembershipHallimLanding() {
             onClick={() => {
               document.getElementById('care-membership-targets')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="group flex items-center justify-center gap-5 md:gap-8 mt-10 px-12 py-6 md:px-24 md:py-8 bg-black/50 backdrop-blur-md rounded-full border border-[#c8a96e]/50 shadow-[0_4px_24px_rgba(200,169,110,0.3)] w-fit mx-auto cursor-pointer transition-all duration-300 hover:bg-[#c8a96e] hover:scale-105 hover:shadow-[0_8px_32px_rgba(200,169,110,0.6)]"
+            className="group flex items-center justify-center gap-3 sm:gap-5 md:gap-8 mt-10 px-6 py-5 sm:px-12 sm:py-6 md:px-24 md:py-8 bg-black/50 backdrop-blur-md rounded-full border border-[#c8a96e]/50 shadow-[0_4px_24px_rgba(200,169,110,0.3)] w-fit mx-auto cursor-pointer transition-all duration-300 hover:bg-[#c8a96e] hover:scale-105 hover:shadow-[0_8px_32px_rgba(200,169,110,0.6)]"
           >
-            <ChevronDown className="animate-bounce w-7 h-7 md:w-9 md:h-9 text-[#c8a96e] group-hover:text-white transition-colors duration-300" />
-            <span className="text-2xl md:text-4xl font-bold tracking-wide text-white drop-shadow-lg group-hover:text-white transition-colors duration-300">
+            <ChevronDown className="animate-bounce w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 text-[#c8a96e] group-hover:text-white transition-colors duration-300" />
+            <span className="text-lg sm:text-2xl md:text-4xl whitespace-nowrap font-bold tracking-wide text-white drop-shadow-lg group-hover:text-white transition-colors duration-300">
               맞춤 케어멤버십 자세히보기
             </span>
-            <ChevronDown className="animate-bounce w-7 h-7 md:w-9 md:h-9 text-[#c8a96e] group-hover:text-white transition-colors duration-300" />
+            <ChevronDown className="animate-bounce w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 text-[#c8a96e] group-hover:text-white transition-colors duration-300" />
           </button>
         </div>
 
