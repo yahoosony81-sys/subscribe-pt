@@ -12,7 +12,7 @@ export function LocationSectionHallim() {
             Location
           </span>
           <h2 className="mb-6 text-balance text-3xl font-bold text-foreground md:text-4xl">
-            마인드 휘트니스 한림점
+            마인드휘트니스 한림점
           </h2>
           <p className="mx-auto max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
             편리한 접근성과 쾌적한 시설로<br /> 여러분을 기다립니다
@@ -25,7 +25,7 @@ export function LocationSectionHallim() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
             <Image
               src="/images/map-location.jpg"
-              alt="마인드 휘트니스 한림점 위치"
+              alt="마인드휘트니스 한림점 위치"
               fill
               className="object-cover"
             />

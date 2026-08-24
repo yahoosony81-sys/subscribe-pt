@@ -11,7 +11,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog"
 import { RegistrationSectionHallim } from "@/components/registration-section-hallim"
-import { CheckCircle2, AlertCircle, Plus } from "lucide-react"
+import { CheckCircle2, AlertCircle, Plus, ChevronDown } from "lucide-react"
 
 /* ─── 슬라이드쇼 이미지 목록 ─── */
 const HERO_IMAGES = [
@@ -41,40 +41,74 @@ function useScrollReveal(threshold = 0.18) {
 }
 
 /* ─── 지그재그 섹션 데이터 ─── */
-const ZIGZAG_ITEMS = [
+type ZigzagItem = {
+  image: string;
+  tag: string;
+  tagColor: string;
+  title: string;
+  lead: string;
+  body: string;
+  cta: string;
+  highlight: string;
+  reverse: boolean;
+  objectPosition?: string;
+}
+
+const ZIGZAG_ITEMS: ZigzagItem[] = [
   {
-    image: "/images/caremembership-jejusi/section-urbanfield.jpg",
-    tag: "FOR WOMEN",
+    image: "/images/애플힙케어.png",
+    tag: "APPLE HIP CARE",
     tagColor: "#c8a96e",
-    title: "\"누구 엄마\" 말고,\n나를 위한 시간",
-    lead: "아이 챙기느라, 남편 챙기느라\n정작 내 몸은 가장 나중으로\n미뤄두지 않으셨나요?",
-    body: "체력은 떨어지고 교복 입은 아이 옆에 서기가 문득 부끄러워졌다면, 이제는 나를 위한 투자를 시작해야 할 때입니다.",
-    cta: "\"누구 엄마\" 말고, 다시 여자로 불리던 시절로 —\n당당해질 주부들을 위한 3개월 집중 프로젝트",
-    highlight: "1:1 맞춤형 케어 멤버십",
+    title: "애플힙 케어\n멤버십",
+    lead: "이젠 흔적만 남은 엉덩이를 위해.\n앞 허벅지가 아닌 엉덩이로\n움직이는 법부터 다시 만듭니다.",
+    body: "스쿼트를 해도 앞 허벅지만 발달하시나요? 오래 앉아 있어 엉덩이 사용감이 떨어진 분들을 위해 준비했습니다. 대퇴직근·둔근 등 꼼꼼한 근육 이완부터 브릿지·힙 쓰러스트 같은 체계적인 근력 강화, 그리고 힙 힌지 연습과 고관절 스트레칭 등 일상 습관 교정까지 책임집니다.",
+    cta: "옆에서 봤을 때 평평하거나 처진 엉덩이가 고민이시라면,\n지금 바로 애플힙 케어 멤버십을 시작해 보세요.",
+    highlight: "엉덩이 근육 집중 케어",
     reverse: false,
   },
   {
-    image: "/images/caremembership-jejusi/section-man-suit.jpg",
-    tag: "FOR MEN",
+    image: "/images/코어핏케어.png",
+    tag: "CORE FIT CARE",
     tagColor: "#7a8fa6",
-    title: "수트 핏,\n다시 찾아드립니다",
-    lead: "\"숨을 참아야 겨우 잠기는\n셔츠 단추, 언제까지\n외면하실 건가요?\"",
-    body: "단순히 체중만 줄이는 다이어트가 아닙니다. 굽은 등과 어깨를 펴고 늘어난 뱃살을 저격하여, 남자의 잃어버린 수트 핏을 완벽하게 되찾아 드립니다.",
-    cta: "3개월 헬스 + 1:1 체형/웨이트 케어 PT 15회로\n핏을 다시 세우세요.",
-    highlight: "수트 핏 프로젝트",
+    title: "코어핏 케어\n멤버십",
+    lead: "배를 덮는 외투 없이는 앉아 있기가 힘드신가요?\n복부에 힘을 주는 방법부터\n앉는 습관까지 관리해 드립니다.",
+    body: "앉았을 때 유독 접히고 앞으로 밀리는 뱃살, 허리와 등이 굽는 자세가 고민이신가요? 폼롤러를 활용한 복부·대퇴직근 이완부터 90/90 호흡, 데드버그, 플랭크 등 코어 중심의 탄탄한 근력 강화 훈련을 진행합니다. 바르게 앉는 자세 교정과 활동량 늘리기 등 건강한 습관까지 함께 만들어 드립니다.",
+    cta: "배를 가리는 옷 대신 당당하게!\n무너진 체형을 바로잡는 코어핏 케어 멤버십을 만나보세요.",
+    highlight: "코어·복부 집중 케어",
     reverse: true,
   },
   {
-    image: "/images/caremembership-jejusi/hf_20260701_061740_bc567781-5781-4a7c-9793-356ae3dd8d4f.png",
-    tag: "TARGET CARE",
+    image: "/images/슬림암케어.png",
+    tag: "SLIM ARM CARE",
     tagColor: "#c8a96e",
-    title: "원하는 부위만 쏙!\n타겟 집중 케어",
-    lead: "\"전신 케어PT 말고,\n내가 원하는 부위만\n집중 케어 받으세요.\"",
-    body: "정체되고 안 빠지는 부위(허벅지/팔뚝)는 다이어트 전 미리 예열하는 기간이 반드시 필요합니다. 1~2달 미리 예열 후 본격적으로 전신 운동시 허벅지, 팔뚝살이 함께 빠지는 놀라운 경험을 하실거예요!! 비싼 PT도 좋지만, 매달 합리적인 가격으로 헬스장 이용은 기본, 빼고 싶은 부위만 1:1 집중 케어하는 케어 멤버십.",
-    cta: "마인드휘트니스 한림점의 집중 관리 케어 멤버십으로 매달 고민되는 부위를 집중적으로 관리하세요.",
-    highlight: "헬스장 이용권 + 케어 PT 결합",
+    title: "슬림암 케어\n멤버십",
+    lead: "가디건 없이는 민소매 옷이 부담스럽다면?\n팔만 운동하지 않습니다.\n등과 어깨 라인까지 함께 만듭니다.",
+    body: "민소매 입기가 망설여지고 둔해 보이는 상체 라인이 고민이신 분들을 위한 프로그램입니다. 흉추·광배근·삼두근 이완으로 시작해 Y/T 레이즈, 킥백, 로우 등 팔과 등, 어깨 라인을 동시에 다듬는 운동을 진행합니다. 굽은 어깨와 목을 바로잡아 숨겨진 옷맵시를 찾아드립니다.",
+    cta: "올여름엔 가디건 없이 당당하게!\n매끄러운 어깨와 팔 라인을 위한 슬림암 케어 멤버십과 함께하세요.",
+    highlight: "팔·어깨 라인 집중 케어",
     reverse: false,
-    objectPosition: "center 60%",
+  },
+  {
+    image: "/images/밸러스업케어.png",
+    tag: "BALANCE UP CARE",
+    tagColor: "#7a8fa6",
+    title: "밸런스업 케어\n멤버십",
+    lead: "자세가 바뀌면, 보이는 인상과 움직임이 달라집니다.\n굽은 등, 말린 어깨,\n앞으로 나온 목을 위한 케어",
+    body: "거북목, 라운드숄더, 좌우 비대칭으로 피로감을 달고 사시나요? 흉추와 광배근 이완을 통해 굳어있는 상체를 부드럽게 풀고, 로망체어, W레이즈, 버드독 등으로 무너진 밸런스와 척추 기립근을 바로 세웁니다. 바른 무게 중심 찾기와 짝다리 방지 등 근본적인 체형 교정을 도와드립니다.",
+    cta: "굽은 어깨와 목을 활짝 펴고,\n자신감 있는 자세를 되찾고 싶다면 밸런스업 케어를 시작해 보세요.",
+    highlight: "체형 비대칭·자세 교정 케어",
+    reverse: true,
+  },
+  {
+    image: "/images/라이트레스케어.png",
+    tag: "LIGHT LEG CARE",
+    tagColor: "#c8a96e",
+    title: "라이트레그 케어\n멤버십",
+    lead: "아침엔 편했던 신발이 퇴근길 내 발을 조이고 있다면?\n발목부터 엉덩이까지,\n무겁고 답답한 하체를 위한 케어",
+    body: "오후만 되면 퉁퉁 붓고 무거운 다리 때문에 퇴근길 발걸음이 무거우신가요? 둔근부터 종아리까지 꼼꼼한 이완 관리를 시작으로, 카프레이즈, 런지, 스텝업 등 하체 전반의 밸런스와 근력을 깨우는 운동을 진행합니다. 발목 펌핑과 계단 이용 등 일상 속 붓기 관리 습관 교정도 병행합니다.",
+    cta: "무겁고 답답한 하체 고민,\n이제 라이트레그 케어로 가볍고 시원한 다리를 되찾으세요.",
+    highlight: "하체 부종·피로 회복 케어",
+    reverse: false,
   },
 ]
 
@@ -89,9 +123,10 @@ export function CareMembershipHallimLanding() {
   const sec1 = useScrollReveal()
   const sec2 = useScrollReveal()
   const sec3 = useScrollReveal()
+  const sec4 = useScrollReveal()
+  const sec5 = useScrollReveal()
   const secPackages = useScrollReveal()
-  const secWhy = useScrollReveal()
-  const secRefs = [sec1, sec2, sec3]
+  const secRefs = [sec1, sec2, sec3, sec4, sec5]
 
   /* ─── 슬라이드 이동 ─── */
   const goToSlide = useCallback(
@@ -167,10 +202,19 @@ export function CareMembershipHallimLanding() {
             <span className="cm-hero__divider-text">FITNESS &amp; WELLNESS</span>
             <span className="cm-hero__divider-line" />
           </div>
-          <p className="cm-hero__desc">
-            이젠 헬스/PT도 부담없는 시대,<br />
-            나를 위한 변화! 지금 <span className="cm-hero__desc-highlight">케어멤버십</span>을 시작하세요
-          </p>
+          <button 
+            type="button"
+            onClick={() => {
+              document.getElementById('care-membership-targets')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="group flex items-center justify-center gap-5 md:gap-8 mt-10 px-12 py-6 md:px-24 md:py-8 bg-black/50 backdrop-blur-md rounded-full border border-[#c8a96e]/50 shadow-[0_4px_24px_rgba(200,169,110,0.3)] w-fit mx-auto cursor-pointer transition-all duration-300 hover:bg-[#c8a96e] hover:scale-105 hover:shadow-[0_8px_32px_rgba(200,169,110,0.6)]"
+          >
+            <ChevronDown className="animate-bounce w-7 h-7 md:w-9 md:h-9 text-[#c8a96e] group-hover:text-white transition-colors duration-300" />
+            <span className="text-2xl md:text-4xl font-bold tracking-wide text-white drop-shadow-lg group-hover:text-white transition-colors duration-300">
+              맞춤 케어멤버십 자세히보기
+            </span>
+            <ChevronDown className="animate-bounce w-7 h-7 md:w-9 md:h-9 text-[#c8a96e] group-hover:text-white transition-colors duration-300" />
+          </button>
         </div>
 
         <div className="cm-hero__dots" role="tablist" aria-label="슬라이드 인디케이터">
@@ -187,7 +231,7 @@ export function CareMembershipHallimLanding() {
 
 
       {/* ═══ ZIGZAG TARGET SECTION ═══ */}
-      <section className="cm-targets" aria-label="케어 멤버십 대상">
+      <section id="care-membership-targets" className="cm-targets" aria-label="케어 멤버십 대상">
         {/* 섹션 헤더 */}
         <div className="cm-targets__header">
           <p className="cm-targets__header-en">WHO IS IT FOR</p>
@@ -263,16 +307,62 @@ export function CareMembershipHallimLanding() {
         })}
       </section>
 
-      {/* ═══ WHY CARE MEMBERSHIP SECTION ═══ */}
-      <section aria-label="왜 케어 멤버십인가">
-        <Image
-          src="/images/caremembership-jejusi/케어멤버십설명.png"
-          alt="왜 케어 멤버십인가 안내"
-          width={1920}
-          height={1080}
-          style={{ width: "100%", height: "auto", display: "block" }}
-          priority
-        />
+      {/* ═══ EXPERT PROFILE SECTION ═══ */}
+      <section className="cm-expert" aria-label="프로그램 개발 및 교육 책임자">
+        <div className="cm-expert__container">
+          <div className="cm-expert__header">
+            <p className="cm-expert__header-en">EXPERT PROFILE</p>
+            <h2 className="cm-expert__title">
+              케어 멤버십 프로그램 개발 및<br/>
+              <span>교육 총괄 책임코치</span>
+            </h2>
+            <div className="cm-expert__line" />
+          </div>
+
+          <div className="cm-expert__content">
+            <div className="cm-expert__image">
+              <Image 
+                src="/images/이서진이사님사진.jpg" 
+                alt="이서진 교육 이사" 
+                fill 
+                style={{ objectFit: "cover", objectPosition: "center top" }}
+              />
+            </div>
+
+            <div className="cm-expert__info">
+              <h3 className="cm-expert__name">이서진 <span>이사</span></h3>
+              
+              <div className="cm-expert__career">
+                <div className="cm-expert__group">
+                  <h4>주요 직책 및 경력</h4>
+                  <ul>
+                    <li>마인드휘트니스 '케어멤버십 프로그램' 개발 및 교육 총괄 책임코치</li>
+                    <li>마인드피트니스 교육이사</li>
+                    <li>IFGA 교육이사</li>
+                    <li>대한예방운동협회 자문위원</li>
+                    <li>전) 네이버 지식iN 하이닥 운동전문 상담위원</li>
+                    <li>전) KBS 스포츠예술과학원 스포츠예술학부 외래교수</li>
+                  </ul>
+                </div>
+
+                <div className="cm-expert__group">
+                  <h4>학력 사항</h4>
+                  <ul>
+                    <li>경희대학교 체육학과/스포츠의학과 졸업</li>
+                    <li>경희대학교 일반대학원 운동생리학 석사 졸업</li>
+                  </ul>
+                </div>
+
+                <div className="cm-expert__group">
+                  <h4>보유 자격</h4>
+                  <ul>
+                    <li>건강운동관리사 (문화체육관광부)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ═══ MEMBERSHIP PACKAGES SECTION ═══ */}
@@ -315,8 +405,8 @@ export function CareMembershipHallimLanding() {
       {(!isDetailsOpen && !isFormOpen) && (
         <div className="cm-sticky-cta-wrap">
           <button className="cm-sticky-cta" type="button" onClick={handleCtaClick}>
-            <span>지금 케어 멤버십 온라인 신청하기 &rarr;</span>
-            <span className="cm-sticky-cta__sub">온라인 신청시 월 2만원 혜택 추가</span>
+            <span>케어멤버십 전화/문자 상담 가능한 연락처 보기 &rarr;</span>
+            <span className="cm-sticky-cta__sub">8월말까지 신청시 2만원 혜택추가</span>
           </button>
         </div>
       )}
@@ -329,7 +419,7 @@ export function CareMembershipHallimLanding() {
               케어 멤버십 온라인 신청
             </DialogTitle>
             <DialogDescription className="text-center text-sm mt-2 flex flex-col gap-1">
-              <span className="font-medium text-orange-500">온라인 신청시 월 2만원의 혜택이 추가로 제공됩니다</span>
+              <span className="font-medium text-orange-500">8월말까지 신청시 2만원 혜택추가</span>
               <span className="font-normal text-slate-600">신청 확인 후 지점에서 순차적으로 안내 드리겠습니다.</span>
             </DialogDescription>
           </DialogHeader>
@@ -426,9 +516,9 @@ export function CareMembershipHallimLanding() {
               onClick={handleOpenRegistrationFromDetails}
               className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl text-lg transition-colors flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30"
             >
-              지금 케어 멤버십 온라인 신청하기 &rarr;
+              케어멤버십 전화/문자 상담 가능한 연락처 보기 &rarr;
             </button>
-            <p className="text-center text-xs text-slate-400 mt-3 font-medium">온라인 신청 시 월 2만원 추가 혜택!</p>
+            <p className="text-center text-xs text-slate-400 mt-3 font-medium">8월말까지 신청시 2만원 혜택추가</p>
           </div>
         </DialogContent>
       </Dialog>
