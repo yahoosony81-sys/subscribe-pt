@@ -11,7 +11,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog"
 import { RegistrationSectionHallim } from "@/components/registration-section-hallim"
-import { CheckCircle2, AlertCircle, Plus, ChevronDown } from "lucide-react"
+import { CheckCircle2, AlertCircle, Plus, ChevronDown, Phone, MessageSquare, Smartphone, Clock, MapPin, Eye } from "lucide-react"
 
 /* ─── 슬라이드쇼 이미지 목록 ─── */
 const HERO_IMAGES = [
@@ -269,7 +269,12 @@ export function CareMembershipHallimLanding() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   {/* 이미지 위 태그 배지 */}
-                  <div className="cm-target-row__image-tag" style={{ borderColor: item.tagColor, color: item.tagColor }}>
+                  <div className="cm-target-row__image-tag" style={{ 
+                    borderColor: item.tagColor, 
+                    color: item.tagColor === "#7a8fa6" ? "#ffffff" : item.tagColor,
+                    backgroundColor: "rgba(0,0,0,0.4)",
+                    textShadow: "0 2px 4px rgba(0,0,0,0.8)"
+                  }}>
                     {item.tag}
                   </div>
                   {/* 자세히보기 버튼 추가 */}
@@ -414,24 +419,77 @@ export function CareMembershipHallimLanding() {
         </div>
       )}
 
-      {/* ═══ REGISTRATION MODAL ═══ */}
+      {/* ═══ CONSULTATION CONTACT MODAL ═══ */}
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
-        <DialogContent className="max-h-[90vh] overflow-y-auto bg-white sm:max-w-lg p-6 rounded-2xl">
-          <DialogHeader className="mb-4">
-            <DialogTitle className="text-xl font-bold text-slate-900 text-center">
-              케어 멤버십 온라인 신청
+        <DialogContent className="bg-[#171717] border border-[#333] text-white sm:max-w-md p-6 sm:p-8 rounded-3xl shadow-2xl">
+          <div className="flex flex-col items-center">
+            {/* 뱃지 */}
+            <div className="border border-[#c8a96e] text-[#c8a96e] px-4 py-1 rounded-full text-xs font-bold mb-4 tracking-wider">
+              CONSULTATION CONTACT
+            </div>
+            
+            {/* 제목 */}
+            <DialogTitle className="text-2xl font-bold text-white mb-2">
+              상담 가능 연락처
             </DialogTitle>
-            <DialogDescription className="text-center text-sm mt-2 flex flex-col gap-1">
-              <span className="font-medium text-orange-500">8월말까지 신청시 2만원 혜택추가</span>
-              <span className="font-normal text-slate-600">신청 확인 후 지점에서 순차적으로 안내 드리겠습니다.</span>
+            <DialogDescription className="text-gray-400 text-sm mb-6 text-center">
+              전화 연결 및 문자 상담을 바로 이용하실 수 있습니다.
             </DialogDescription>
-          </DialogHeader>
-          <RegistrationSectionHallim
-            googleSheetUrl="https://script.google.com/macros/s/AKfycbyNmVek0v-6H65jnlLpM_TQyOqKA9MEZJ0CqVEO5nvOY1Z1Y8yBvtE40sqv3mQ3iQqP/exec"
-            sheetName="한림점케어멤버십"
-            isModal={true}
-            onSuccess={() => setIsFormOpen(false)}
-          />
+            
+            {/* 전화번호 박스 */}
+            <div className="w-full bg-[#202020] rounded-2xl p-5 mb-6 flex flex-col items-center border border-white/5">
+              <span className="text-gray-400 text-xs mb-2">상담 가능 전화번호</span>
+              <span className="text-[#c8a96e] text-3xl font-extrabold tracking-widest mb-5">
+                010-8849-7050
+              </span>
+              
+              <div className="flex w-full gap-3 mb-4">
+                <a href="tel:010-8849-7050" className="flex-1 bg-[#c8a96e] text-black font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-[#b59863] transition-colors">
+                  <Phone className="w-4 h-4" /> 전화 연결
+                </a>
+                <a href="sms:010-8849-7050" className="flex-1 bg-transparent border border-gray-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
+                  <MessageSquare className="w-4 h-4" /> 문자 상담하기
+                </a>
+              </div>
+              <p className="text-[11px] text-gray-500 text-center break-keep flex items-start gap-1 justify-center">
+                <Smartphone className="w-3.5 h-3.5 text-[#00b4d8] shrink-0" />
+                <span>모바일 환경에서는 버튼 선택 시 통화 또는 문자 전송 화면으로 바로 연결됩니다.</span>
+              </p>
+            </div>
+
+            {/* 상담가능시간 */}
+            <div className="w-full bg-transparent border border-white/10 rounded-2xl p-4 mb-6 flex justify-between items-center">
+              <div className="flex items-center gap-2 text-gray-400">
+                <Clock className="w-4 h-4 text-[#c8a96e]" />
+                <span className="text-sm font-medium">상담가능시간</span>
+              </div>
+              <span className="font-bold text-white">평일 09:00 ~ 21:00</span>
+            </div>
+            
+            {/* 하단 링크 */}
+            <div className="w-full flex flex-col gap-2 mt-2">
+              <div className="flex items-center gap-1.5 text-gray-400 text-xs mb-1">
+                <MapPin className="w-3.5 h-3.5 text-red-500" />
+                마인드휘트니스 한림점 지도 및 시설 안내
+              </div>
+              <div className="flex w-full gap-3">
+                <a 
+                  href="https://map.naver.com/p/search/%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4/place/1549272067?c=15.00,0,0,0,dh&placePath=/home?bk_query=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4" 
+                  target="_blank" rel="noreferrer"
+                  className="flex-1 bg-[#c8a96e] text-black font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-[#b59863] transition-colors text-sm"
+                >
+                  <MapPin className="w-4 h-4" /> 지점위치 보기
+                </a>
+                <a 
+                  href="https://map.naver.com/p/search/%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4/place/1549272067?c=15.00,0,0,0,dh&placePath=/photo?bk_query=%EB%A7%88%EC%9D%B8%EB%93%9C%ED%9C%98%ED%8A%B8%EB%8B%88%EC%8A%A4" 
+                  target="_blank" rel="noreferrer"
+                  className="flex-1 bg-[#c8a96e] text-black font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-[#b59863] transition-colors text-sm"
+                >
+                  <Eye className="w-4 h-4" /> 센터내부 둘러보기
+                </a>
+              </div>
+            </div>
+          </div>
         </DialogContent>
       </Dialog>
 
