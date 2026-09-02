@@ -180,7 +180,13 @@
     *   주요 내용: 팀버핏 감성 영상 히어로 + 첫 방문 무료 체험 예약
     *   GTM: GTM-5VB56Q69 | 픽셀: GTM 태그 내부 포함 (단독 픽셀 미설치) ✅
 
+## 📍 채용 / HR 랜딩페이지 (Recruitment)
+*   **마인드휘트니스 한림점 채용공고**
+    *   주소: https://mindfitness-hallim.com/recruit-hallim
+    *   주요 내용: 버핏서울(GreetingHR) 스타일 구조 정확 재현, 네비게이션바, 흰/검정 교차 배경, 50:50 지그재그, 복지 및 급여/커미션(영업지원금 최대 200만/수업료60%/정착지원금150만), 코치 스토리, 위치 및 채용 포지션 안내
+
 ---
 
 > [!TIP]
 > 위 주소들은 현재 라이브 도메인(`mindfitness-hallim.com`) 기준으로 작성되었습니다. 로컬 테스트 시에는 `https://mindfitness-hallim.com` 부분을 `http://localhost:3000`으로 바꿔서 접속하세요.
+
