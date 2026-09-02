@@ -114,6 +114,9 @@
     *   주요 내용: 대구도남점 7월 한정 프로모션 안내 및 신청 랜딩페이지
 
 ## 📍 한림점 (Hallim)
+*   **마인드휘트니스 한림점 채용공고**
+    *   주소: https://mindfitness-hallim.com/recruit-hallim
+    *   주요 내용: 버핏서울(GreetingHR) 스타일 채용 랜딩페이지 (PT코치/FC/부서관리자)
 *   **버닝 케어 멤버십 (고민부위 리셋)**
     *   주소: https://mindfitness-hallim.com/hl-burning-caremember
     *   주요 내용: 팔뚝살, 허벅지살 다이어트 전 리셋 프로그램 (월 9.9만원)
