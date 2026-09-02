@@ -157,15 +157,34 @@ export function RecruitHallimLanding() {
         <div className="rc-hero__bg">
           <img src="/images/채용페이지가로긴이미지.png" alt="마인드휘트니스 채용 히어로" />
         </div>
+        
+        {/* 오른쪽 위 로고 */}
+        <div className="rc-hero__top-logo">
+          <img src="/images/배경재거로고2.png" alt="마인드휘트니스 로고" />
+        </div>
+
         <div className="rc-hero__overlay" />
         <div className="rc-hero__content">
-          <div className="rc-spacer-60" />
-          <p className="rc-hero__sub"><strong>마인드휘트니스 코치 채용</strong></p>
+          <div className="rc-spacer-40" />
+
+          {/* 서브 카피 */}
+          <p className="rc-hero__sub">
+            마음이 진심이 되어 전심이 되는
+          </p>
+
+          {/* 메인 타이틀 */}
           <h1 className="rc-hero__title">
-            마음이 진심이 되어 전심이 되는<br />
-            <span className="rc-accent">역량 있는 코치</span>님을 모십니다.
+            <span className="rc-hero__title-accent">역량 있는 코치</span>님을 모십니다.
           </h1>
-          <div className="rc-spacer-60" />
+
+          {/* 주요 혜택 요약 태그 칩들 */}
+          <div className="rc-hero__chips">
+            <span className="rc-hero__chip">🏝️ 정착지원금 150만원</span>
+            <span className="rc-hero__chip">📈 수업료 최대 60%</span>
+            <span className="rc-hero__chip">🎓 체계적 교육지원</span>
+          </div>
+
+          <div className="rc-spacer-40" />
         </div>
       </section>
 
