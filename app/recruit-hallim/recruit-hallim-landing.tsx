@@ -8,7 +8,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog"
-import { Phone, MessageSquare, Mail, Clock, ChevronDown, MapPin } from "lucide-react"
+import { Phone, MessageSquare, Mail, Clock, ChevronDown, MapPin, ChevronLeft, ChevronRight } from "lucide-react"
 
 /* ═══ 채용 포지션 데이터 ═══ */
 const POSITIONS = [
@@ -102,6 +102,184 @@ const SLIDER_IMAGES = [
   { src: "/images/2024 경상지사_신년회 (2).jpg", alt: "마인드휘트니스 경상지사 신년회" },
 ]
 
+/* ═══ 교육 세션 이미지 데이터 ═══ */
+const EDUCATION_IMAGES = [
+  {
+    src: "/images/250221_고투_김승호대표님_고소득PT_실전세미나 (5).jpg",
+    alt: "김승호 대표님 고소득PT 실전 세미나",
+    caption: "김승호 대표님 고소득 PT 실전 세미나"
+  },
+  {
+    src: "/images/본사세미나 (6).jpg",
+    alt: "본사 교육 세미나",
+    caption: "마인드 휘트니스 본사 교육 세미나"
+  },
+  {
+    src: "/images/교육집중모습.jpg",
+    alt: "교육 집중 모습",
+    caption: "체계적인 이론 및 실기 교육 현장"
+  },
+  {
+    src: "/images/더락컴퍼니_세미나_24.11.21_경상지사 (2).jpg",
+    alt: "더락컴퍼니 세미나",
+    caption: "경상지사 외부 전문가 초청 세미나"
+  },
+  {
+    src: "/images/교육사진 (2).jpg",
+    alt: "실기 및 이론 교육 현장",
+    caption: "마인드 휘트니스 실기 및 이론 교육 현장"
+  }
+]
+
+/* ═══ 워크숍 / 팀 활동 이미지 데이터 ═══ */
+const WORKSHOP_IMAGES = [
+  {
+    src: "/images/26제주지사체육대회.png",
+    alt: "2026년 MIND 체육대회",
+    caption: "2026 마인드 체육대회 (8개 지점 하나의 팀) 단체 사진"
+  },
+  {
+    src: "/images/26년경상지사신년회.jpg",
+    alt: "2026년 경상지사 신년회",
+    caption: "2026 경상지사 신년회 단체 기념 촬영",
+    objectPosition: "center 70%"
+  },
+  {
+    src: "/images/25년제주시사마인드신년회.JPG",
+    alt: "2025년 제주시사 마인드 신년회",
+    caption: "2025 제주시사 마인드 신년회 단체 사진"
+  },
+  {
+    src: "/images/26경남지사워크숍.png",
+    alt: "2026년 경남지사 워크숍",
+    caption: "2026 마인드 휘트니스 경남지사 워크숍 현장"
+  }
+]
+
+/* ═══ 팀 문화 이미지 데이터 ═══ */
+const CULTURE_IMAGES = [
+  {
+    src: "/images/팀문화1.jpg",
+    alt: "마인드 휘트니스 팀 문화 1",
+    caption: "함께 성장하는 마인드 휘트니스 팀 문화"
+  },
+  {
+    src: "/images/팀문화2.jpg",
+    alt: "마인드 휘트니스 팀 문화 2",
+    caption: "서로 존중하고 응원하는 동료들과 함께"
+  },
+  {
+    src: "/images/팀문화5.jpg",
+    alt: "마인드 휘트니스 팀 문화 3",
+    caption: "진심을 담은 소통과 협업 현장"
+  },
+  {
+    src: "/images/팀문화7.jpg",
+    alt: "마인드 휘트니스 팀 문화 4",
+    caption: "즐겁게 일하는 활기찬 분위기"
+  },
+  {
+    src: "/images/팀문화9.jpg",
+    alt: "마인드 휘트니스 팀 문화 5",
+    caption: "마인드 휘트니스 단체 모임 현장"
+  }
+]
+
+/* ═══ 과학적 케어 시스템 이미지 데이터 ═══ */
+const CARE_IMAGES = [
+  {
+    src: "/images/KakaoTalk_20260309_113433753_27.jpg",
+    alt: "맞춤 운동 실기 교육",
+    caption: "실전 체형 분석 및 트레이닝 세미나",
+    objectPosition: "center 70%"
+  },
+  {
+    src: "/images/다양한티칭.jpg",
+    alt: "다양한 트레이닝 티칭",
+    caption: "PT · 필라테스 · 재활 운동 등 맞춤형 케어"
+  },
+  {
+    src: "/images/움직임의 기초원리_세미나 (4).jpg",
+    alt: "움직임의 기초원리 세미나",
+    caption: "움직임의 기초원리 & 체계적 재활 교육 세미나"
+  },
+  {
+    src: "/images/KakaoTalk_20260309_113341588_03.jpg",
+    alt: "과학적 케어 및 기능 평가",
+    caption: "과학적 기능 평가 및 회원 맞춤 케어 시스템",
+    objectPosition: "center 70%"
+  }
+]
+
+function ImageCarousel({
+  images,
+  aspectRatio = "4 / 3",
+}: {
+  images: { src: string; alt: string; caption?: string; objectPosition?: string }[]
+  aspectRatio?: string
+}) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
+  }
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+  }
+
+  return (
+    <div className="rc-carousel">
+      <div className="rc-carousel__wrapper" style={{ aspectRatio }}>
+        <img
+          src={images[currentIndex].src}
+          alt={images[currentIndex].alt}
+          className="rc-carousel__img"
+          style={{ objectPosition: images[currentIndex].objectPosition || "center" }}
+        />
+        <button
+          onClick={prevSlide}
+          className="rc-carousel__btn rc-carousel__btn--prev"
+          aria-label="이전 사진"
+          type="button"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="rc-carousel__btn rc-carousel__btn--next"
+          aria-label="다음 사진"
+          type="button"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+
+        {images[currentIndex].caption && (
+          <div className="rc-carousel__caption">
+            {images[currentIndex].caption}
+          </div>
+        )}
+
+        <div className="rc-carousel__badge">
+          {currentIndex + 1} / {images.length}
+        </div>
+      </div>
+
+      <div className="rc-carousel__dots">
+        {images.map((_, idx) => (
+          <button
+            key={idx}
+            type="button"
+            onClick={() => setCurrentIndex(idx)}
+            className={`rc-carousel__dot ${idx === currentIndex ? "rc-carousel__dot--active" : ""}`}
+            aria-label={`${idx + 1}번 사진으로 이동`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
 
 export function RecruitHallimLanding() {
   const [openPosition, setOpenPosition] = useState<number | null>(null)
@@ -174,7 +352,7 @@ export function RecruitHallimLanding() {
 
           {/* 메인 타이틀 */}
           <h1 className="rc-hero__title">
-            <span className="rc-hero__title-accent">역량 있는 코치</span>님을 모십니다.
+            <span className="rc-hero__title-accent">역량있는 PT/FC/부서관리자</span>를 모십니다.
           </h1>
 
           {/* 주요 혜택 요약 태그 칩들 */}
@@ -218,22 +396,12 @@ export function RecruitHallimLanding() {
         <div className="rc-inner">
           <div className="rc-spacer-40" />
           <h2 className="rc-text-section__heading">
-            유능한 코치님들이 제대로<br />성장할 환경이 없었습니다.
+            유능한 코치님들이 제대로<br className="rc-br-desktop" /> 성장할 환경이 없었습니다.
           </h2>
-          <p className="rc-text-section__body">
-            {`
-
-대한민국 피트니스 업계에
-코치님들의 성장과 동기부여를 위한
-환경이 부족했던 것이 현실입니다.
-
-코치님들의 커리어와 보상 체계를
-진심으로 고민하는 회사가 전무했고,
-수업 외 역량을 새롭게
-시도해 볼 수 있는 조직이 없었으며,
-
-이로 인해, 많은 코치님들이
-본인만의 커리어를 만들 수 없었습니다.`}
+          <p className="rc-text-section__body" style={{ lineHeight: 1.85 }}>
+            대한민국 피트니스 업계에 코치님들의 성장과 동기부여를 위한 환경이 부족했던 것이 현실입니다.<br /><br />
+            코치님들의 커리어와 보상 체계를 진심으로 고민하는 회사가 전무했고, 수업 외 역량을 새롭게 시도해 볼 수 있는 조직이 없었으며,<br /><br />
+            이로 인해 많은 코치님들이 본인만의 커리어를 만드실 수 없었습니다.
           </p>
           <div className="rc-spacer-60" />
         </div>
@@ -245,7 +413,7 @@ export function RecruitHallimLanding() {
         <div className="rc-inner">
           <div className="rc-spacer-60" />
           <h2 className="rc-text-section__heading">
-            우리는 이 시장의<br />
+            우리는 이 시장의<br className="rc-br-desktop" />
             마인드휘트니스 마피아를 꿈꿉니다.
           </h2>
 
@@ -256,13 +424,9 @@ export function RecruitHallimLanding() {
           </div>
           <div className="rc-spacer-40" />
 
-          <p className="rc-text-section__body">
-            {`마인드휘트니스 출신 멤버들이 성장하여
-국내외 피트니스 업계를 리드할
-훌륭한 인재로 성장하기를 바랍니다.
-
-어딜 가도, 마인드휘트니스 출신이라고 하면
-업계 최고 코치, 리더를 연상시키고 싶습니다.`}
+          <p className="rc-text-section__body" style={{ lineHeight: 1.85 }}>
+            마인드휘트니스 출신 멤버들이 성장하여 국내외 피트니스 업계를 리드할 훌륭한 인재로 성장하기를 바랍니다.<br /><br />
+            어딜 가도, 마인드휘트니스 출신이라고 하면 업계 최고 코치와 리더를 연상시키고 싶습니다.
           </p>
           <div className="rc-spacer-60" />
         </div>
@@ -286,7 +450,7 @@ export function RecruitHallimLanding() {
             <div className="rc-split__text">
               <p className="rc-split__label"><strong>📌 이유1: 과학적 케어 시스템</strong></p>
               <h3 className="rc-split__title">
-                <span className="rc-accent">PT | 필라테스 | 재활 운동</span><br />
+                <span className="rc-accent">PT | 필라테스 | 재활 운동</span><br className="rc-br-desktop" />
                 다양한 트레이닝 티칭 경험을 쌓을 수 있습니다.
               </h3>
               <div className="rc-split__divider" />
@@ -295,9 +459,7 @@ export function RecruitHallimLanding() {
               </p>
             </div>
             <div className="rc-split__image">
-              <div className="rc-img-placeholder rc-img-placeholder--landscape">
-                <img src="/images/다양한티칭.jpg" alt="다양한 트레이닝 티칭" />
-              </div>
+              <ImageCarousel images={CARE_IMAGES} />
             </div>
           </div>
 
@@ -315,7 +477,7 @@ export function RecruitHallimLanding() {
             <div className="rc-split__text">
               <p className="rc-split__label"><strong>📌 이유2 : 성장이 보장된 커리어 로드맵</strong></p>
               <h3 className="rc-split__title">
-                <span className="rc-accent">코치 ▶ 시니어 코치 ▶ 팀 리더 ▶ 지점 매니저</span><br />
+                <span className="rc-accent">코치 ▶ 시니어 코치 ▶ 팀 리더 ▶ 지점 매니저</span><br className="rc-br-desktop" />
                 역량에 따라 빠른 권한과 역할 확장
               </h3>
               <div className="rc-split__divider" />
@@ -337,7 +499,7 @@ export function RecruitHallimLanding() {
             <div className="rc-split__text">
               <p className="rc-split__label"><strong>📌 이유3: 최고의 교육 시스템</strong></p>
               <h3 className="rc-split__title">
-                <span className="rc-accent">이 곳이 바로 피트니스 코치 사관 학교,</span><br />
+                <span className="rc-accent">이 곳이 바로 피트니스 코치 사관 학교,</span><br className="rc-br-desktop" />
                 모든 것은 교육과 매뉴얼에서부터 출발합니다.
               </h3>
               <div className="rc-split__divider" />
@@ -346,18 +508,14 @@ export function RecruitHallimLanding() {
               </p>
             </div>
             <div className="rc-split__image">
-              <div className="rc-img-placeholder rc-img-placeholder--landscape">
-                <span>📷 교육 세션 장면<br/>권장: 480 × 320</span>
-              </div>
+              <ImageCarousel images={EDUCATION_IMAGES} />
             </div>
           </div>
 
           <div className="rc-spacer-40" />
 
-          {/* Full width image */}
-          <div className="rc-img-placeholder rc-img-placeholder--landscape" style={{ borderRadius: '4px' }}>
-            <span>📷 팀 활동 / 워크숍 장면<br/>권장: 960 × 400</span>
-          </div>
+          {/* Full width image (Workshop Carousel) */}
+          <ImageCarousel images={WORKSHOP_IMAGES} aspectRatio="12 / 5" />
 
           <div className="rc-spacer-40" />
 
@@ -366,7 +524,7 @@ export function RecruitHallimLanding() {
             <div className="rc-split__text">
               <p className="rc-split__label"><strong>📌 이유4 : 진심을 담은 팀 문화</strong></p>
               <h3 className="rc-split__title">
-                <span className="rc-accent">&ldquo;마음이 진심이 되어 전심이 되는&rdquo;</span><br />
+                <span className="rc-accent">&ldquo;마음이 진심이 되어 전심이 되는&rdquo;</span><br className="rc-br-desktop" />
                 함께 성장하는 동료가 여기 있습니다.
               </h3>
               <div className="rc-split__divider" />
@@ -375,9 +533,7 @@ export function RecruitHallimLanding() {
               </p>
             </div>
             <div className="rc-split__image">
-              <div className="rc-img-placeholder rc-img-placeholder--landscape">
-                <span>📷 팀 문화 사진<br/>권장: 480 × 320</span>
-              </div>
+              <ImageCarousel images={CULTURE_IMAGES} />
             </div>
           </div>
 
