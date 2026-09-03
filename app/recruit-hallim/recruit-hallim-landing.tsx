@@ -325,8 +325,12 @@ export function RecruitHallimLanding() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!privacyAgreed || !thirdPartyAgreed) {
-      alert("개인정보 수집 및 제3자 제공 동의에 체크해 주세요.")
+    if (!privacyAgreed) {
+      alert("개인정보 수집 및 이용 동의에 체크해 주세요.")
+      return
+    }
+    if (!thirdPartyAgreed) {
+      alert("개인정보 제3자 제공 동의에 체크해 주세요.")
       return
     }
     if (!field) {
