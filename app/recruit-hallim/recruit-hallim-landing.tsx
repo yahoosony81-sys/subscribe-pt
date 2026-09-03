@@ -431,7 +431,7 @@ export function RecruitHallimLanding() {
             <a href="#" className="rc-header__nav-item">채용</a>
             <a href="#" className="rc-header__nav-item">멤버소개</a>
             <a href="#" className="rc-header__nav-item">뉴스</a>
-            <a href="#" className="rc-header__nav-item rc-header__nav-item--accent">공식 홈페이지↗</a>
+            <a href="https://www.mindfitness-official.com/" target="_blank" rel="noopener noreferrer" className="rc-header__nav-item rc-header__nav-item--accent">공식 홈페이지↗</a>
           </nav>
 
           {/* Mobile Menu Button */}
