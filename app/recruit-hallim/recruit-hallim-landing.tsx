@@ -884,8 +884,12 @@ export function RecruitHallimLanding() {
 
           <div className="rc-split">
             <div className="rc-split__image">
-              <div className="rc-img-placeholder rc-img-placeholder--landscape">
-                <span>📷 이노플랫 시설 / 지도 이미지<br/>권장: 480 × 320</span>
+              <div className="rc-img-placeholder rc-img-placeholder--landscape" style={{ overflow: 'hidden', borderRadius: '12px' }}>
+                <img
+                  src="/images/공항점위치.png"
+                  alt="주식회사 이노플랫 위치 지도"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
             </div>
             <div className="rc-split__text">
