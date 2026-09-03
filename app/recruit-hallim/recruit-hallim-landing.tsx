@@ -8,7 +8,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog"
-import { Phone, MessageSquare, Mail, Clock, ChevronDown, MapPin, ChevronLeft, ChevronRight } from "lucide-react"
+import { Phone, MessageSquare, Mail, Clock, ChevronDown, MapPin, ChevronLeft, ChevronRight, Upload, Download, CheckCircle } from "lucide-react"
 
 /* ═══ 채용 포지션 데이터 ═══ */
 const POSITIONS = [
@@ -286,6 +286,21 @@ export function RecruitHallimLanding() {
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false)
   const [sliderIndex, setSliderIndex] = useState(0)
 
+  // Form states
+  const [privacyAgreed, setPrivacyAgreed] = useState(false)
+  const [thirdPartyAgreed, setThirdPartyAgreed] = useState(false)
+  const [applicantName, setApplicantName] = useState("")
+  const [phone1, setPhone1] = useState("010")
+  const [phone2, setPhone2] = useState("")
+  const [phone3, setPhone3] = useState("")
+  const [field, setField] = useState("")
+  const [region, setRegion] = useState("서귀포시")
+  const [branch, setBranch] = useState("서홍점")
+  const [source, setSource] = useState("")
+  const [email, setEmail] = useState("")
+  const [fileName, setFileName] = useState("")
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
   const handleTogglePosition = (index: number) => {
     setOpenPosition(openPosition === index ? null : index)
   }
@@ -296,6 +311,50 @@ export function RecruitHallimLanding() {
 
   const handleSliderNext = () => {
     setSliderIndex(Math.min(SLIDER_IMAGES.length - 1, sliderIndex + 1))
+  }
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setFileName(e.target.files[0].name)
+    }
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!privacyAgreed || !thirdPartyAgreed) {
+      alert("개인정보 수집 및 제3자 제공 동의에 체크해 주세요.")
+      return
+    }
+    if (!field) {
+      alert("분야를 선택해 주세요.")
+      return
+    }
+    if (!region) {
+      alert("지원 지역을 선택해 주세요.")
+      return
+    }
+    if (!branch) {
+      alert("지원 지점을 선택해 주세요.")
+      return
+    }
+    if (!source) {
+      alert("채용공고를 알게된 경로를 선택해 주세요.")
+      return
+    }
+    if (!fileName) {
+      alert("입사지원서 파일을 첨부해 주세요.")
+      return
+    }
+    setIsSubmitted(true)
+  }
+
+  const handleModalClose = (open: boolean) => {
+    setIsApplyModalOpen(open)
+    if (!open) {
+      setTimeout(() => {
+        setIsSubmitted(false)
+      }, 300)
+    }
   }
 
   return (
@@ -823,47 +882,283 @@ export function RecruitHallimLanding() {
 
 
       {/* ═══ APPLICATION MODAL ═══ */}
-      <Dialog open={isApplyModalOpen} onOpenChange={setIsApplyModalOpen}>
-        <DialogContent className="bg-[#171717] border border-[#333] text-white sm:max-w-md p-6 sm:p-8 rounded-3xl shadow-2xl">
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div style={{ border: '1px solid #FFD72E', color: '#FFD72E', padding: '4px 16px', borderRadius: '100px', fontSize: '11px', fontWeight: 700, letterSpacing: '2px', marginBottom: '16px' }}>
-              APPLICATION
-            </div>
+      <Dialog open={isApplyModalOpen} onOpenChange={handleModalClose}>
+        <DialogContent className="bg-white text-gray-900 border border-gray-300 sm:max-w-xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 rounded-2xl shadow-2xl">
+          <DialogTitle className="sr-only">마인드휘트니스 채용 지원서 입력</DialogTitle>
+          <DialogDescription className="sr-only">채용 지원 정보 입력 및 지원서 제출 모달</DialogDescription>
 
-            <DialogTitle className="text-2xl font-bold text-white mb-2">지원 안내</DialogTitle>
-            <DialogDescription className="text-gray-400 text-sm mb-6 text-center">
-              아래 연락처로 이력서를 보내주시거나 전화 상담을 신청해 주세요.
-            </DialogDescription>
-
-            <div style={{ width: '100%', background: '#202020', borderRadius: '16px', padding: '24px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)', marginBottom: '20px' }}>
-              <p style={{ fontSize: '12px', color: '#757575', marginBottom: '8px' }}>채용 문의 전화번호</p>
-              <p style={{ fontSize: '28px', fontWeight: 900, color: '#FFD72E', letterSpacing: '2px', marginBottom: '4px' }}>0507-1320-2245</p>
-              <p style={{ fontSize: '14px', color: '#9E9E9E' }}>
-                <Mail className="w-3.5 h-3.5 inline mr-1" />mindfitness@naver.com
+          {isSubmitted ? (
+            <div className="py-12 px-4 text-center flex flex-col items-center">
+              <CheckCircle className="w-16 h-16 text-green-500 mb-4" />
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">지원서 접수 완료!</h3>
+              <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+                마인드휘트니스에 지원해 주셔서 감사합니다.<br />
+                제출해 주신 지원서를 확인 후 빠른 시일 내에 연락드리겠습니다.
               </p>
+              <button
+                type="button"
+                onClick={() => handleModalClose(false)}
+                className="bg-black text-white px-8 py-3 rounded-lg font-bold text-sm hover:bg-gray-800 transition-colors"
+              >
+                확인
+              </button>
             </div>
-
-            <div style={{ display: 'flex', gap: '12px', width: '100%' }}>
-              <a href="tel:0507-1320-2245" style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '14px', borderRadius: '14px', fontSize: '14px', fontWeight: 700, background: '#FFD72E', color: '#0A0913', textDecoration: 'none' }}>
-                <Phone className="w-4 h-4" /> 전화 문의
-              </a>
-              <a href="mailto:mindfitness@naver.com?subject=[채용지원] 마인드휘트니스 한림점" style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '14px', borderRadius: '14px', fontSize: '14px', fontWeight: 700, background: 'transparent', color: '#fff', border: '1px solid #616161', textDecoration: 'none' }}>
-                <Mail className="w-4 h-4" /> 이메일 지원
-              </a>
-            </div>
-
-            <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 20px', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '14px', marginTop: '12px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: '#9E9E9E' }}>
-                <Clock className="w-4 h-4" style={{ color: '#FFD72E' }} />
-                <span>상담가능시간</span>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-5 text-left">
+              {/* 1. 개인정보 수집 및 이용 동의 */}
+              <div>
+                <label className="block text-sm font-bold text-gray-900 mb-2">
+                  개인정보 수집 및 이용 동의 <span className="text-red-500 font-bold ml-0.5">*</span>
+                </label>
+                <div className="border border-gray-400 p-3.5 text-[12px] leading-relaxed text-gray-800 bg-white mb-2 font-normal rounded-sm">
+                  <p className="font-bold mb-1">■ 개인정보 수집 및 이용 동의 안내</p>
+                  <p>1. 항목 : 이름, 연락처, 이메일</p>
+                  <p>2. 목적 : 채용 제안에 따른 연락처 정보 확인</p>
+                  <p className="mb-2">3. 보유기간 : 신청 후 3개월간 보관 후 파기</p>
+                  <p className="text-gray-700">
+                    위 정보 수집에 대한 동의를 거부할 권리가 있으며, 동의 거부 시에는 채용 공고 접수가 제한될 수 있습니다.
+                  </p>
+                </div>
+                <label className="flex items-center gap-2 text-xs text-gray-900 font-medium cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={privacyAgreed}
+                    onChange={(e) => setPrivacyAgreed(e.target.checked)}
+                    className="w-4 h-4 rounded border-gray-400"
+                    required
+                  />
+                  개인정보 수집 및 이용에 동의합니다.
+                </label>
               </div>
-              <span style={{ fontSize: '14px', fontWeight: 700, color: '#fff' }}>평일 09:00 ~ 21:00</span>
-            </div>
 
-            <a href="sms:0507-1320-2245" style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '14px', borderRadius: '14px', fontSize: '14px', fontWeight: 700, background: 'transparent', color: '#fff', border: '1px solid #616161', textDecoration: 'none', marginTop: '12px' }}>
-              <MessageSquare className="w-4 h-4" /> 문자 문의하기
-            </a>
-          </div>
+              {/* 2. 개인정보 제3자 제공 동의 */}
+              <div>
+                <label className="block text-sm font-bold text-gray-900 mb-2">
+                  개인정보 제3자 제공 동의 <span className="text-red-500 font-bold ml-0.5">*</span>
+                </label>
+                <div className="border border-gray-400 p-3.5 text-[12px] leading-relaxed text-gray-800 bg-white mb-2 font-normal rounded-sm">
+                  <p className="font-bold mb-1">다음과 같이 개인정보를 제3자에게 제공하고 있습니다.</p>
+                  <br />
+                  <p>1. 개인정보를 제공받는 자 : 마인드휘트니스 본사</p>
+                  <p>2. 제공받는 자의 개인정보 이용목적 : 고객 관리 및 채용목적</p>
+                  <p>3. 제공하는 개인정보 항목 : 성명, 휴대폰번호, 이메일</p>
+                  <p>4. 제공받는 자의 보유 및 이용기간 : 신청 후 3개월간 보관 후 파기</p>
+                </div>
+                <label className="flex items-center gap-2 text-xs text-gray-900 font-medium cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={thirdPartyAgreed}
+                    onChange={(e) => setThirdPartyAgreed(e.target.checked)}
+                    className="w-4 h-4 rounded border-gray-400"
+                    required
+                  />
+                  개인정보 제3자 제공에 대해 동의합니다.
+                </label>
+              </div>
+
+              {/* 3. 이름 */}
+              <div>
+                <label className="block text-sm font-bold text-gray-900 mb-1.5">
+                  이름 <span className="text-red-500 font-bold ml-0.5">*</span>
+                </label>
+                <input
+                  type="text"
+                  value={applicantName}
+                  onChange={(e) => setApplicantName(e.target.value)}
+                  required
+                  className="w-full border border-gray-800 rounded px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-black"
+                />
+              </div>
+
+              {/* 4. 연락처 */}
+              <div>
+                <label className="block text-sm font-bold text-gray-900 mb-1.5">
+                  연락처 <span className="text-red-500 font-bold ml-0.5">*</span>
+                </label>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="text"
+                    maxLength={3}
+                    value={phone1}
+                    onChange={(e) => setPhone1(e.target.value)}
+                    required
+                    className="w-1/3 border border-gray-800 rounded px-3 py-2.5 text-sm text-center text-gray-900 focus:outline-none focus:ring-1 focus:ring-black"
+                  />
+                  <span className="text-gray-600">-</span>
+                  <input
+                    type="text"
+                    maxLength={4}
+                    value={phone2}
+                    onChange={(e) => setPhone2(e.target.value)}
+                    required
+                    className="w-1/3 border border-gray-800 rounded px-3 py-2.5 text-sm text-center text-gray-900 focus:outline-none focus:ring-1 focus:ring-black"
+                  />
+                  <span className="text-gray-600">-</span>
+                  <input
+                    type="text"
+                    maxLength={4}
+                    value={phone3}
+                    onChange={(e) => setPhone3(e.target.value)}
+                    required
+                    className="w-1/3 border border-gray-800 rounded px-3 py-2.5 text-sm text-center text-gray-900 focus:outline-none focus:ring-1 focus:ring-black"
+                  />
+                </div>
+              </div>
+
+              {/* 5. 분야 */}
+              <div>
+                <label className="block text-sm font-bold text-gray-900 mb-1.5">
+                  분야 <span className="text-red-500 font-bold ml-0.5">*</span>
+                </label>
+                <select
+                  value={field}
+                  onChange={(e) => setField(e.target.value)}
+                  required
+                  className="w-full border border-gray-800 rounded px-3 py-2.5 text-sm text-gray-900 bg-white focus:outline-none focus:ring-1 focus:ring-black cursor-pointer"
+                >
+                  <option value="">(선택)</option>
+                  <option value="PT">PT</option>
+                  <option value="FT">FT</option>
+                  <option value="FC">FC</option>
+                  <option value="CS">CS</option>
+                  <option value="기구필라테스 강사">기구필라테스 강사</option>
+                  <option value="골프 프로">골프 프로</option>
+                </select>
+              </div>
+
+              {/* 6. 지원 지역 */}
+              <div>
+                <label className="block text-sm font-bold text-gray-900 mb-1.5">
+                  지원 지역 <span className="text-red-500 font-bold ml-0.5">*</span>
+                </label>
+                <select
+                  value={region}
+                  onChange={(e) => setRegion(e.target.value)}
+                  required
+                  className="w-full border border-gray-800 rounded px-3 py-2.5 text-sm text-gray-900 bg-white focus:outline-none focus:ring-1 focus:ring-black cursor-pointer"
+                >
+                  <option value="">(선택)</option>
+                  <option value="제주시">제주시</option>
+                  <option value="서귀포시">서귀포시</option>
+                  <option value="울산">울산</option>
+                  <option value="부산">부산</option>
+                  <option value="대구">대구</option>
+                </select>
+              </div>
+
+              {/* 7. 지원 지점 */}
+              <div>
+                <label className="block text-sm font-bold text-gray-900 mb-1.5">
+                  지원 지점 <span className="text-red-500 font-bold ml-0.5">*</span>
+                </label>
+                <select
+                  value={branch}
+                  onChange={(e) => setBranch(e.target.value)}
+                  required
+                  className="w-full border border-gray-800 rounded px-3 py-2.5 text-sm text-gray-900 bg-white focus:outline-none focus:ring-1 focus:ring-black cursor-pointer"
+                >
+                  <option value="">(선택)</option>
+                  <option value="서홍점">서홍점</option>
+                  <option value="영어교육도시점">영어교육도시점</option>
+                  <option value="터미널점">터미널점</option>
+                  <option value="중문점">중문점</option>
+                  <option value="동홍점">동홍점</option>
+                  <option value="울산송정점">울산송정점</option>
+                  <option value="제주공항점">제주공항점</option>
+                  <option value="울산태화점">울산태화점</option>
+                  <option value="노형점">노형점</option>
+                  <option value="부산명지점">부산명지점</option>
+                  <option value="울산천곡점">울산천곡점</option>
+                  <option value="울산옥동점">울산옥동점</option>
+                  <option value="울산야음점">울산야음점</option>
+                  <option value="대구도남점">대구도남점</option>
+                  <option value="한림점">한림점</option>
+                  <option value="제주중앙점">제주중앙점</option>
+                  <option value="울산삼산점">울산삼산점</option>
+                </select>
+              </div>
+
+              {/* 8. 채용공고를 알게된 경로 */}
+              <div>
+                <label className="block text-sm font-bold text-gray-900 mb-1.5">
+                  채용공고를 알게된 경로 <span className="text-red-500 font-bold ml-0.5">*</span>
+                </label>
+                <select
+                  value={source}
+                  onChange={(e) => setSource(e.target.value)}
+                  required
+                  className="w-full border border-gray-800 rounded px-3 py-2.5 text-sm text-gray-900 bg-white focus:outline-none focus:ring-1 focus:ring-black cursor-pointer"
+                >
+                  <option value="">(선택)</option>
+                  <option value="채용 사이트 (사람인, 잡코리아 등)">채용 사이트 (사람인, 잡코리아 등)</option>
+                  <option value="알바천국">알바천국</option>
+                  <option value="인스타그램 등 소셜 미디어">인스타그램 등 소셜 미디어</option>
+                  <option value="제주생활게시판">제주생활게시판</option>
+                  <option value="인터넷 검색">인터넷 검색</option>
+                  <option value="당근마켓">당근마켓</option>
+                  <option value="스포드림">스포드림</option>
+                  <option value="호호요가">호호요가</option>
+                  <option value="지인의 소개">지인의 소개</option>
+                  <option value="기타">기타</option>
+                </select>
+              </div>
+
+              {/* 9. 이메일 작성 */}
+              <div>
+                <label className="block text-sm font-bold text-gray-900 mb-1.5">
+                  이메일 작성 <span className="text-red-500 font-bold ml-0.5">*</span>
+                </label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="w-full border border-gray-800 rounded px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-black"
+                />
+              </div>
+
+              {/* 10. 입사지원서 업로드 */}
+              <div>
+                <label className="block text-sm font-bold text-gray-900 mb-2">
+                  입사지원서 (하단의 이력서 양식 다운로드 후 작성) <span className="text-red-500 font-bold ml-0.5">*</span>
+                </label>
+                <div className="flex items-center gap-3">
+                  <label className="inline-flex items-center gap-2 border border-gray-400 bg-gray-100 text-gray-800 px-4 py-2 rounded text-sm font-bold cursor-pointer hover:bg-gray-200 transition-colors">
+                    <Upload className="w-4 h-4" /> 파일 올리기
+                    <input
+                      type="file"
+                      onChange={handleFileChange}
+                      className="hidden"
+                      accept=".pdf,.doc,.docx,.hwp,.zip"
+                    />
+                  </label>
+                  {fileName ? (
+                    <span className="text-xs text-blue-600 font-medium truncate max-w-[200px]">{fileName}</span>
+                  ) : (
+                    <span className="text-xs text-gray-400">선택된 파일 없음</span>
+                  )}
+                </div>
+              </div>
+
+              {/* 11 & 12. 간단 지원 하기 & 이력서 양식 다운로드 */}
+              <div className="pt-4 pb-2 text-center">
+                <button
+                  type="submit"
+                  className="w-full border border-gray-900 bg-white text-gray-900 font-bold text-base py-3.5 rounded hover:bg-gray-100 transition-colors mb-5 cursor-pointer shadow-sm"
+                >
+                  간단 지원 하기
+                </button>
+
+                <a
+                  href="/images/마인드휘트니스_이력서양식 (1).hwp"
+                  download="마인드휘트니스_이력서양식.hwp"
+                  className="inline-flex items-center gap-2 border border-gray-900 rounded-full px-6 py-2 text-sm font-bold text-gray-900 hover:bg-gray-100 transition-colors cursor-pointer text-decoration-none"
+                >
+                  <Download className="w-4 h-4" /> 이력서 양식 다운로드
+                </a>
+              </div>
+            </form>
+          )}
         </DialogContent>
       </Dialog>
     </div>
