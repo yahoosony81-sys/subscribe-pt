@@ -299,6 +299,8 @@ export function RecruitHallimLanding() {
   const [source, setSource] = useState("")
   const [email, setEmail] = useState("")
   const [fileName, setFileName] = useState("")
+  const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleTogglePosition = (index: number) => {
@@ -315,11 +317,13 @@ export function RecruitHallimLanding() {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
-      setFileName(e.target.files[0].name)
+      const file = e.target.files[0]
+      setSelectedFile(file)
+      setFileName(file.name)
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!privacyAgreed || !thirdPartyAgreed) {
       alert("개인정보 수집 및 제3자 제공 동의에 체크해 주세요.")
@@ -341,11 +345,59 @@ export function RecruitHallimLanding() {
       alert("채용공고를 알게된 경로를 선택해 주세요.")
       return
     }
-    if (!fileName) {
+    if (!selectedFile) {
       alert("입사지원서 파일을 첨부해 주세요.")
       return
     }
-    setIsSubmitted(true)
+
+    setIsSubmitting(true)
+
+    try {
+      let base64Data = ""
+      if (selectedFile) {
+        base64Data = await new Promise<string>((resolve, reject) => {
+          const reader = new FileReader()
+          reader.onload = () => {
+            const result = reader.result as string
+            const base64 = result.split(",")[1] || ""
+            resolve(base64)
+          }
+          reader.onerror = (error) => reject(error)
+          reader.readAsDataURL(selectedFile)
+        })
+      }
+
+      const payload = {
+        name: applicantName,
+        phone: `${phone1}-${phone2}-${phone3}`,
+        field: field,
+        region: region,
+        branch: branch,
+        source: source,
+        email: email,
+        fileName: selectedFile ? selectedFile.name : "",
+        fileMimeType: selectedFile ? selectedFile.type || "application/octet-stream" : "",
+        fileData: base64Data,
+      }
+
+      const GAS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyxNIAtB03Atvws3uQ3Bko-IH4TxoX3mRhoPuJVpdrUOZOIVob0VUJVcP_-3EcO4y1NOg/exec"
+
+      await fetch(GAS_WEBHOOK_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        body: JSON.stringify(payload),
+      })
+
+      setIsSubmitted(true)
+    } catch (error) {
+      console.error("Submit error:", error)
+      alert("지원서 제출 중 오류가 발생했습니다. 다시 시도해 주세요.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleModalClose = (open: boolean) => {
@@ -1144,9 +1196,10 @@ export function RecruitHallimLanding() {
               <div className="pt-4 pb-2 text-center">
                 <button
                   type="submit"
-                  className="w-full border border-gray-900 bg-white text-gray-900 font-bold text-base py-3.5 rounded hover:bg-gray-100 transition-colors mb-5 cursor-pointer shadow-sm"
+                  disabled={isSubmitting}
+                  className="w-full border border-gray-900 bg-white text-gray-900 font-bold text-base py-3.5 rounded hover:bg-gray-100 transition-colors mb-5 cursor-pointer shadow-sm disabled:opacity-50"
                 >
-                  간단 지원 하기
+                  {isSubmitting ? "제출 중..." : "간단 지원 하기"}
                 </button>
 
                 <a
