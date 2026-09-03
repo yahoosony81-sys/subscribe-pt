@@ -876,7 +876,7 @@ export function RecruitHallimLanding() {
           <p className="rc-text-section__body" style={{ color: 'var(--rc-yellow)', fontWeight: 700, fontSize: '16px' }}>
             <strong>LOCATION</strong>
           </p>
-          <h2 className="rc-text-section__heading">마인드휘트니스 한림점</h2>
+          <h2 className="rc-text-section__heading">주식회사 이노플랫</h2>
           <p className="rc-text-section__body" style={{ fontSize: '16px', opacity: 0.7 }}>
             편리한 접근성과 쾌적한 시설로 여러분을 기다립니다
           </p>
@@ -885,7 +885,7 @@ export function RecruitHallimLanding() {
           <div className="rc-split">
             <div className="rc-split__image">
               <div className="rc-img-placeholder rc-img-placeholder--landscape">
-                <span>📷 한림점 시설 / 지도 이미지<br/>권장: 480 × 320</span>
+                <span>📷 이노플랫 시설 / 지도 이미지<br/>권장: 480 × 320</span>
               </div>
             </div>
             <div className="rc-split__text">
@@ -896,7 +896,7 @@ export function RecruitHallimLanding() {
                   <div>
                     <p style={{ fontWeight: 700, margin: '0 0 4px', color: 'var(--rc-black)' }}>주소</p>
                     <p style={{ margin: 0, color: 'var(--rc-gray-600)', fontSize: 14, lineHeight: 1.5 }}>
-                      제주 제주시 한림읍 한림남1길 3<br/>상두거리 몽돌스테이 3층
+                      제주 제주시 도령로 167 에이동 2층, 3층
                     </p>
                   </div>
                 </div>
@@ -905,7 +905,7 @@ export function RecruitHallimLanding() {
                   <Phone style={{ width: 20, height: 20, color: '#b5940a', flexShrink: 0, marginTop: 2 }} />
                   <div>
                     <p style={{ fontWeight: 700, margin: '0 0 4px', color: 'var(--rc-black)' }}>전화번호</p>
-                    <p style={{ margin: 0, color: 'var(--rc-gray-600)', fontSize: 14 }}>0507-1320-2245</p>
+                    <p style={{ margin: 0, color: 'var(--rc-gray-600)', fontSize: 14 }}>0507-1348-0798</p>
                   </div>
                 </div>
                 {/* 운영시간 */}
