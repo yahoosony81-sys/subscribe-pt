@@ -380,7 +380,7 @@ export function RecruitHallimLanding() {
         fileData: base64Data,
       }
 
-      const GAS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyxNIAtB03Atvws3uQ3Bko-IH4TxoX3mRhoPuJVpdrUOZOIVob0VUJVcP_-3EcO4y1NOg/exec"
+      const GAS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwViYDiijj_e_n0ZlczzSZkQUCHUBLxO8Ywj7i0b77i34Ov6-j1KqZt4Wg93tnC-rzaRg/exec"
 
       await fetch(GAS_WEBHOOK_URL, {
         method: "POST",
