@@ -96,9 +96,9 @@ const POSITIONS = [
 
 /* ═══ 슬라이더 이미지 데이터 ═══ */
 const SLIDER_IMAGES = [
-  { src: "/images/06_중문점_시설사진 (47).JPG", alt: "마인드휘트니스 중문점 시설사진" },
   { src: "/images/운동티칭.jpg", alt: "마인드휘트니스 코칭 장면" },
   { src: "/images/08_울산송정점_시설사진 (34).jpg", alt: "마인드휘트니스 울산송정점 시설사진" },
+  { src: "/images/06_중문점_시설사진 (47).JPG", alt: "마인드휘트니스 중문점 시설사진" },
   { src: "/images/2024 경상지사_신년회 (2).jpg", alt: "마인드휘트니스 경상지사 신년회" },
 ]
 
