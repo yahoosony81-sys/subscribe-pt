@@ -11,7 +11,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog"
 import { RegistrationSectionHallim } from "@/components/registration-section-hallim"
-import { CheckCircle2, AlertCircle, Plus, ChevronDown, Phone, MessageSquare, Smartphone, Clock, MapPin, Eye } from "lucide-react"
+import { CheckCircle2, AlertCircle, Plus, ChevronDown, Phone, MessageSquare, Smartphone, Clock, MapPin, Eye, Sparkles, Gift, Zap, Coffee } from "lucide-react"
 
 /* ─── 슬라이드쇼 이미지 목록 ─── */
 const HERO_IMAGES = [
@@ -129,6 +129,7 @@ export function CareMembershipHallimLanding() {
   const sec4 = useScrollReveal()
   const sec5 = useScrollReveal()
   const secPackages = useScrollReveal()
+  const secPromoGift = useScrollReveal()
   const secRefs = [sec1, sec2, sec3, sec4, sec5]
 
   /* ─── 슬라이드 이동 ─── */
@@ -208,13 +209,13 @@ export function CareMembershipHallimLanding() {
           <button 
             type="button"
             onClick={() => {
-              document.getElementById('care-membership-targets')?.scrollIntoView({ behavior: 'smooth' });
+              document.getElementById('september-promo-gift')?.scrollIntoView({ behavior: 'smooth' });
             }}
             className="group flex items-center justify-center gap-3 sm:gap-5 md:gap-8 mt-10 px-6 py-5 sm:px-12 sm:py-6 md:px-24 md:py-8 bg-black/50 backdrop-blur-md rounded-full border border-[#c8a96e]/50 shadow-[0_4px_24px_rgba(200,169,110,0.3)] w-fit mx-auto cursor-pointer transition-all duration-300 hover:bg-[#c8a96e] hover:scale-105 hover:shadow-[0_8px_32px_rgba(200,169,110,0.6)]"
           >
             <ChevronDown className="animate-bounce w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 text-[#c8a96e] group-hover:text-white transition-colors duration-300" />
             <span className="text-lg sm:text-2xl md:text-4xl whitespace-nowrap font-bold tracking-wide text-white drop-shadow-lg group-hover:text-white transition-colors duration-300">
-              맞춤 케어멤버십 자세히보기
+              9월 케어멤버십 프로모션 자세히보기
             </span>
             <ChevronDown className="animate-bounce w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 text-[#c8a96e] group-hover:text-white transition-colors duration-300" />
           </button>
@@ -313,6 +314,100 @@ export function CareMembershipHallimLanding() {
             </div>
           )
         })}
+      </section>
+
+      {/* ═══ 9월 SPECIAL PROMOTION GIFT SECTION ═══ */}
+      <section
+        id="september-promo-gift"
+        ref={secPromoGift.ref}
+        className={`cm-promo-gift ${secPromoGift.visible ? "cm-promo-gift--visible" : ""}`}
+        aria-label="9월 케어멤버십 특별 프로모션 증정 혜택"
+      >
+        <div className="cm-promo-gift__container">
+          {/* Header Badge & Title */}
+          <div className="cm-promo-gift__header">
+            <div className="cm-promo-gift__badge">
+              <Sparkles className="w-3.5 h-3.5 text-[#c8a96e]" />
+              <span>SEPTEMBER SPECIAL GIFT</span>
+            </div>
+            <h2 className="cm-promo-gift__main-title">
+              내 몸의 밸런스를 되찾는<br />
+              <span className="text-[#c8a96e]">9월 케어멤버십 프로모션!</span>
+            </h2>
+          </div>
+
+          {/* Grid Layout: Left Image, Right Text */}
+          <div className="cm-promo-gift__grid">
+            {/* Left: Image Container */}
+            <div className="cm-promo-gift__image-card">
+              <div className="cm-promo-gift__image-badge">
+                <Gift className="w-4 h-4 text-[#0d0d0d]" />
+                <span>등록 회원 전원 증정</span>
+              </div>
+              <div className="cm-promo-gift__image-inner">
+                <Image
+                  src="/images/방탄커피선물.png"
+                  alt="마이노멀 시그니처 방탄커피 (6개입) 사은품"
+                  width={600}
+                  height={600}
+                  className="cm-promo-gift__img"
+                  priority
+                />
+              </div>
+              <div className="cm-promo-gift__image-footer">
+                <span className="cm-promo-gift__product-name">마이노멀 시그니처 방탄커피</span>
+                <span className="cm-promo-gift__product-qty">6개입 1세트</span>
+              </div>
+            </div>
+
+            {/* Right: Text Description */}
+            <div className="cm-promo-gift__content">
+              <div className="cm-promo-gift__intro-box">
+                <p className="cm-promo-gift__headline">
+                  등록하시는 분들께 든든한 에너지를 채워줄<br />
+                  <strong className="text-[#c8a96e] font-bold">&apos;마이노멀 시그니처 방탄커피(6개입)&apos;</strong>를 증정합니다.
+                </p>
+              </div>
+
+              <div className="cm-promo-gift__body-list">
+                <div className="cm-promo-gift__item">
+                  <div className="cm-promo-gift__icon-wrap">
+                    <Zap className="w-4 h-4 text-[#c8a96e]" />
+                  </div>
+                  <p className="cm-promo-gift__text">
+                    무너진 체형을 교정하고 근력을 강화하는 과정에서는 지치지 않게 도와주는 <strong>효율적인 에너지 공급</strong>이 매우 중요합니다.
+                  </p>
+                </div>
+
+                <div className="cm-promo-gift__item">
+                  <div className="cm-promo-gift__icon-wrap">
+                    <Coffee className="w-4 h-4 text-[#c8a96e]" />
+                  </div>
+                  <p className="cm-promo-gift__text">
+                    방탄커피에 포함된 <strong>MCT 오일</strong>(탄소수 8~12개로 이중결합이 없는 포화지방)은 우리 몸에 빠르게 흡수되어 즉각적인 에너지로 쓰이기 때문에, <strong>케어멤버십 트레이닝 시 훌륭한 부스터 역할</strong>을 해냅니다.
+                  </p>
+                </div>
+
+                <div className="cm-promo-gift__item">
+                  <div className="cm-promo-gift__icon-wrap">
+                    <Sparkles className="w-4 h-4 text-[#c8a96e]" />
+                  </div>
+                  <p className="cm-promo-gift__text">
+                    엄선된 3가지 원두와 프랑스산 기버터가 만나 고소한 풍미를 자랑하며, 긴 시간 유지되는 포만감 덕분에 <strong>건강한 몸을 만드는 든든한 조력자</strong>가 될 것입니다.
+                  </p>
+                </div>
+              </div>
+
+              {/* Feature Tags */}
+              <div className="cm-promo-gift__tags">
+                <span className="cm-promo-gift__tag">#MCT오일부스터</span>
+                <span className="cm-promo-gift__tag">#프랑스산기버터</span>
+                <span className="cm-promo-gift__tag">#3가지엄선원두</span>
+                <span className="cm-promo-gift__tag">#든든한포만감</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ═══ EXPERT PROFILE SECTION ═══ */}
@@ -414,7 +509,6 @@ export function CareMembershipHallimLanding() {
         <div className="cm-sticky-cta-wrap">
           <button className="cm-sticky-cta" type="button" onClick={handleCtaClick}>
             <span>케어멤버십 전화/문자 상담 가능한 연락처 보기 &rarr;</span>
-            <span className="cm-sticky-cta__sub">8월말까지 신청시 2만원 혜택추가</span>
           </button>
         </div>
       )}
@@ -440,14 +534,14 @@ export function CareMembershipHallimLanding() {
             <div className="w-full bg-[#202020] rounded-2xl p-5 mb-6 flex flex-col items-center border border-white/5">
               <span className="text-gray-400 text-xs mb-2">상담 가능 전화번호</span>
               <span className="text-[#c8a96e] text-3xl font-extrabold tracking-widest mb-5">
-                010-8849-7050
+                010-9970-0432
               </span>
               
               <div className="flex w-full gap-3 mb-4">
-                <a href="tel:010-8849-7050" className="flex-1 bg-[#c8a96e] text-black font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-[#b59863] transition-colors">
+                <a href="tel:010-9970-0432" className="flex-1 bg-[#c8a96e] text-black font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-[#b59863] transition-colors">
                   <Phone className="w-4 h-4" /> 전화 연결
                 </a>
-                <a href="sms:010-8849-7050" className="flex-1 bg-transparent border border-gray-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
+                <a href="sms:010-9970-0432" className="flex-1 bg-transparent border border-gray-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
                   <MessageSquare className="w-4 h-4" /> 문자 상담하기
                 </a>
               </div>
@@ -575,11 +669,10 @@ export function CareMembershipHallimLanding() {
             <button 
               type="button"
               onClick={handleOpenRegistrationFromDetails}
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl text-lg transition-colors flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30"
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-extrabold py-4 rounded-xl text-lg sm:text-xl transition-colors flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30"
             >
               케어멤버십 전화/문자 상담 가능한 연락처 보기 &rarr;
             </button>
-            <p className="text-center text-xs text-slate-400 mt-3 font-medium">8월말까지 신청시 2만원 혜택추가</p>
           </div>
         </DialogContent>
       </Dialog>

@@ -886,27 +886,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 14px 24px;
+  padding: 16px 24px;
   background: var(--cm-brown);
   color: var(--cm-white);
   border: 1px solid rgba(200, 169, 110, 0.4);
   border-radius: 32px;
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: clamp(14px, 4vw, 15px);
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-size: clamp(15px, 4.2vw, 17px);
+  font-weight: 700;
+  letter-spacing: 0.03em;
   cursor: pointer;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
   transition: all 0.3s ease;
   backdrop-filter: blur(8px);
-}
-
-.cm-sticky-cta__sub {
-  font-size: clamp(12px, 3.5vw, 13px);
-  color: var(--cm-gold-light);
-  font-weight: 500;
-  margin-top: 4px;
-  letter-spacing: 0.02em;
 }
 
 .cm-sticky-cta:hover {
@@ -1072,3 +1064,267 @@ footer {
   left: 0;
   color: var(--cm-gold);
 }
+
+/* ═══════════════════════════════════════════════════
+   SEPTEMBER SPECIAL PROMOTION GIFT SECTION
+   ═══════════════════════════════════════════════════ */
+.cm-promo-gift {
+  width: 100%;
+  padding: 100px 24px;
+  background: linear-gradient(180deg, #121110 0%, #1a1815 50%, #121110 100%);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(200, 169, 110, 0.2);
+  border-bottom: 1px solid rgba(200, 169, 110, 0.2);
+
+  /* Scroll Reveal */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cm-promo-gift--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cm-promo-gift::before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(200, 169, 110, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+}
+
+.cm-promo-gift__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.cm-promo-gift__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.cm-promo-gift__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(200, 169, 110, 0.5);
+  background: rgba(200, 169, 110, 0.08);
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--cm-gold-light);
+  margin-bottom: 16px;
+}
+
+.cm-promo-gift__main-title {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: clamp(26px, 4.5vw, 40px);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #ffffff;
+  word-break: keep-all;
+}
+
+.cm-promo-gift__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* Left Image Card */
+.cm-promo-gift__image-card {
+  position: relative;
+  background: #1e1c19;
+  border: 1px solid rgba(200, 169, 110, 0.3);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cm-promo-gift__image-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200, 169, 110, 0.6);
+  box-shadow: 0 25px 60px rgba(200, 169, 110, 0.15), 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+.cm-promo-gift__image-badge {
+  position: absolute;
+  top: -14px;
+  left: 24px;
+  background: linear-gradient(135deg, #c8a96e 0%, #a68449 100%);
+  color: #0d0d0d;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  z-index: 3;
+}
+
+.cm-promo-gift__image-inner {
+  width: 100%;
+  aspect-ratio: 1/1;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #141312;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cm-promo-gift__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cm-promo-gift__image-card:hover .cm-promo-gift__img {
+  transform: scale(1.04);
+}
+
+.cm-promo-gift__image-footer {
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cm-promo-gift__product-name {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.cm-promo-gift__product-qty {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cm-gold-light);
+  background: rgba(200, 169, 110, 0.15);
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+/* Right Content */
+.cm-promo-gift__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cm-promo-gift__intro-box {
+  background: rgba(200, 169, 110, 0.08);
+  border: 1px solid rgba(200, 169, 110, 0.25);
+  border-radius: 16px;
+  padding: 20px 24px;
+}
+
+.cm-promo-gift__headline {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: clamp(16px, 2.2vw, 19px);
+  font-weight: 500;
+  line-height: 1.6;
+  color: #e5e5e5;
+  word-break: keep-all;
+}
+
+.cm-promo-gift__body-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cm-promo-gift__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.cm-promo-gift__icon-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: rgba(200, 169, 110, 0.12);
+  border: 1px solid rgba(200, 169, 110, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cm-promo-gift__text {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: clamp(14px, 1.6vw, 15px);
+  font-weight: 400;
+  line-height: 1.75;
+  color: #cccccc;
+  word-break: keep-all;
+}
+
+.cm-promo-gift__text strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.cm-promo-gift__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.cm-promo-gift__tag {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cm-gold-light);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(200, 169, 110, 0.2);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+@media (max-width: 900px) {
+  .cm-promo-gift {
+    padding: 72px 20px;
+  }
+  .cm-promo-gift__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .cm-promo-gift__image-card {
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
