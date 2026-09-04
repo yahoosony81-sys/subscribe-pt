@@ -15,10 +15,10 @@ import { CheckCircle2, AlertCircle, Plus, ChevronDown, Phone, MessageSquare, Sma
 
 /* ─── 슬라이드쇼 이미지 목록 ─── */
 const HERO_IMAGES = [
-  "/images/22호점_한림점_시설사진 (11).jpg",
-  "/images/22호점_한림점_시설사진 (15).jpg",
-  "/images/한림점_시설사진 (2).jpg",
-  "/images/한림점_시설사진.jpg",
+  "/images/히어로11.png",
+  "/images/히어로22.png",
+  "/images/히어로333.png",
+  "/images/히어로44.png",
 ]
 
 const SLIDE_DURATION = 1500
