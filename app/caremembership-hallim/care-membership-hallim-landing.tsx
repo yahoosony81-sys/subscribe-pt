@@ -163,10 +163,44 @@ export function CareMembershipHallimLanding() {
   }, [])
 
   const handleCtaClick = () => {
+    // ── 메타 이벤트: 연락처 보기 CTA 클릭 시 Contact 이벤트 전송 ──
+    const eventId = crypto.randomUUID();
+    // 클라이언트 사이드 (브라우저 픽셀)
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Contact', {}, { eventID: eventId });
+    }
+    // 서버 사이드 (Conversions API — iOS 쿠키 제한 우회)
+    fetch('/api/capi', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        eventName: 'Contact',
+        pathname: window?.location?.pathname || '/caremembership-hallim',
+        eventSourceUrl: window?.location?.href || '',
+        eventId,
+      }),
+    }).catch(err => console.error('[CAPI] Contact event error:', err));
+
     setIsFormOpen(true)
   }
 
   const handleOpenRegistrationFromDetails = () => {
+    // ── 메타 이벤트: 상세 팝업 내 CTA 클릭 시 Contact 이벤트 전송 ──
+    const eventId = crypto.randomUUID();
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Contact', {}, { eventID: eventId });
+    }
+    fetch('/api/capi', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        eventName: 'Contact',
+        pathname: window?.location?.pathname || '/caremembership-hallim',
+        eventSourceUrl: window?.location?.href || '',
+        eventId,
+      }),
+    }).catch(err => console.error('[CAPI] Contact event error:', err));
+
     setIsDetailsOpen(false)
     setTimeout(() => setIsFormOpen(true), 300)
   }
