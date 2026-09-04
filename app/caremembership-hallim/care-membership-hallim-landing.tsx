@@ -256,11 +256,7 @@ export function CareMembershipHallimLanding() {
           >
             {/* 上 긴 라인 (Top Accent Line with Gold Gradient) */}
             <div className="w-full flex items-center gap-3">
-              <span className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#c8a96e] to-[#c8a96e]/40 group-hover:via-[#e2c99a] transition-all duration-300" />
-              <span className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-[#c8a96e] uppercase">
-                SEPTEMBER SPECIAL PROMOTION
-              </span>
-              <span className="flex-1 h-[1px] bg-gradient-to-l from-transparent via-[#c8a96e] to-[#c8a96e]/40 group-hover:via-[#e2c99a] transition-all duration-300" />
+              <span className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#c8a96e] to-transparent group-hover:via-[#e2c99a] transition-all duration-300" />
             </div>
 
             {/* 메인 텍스트 & 화살표 */}
@@ -273,11 +269,7 @@ export function CareMembershipHallimLanding() {
 
             {/* 下 긴 라인 (Bottom Accent Line) */}
             <div className="w-full flex items-center gap-3">
-              <span className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#c8a96e]/40 to-[#c8a96e] group-hover:via-[#e2c99a] transition-all duration-300" />
-              <span className="text-[10px] sm:text-xs font-medium text-[#c8a96e]/90 tracking-wider">
-                🎁 등록 회원 전원 &apos;방탄커피 6개입&apos; 증정
-              </span>
-              <span className="flex-1 h-[1px] bg-gradient-to-l from-transparent via-[#c8a96e]/40 to-[#c8a96e] group-hover:via-[#e2c99a] transition-all duration-300" />
+              <span className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#c8a96e]/70 to-transparent group-hover:via-[#e2c99a] transition-all duration-300" />
             </div>
           </div>
         </div>
