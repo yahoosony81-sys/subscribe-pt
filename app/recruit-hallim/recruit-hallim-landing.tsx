@@ -795,7 +795,7 @@ export function RecruitHallimLanding() {
             const bgImages = [
               "/images/가로긴사진1.png",
               "/images/image copy 4.png",
-              "/images/부서관리자사진.png",
+              "/images/image copy 5.png",
             ]
             const bgImg = bgImages[idx]
 
