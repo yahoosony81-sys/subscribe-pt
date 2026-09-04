@@ -887,25 +887,25 @@
   align-items: center;
   justify-content: center;
   padding: 16px 24px;
-  background: var(--cm-brown);
-  color: var(--cm-white);
-  border: 1px solid rgba(200, 169, 110, 0.4);
+  background: linear-gradient(135deg, #ff6b00 0%, #f97316 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 32px;
   font-family: 'Noto Sans KR', sans-serif;
   font-size: clamp(15px, 4.2vw, 17px);
   font-weight: 700;
   letter-spacing: 0.03em;
   cursor: pointer;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 8px 32px rgba(249, 115, 22, 0.55);
   transition: all 0.3s ease;
   backdrop-filter: blur(8px);
 }
 
 .cm-sticky-cta:hover {
-  background: var(--cm-brown-hover);
-  transform: translateY(-2px) translateX(0); /* Reset translateX since wrapper handles centering */
-  box-shadow: 0 12px 36px rgba(200, 169, 110, 0.45);
-  border-color: var(--cm-gold);
+  background: linear-gradient(135deg, #ea580c 0%, #dd4b00 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(249, 115, 22, 0.7);
+  border-color: #ffffff;
 }
 
 .cm-sticky-cta:active {

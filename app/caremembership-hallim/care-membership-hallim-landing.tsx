@@ -211,13 +211,13 @@ export function CareMembershipHallimLanding() {
             onClick={() => {
               document.getElementById('september-promo-gift')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="group flex items-center justify-center gap-3 sm:gap-5 md:gap-8 mt-10 px-6 py-5 sm:px-12 sm:py-6 md:px-24 md:py-8 bg-black/50 backdrop-blur-md rounded-full border border-[#c8a96e]/50 shadow-[0_4px_24px_rgba(200,169,110,0.3)] w-fit mx-auto cursor-pointer transition-all duration-300 hover:bg-[#c8a96e] hover:scale-105 hover:shadow-[0_8px_32px_rgba(200,169,110,0.6)]"
+            className="group flex items-center justify-center gap-3 sm:gap-5 md:gap-8 mt-10 px-6 py-5 sm:px-12 sm:py-6 md:px-24 md:py-8 bg-[#c8a96e] backdrop-blur-md rounded-full border border-[#e2c99a] shadow-[0_8px_32px_rgba(200,169,110,0.6)] w-fit mx-auto cursor-pointer transition-all duration-300 hover:bg-[#b5955a] hover:scale-105"
           >
-            <ChevronDown className="animate-bounce w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 text-[#c8a96e] group-hover:text-white transition-colors duration-300" />
-            <span className="text-lg sm:text-2xl md:text-4xl whitespace-nowrap font-bold tracking-wide text-white drop-shadow-lg group-hover:text-white transition-colors duration-300">
+            <ChevronDown className="animate-bounce w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 text-[#0d0d0d] font-bold" />
+            <span className="text-lg sm:text-2xl md:text-4xl whitespace-nowrap font-extrabold tracking-wide text-[#0d0d0d] drop-shadow-sm">
               9월 케어멤버십 프로모션 자세히보기
             </span>
-            <ChevronDown className="animate-bounce w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 text-[#c8a96e] group-hover:text-white transition-colors duration-300" />
+            <ChevronDown className="animate-bounce w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 text-[#0d0d0d] font-bold" />
           </button>
         </div>
 
