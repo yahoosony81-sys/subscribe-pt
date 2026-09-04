@@ -206,19 +206,46 @@ export function CareMembershipHallimLanding() {
             <span className="cm-hero__divider-text">FITNESS &amp; WELLNESS</span>
             <span className="cm-hero__divider-line" />
           </div>
-          <button 
-            type="button"
+          {/* ═══ ELEGANT LUXURY PROMOTION SCROLL BANNER ═══ */}
+          <div 
+            role="button"
+            tabIndex={0}
             onClick={() => {
               document.getElementById('september-promo-gift')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="group flex items-center justify-center gap-3 sm:gap-5 md:gap-8 mt-10 px-6 py-5 sm:px-12 sm:py-6 md:px-24 md:py-8 bg-[#c8a96e] backdrop-blur-md rounded-full border border-[#e2c99a] shadow-[0_8px_32px_rgba(200,169,110,0.6)] w-fit mx-auto cursor-pointer transition-all duration-300 hover:bg-[#b5955a] hover:scale-105"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                document.getElementById('september-promo-gift')?.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="group mt-8 cursor-pointer flex flex-col items-center gap-3 px-6 py-5 sm:px-10 sm:py-6 rounded-2xl bg-black/45 backdrop-blur-md border border-[#c8a96e]/40 shadow-[0_10px_35px_rgba(0,0,0,0.5)] transition-all duration-500 hover:border-[#c8a96e] hover:bg-black/65 hover:shadow-[0_12px_45px_rgba(200,169,110,0.4)] hover:-translate-y-1 w-full sm:max-w-2xl mx-auto"
           >
-            <ChevronDown className="animate-bounce w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 text-[#0d0d0d] font-bold" />
-            <span className="text-lg sm:text-2xl md:text-4xl whitespace-nowrap font-extrabold tracking-wide text-[#0d0d0d] drop-shadow-sm">
-              9월 케어멤버십 프로모션 자세히보기
-            </span>
-            <ChevronDown className="animate-bounce w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 text-[#0d0d0d] font-bold" />
-          </button>
+            {/* 上 긴 라인 (Top Accent Line with Gold Gradient) */}
+            <div className="w-full flex items-center gap-3">
+              <span className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#c8a96e] to-[#c8a96e]/40 group-hover:via-[#e2c99a] transition-all duration-300" />
+              <span className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-[#c8a96e] uppercase">
+                SEPTEMBER SPECIAL PROMOTION
+              </span>
+              <span className="flex-1 h-[1px] bg-gradient-to-l from-transparent via-[#c8a96e] to-[#c8a96e]/40 group-hover:via-[#e2c99a] transition-all duration-300" />
+            </div>
+
+            {/* 메인 텍스트 & 화살표 */}
+            <div className="flex items-center justify-center gap-3 sm:gap-4 my-1">
+              <span className="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white drop-shadow-md group-hover:text-[#c8a96e] transition-colors duration-300">
+                9월 케어멤버십 프로모션 자세히보기
+              </span>
+              <ChevronDown className="animate-bounce w-6 h-6 sm:w-8 sm:h-8 text-[#c8a96e] group-hover:text-white transition-colors duration-300 shrink-0" />
+            </div>
+
+            {/* 下 긴 라인 (Bottom Accent Line) */}
+            <div className="w-full flex items-center gap-3">
+              <span className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#c8a96e]/40 to-[#c8a96e] group-hover:via-[#e2c99a] transition-all duration-300" />
+              <span className="text-[10px] sm:text-xs font-medium text-[#c8a96e]/90 tracking-wider">
+                🎁 등록 회원 전원 &apos;방탄커피 6개입&apos; 증정
+              </span>
+              <span className="flex-1 h-[1px] bg-gradient-to-l from-transparent via-[#c8a96e]/40 to-[#c8a96e] group-hover:via-[#e2c99a] transition-all duration-300" />
+            </div>
+          </div>
         </div>
 
         <div className="cm-hero__dots" role="tablist" aria-label="슬라이드 인디케이터">
