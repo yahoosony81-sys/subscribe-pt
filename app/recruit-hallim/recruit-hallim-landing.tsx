@@ -514,8 +514,9 @@ export function RecruitHallimLanding() {
             유능한 코치님들이 제대로<br className="rc-br-desktop" /> 성장할 환경이 없었습니다.
           </h2>
           <p className="rc-text-section__body" style={{ lineHeight: 1.85 }}>
-            대한민국 피트니스 업계에 코치님들의 성장과 동기부여를 위한 환경이 부족했던 것이 현실입니다.<br /><br />
-            코치님들의 커리어와 보상 체계를 진심으로 고민하는 회사가 전무했고, 수업 외 역량을 새롭게 시도해 볼 수 있는 조직이 없었으며,<br /><br />
+            대한민국 피트니스 업계에 코치님들의 성장과 동기부여를 위한 환경이 부족했던 것이 현실입니다.<br className="hidden sm:inline" />{" "}
+            코치님들의 커리어와 보상 체계를 진심으로 고민하는 회사가 전무했고,<br className="hidden sm:inline" />{" "}
+            수업 외 역량을 새롭게 시도해 볼 수 있는 조직이 없었으며,<br className="hidden sm:inline" />{" "}
             이로 인해 많은 코치님들이 본인만의 커리어를 만드실 수 없었습니다.
           </p>
           <div className="rc-spacer-60" />
