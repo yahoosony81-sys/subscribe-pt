@@ -791,44 +791,52 @@ export function RecruitHallimLanding() {
           </p>
           <div className="rc-spacer-40" />
 
-          {POSITIONS.map((pos, idx) => (
-            <div key={idx} className="rc-position">
-              <div 
-                className="rc-position__header relative overflow-hidden" 
-                onClick={() => handleTogglePosition(idx)}
-                style={idx === 0 ? {
-                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/가로긴사진1.png')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  color: '#ffffff'
-                } : undefined}
-              >
-                <div className="rc-position__left relative z-10">
-                  <div className="rc-position__emoji" style={idx === 0 ? { background: 'rgba(255, 255, 255, 0.2)', backdropFilter: 'blur(4px)' } : undefined}>
-                    {pos.emoji}
-                  </div>
-                  <div>
-                    <h3 className="rc-position__name" style={idx === 0 ? { color: '#ffffff' } : undefined}>
-                      {pos.title}
-                    </h3>
-                    <div className="rc-position__tags">
-                      {pos.tags.map((tag, i) => (
-                        <span key={i} className={`rc-position__tag ${i === 0 ? 'rc-position__tag--yellow' : 'rc-position__tag--gray'}`} style={idx === 0 && i !== 0 ? { background: 'rgba(255,255,255,0.2)', color: '#fff' } : undefined}>
-                          {tag}
-                        </span>
-                      ))}
+          {POSITIONS.map((pos, idx) => {
+            const bgImages = [
+              "/images/가로긴사진1.png",
+              "/images/2번재사진.png",
+              "/images/부서관리자사진.png",
+            ]
+            const bgImg = bgImages[idx]
+
+            return (
+              <div key={idx} className="rc-position">
+                <div 
+                  className="rc-position__header relative overflow-hidden" 
+                  onClick={() => handleTogglePosition(idx)}
+                  style={bgImg ? {
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('${bgImg}')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    color: '#ffffff'
+                  } : undefined}
+                >
+                  <div className="rc-position__left relative z-10">
+                    <div className="rc-position__emoji" style={bgImg ? { background: 'rgba(255, 255, 255, 0.2)', backdropFilter: 'blur(4px)' } : undefined}>
+                      {pos.emoji}
+                    </div>
+                    <div>
+                      <h3 className="rc-position__name" style={bgImg ? { color: '#ffffff' } : undefined}>
+                        {pos.title}
+                      </h3>
+                      <div className="rc-position__tags">
+                        {pos.tags.map((tag, i) => (
+                          <span key={i} className={`rc-position__tag ${i === 0 ? 'rc-position__tag--yellow' : 'rc-position__tag--gray'}`} style={bgImg && i !== 0 ? { background: 'rgba(255,255,255,0.2)', color: '#fff' } : undefined}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
+                  <button type="button"
+                    className={`rc-position__toggle relative z-10 ${openPosition === idx ? 'rc-position__toggle--open' : ''}`}
+                    style={bgImg ? { background: 'rgba(255,255,255,0.2)', color: '#ffffff', borderColor: 'rgba(255,255,255,0.4)', backdropFilter: 'blur(4px)' } : undefined}
+                    aria-expanded={openPosition === idx}
+                  >
+                    상세보기
+                    <ChevronDown className="w-4 h-4" />
+                  </button>
                 </div>
-                <button type="button"
-                  className={`rc-position__toggle relative z-10 ${openPosition === idx ? 'rc-position__toggle--open' : ''}`}
-                  style={idx === 0 ? { background: 'rgba(255,255,255,0.2)', color: '#ffffff', borderColor: 'rgba(255,255,255,0.4)', backdropFilter: 'blur(4px)' } : undefined}
-                  aria-expanded={openPosition === idx}
-                >
-                  상세보기
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-              </div>
 
               <div className={`rc-position__body ${openPosition === idx ? 'rc-position__body--open' : ''}`}>
                 <div className="rc-position__content">
@@ -868,7 +876,7 @@ export function RecruitHallimLanding() {
                 </div>
               </div>
             </div>
-          ))}
+          )})}
 
           <div className="rc-spacer-40" />
 
