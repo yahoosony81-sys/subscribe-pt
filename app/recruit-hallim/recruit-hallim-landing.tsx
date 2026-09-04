@@ -571,7 +571,8 @@ export function RecruitHallimLanding() {
               </h3>
               <div className="rc-split__divider" />
               <p className="rc-split__desc">
-                마인드휘트니스는 케어멤버십 시스템을 통해 회원별 맞춤 운동 프로그램, 습관 형성 관리, 루틴 설정, 피드백 제공 등 체계적인 관리 시스템을 운영합니다. 코치님들은 단순 PT를 넘어 전인적 케어 역량을 키울 수 있습니다.
+                마인드휘트니스는 <strong>케어멤버십 시스템</strong>을 통해 <strong>회원별 맞춤 운동 프로그램</strong>, <strong>습관 형성 관리</strong>, <strong>루틴 설정</strong>, <strong>피드백 제공</strong> 등 체계적인 관리 시스템을 운영합니다.<br className="hidden sm:inline" />{" "}
+                코치님들은 단순 PT를 넘어 <strong>전인적 케어 역량</strong>을 키울 수 있습니다.
               </p>
             </div>
             <div className="rc-split__image">
@@ -598,7 +599,8 @@ export function RecruitHallimLanding() {
               </h3>
               <div className="rc-split__divider" />
               <p className="rc-split__desc">
-                마인드휘트니스는 개인의 역량과 열정에 따라 다양한 권한과 역할을 경험할 수 있는 열린 조직입니다. 커리어 패스가 명확하게 구성되어 있어, 각자의 강점에 따라 성장 가능성은 무한대입니다.
+                마인드휘트니스는 개인의 역량과 열정에 따라 <strong>다양한 권한과 역할</strong>을 경험할 수 있는 열린 조직입니다.<br className="hidden sm:inline" />{" "}
+                <strong>명확한 커리어 패스</strong>가 구성되어 있어, 각자의 강점에 따라 <strong>성장 가능성은 무한대</strong>입니다.
               </p>
             </div>
             <div className="rc-split__image">
@@ -620,7 +622,8 @@ export function RecruitHallimLanding() {
               </h3>
               <div className="rc-split__divider" />
               <p className="rc-split__desc">
-                경희대 체육학/스포츠의학 석사 출신 교육이사의 직접 교육을 통해 과학적이고 체계적인 운동 지도 역량을 키울 수 있습니다. 입사와 동시에 전문성을 위한 교육은 물론, 회사와 브랜드에 대한 이해 등 체계적인 교육이 진행됩니다.
+                <strong>경희대 체육학/스포츠의학 석사 출신 교육이사</strong>의 직접 교육을 통해 <strong>과학적이고 체계적인 운동 지도 역량</strong>을 키울 수 있습니다.<br className="hidden sm:inline" />{" "}
+                입사와 동시에 <strong>전문성 교육</strong>은 물론, <strong>회사와 브랜드 이해</strong> 등 체계적인 교육 프로그램이 진행됩니다.
               </p>
             </div>
             <div className="rc-split__image">
@@ -645,7 +648,8 @@ export function RecruitHallimLanding() {
               </h3>
               <div className="rc-split__divider" />
               <p className="rc-split__desc">
-                마인드휘트니스는 서로를 존중하고 응원하는 팀 문화를 만들어갑니다. 정기 미팅과 워크숍을 통해 더 나은 서비스를 함께 고민하고, 회원의 변화가 곧 우리의 보람이 됩니다.
+                마인드휘트니스는 서로를 존중하고 응원하는 <strong>진심을 담은 팀 문화</strong>를 만들어갑니다.<br className="hidden sm:inline" />{" "}
+                <strong>정기 미팅과 워크숍</strong>을 통해 더 나은 서비스를 함께 고민하며, <strong>회원의 변화가 곧 우리의 보람</strong>이 됩니다.
               </p>
             </div>
             <div className="rc-split__image">
