@@ -284,6 +284,7 @@ function ImageCarousel({
 export function RecruitHallimLanding() {
   const [openPosition, setOpenPosition] = useState<number | null>(null)
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false)
+  const [payModalImage, setPayModalImage] = useState<string | null>(null)
   const [sliderIndex, setSliderIndex] = useState(0)
 
   // Form states
@@ -561,10 +562,10 @@ export function RecruitHallimLanding() {
           </h2>
           <div className="rc-spacer-40" />
 
-          {/* 이유 1: text(left) + image(right) */}
+          {/* 이유 1: text(left) + image(right) - PT 관련 */}
           <div className="rc-split">
             <div className="rc-split__text">
-              <p className="rc-split__label"><strong>📌 이유1: 과학적 케어 시스템</strong></p>
+              <p className="rc-split__label"><strong>📌 이유1: 과학적 케어 시스템 (PT)</strong></p>
               <h3 className="rc-split__title">
                 <span className="rc-accent">PT | 필라테스 | 재활 운동</span><br className="rc-br-desktop" />
                 다양한 트레이닝 티칭 경험을 쌓을 수 있습니다.
@@ -575,11 +576,180 @@ export function RecruitHallimLanding() {
               </p>
             </div>
             <div className="rc-split__image">
-              <ImageCarousel images={CARE_IMAGES} />
+              <div className="rc-img-placeholder rc-img-placeholder--landscape w-full relative" style={{ borderRadius: '8px', overflow: 'hidden' }}>
+                <img src="/images/PT사진4대3.png" alt="PT 선생님 모집" style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }} />
+                
+                {/* CTA Button placed inside the image */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-max z-10">
+                  <button
+                    type="button"
+                    onClick={() => setPayModalImage('/images/PT직급별급여조건.png')}
+                    style={{
+                      backgroundColor: '#eab308',
+                      color: '#000',
+                      fontWeight: 800,
+                      fontSize: '16px',
+                      padding: '12px 32px',
+                      borderRadius: '50px',
+                      border: 'none',
+                      boxShadow: '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)',
+                      transform: 'translateY(0)',
+                      transition: 'all 0.15s ease',
+                      cursor: 'pointer',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '6px'
+                    }}
+                    onMouseDown={(e) => {
+                      e.currentTarget.style.transform = 'translateY(4px)';
+                      e.currentTarget.style.boxShadow = '0 2px 0 #ca8a04, 0 4px 8px rgba(0, 0, 0, 0.2)';
+                    }}
+                    onMouseUp={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)';
+                    }}
+                  >
+                    자세히 보기
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
           <div className="rc-spacer-40" />
+
+          {/* 이유 1 - 추가 1: image(left) + text(right) - FC 모집 */}
+          <div className="rc-split rc-split--reverse">
+            <div className="rc-split__text">
+              <p className="rc-split__label"><strong>📌 FC 모집 (피트니스 카운슬러)</strong></p>
+              <h3 className="rc-split__title">
+                <span className="rc-accent">회원 상담 | 계약 관리 | 만족도 케어</span><br className="rc-br-desktop" />
+                밝고 적극적인 역량으로 최적의 운동을 제안합니다.
+              </h3>
+              <div className="rc-split__divider" />
+              <p className="rc-split__desc">
+                FC 선생님은 회원의 운동 목표와 니즈를 파악하여 최적의 프로그램을 제안하고, 회원 등록 및 만족도 관리를 담당합니다.
+              </p>
+            </div>
+            <div className="rc-split__image">
+              <div className="rc-img-placeholder rc-img-placeholder--landscape w-full relative" style={{ borderRadius: '8px', overflow: 'hidden' }}>
+                <img src="/images/FC사진4대3.png" alt="FC 선생님 모집" style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }} />
+                
+                {/* CTA Button placed inside the image */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-max z-10">
+                  <button
+                    type="button"
+                    onClick={() => setPayModalImage('/images/FC직급별급여조건.png')}
+                    style={{
+                      backgroundColor: '#eab308',
+                      color: '#000',
+                      fontWeight: 800,
+                      fontSize: '16px',
+                      padding: '12px 32px',
+                      borderRadius: '50px',
+                      border: 'none',
+                      boxShadow: '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)',
+                      transform: 'translateY(0)',
+                      transition: 'all 0.15s ease',
+                      cursor: 'pointer',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '6px'
+                    }}
+                    onMouseDown={(e) => {
+                      e.currentTarget.style.transform = 'translateY(4px)';
+                      e.currentTarget.style.boxShadow = '0 2px 0 #ca8a04, 0 4px 8px rgba(0, 0, 0, 0.2)';
+                    }}
+                    onMouseUp={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)';
+                    }}
+                  >
+                    자세히 보기
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="rc-spacer-40" />
+
+          {/* 이유 1 - 추가 2: text(left) + image(right) - 부서관리자 모집 */}
+          <div className="rc-split">
+            <div className="rc-split__text">
+              <p className="rc-split__label"><strong>📌 부서관리자 모집 (팀장)</strong></p>
+              <h3 className="rc-split__title">
+                <span className="rc-accent">팀 리더십 | 매출 관리 | 운영 프로세스 개선</span><br className="rc-br-desktop" />
+                팀원 육성과 매출 관리를 총괄하며 조직의 성장을 리드합니다.
+              </h3>
+              <div className="rc-split__divider" />
+              <p className="rc-split__desc">
+                부서관리자는 FC팀 또는 PT팀을 총괄하며, 팀원 채용 및 교육, 매출 목표 설정 및 달성 전략 수립을 이끕니다.
+              </p>
+            </div>
+            <div className="rc-split__image">
+              <div className="rc-img-placeholder rc-img-placeholder--landscape w-full relative" style={{ borderRadius: '8px', overflow: 'hidden' }}>
+                <img src="/images/팀장급이미지.jpg" alt="부서관리자 모집" style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }} />
+                
+                {/* CTA Button placed inside the image */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-max z-10">
+                  <button
+                    type="button"
+                    onClick={() => setPayModalImage('/images/팀장급-급여조건 copy.png')}
+                    style={{
+                      backgroundColor: '#eab308',
+                      color: '#000',
+                      fontWeight: 800,
+                      fontSize: '16px',
+                      padding: '12px 32px',
+                      borderRadius: '50px',
+                      border: 'none',
+                      boxShadow: '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)',
+                      transform: 'translateY(0)',
+                      transition: 'all 0.15s ease',
+                      cursor: 'pointer',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '6px'
+                    }}
+                    onMouseDown={(e) => {
+                      e.currentTarget.style.transform = 'translateY(4px)';
+                      e.currentTarget.style.boxShadow = '0 2px 0 #ca8a04, 0 4px 8px rgba(0, 0, 0, 0.2)';
+                    }}
+                    onMouseUp={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)';
+                    }}
+                  >
+                    자세히 보기
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="rc-spacer-60" />
+        </div>
+      </section>
+
+      {/* ═══ SECTION 5.5: 교육섹션 (Dark bg) ═══ */}
+      <section className="rc-text-section rc-text-section--dark">
+        <div className="rc-inner">
+          <div className="rc-spacer-60" />
 
           {/* Full width image placeholder */}
           <div className="rc-img-placeholder rc-img-placeholder--landscape" style={{ borderRadius: '4px' }}>
@@ -1243,6 +1413,23 @@ export function RecruitHallimLanding() {
               </div>
             </form>
           )}
+        </DialogContent>
+      </Dialog>
+
+      {/* ═══ 급여조건 상세 이미지 모달 ═══ */}
+      <Dialog open={!!payModalImage} onOpenChange={(open) => !open && setPayModalImage(null)}>
+        <DialogContent className="max-w-2xl p-0 overflow-hidden bg-transparent border-none shadow-none text-white">
+          <DialogTitle className="sr-only">급여조건 상세 보기</DialogTitle>
+          <DialogDescription className="sr-only">급여조건 상세 이미지입니다.</DialogDescription>
+          <div className="relative flex justify-center items-center max-h-[90vh] overflow-y-auto rounded-lg">
+            {payModalImage && (
+              <img
+                src={payModalImage}
+                alt="급여조건 상세"
+                className="w-full h-auto max-w-full object-contain rounded-lg shadow-2xl"
+              />
+            )}
+          </div>
         </DialogContent>
       </Dialog>
     </div>
