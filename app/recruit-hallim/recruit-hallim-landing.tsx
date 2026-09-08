@@ -751,6 +751,19 @@ export function RecruitHallimLanding() {
         <div className="rc-inner">
           <div className="rc-spacer-60" />
 
+          {/* 교육/팀문화 섹션 타이틀 */}
+          <div style={{ textAlign: "center", marginBottom: "40px" }}>
+            <p className="rc-text-section__body" style={{ color: 'var(--rc-yellow)', fontWeight: 700, fontSize: '16px' }}>
+              <strong>EDUCATION & CULTURE</strong>
+            </p>
+            <p className="rc-text-section__body" style={{ fontSize: '16px', opacity: 0.7, marginTop: '8px' }}>
+              최고의 전문가로 거듭나기 위한 여정
+            </p>
+            <h2 className="rc-text-section__heading" style={{ marginTop: '16px' }}>
+              마인드휘트니스가 자랑하는<br />차별화된 교육과 팀 문화
+            </h2>
+          </div>
+
           {/* Full width image placeholder */}
           <div className="rc-img-placeholder rc-img-placeholder--landscape" style={{ borderRadius: '4px' }}>
             <img src="/images/자격증그룹.jpg" alt="자격증 및 교육 커리큘럼 인포그래픽" />
@@ -772,9 +785,7 @@ export function RecruitHallimLanding() {
               </p>
             </div>
             <div className="rc-split__image">
-              <div className="rc-img-placeholder rc-img-placeholder--landscape">
-                <span>📷 커리어 로드맵 이미지<br/>권장: 480 × 320</span>
-              </div>
+              <img src="/images/성장비전4대3.png" alt="커리어 로드맵" style={{ width: "100%", borderRadius: "12px", backgroundColor: "#ffffff", border: "1px solid #e5e7eb", boxShadow: "0 4px 12px rgba(0,0,0,0.08)" }} />
             </div>
           </div>
 
@@ -799,6 +810,13 @@ export function RecruitHallimLanding() {
           </div>
 
           <div className="rc-spacer-40" />
+        </div>
+      </section>
+
+      {/* ═══ SECTION 5.6: 워크샵 및 팀 문화 (Light bg) ═══ */}
+      <section className="rc-text-section bg-white text-gray-900" style={{ backgroundColor: "#ffffff" }}>
+        <div className="rc-inner">
+          <div className="rc-spacer-60" />
 
           {/* Full width image (Workshop Carousel) */}
           <ImageCarousel images={WORKSHOP_IMAGES} aspectRatio="12 / 5" />
@@ -843,29 +861,17 @@ export function RecruitHallimLanding() {
           </h2>
           <div className="rc-spacer-40" />
 
-          {/* 코치 스토리 카드 그리드 */}
-          <div className="rc-coach-grid">
-            {[
-              { name: "코치명을 입력하세요", role: "PT 코치", years: "0년차", placeholder: "📷 코치 프로필 사진\n권장: 400 × 500" },
-              { name: "코치명을 입력하세요", role: "필라테스 강사", years: "0년차", placeholder: "📷 코치 프로필 사진\n권장: 400 × 500" },
-              { name: "코치명을 입력하세요", role: "PT 코치", years: "0년차", placeholder: "📷 코치 프로필 사진\n권장: 400 × 500" },
-            ].map((coach, i) => (
-              <div key={i} className="rc-coach-card">
-                <div className="rc-coach-card__img">
-                  <div className="rc-img-placeholder rc-img-placeholder--dark" style={{ paddingBottom: '125%' }}>
-                    <span style={{ whiteSpace: 'pre-line' }}>{coach.placeholder}</span>
-                  </div>
-                </div>
-                <div className="rc-coach-card__info">
-                  <span className="rc-coach-card__years">{coach.years}</span>
-                  <h4 className="rc-coach-card__name">{coach.name}</h4>
-                  <p className="rc-coach-card__role">{coach.role}</p>
-                </div>
-                <div className="rc-coach-card__quote">
-                  <p>&ldquo;이 곳에 코치님의 성장 스토리를 입력해 주세요. 마인드휘트니스에서의 경험과 성장 이야기를 들려주세요.&rdquo;</p>
-                </div>
-              </div>
-            ))}
+          {/* 코치 스토리 이미지 그리드 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="rounded-xl overflow-hidden shadow-lg h-full">
+              <img src="/images/성장스토리1.png" alt="성장스토리 1" className="w-full h-full object-cover aspect-[2/3] block" />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg h-full">
+              <img src="/images/성장스토리2.png" alt="성장스토리 2" className="w-full h-full object-cover aspect-[2/3] block" />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg h-full">
+              <img src="/images/성장스토리3.png" alt="성장스토리 3" className="w-full h-full object-cover aspect-[2/3] block" />
+            </div>
           </div>
 
           <div className="rc-spacer-60" />
