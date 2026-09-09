@@ -6,90 +6,90 @@
 
 ## 📍 도남점 (Donam)
 *   **TEAM MIND 그룹PT (영상 히어로)**
-    *   주소: https://mindfitness-hallim.com/dn-teammind
+    *   주소: https://mindfitness-online.com/dn-teammind
     *   주요 내용: 팀버핏 감성 영상 히어로 + 첫 방문 무료 체험 예약
     *   GTM: GTM-KQR8JJ44 | 픽셀: 26658899260438637 (도남) ✅
 *   **그룹PT 오픈 프로모션**
-    *   주소: https://mindfitness-hallim.com/dn-group-pt
+    *   주소: https://mindfitness-online.com/dn-group-pt
     *   주요 내용: 10년차 강사 직접 진행, 선착순 12명 마감 이벤트
 *   **바디챌린지 6기 모집**
-    *   주소: https://mindfitness-hallim.com/promo-bodychallenge
+    *   주소: https://mindfitness-online.com/promo-bodychallenge
     *   주요 내용: 2026 상반기 바디챌린지 모집 랜딩
 *   **7월 프로모션 (대구도남점)**
-    *   주소: https://mindfitness-hallim.com/donam-july-promo
+    *   주소: https://mindfitness-online.com/donam-july-promo
     *   주요 내용: 대구도남점 7월 한정 프로모션 안내 및 신청 랜딩페이지
 
 ## 📍 한림점 (Hallim)
 *   **버닝 케어 멤버십 (고민부위 리셋)**
-    *   주소: https://mindfitness-hallim.com/hl-burning-caremember
+    *   주소: https://mindfitness-online.com/hl-burning-caremember
     *   주요 내용: 팔뚝살, 허벅지살 다이어트 전 리셋 프로그램 (월 9.9만원)
 *   **구독형 케어 멤버십**
-    *   주소: https://mindfitness-hallim.com/hl-caremembership
+    *   주소: https://mindfitness-online.com/hl-caremembership
     *   주요 내용: 한림점 월 5회 25분 구독형 케어 멤버십
 *   **프리미엄 케어 멤버십 (제주시 - 한림)**
-    *   주소: https://mindfitness-hallim.com/caremembership-hallim
+    *   주소: https://mindfitness-online.com/caremembership-hallim
     *   주요 내용: 한림점 프리미엄 케어 멤버십 랜딩페이지 (어반필드 스타일)
 *   **프로모션 A**
-    *   주소: https://mindfitness-hallim.com/promo-a
+    *   주소: https://mindfitness-online.com/promo-a
 *   **프로모션 B**
-    *   주소: https://mindfitness-hallim.com/promo-b
+    *   주소: https://mindfitness-online.com/promo-b
 *   **프로모션 C**
-    *   주소: https://mindfitness-hallim.com/promo-c
+    *   주소: https://mindfitness-online.com/promo-c
 *   **프로모션 D**
-    *   주소: https://mindfitness-hallim.com/promo-d
+    *   주소: https://mindfitness-online.com/promo-d
 *   **통증 케어 멤버십**
-    *   주소: https://mindfitness-hallim.com/hl-pain-membership
+    *   주소: https://mindfitness-online.com/hl-pain-membership
 
 ## 📍 부산명지점 (Myeongji)
 *   **케어 멤버십 프로모션**
-    *   주소: https://mindfitness-hallim.com/mg-promtion
+    *   주소: https://mindfitness-online.com/mg-promtion
 
 ## 📍 노형점 (Nohyeong)
 *   **키피pt**
-    *   주소: https://www.nh-coffee.mindfitness-hallim.com
+    *   주소: https://www.nh-coffee.mindfitness-online.com
 *   **커피 증정 리타겟팅 랜딩**
-    *   주소: https://mindfitness-hallim.com/nh-retarget-coffeelanding
+    *   주소: https://mindfitness-online.com/nh-retarget-coffeelanding
     *   주요 내용: 방문 시 커피 쿠폰 증정 이벤트
 *   **버닝 케어 멤버십 (고민부위 리셋)**
-    *   주소: https://mindfitness-hallim.com/nh-burning-care
+    *   주소: https://mindfitness-online.com/nh-burning-care
     *   주요 내용: 노형점 팔뚝살, 허벅지살 다이어트 전 리셋 프로그램 (월 9.9만원)
 *   **통증 케어 멤버십**
-    *   주소: https://mindfitness-hallim.com/nh-pain-membership
+    *   주소: https://mindfitness-online.com/nh-pain-membership
     *   주요 내용: 노형점 통증 케어 멤버십
 *   **구독형 
 멤버십**
-    *   주소: https://mindfitness-hallim.com/nh-caremembership
+    *   주소: https://mindfitness-online.com/nh-caremembership
     *   주요 내용: 노형점 월 5회 25분 구독형 케어 멤버십
 *   **프리미엄 케어 멤버십 (제주시)**
-    *   주소: https://mindfitness-hallim.com/caremembership-jejusi
+    *   주소: https://mindfitness-online.com/caremembership-jejusi
     *   주요 내용: 제주시 노형점 케어 멤버십 랜딩페이지 (어반필드 스타일)
 
 ## 📍 통합/기타 프로모션
 *   **프로모션 A (Nike Style)**
-    *   주소: https://mindfitness-hallim.com/promo-a
+    *   주소: https://mindfitness-online.com/promo-a
 *   **프로모션 B (Nike Style)**
-    *   주소: https://mindfitness-hallim.com/promo-b
+    *   주소: https://mindfitness-online.com/promo-b
 *   **프로모션 C (Nike Style)**
-    *   주소: https://mindfitness-hallim.com/promo-c
+    *   주소: https://mindfitness-online.com/promo-c
 *   **프로모션 D (무료체험 신청)**
-    *   주소: https://mindfitness-hallim.com/promo-d
+    *   주소: https://mindfitness-online.com/promo-d
 
 ## 📍 리마인드스트레칭 마곡점 (Remind Stretching - Magok)
 *   **리마인드스트레칭 랜딩페이지**
-    *   주소: https://mindfitness-hallim.com/remindstretching-MG
+    *   주소: https://mindfitness-online.com/remindstretching-MG
     *   주요 내용: 프리미엄 웰니스 스트레칭 클리닉 랜딩 (4가지 프로그램 소개, 통증 데이터, 지점 안내)
     *   브랜드: 리마인드스트레칭 (Remind-stretching)
 
 ## 📍 리셋 중문점 (Jungmun)
 *   **TEAM MIND 그룹PT (영상 히어로)**
-    *   주소: https://mindfitness-hallim.com/jm-reset
+    *   주소: https://mindfitness-online.com/jm-reset
     *   주요 내용: 팀버핏 감성 영상 히어로 + 첫 방문 무료 체험 예약
     *   GTM: GTM-5VB56Q69 | 픽셀: GTM 태그 내부 포함 (단독 픽셀 미설치) ✅
 
 ---
 
 > [!TIP]
-> 위 주소들은 현재 라이브 도메인(`mindfitness-hallim.com`) 기준으로 작성되었습니다. 로컬 테스트 시에는 `https://mindfitness-hallim.com` 부분을 `http://localhost:3000`으로 바꿔서 접속하세요.
+> 위 주소들은 현재 라이브 도메인(`mindfitness-online.com`) 기준으로 작성되었습니다. 로컬 테스트 시에는 `https://mindfitness-online.com` 부분을 `http://localhost:3000`으로 바꿔서 접속하세요.
 
 =======
 # 🚀 마인드휘트니스 랜딩페이지 URL 모음
@@ -100,96 +100,96 @@
 
 ## 📍 도남점 (Donam)
 *   **TEAM MIND 그룹PT (영상 히어로)**
-    *   주소: https://mindfitness-hallim.com/dn-teammind
+    *   주소: https://mindfitness-online.com/dn-teammind
     *   주요 내용: 팀버핏 감성 영상 히어로 + 첫 방문 무료 체험 예약
     *   GTM: GTM-KQR8JJ44 | 픽셀: 26658899260438637 (도남) ✅
 *   **그룹PT 오픈 프로모션**
-    *   주소: https://mindfitness-hallim.com/dn-group-pt
+    *   주소: https://mindfitness-online.com/dn-group-pt
     *   주요 내용: 10년차 강사 직접 진행, 선착순 12명 마감 이벤트
 *   **바디챌린지 6기 모집**
-    *   주소: https://mindfitness-hallim.com/promo-bodychallenge
+    *   주소: https://mindfitness-online.com/promo-bodychallenge
     *   주요 내용: 2026 상반기 바디챌린지 모집 랜딩
 *   **7월 프로모션 (대구도남점)**
-    *   주소: https://mindfitness-hallim.com/donam-july-promo
+    *   주소: https://mindfitness-online.com/donam-july-promo
     *   주요 내용: 대구도남점 7월 한정 프로모션 안내 및 신청 랜딩페이지
 
 ## 📍 한림점 (Hallim)
 *   **마인드휘트니스 한림점 채용공고**
-    *   주소: https://mindfitness-hallim.com/recruit-hallim
+    *   주소: https://mindfitness-online.com/recruit-hallim
     *   주요 내용: 버핏서울(GreetingHR) 스타일 채용 랜딩페이지 (PT코치/FC/부서관리자)
 *   **버닝 케어 멤버십 (고민부위 리셋)**
-    *   주소: https://mindfitness-hallim.com/hl-burning-caremember
+    *   주소: https://mindfitness-online.com/hl-burning-caremember
     *   주요 내용: 팔뚝살, 허벅지살 다이어트 전 리셋 프로그램 (월 9.9만원)
 *   **구독형 케어 멤버십**
-    *   주소: https://mindfitness-hallim.com/hl-caremembership
+    *   주소: https://mindfitness-online.com/hl-caremembership
     *   주요 내용: 한림점 월 5회 25분 구독형 케어 멤버십
 *   **프리미엄 케어 멤버십 (제주시 - 한림)**
-    *   주소: https://mindfitness-hallim.com/caremembership-hallim
+    *   주소: https://mindfitness-online.com/caremembership-hallim
     *   주요 내용: 한림점 프리미엄 케어 멤버십 랜딩페이지 (어반필드 스타일)
 *   **프로모션 A**
-    *   주소: https://mindfitness-hallim.com/promo-a
+    *   주소: https://mindfitness-online.com/promo-a
 *   **프로모션 B**
-    *   주소: https://mindfitness-hallim.com/promo-b
+    *   주소: https://mindfitness-online.com/promo-b
 *   **프로모션 C**
-    *   주소: https://mindfitness-hallim.com/promo-c
+    *   주소: https://mindfitness-online.com/promo-c
 *   **프로모션 D**
-    *   주소: https://mindfitness-hallim.com/promo-d
+    *   주소: https://mindfitness-online.com/promo-d
 *   **통증 케어 멤버십**
-    *   주소: https://mindfitness-hallim.com/hl-pain-membership
+    *   주소: https://mindfitness-online.com/hl-pain-membership
 
 ## 📍 부산명지점 (Myeongji)
 *   **케어 멤버십 프로모션**
-    *   주소: https://mindfitness-hallim.com/mg-promtion
+    *   주소: https://mindfitness-online.com/mg-promtion
 
 ## 📍 노형점 (Nohyeong)
 *   **키피pt**
-    *   주소: https://www.nh-coffee.mindfitness-hallim.com
+    *   주소: https://www.nh-coffee.mindfitness-online.com
 *   **커피 증정 리타겟팅 랜딩**
-    *   주소: https://mindfitness-hallim.com/nh-retarget-coffeelanding
+    *   주소: https://mindfitness-online.com/nh-retarget-coffeelanding
     *   주요 내용: 방문 시 커피 쿠폰 증정 이벤트
 *   **버닝 케어 멤버십 (고민부위 리셋)**
-    *   주소: https://mindfitness-hallim.com/nh-burning-care
+    *   주소: https://mindfitness-online.com/nh-burning-care
     *   주요 내용: 노형점 팔뚝살, 허벅지살 다이어트 전 리셋 프로그램 (월 9.9만원)
 *   **통증 케어 멤버십**
-    *   주소: https://mindfitness-hallim.com/nh-pain-membership
+    *   주소: https://mindfitness-online.com/nh-pain-membership
     *   주요 내용: 노형점 통증 케어 멤버십
 *   **구독형 
 멤버십**
-    *   주소: https://mindfitness-hallim.com/nh-caremembership
+    *   주소: https://mindfitness-online.com/nh-caremembership
     *   주요 내용: 노형점 월 5회 25분 구독형 케어 멤버십
 *   **프리미엄 케어 멤버십 (제주시)**
-    *   주소: https://mindfitness-hallim.com/caremembership-jejusi
+    *   주소: https://mindfitness-online.com/caremembership-jejusi
     *   주요 내용: 제주시 노형점 케어 멤버십 랜딩페이지 (어반필드 스타일)
 
 ## 📍 통합/기타 프로모션
 *   **프로모션 A (Nike Style)**
-    *   주소: https://mindfitness-hallim.com/promo-a
+    *   주소: https://mindfitness-online.com/promo-a
 *   **프로모션 B (Nike Style)**
-    *   주소: https://mindfitness-hallim.com/promo-b
+    *   주소: https://mindfitness-online.com/promo-b
 *   **프로모션 C (Nike Style)**
-    *   주소: https://mindfitness-hallim.com/promo-c
+    *   주소: https://mindfitness-online.com/promo-c
 *   **프로모션 D (무료체험 신청)**
-    *   주소: https://mindfitness-hallim.com/promo-d
+    *   주소: https://mindfitness-online.com/promo-d
 
 ## 📍 리마인드스트레칭 마곡점 (Remind Stretching - Magok)
 *   **리마인드스트레칭 랜딩페이지**
-    *   주소: https://mindfitness-hallim.com/remindstretching-MG
+    *   주소: https://mindfitness-online.com/remindstretching-MG
     *   주요 내용: 프리미엄 웰니스 스트레칭 클리닉 랜딩 (4가지 프로그램 소개, 통증 데이터, 지점 안내)
     *   브랜드: 리마인드스트레칭 (Remind-stretching)
 
 ## 📍 리셋 중문점 (Jungmun)
 *   **TEAM MIND 그룹PT (영상 히어로)**
-    *   주소: https://mindfitness-hallim.com/jm-reset
+    *   주소: https://mindfitness-online.com/jm-reset
     *   주요 내용: 팀버핏 감성 영상 히어로 + 첫 방문 무료 체험 예약
     *   GTM: GTM-5VB56Q69 | 픽셀: GTM 태그 내부 포함 (단독 픽셀 미설치) ✅
 
 ## 📍 채용 / HR 랜딩페이지 (Recruitment)
 *   **마인드휘트니스 한림점 채용공고**
-    *   주소: https://mindfitness-hallim.com/recruit-hallim
+    *   주소: https://mindfitness-online.com/recruit-hallim
     *   주요 내용: 버핏서울(GreetingHR) 스타일 구조 정확 재현, 네비게이션바, 흰/검정 교차 배경, 50:50 지그재그, 복지 및 급여/커미션(영업지원금 최대 200만/수업료60%/정착지원금150만), 코치 스토리, 위치 및 채용 포지션 안내
 
 ---
 
 > [!TIP]
-> 위 주소들은 현재 라이브 도메인(`mindfitness-hallim.com`) 기준으로 작성되었습니다. 로컬 테스트 시에는 `https://mindfitness-hallim.com` 부분을 `http://localhost:3000`으로 바꿔서 접속하세요.
+> 위 주소들은 현재 라이브 도메인(`mindfitness-online.com`) 기준으로 작성되었습니다. 로컬 테스트 시에는 `https://mindfitness-online.com` 부분을 `http://localhost:3000`으로 바꿔서 접속하세요.
 
