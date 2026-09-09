@@ -468,7 +468,7 @@ export function RecruitHallimLanding() {
 
           {/* 메인 타이틀 */}
           <h1 className="rc-hero__title">
-            <span className="rc-hero__title-accent">역량있는 PT/FC/부서관리자</span>를 모십니다.
+            <span className="rc-hero__title-accent">PT / FC / 부서관리자</span>를 모십니다.
           </h1>
 
           {/* 주요 혜택 요약 태그 칩들 */}
@@ -530,8 +530,8 @@ export function RecruitHallimLanding() {
         <div className="rc-inner">
           <div className="rc-spacer-60" />
           <h2 className="rc-text-section__heading">
-            우리는 이 시장의<br className="rc-br-desktop" />
-            마인드휘트니스 마피아를 꿈꿉니다.
+            한계를 넘어 비전을 현실로,<br className="rc-br-desktop" />
+            마인드와 함께 새로운 성공 스토리를 시작하세요!
           </h2>
 
           {/* Full width image placeholder */}
@@ -572,7 +572,7 @@ export function RecruitHallimLanding() {
               </h3>
               <div className="rc-split__divider" />
               <p className="rc-split__desc">
-                마인드휘트니스는 케어멤버십 시스템을 통해 회원별 맞춤 운동 프로그램, 습관 형성 관리, 루틴 설정, 피드백 제공 등 체계적인 관리 시스템을 운영합니다. 코치님들은 단순 PT를 넘어 전인적 케어 역량을 키울 수 있습니다.
+                마인드휘트니스의 체계적이고 과학적인 시스템을 바탕으로, 회원 개인별 맞춤 운동 프로그램을 기획하고 지도합니다. 단순한 수업 진행을 넘어, 웨이트부터 재활까지 폭넓은 실무 경험을 쌓으며 대체 불가능한 트레이닝 전문가로 확실하게 성장할 수 있는 환경을 제공합니다.
               </p>
             </div>
             <div className="rc-split__image">
@@ -583,36 +583,23 @@ export function RecruitHallimLanding() {
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-max z-10">
                   <button
                     type="button"
-                    onClick={() => setPayModalImage('/images/PT직급별급여조건.png')}
+                    onClick={() => setPayModalImage('/images/PT급여조건.png')}
                     style={{
-                      backgroundColor: '#eab308',
+                      backgroundColor: '#ffd600',
                       color: '#000',
-                      fontWeight: 800,
+                      fontWeight: 700,
                       fontSize: '16px',
-                      padding: '12px 32px',
+                      padding: '10px 40px',
                       borderRadius: '50px',
                       border: 'none',
-                      boxShadow: '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)',
-                      transform: 'translateY(0)',
-                      transition: 'all 0.15s ease',
                       cursor: 'pointer',
                       display: 'inline-flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      gap: '6px'
+                      transition: 'background-color 0.2s ease'
                     }}
-                    onMouseDown={(e) => {
-                      e.currentTarget.style.transform = 'translateY(4px)';
-                      e.currentTarget.style.boxShadow = '0 2px 0 #ca8a04, 0 4px 8px rgba(0, 0, 0, 0.2)';
-                    }}
-                    onMouseUp={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)';
-                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#eab308'}
+                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ffd600'}
                   >
                     자세히 보기
                   </button>
@@ -633,7 +620,7 @@ export function RecruitHallimLanding() {
               </h3>
               <div className="rc-split__divider" />
               <p className="rc-split__desc">
-                FC 선생님은 회원의 운동 목표와 니즈를 파악하여 최적의 프로그램을 제안하고, 회원 등록 및 만족도 관리를 담당합니다.
+                지점의 첫인상을 결정하고 성장을 견인하는 핵심 포지션입니다. 회원의 니즈를 정확히 파악하여 가장 알맞은 프로그램을 컨설팅하고, 지속적인 소통으로 만족도를 높입니다. 사람을 대하는 긍정적인 에너지만 있다면, 체계적인 업무 매뉴얼을 통해 최고의 세일즈 전문가로 거듭날 수 있습니다.
               </p>
             </div>
             <div className="rc-split__image">
@@ -644,36 +631,23 @@ export function RecruitHallimLanding() {
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-max z-10">
                   <button
                     type="button"
-                    onClick={() => setPayModalImage('/images/FC직급별급여조건.png')}
+                    onClick={() => setPayModalImage('/images/FC급여조건.png')}
                     style={{
-                      backgroundColor: '#eab308',
+                      backgroundColor: '#ffd600',
                       color: '#000',
-                      fontWeight: 800,
+                      fontWeight: 700,
                       fontSize: '16px',
-                      padding: '12px 32px',
+                      padding: '10px 40px',
                       borderRadius: '50px',
                       border: 'none',
-                      boxShadow: '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)',
-                      transform: 'translateY(0)',
-                      transition: 'all 0.15s ease',
                       cursor: 'pointer',
                       display: 'inline-flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      gap: '6px'
+                      transition: 'background-color 0.2s ease'
                     }}
-                    onMouseDown={(e) => {
-                      e.currentTarget.style.transform = 'translateY(4px)';
-                      e.currentTarget.style.boxShadow = '0 2px 0 #ca8a04, 0 4px 8px rgba(0, 0, 0, 0.2)';
-                    }}
-                    onMouseUp={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)';
-                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#eab308'}
+                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ffd600'}
                   >
                     자세히 보기
                   </button>
@@ -694,7 +668,7 @@ export function RecruitHallimLanding() {
               </h3>
               <div className="rc-split__divider" />
               <p className="rc-split__desc">
-                부서관리자는 FC팀 또는 PT팀을 총괄하며, 팀원 채용 및 교육, 매출 목표 설정 및 달성 전략 수립을 이끕니다.
+                지점의 PT 또는 FC 부서를 총괄하며, 팀원들의 잠재력을 끌어내고 지점의 목표 달성을 이끄는 핵심 리더입니다. 탄탄한 조직력 안에서 운영 프로세스를 직접 기획하고 실행하며, 관리자로서의 압도적인 커리어와 리더십을 증명할 수 있는 최고의 무대입니다.
               </p>
             </div>
             <div className="rc-split__image">
@@ -705,36 +679,23 @@ export function RecruitHallimLanding() {
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-max z-10">
                   <button
                     type="button"
-                    onClick={() => setPayModalImage('/images/팀장급-급여조건 copy.png')}
+                    onClick={() => setPayModalImage('/images/팀장별급여조선.png')}
                     style={{
-                      backgroundColor: '#eab308',
+                      backgroundColor: '#ffd600',
                       color: '#000',
-                      fontWeight: 800,
+                      fontWeight: 700,
                       fontSize: '16px',
-                      padding: '12px 32px',
+                      padding: '10px 40px',
                       borderRadius: '50px',
                       border: 'none',
-                      boxShadow: '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)',
-                      transform: 'translateY(0)',
-                      transition: 'all 0.15s ease',
                       cursor: 'pointer',
                       display: 'inline-flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      gap: '6px'
+                      transition: 'background-color 0.2s ease'
                     }}
-                    onMouseDown={(e) => {
-                      e.currentTarget.style.transform = 'translateY(4px)';
-                      e.currentTarget.style.boxShadow = '0 2px 0 #ca8a04, 0 4px 8px rgba(0, 0, 0, 0.2)';
-                    }}
-                    onMouseUp={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 6px 0 #ca8a04, 0 8px 15px rgba(0, 0, 0, 0.25)';
-                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#eab308'}
+                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ffd600'}
                   >
                     자세히 보기
                   </button>
@@ -765,8 +726,34 @@ export function RecruitHallimLanding() {
           </div>
 
           {/* Full width image placeholder */}
-          <div className="rc-img-placeholder rc-img-placeholder--landscape" style={{ borderRadius: '4px' }}>
-            <img src="/images/자격증그룹.jpg" alt="자격증 및 교육 커리큘럼 인포그래픽" />
+          <div className="rc-img-placeholder rc-img-placeholder--landscape relative w-full" style={{ borderRadius: '4px', overflow: 'hidden' }}>
+            <img src="/images/자격증그룹.jpg" alt="자격증 및 교육 커리큘럼 인포그래픽" style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }} />
+            
+            {/* CTA Button placed inside the image */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-max z-10">
+              <button
+                type="button"
+                onClick={() => setPayModalImage('/images/교육사업자세히보기선명도작업후.png')}
+                style={{
+                  backgroundColor: '#ffd600',
+                  color: '#000',
+                  fontWeight: 700,
+                  fontSize: '21px',
+                  padding: '13px 52px',
+                  borderRadius: '50px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'background-color 0.2s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#eab308'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ffd600'}
+              >
+                자세히 보기
+              </button>
+            </div>
           </div>
 
           <div className="rc-spacer-40" />
@@ -781,7 +768,7 @@ export function RecruitHallimLanding() {
               </h3>
               <div className="rc-split__divider" />
               <p className="rc-split__desc">
-                마인드휘트니스는 개인의 역량과 열정에 따라 다양한 권한과 역할을 경험할 수 있는 열린 조직입니다. 커리어 패스가 명확하게 구성되어 있어, 각자의 강점에 따라 성장 가능성은 무한대입니다.
+                마인드휘트니스는 오직 개인의 역량과 열정으로 평가받는 열린 조직입니다. 코치에서 시작해 지점 매니저까지 도달할 수 있는 명확한 커리어 패스가 준비되어 있으며, 각자의 강점과 성과에 비례하는 무한한 성장의 기회를 제공합니다.
               </p>
             </div>
             <div className="rc-split__image">
@@ -796,12 +783,12 @@ export function RecruitHallimLanding() {
             <div className="rc-split__text">
               <p className="rc-split__label"><strong>📌 이유3: 최고의 교육 시스템</strong></p>
               <h3 className="rc-split__title">
-                <span className="rc-accent">이 곳이 바로 피트니스 코치 사관 학교,</span><br className="rc-br-desktop" />
+                <span className="rc-accent">이 곳이 바로 피트니스 코치 사관 학교</span><br className="rc-br-desktop" />
                 모든 것은 교육과 매뉴얼에서부터 출발합니다.
               </h3>
               <div className="rc-split__divider" />
               <p className="rc-split__desc">
-                경희대 체육학/스포츠의학 석사 출신 교육이사의 직접 교육을 통해 과학적이고 체계적인 운동 지도 역량을 키울 수 있습니다. 입사와 동시에 전문성을 위한 교육은 물론, 회사와 브랜드에 대한 이해 등 체계적인 교육이 진행됩니다.
+                입사와 동시에 마인드휘트니스만의 전문적인 양성 과정이 시작됩니다. 경희대 스포츠의학 석사 출신 교육이사가 주관하는 체계적인 실기 및 이론 교육을 통해, 실무에 완벽하게 적용할 수 있는 과학적이고 압도적인 트레이닝 지도 역량을 완성해 드립니다.
               </p>
             </div>
             <div className="rc-split__image">
@@ -818,6 +805,18 @@ export function RecruitHallimLanding() {
         <div className="rc-inner">
           <div className="rc-spacer-60" />
 
+          <div style={{ textAlign: "center", marginBottom: "40px" }}>
+            <p className="rc-text-section__body" style={{ color: '#b5940a', fontWeight: 700, fontSize: '16px' }}>
+              <strong>TEAM CULTURE</strong>
+            </p>
+            <p className="rc-text-section__body" style={{ fontSize: '16px', opacity: 0.7, marginTop: '8px' }}>
+              마음이 진심이 되어 전심이 되는
+            </p>
+            <h2 className="rc-text-section__heading" style={{ marginTop: '16px' }}>
+              같이의 가치, 마인드 팀문화
+            </h2>
+          </div>
+
           {/* Full width image (Workshop Carousel) */}
           <ImageCarousel images={WORKSHOP_IMAGES} aspectRatio="12 / 5" />
 
@@ -833,7 +832,7 @@ export function RecruitHallimLanding() {
               </h3>
               <div className="rc-split__divider" />
               <p className="rc-split__desc">
-                마인드휘트니스는 서로를 존중하고 응원하는 팀 문화를 만들어갑니다. 정기 미팅과 워크숍을 통해 더 나은 서비스를 함께 고민하고, 회원의 변화가 곧 우리의 보람이 됩니다.
+                마인드휘트니스는 서로를 존중하고 응원하는 팀 문화를 만들어갑니다. 성장과 노력의 결과를 다함께 축하하고 긍정 에너지를 나눕니다. 다양한 사내 행사와 모임을 통해 끈끈한 유대감을 쌓으며, 혼자가 아닌 '함께'이기에 가능한 긍정적인 에너지와 성장을 경험할 수 있습니다.
               </p>
             </div>
             <div className="rc-split__image">
@@ -864,13 +863,13 @@ export function RecruitHallimLanding() {
           {/* 코치 스토리 이미지 그리드 */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="rounded-xl overflow-hidden shadow-lg h-full">
-              <img src="/images/성장스토리1.png" alt="성장스토리 1" className="w-full h-full object-cover aspect-[2/3] block" />
+              <img src="/images/성공스토리1.png" alt="성공스토리 1" className="w-full h-full object-cover aspect-[2/3] block" />
             </div>
             <div className="rounded-xl overflow-hidden shadow-lg h-full">
-              <img src="/images/성장스토리2.png" alt="성장스토리 2" className="w-full h-full object-cover aspect-[2/3] block" />
+              <img src="/images/성공스토리2.png" alt="성공스토리 2" className="w-full h-full object-cover aspect-[2/3] block" />
             </div>
             <div className="rounded-xl overflow-hidden shadow-lg h-full">
-              <img src="/images/성장스토리3.png" alt="성장스토리 3" className="w-full h-full object-cover aspect-[2/3] block" />
+              <img src="/images/성공스토리3.png" alt="성공스토리 3" className="w-full h-full object-cover aspect-[2/3] block" />
             </div>
           </div>
 
@@ -882,6 +881,15 @@ export function RecruitHallimLanding() {
         </div>
       </section>
 
+      {/* ═══ SECTION 6.5: 전지점 안내 (Dark bg) ═══ */}
+      <section className="rc-text-section rc-text-section--dark">
+        <div className="rc-inner">
+          <div className="w-full">
+            <img src="/images/전지점안내선명도수정버전.png" alt="전지점 안내" className="w-full h-auto block rounded-xl shadow-lg" />
+          </div>
+          <div className="rc-spacer-60" />
+        </div>
+      </section>
 
       {/* ═══ SECTION 7: 복지 & 혜택 (White bg, card grid) ═══ */}
       <section className="rc-text-section rc-text-section--white">
@@ -932,17 +940,15 @@ export function RecruitHallimLanding() {
 
           <div className="rc-process-grid">
             {[
-              { num: 1, title: "서류 접수", desc: "이력서 및\n자기소개서 제출" },
-              { num: 2, title: "1차 면접", desc: "인성 및\n직무 역량 면접" },
-              { num: 3, title: "실기 테스트", desc: "코칭 역량\n실기 평가" },
-              { num: 4, title: "2차 면접", desc: "대표 면접 및\n처우 협의" },
-              { num: 5, title: "최종 합격", desc: "합격 통보 및\n입사 안내" },
-              { num: 6, title: "온보딩", desc: "교육 및\n현장 투입" },
+              { num: 1, title: "채용사이트내 지원하기", desc: "" },
+              { num: 2, title: "지원서류 검토 후 개별연락", desc: "" },
+              { num: 3, title: "서류 합격자 심층면접", desc: "" },
+              { num: 4, title: "채용 결과 발표", desc: "" },
             ].map((s, i) => (
               <div key={i} className="rc-process-step">
                 <div className="rc-process-step__num">{s.num}</div>
-                <p className="rc-process-step__title" style={{ color: 'var(--rc-black)' }}>{s.title}</p>
-                <p className="rc-process-step__desc" style={{ color: 'var(--rc-gray-600)' }}>{s.desc}</p>
+                <p className="rc-process-step__title" style={{ color: 'var(--rc-white)' }}>{s.title}</p>
+                {s.desc && <p className="rc-process-step__desc" style={{ color: 'var(--rc-white)' }}>{s.desc}</p>}
               </div>
             ))}
           </div>

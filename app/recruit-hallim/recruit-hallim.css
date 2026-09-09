@@ -602,7 +602,7 @@
    ═══════════════════════════════════════════════════ */
 .rc-process-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 
@@ -777,8 +777,17 @@
    CTA BUTTON (centered)
    ═══════════════════════════════════════════════════ */
 .rc-cta-wrap {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex; justify-content: center;
   padding: 20px 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .rc-cta-btn {
