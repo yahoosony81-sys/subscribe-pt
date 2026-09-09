@@ -458,9 +458,15 @@
   .rc-split, .rc-split--reverse {
     flex-direction: column;
   }
-  .rc-split__text, .rc-split__image {
+  .rc-split__text {
     width: 100%;
     flex: none;
+    order: 2;
+  }
+  .rc-split__image {
+    width: 100%;
+    flex: none;
+    order: 1;
   }
 }
 
