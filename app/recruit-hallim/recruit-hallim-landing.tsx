@@ -29,7 +29,6 @@ const POSITIONS = [
     ],
     tasks: [
       "1:1 퍼스널 트레이닝 세션 진행",
-      "케어멤버십 회원 관리 및 운동 루틴 설계",
       "회원 체성분 분석 및 목표 관리",
       "운동 일지 작성 및 피드백 제공",
     ],
@@ -473,7 +472,7 @@ export function RecruitHallimLanding() {
 
           {/* 주요 혜택 요약 태그 칩들 */}
           <div className="rc-hero__chips">
-            <span className="rc-hero__chip">🏝️ 정착지원금 150만원</span>
+            <span className="rc-hero__chip">🏝️ 정착지원금 300만원</span>
             <span className="rc-hero__chip">📈 수업료 최대 60%</span>
             <span className="rc-hero__chip">🎓 체계적 교육지원</span>
           </div>
@@ -908,10 +907,7 @@ export function RecruitHallimLanding() {
               { icon: "🏃", title: "자기 운동 시간 보장", desc: "근무 시간 내 자기 운동 시간을 보장하여 건강한 라이프스타일을 유지할 수 있습니다." },
               { icon: "📚", title: "역량 강화 교육 지원", desc: "교육이사 직접 교육, 외부 세미나 참가비 지원 등 전문성 성장을 지원합니다." },
               { icon: "💰", title: "인센티브 제도", desc: "성과에 따른 인센티브를 지급하여 노력에 합당한 보상을 제공합니다." },
-              { icon: "🛡️", title: "4대 보험 가입", desc: "국민연금, 건강보험, 고용보험, 산재보험 4대 보험을 완비합니다." },
-
-              { icon: "🎉", title: "경조사 지원", desc: "가족 같은 팀 문화 속에서 경조사 휴가 및 경조금을 지원합니다." },
-              { icon: "🏝️", title: "정착지원금 150만원", desc: "부럽다, 제주살이! 제주살이 로망 실현, 마인드와 함께 하세요. 정착지원금 150만원을 드립니다." },
+              { icon: "🏝️", title: "정착지원금 300만원", desc: "부럽다, 제주살이! 제주살이 로망 실현, 마인드와 함께 하세요. 정착지원금 300만원을 드립니다." },
               { icon: "📈", title: "커미션 한도 없음", desc: "영업지원금 + 추가 커미션 제도로 역량에 따라 수입의 한계가 없습니다." },
               { icon: "🎓", title: "수업료 최대 60% 지급", desc: "PT 코치님은 수업료의 최대 60%를 지급받으며, 성과에 따른 추가 보상이 있습니다." },
             ].map((b, i) => (
