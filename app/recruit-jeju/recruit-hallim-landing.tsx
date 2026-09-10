@@ -733,12 +733,11 @@ export function RecruitHallimLanding() {
               <button
                 type="button"
                 onClick={() => setPayModalImage('/images/교육사업자세히보기선명도작업후.png')}
+                className="text-[15px] sm:text-[21px] px-[36px] sm:px-[52px] py-[9px] sm:py-[13px]"
                 style={{
                   backgroundColor: '#ffd600',
                   color: '#000',
                   fontWeight: 700,
-                  fontSize: '21px',
-                  padding: '13px 52px',
                   borderRadius: '50px',
                   border: 'none',
                   cursor: 'pointer',
