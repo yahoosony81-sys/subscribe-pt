@@ -114,8 +114,8 @@
     *   주요 내용: 대구도남점 7월 한정 프로모션 안내 및 신청 랜딩페이지
 
 ## 📍 한림점 (Hallim)
-*   **마인드휘트니스 한림점 채용공고**
-    *   주소: https://mindfitness-online.com/recruit-hallim
+*   **마인드휘트니스 제주(이노플랫) 채용공고**
+    *   주소: https://mindfitness-online.com/recruit-jeju
     *   주요 내용: 버핏서울(GreetingHR) 스타일 채용 랜딩페이지 (PT코치/FC/부서관리자)
 *   **버닝 케어 멤버십 (고민부위 리셋)**
     *   주소: https://mindfitness-online.com/hl-burning-caremember
@@ -184,9 +184,9 @@
     *   GTM: GTM-5VB56Q69 | 픽셀: GTM 태그 내부 포함 (단독 픽셀 미설치) ✅
 
 ## 📍 채용 / HR 랜딩페이지 (Recruitment)
-*   **마인드휘트니스 한림점 채용공고**
-    *   주소: https://mindfitness-online.com/recruit-hallim
-    *   주요 내용: 버핏서울(GreetingHR) 스타일 구조 정확 재현, 네비게이션바, 흰/검정 교차 배경, 50:50 지그재그, 복지 및 급여/커미션(영업지원금 최대 200만/수업료60%/정착지원금150만), 코치 스토리, 위치 및 채용 포지션 안내
+*   **마인드휘트니스 제주(이노플랫) 채용공고**
+    *   주소: https://mindfitness-online.com/recruit-jeju
+    *   주요 내용: 버핏서울(GreetingHR) 스타일 구조 정확 재현, 네비게이션바, 흰/검정 교차 배경, 50:50 지그재그, 복지 및 급여/커미션(영업지원금 최대 200만/수업료60%/정착지원금300만), 코치 스토리, 위치 및 채용 포지션 안내
 
 ---
 
