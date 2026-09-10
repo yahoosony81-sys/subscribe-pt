@@ -13,7 +13,7 @@ export function GtmProvider() {
   // 각 랜딩 페이지별 경로 확인
   const isNhLanding = pathname.startsWith('/nh-retarget-coffeelanding') || pathname.startsWith('/nh-burning-care') || pathname.startsWith('/nh-pain-membership') || pathname.startsWith('/nh-caremembership') || pathname.startsWith('/caremembership-jejusi');
   const isDnLanding = pathname.startsWith('/dn-') || pathname.startsWith('/promo-bodychallenge') || pathname.startsWith('/donam-july-promo');
-  const isHallimLanding = pathname.startsWith('/hl-burning-caremember') || pathname.startsWith('/hl-caremembership') || pathname.startsWith('/hl-pain-membership') || pathname.startsWith('/caremembership-hallim') || pathname.startsWith('/jm-reset');
+  const isHallimLanding = pathname.startsWith('/hl-burning-caremember') || pathname.startsWith('/hl-caremembership') || pathname.startsWith('/hl-pain-membership') || pathname.startsWith('/caremembership-hallim') || pathname.startsWith('/jm-reset') || pathname.startsWith('/recruit-jeju');
   const isMyeongjiLanding = pathname.startsWith('/mg-');
 
   // 조건에 맞게 GTM 아이디 할당

@@ -85,6 +85,8 @@ export const config = {
     '/caremembership-hallim:path*',
     // 리셋 중문점 (한림점 CAPI)
     '/jm-reset:path*',
+    // 채용공고 (한림점 GTM/CAPI)
+    '/recruit-jeju:path*',
     // 도남점 랜딩
     '/dn-:path*',
     // 도남점 바디챌린지

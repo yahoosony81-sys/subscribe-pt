@@ -35,7 +35,7 @@ export const BRANCH_PIXELS: BranchPixelInfo[] = [
     pixelId: '931401023110366',
     nameKo: '한림점',
     code: 'hl',
-    urlPrefixes: ['/hl-', '/caremembership-hallim', '/jm-reset'],
+    urlPrefixes: ['/hl-', '/caremembership-hallim', '/jm-reset', '/recruit-jeju'],
   },
   {
     pixelId: '891686733924318',
