@@ -293,7 +293,7 @@ function ImageCarousel({
 export function RecruitHallimLanding() {
   const [openPosition, setOpenPosition] = useState<number | null>(null)
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false)
-  const [payModalImage, setPayModalImage] = useState<string | null>(null)
+  const [payModalImage, setPayModalImage] = useState<string | string[] | null>(null)
   const [sliderIndex, setSliderIndex] = useState(0)
 
   // Form states
@@ -601,7 +601,13 @@ export function RecruitHallimLanding() {
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-max z-10">
                   <button
                     type="button"
-                    onClick={() => setPayModalImage('/images/pt긴이미지-정사각.png')}
+                    onClick={() => setPayModalImage([
+                      '/images/PT-1.jpg',
+                      '/images/PT-2.jpg',
+                      '/images/PT-3.jpg',
+                      '/images/PT-4.jpg',
+                      '/images/PT-5.jpg'
+                    ])}
                     style={{
                       backgroundColor: '#ffd600',
                       color: '#000',
@@ -649,7 +655,13 @@ export function RecruitHallimLanding() {
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-max z-10">
                   <button
                     type="button"
-                    onClick={() => setPayModalImage('/images/FC긴이미지-정사각.png')}
+                    onClick={() => setPayModalImage([
+                      '/images/PT-1.jpg',
+                      '/images/PT-2.jpg',
+                      '/images/PT-3.jpg',
+                      '/images/PT-4.jpg',
+                      '/images/FC-5.jpg'
+                    ])}
                     style={{
                       backgroundColor: '#ffd600',
                       color: '#000',
@@ -697,7 +709,13 @@ export function RecruitHallimLanding() {
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-max z-10">
                   <button
                     type="button"
-                    onClick={() => setPayModalImage('/images/관리자긴이미지-정사각.png')}
+                    onClick={() => setPayModalImage([
+                      '/images/PT-1.jpg',
+                      '/images/PT-2.jpg',
+                      '/images/PT-3.jpg',
+                      '/images/PT-4.jpg',
+                      '/images/관리자-5.jpg'
+                    ])}
                     style={{
                       backgroundColor: '#ffd600',
                       color: '#000',
@@ -751,7 +769,10 @@ export function RecruitHallimLanding() {
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-max z-10">
               <button
                 type="button"
-                onClick={() => setPayModalImage('/images/교육사업자세히보기선명도작업후.png')}
+                onClick={() => setPayModalImage([
+                  '/images/교육-1.jpg',
+                  '/images/교육-2.jpg'
+                ])}
                 className="text-[15px] sm:text-[21px] px-[36px] sm:px-[52px] py-[9px] sm:py-[13px]"
                 style={{
                   backgroundColor: '#ffd600',
@@ -1449,14 +1470,26 @@ export function RecruitHallimLanding() {
         <DialogContent className="max-w-2xl w-[95vw] sm:w-[90vw] max-h-[85vh] p-0 overflow-y-auto bg-transparent border-none shadow-none text-white">
           <DialogTitle className="sr-only">상세 보기</DialogTitle>
           <DialogDescription className="sr-only">상세 이미지입니다.</DialogDescription>
-          <div className="relative w-full">
-            {payModalImage && (
+          <div className="relative w-full flex flex-col">
+            {Array.isArray(payModalImage) ? (
+              <div className="w-full flex flex-col rounded-lg shadow-2xl overflow-hidden mx-auto">
+                {payModalImage.map((src, index) => (
+                  <img
+                    key={index}
+                    src={src}
+                    alt={`상세 이미지 ${index + 1}`}
+                    className="w-full h-auto block m-0 p-0 border-none"
+                    style={{ verticalAlign: 'bottom' }}
+                  />
+                ))}
+              </div>
+            ) : payModalImage ? (
               <img
                 src={payModalImage}
                 alt="상세 이미지"
                 className="w-full h-auto block rounded-lg shadow-2xl mx-auto"
               />
-            )}
+            ) : null}
           </div>
         </DialogContent>
       </Dialog>
