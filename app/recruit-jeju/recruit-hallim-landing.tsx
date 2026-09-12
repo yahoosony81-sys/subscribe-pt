@@ -944,6 +944,16 @@ export function RecruitHallimLanding() {
           </div>
 
           <div className="rc-spacer-60" />
+          
+          <div className="w-full flex justify-center pb-8">
+            <img 
+              src="/images/채용절차 정사각 이미지.jpg" 
+              alt="채용 프로세스 안내" 
+              className="w-full h-auto max-w-2xl block rounded-xl shadow-lg mx-auto" 
+            />
+          </div>
+
+          <div className="rc-spacer-60" />
         </div>
       </section>
 
