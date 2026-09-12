@@ -754,7 +754,7 @@ export function RecruitHallimLanding() {
             </div>
           </div>
 
-          <div className="rc-spacer-40" />
+          <div className="h-[100px] md:h-[60px]" />
 
           {/* 이유 2: image(left) + text(right) - reverse */}
           <div className="rc-split rc-split--reverse">
@@ -774,7 +774,7 @@ export function RecruitHallimLanding() {
             </div>
           </div>
 
-          <div className="rc-spacer-40" />
+          <div className="h-[100px] md:h-[60px]" />
 
           {/* 이유 3: text(left) + image(right) */}
           <div className="rc-split">
@@ -818,7 +818,7 @@ export function RecruitHallimLanding() {
           {/* Full width image (Workshop Carousel) */}
           <ImageCarousel images={WORKSHOP_IMAGES} aspectRatio="12 / 5" />
 
-          <div className="rc-spacer-40" />
+          <div className="h-[100px] md:h-[60px]" />
 
           {/* 이유 4: image(left) + text(right) */}
           <div className="rc-split rc-split--reverse">
