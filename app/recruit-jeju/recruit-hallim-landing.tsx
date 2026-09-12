@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import "./recruit-hallim.css"
 import {
   Dialog,
@@ -312,6 +312,20 @@ export function RecruitHallimLanding() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+
+  // 모달창 렌더링 지연을 방지하기 위해 용량이 큰 이미지들을 백그라운드에서 사전 로드 (Preload)
+  useEffect(() => {
+    const imagesToPreload = [
+      '/images/교육사업자세히보기선명도작업후.png',
+      '/images/pt긴이미지-정사각.png',
+      '/images/FC긴이미지-정사각.png',
+      '/images/관리자긴이미지-정사각.png',
+    ];
+    imagesToPreload.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   const handleTogglePosition = (index: number) => {
     setOpenPosition(openPosition === index ? null : index)
