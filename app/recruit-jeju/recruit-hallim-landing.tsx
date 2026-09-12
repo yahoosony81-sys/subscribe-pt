@@ -607,7 +607,7 @@ export function RecruitHallimLanding() {
             </div>
           </div>
 
-          <div className="rc-spacer-40" />
+          <div className="h-[100px] md:h-[60px]" />
 
           {/* 이유 1 - 추가 1: image(left) + text(right) - FC 모집 */}
           <div className="rc-split rc-split--reverse">
@@ -655,7 +655,7 @@ export function RecruitHallimLanding() {
             </div>
           </div>
 
-          <div className="rc-spacer-40" />
+          <div className="h-[100px] md:h-[60px]" />
 
           {/* 이유 1 - 추가 2: text(left) + image(right) - 부서관리자 모집 */}
           <div className="rc-split">
