@@ -1432,15 +1432,15 @@ export function RecruitHallimLanding() {
 
       {/* ═══ 급여조건 상세 이미지 모달 ═══ */}
       <Dialog open={!!payModalImage} onOpenChange={(open) => !open && setPayModalImage(null)}>
-        <DialogContent className="max-w-2xl p-0 overflow-hidden bg-transparent border-none shadow-none text-white">
-          <DialogTitle className="sr-only">급여조건 상세 보기</DialogTitle>
-          <DialogDescription className="sr-only">급여조건 상세 이미지입니다.</DialogDescription>
-          <div className="relative flex justify-center items-start max-h-[90vh] overflow-y-auto rounded-lg w-full">
+        <DialogContent className="max-w-2xl w-[95vw] sm:w-[90vw] max-h-[85vh] p-0 overflow-y-auto bg-transparent border-none shadow-none text-white">
+          <DialogTitle className="sr-only">상세 보기</DialogTitle>
+          <DialogDescription className="sr-only">상세 이미지입니다.</DialogDescription>
+          <div className="relative w-full">
             {payModalImage && (
               <img
                 src={payModalImage}
-                alt="급여조건 상세"
-                className="w-full h-auto max-w-full object-contain rounded-lg shadow-2xl"
+                alt="상세 이미지"
+                className="w-full h-auto block rounded-lg shadow-2xl mx-auto"
               />
             )}
           </div>
