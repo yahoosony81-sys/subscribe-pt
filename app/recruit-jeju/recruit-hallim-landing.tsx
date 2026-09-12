@@ -577,7 +577,7 @@ export function RecruitHallimLanding() {
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-max z-10">
                   <button
                     type="button"
-                    onClick={() => setPayModalImage('/images/PT급여조건.png')}
+                    onClick={() => setPayModalImage('/images/pt긴이미지-정사각.png')}
                     style={{
                       backgroundColor: '#ffd600',
                       color: '#000',
@@ -625,7 +625,7 @@ export function RecruitHallimLanding() {
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-max z-10">
                   <button
                     type="button"
-                    onClick={() => setPayModalImage('/images/FC급여조건.png')}
+                    onClick={() => setPayModalImage('/images/FC긴이미지-정사각.png')}
                     style={{
                       backgroundColor: '#ffd600',
                       color: '#000',
@@ -673,7 +673,7 @@ export function RecruitHallimLanding() {
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-max z-10">
                   <button
                     type="button"
-                    onClick={() => setPayModalImage('/images/팀장별급여조선.png')}
+                    onClick={() => setPayModalImage('/images/관리자긴이미지-정사각.png')}
                     style={{
                       backgroundColor: '#ffd600',
                       color: '#000',
@@ -1423,7 +1423,7 @@ export function RecruitHallimLanding() {
         <DialogContent className="max-w-2xl p-0 overflow-hidden bg-transparent border-none shadow-none text-white">
           <DialogTitle className="sr-only">급여조건 상세 보기</DialogTitle>
           <DialogDescription className="sr-only">급여조건 상세 이미지입니다.</DialogDescription>
-          <div className="relative flex justify-center items-center max-h-[90vh] overflow-y-auto rounded-lg">
+          <div className="relative flex justify-center items-start max-h-[90vh] overflow-y-auto rounded-lg w-full">
             {payModalImage && (
               <img
                 src={payModalImage}
