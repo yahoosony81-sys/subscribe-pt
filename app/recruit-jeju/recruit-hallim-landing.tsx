@@ -454,11 +454,23 @@ export function RecruitHallimLanding() {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button type="button" className="rc-header__mobile-btn" aria-label="메뉴">
-            <svg fill="none" height="24" viewBox="0 0 24 24" width="24">
-              <path clipRule="evenodd" d="M3 5.5H21V7.5H3V5.5ZM3 11H21V13H3V11ZM21 16.5H3V18.5H21V16.5Z" fill="#222222" fillRule="evenodd" />
-            </svg>
-          </button>
+          <a
+            href="https://www.mindfitness-official.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rc-header__mobile-btn"
+            style={{
+              fontSize: '14px',
+              fontWeight: 600,
+              textDecoration: 'none',
+              color: 'var(--rc-black)',
+              whiteSpace: 'nowrap',
+              width: 'auto',
+              padding: '0 12px'
+            }}
+          >
+            공식홈페이지↗
+          </a>
         </div>
       </header>
       <div className="rc-header-blank" />
