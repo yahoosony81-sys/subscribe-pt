@@ -210,6 +210,16 @@ const CARE_IMAGES = [
   }
 ]
 
+/* ═══ 인터뷰 이미지 데이터 ═══ */
+const INTERVIEW_IMAGES = [
+  { src: "/images/pt인터뷰-1.jpg", alt: "PT 인터뷰 1" },
+  { src: "/images/PT인터뷰-2.jpg", alt: "PT 인터뷰 2" },
+  { src: "/images/PT인터뷰-3.jpg", alt: "PT 인터뷰 3" },
+  { src: "/images/fc인터뷰-1.jpg", alt: "FC 인터뷰 1" },
+  { src: "/images/FC인터뷰-2.jpg", alt: "FC 인터뷰 2" },
+  { src: "/images/관리자인터뷰-광익.jpg", alt: "관리자 인터뷰 광익" },
+]
+
 function ImageCarousel({
   images,
   aspectRatio = "4 / 3",
@@ -853,17 +863,9 @@ export function RecruitHallimLanding() {
           </h2>
           <div className="rc-spacer-40" />
 
-          {/* 코치 스토리 이미지 그리드 */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-xl overflow-hidden shadow-lg h-full">
-              <img src="/images/성공스토리1.png" alt="성공스토리 1" className="w-full h-full object-cover aspect-[2/3] block" />
-            </div>
-            <div className="rounded-xl overflow-hidden shadow-lg h-full">
-              <img src="/images/성공스토리2.png" alt="성공스토리 2" className="w-full h-full object-cover aspect-[2/3] block" />
-            </div>
-            <div className="rounded-xl overflow-hidden shadow-lg h-full">
-              <img src="/images/성공스토리3.png" alt="성공스토리 3" className="w-full h-full object-cover aspect-[2/3] block" />
-            </div>
+          {/* 코치 스토리 이미지 카루셀 */}
+          <div className="max-w-2xl mx-auto">
+            <ImageCarousel images={INTERVIEW_IMAGES} aspectRatio="1 / 1" />
           </div>
 
           <div className="rc-spacer-60" />
