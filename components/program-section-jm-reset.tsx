@@ -59,11 +59,11 @@ const ZIGZAG_ITEMS = [
 ]
 
 const WEEKLY_PROGRAMS = [
-  { day: "MON", label: "하체 근력 +유산소운동", desc: "하체 메인 운동 2가지 + 보조 운동 2가지", icon: "🦵" },
-  { day: "TUE", label: "상체 당기기 +유산소운동", desc: "당기기 메인 운동 2가지 + 보조 운동 2가지", icon: "🏋️" },
-  { day: "WED", label: "상체 밀기 +유산소운동", desc: "밀기 메인 운동 2가지 + 보조 운동 2가지", icon: "💪" },
-  { day: "THU", label: "근지구력 +유산소운동", desc: "지치지 않는 몸을 만드는 지구력 중심 훈련", icon: "⚡" },
-  { day: "FRI", label: "전신 운동", desc: "한 주를 마무리하는 전신 복합 훈련", icon: "🔥" },
+  { day: "MON", label: "하체근력 + 유산소운동", desc: "하체운동 4가지와 로잉머신,스키에르그,러닝머신 3종류의 유산소", icon: "🦵" },
+  { day: "TUE", label: "전신운동", desc: "전신근력운동", icon: "🔥" },
+  { day: "WED", label: "상체근력(PULL) + 유산소운동", desc: "하체운동 4가지와 로잉머신,스키에르그,러닝머신 3종류의 유산소", icon: "🏋️" },
+  { day: "THU", label: "근지구력 + 기능성운동", desc: "지치지 않는 지구력과 탄력성운동", icon: "⚡" },
+  { day: "FRI", label: "상체근력(PUSH) + 유산소운동", desc: "하체운동 4가지와 로잉머신,스키에르그,러닝머신 3종류의 유산소", icon: "💪" },
 ]
 
 export function ProgramSectionJmReset() {
@@ -439,7 +439,7 @@ export function ProgramSectionJmReset() {
           <p
             style={{ fontFamily: "'Barlow Condensed', sans-serif", textTransform: "uppercase", fontSize: 11, fontWeight: 700, letterSpacing: "0.3em", color: "rgba(0,0,0,0.5)", marginBottom: 16 }}
           >
-            Limited Spots — 12명 선착순
+            Limited Spots — 16명 선착순
           </p>
           <h2
             style={{
@@ -458,7 +458,7 @@ export function ProgramSectionJmReset() {
             TEAM RESET
           </h2>
           <p style={{ marginTop: 24, fontSize: "clamp(15px, 2vw, 18px)", fontWeight: 700, color: "rgba(0,0,0,0.7)", lineHeight: 1.6, wordBreak: "keep-all" }}>
-            인원수 12명 제한 프로그램 — 지금 바로 서둘러 예약해주세요!
+            인원수 16명 제한 프로그램 — 지금 바로 서둘러 예약해주세요!
           </p>
 
         </div>
@@ -537,7 +537,7 @@ export function ProgramSectionJmReset() {
                 lineHeight: 1.75,
                 wordBreak: "keep-all",
               }}>
-                총 40~50분 안에 8가지<br />운동이 완료됩니다.
+                총 40~50분 안에 7~10 EXERCISE<br />가 완료됩니다.
               </p>
             </div>
 
@@ -564,7 +564,7 @@ export function ProgramSectionJmReset() {
               <div className="jm-class-card jm-strength-card" style={{ borderColor: "#CCFF00", background: "rgba(204,255,0,0.06)" }}>
                 <div>
                   <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: "0.25em", color: "rgba(204,255,0,0.6)", textTransform: "uppercase", marginBottom: 4 }}>STRENGTH</p>
-                  <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem,3vw,2.2rem)", color: "#CCFF00", letterSpacing: "0.02em", marginBottom: 4 }}>18 min</p>
+                  <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem,3vw,2.2rem)", color: "#CCFF00", letterSpacing: "0.02em", marginBottom: 4 }}>20 min</p>
                   <p style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: "clamp(1.1rem,2vw,1.5rem)", color: "#fff" }}>근력존</p>
                 </div>
                 <svg width="52" height="52" viewBox="0 0 52 52" fill="none" style={{ flexShrink: 0, opacity: 0.9 }}>
@@ -580,7 +580,7 @@ export function ProgramSectionJmReset() {
               <div className="jm-class-card">
                 <div>
                   <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: "0.25em", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", marginBottom: 4 }}>CARDIO</p>
-                  <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem,3vw,2.2rem)", color: "#CCFF00", letterSpacing: "0.02em", marginBottom: 4 }}>18 min</p>
+                  <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem,3vw,2.2rem)", color: "#CCFF00", letterSpacing: "0.02em", marginBottom: 4 }}>20 min</p>
                   <p style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: "clamp(1.1rem,2vw,1.5rem)", color: "#fff" }}>유산소존</p>
                 </div>
                 <svg width="52" height="52" viewBox="0 0 52 52" fill="none" style={{ flexShrink: 0, opacity: 0.7 }}>
@@ -596,7 +596,7 @@ export function ProgramSectionJmReset() {
               <div className="jm-class-card">
                 <div>
                   <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: "0.25em", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", marginBottom: 4 }}>COOL-DOWN</p>
-                  <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem,3vw,2.2rem)", color: "#CCFF00", letterSpacing: "0.02em", marginBottom: 4 }}>5 min</p>
+                  <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem,3vw,2.2rem)", color: "#CCFF00", letterSpacing: "0.02em", marginBottom: 4 }}>5 min <span style={{fontSize: "1rem"}}>(유동적)</span></p>
                   <p style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: "clamp(1.1rem,2vw,1.5rem)", color: "#fff" }}>쿨다운</p>
                 </div>
                 <svg width="52" height="52" viewBox="0 0 52 52" fill="none" style={{ flexShrink: 0, opacity: 0.7 }}>
