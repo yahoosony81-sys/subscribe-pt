@@ -245,11 +245,11 @@ export function CareMembershipHallimLanding() {
             role="button"
             tabIndex={0}
             onClick={() => {
-              document.getElementById('september-promo-gift')?.scrollIntoView({ behavior: 'smooth' });
+              document.getElementById('october-passive-stretching')?.scrollIntoView({ behavior: 'smooth' });
             }}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
-                document.getElementById('september-promo-gift')?.scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('october-passive-stretching')?.scrollIntoView({ behavior: 'smooth' });
               }
             }}
             className="group mt-8 cursor-pointer flex flex-col items-center gap-3 px-6 py-5 sm:px-10 sm:py-6 rounded-2xl bg-black/45 backdrop-blur-md border border-[#c8a96e]/40 shadow-[0_10px_35px_rgba(0,0,0,0.5)] transition-all duration-500 hover:border-[#c8a96e] hover:bg-black/65 hover:shadow-[0_12px_45px_rgba(200,169,110,0.4)] hover:-translate-y-1 w-full sm:max-w-2xl mx-auto"
@@ -262,7 +262,7 @@ export function CareMembershipHallimLanding() {
             {/* 메인 텍스트 & 화살표 */}
             <div className="flex items-center justify-center gap-3 sm:gap-4 my-1">
               <span className="whitespace-nowrap text-[15px] sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white drop-shadow-md group-hover:text-[#c8a96e] transition-colors duration-300">
-                9월 케어멤버십 프로모션 자세히보기
+                10월 패시브스트레칭 프로그램 자세히 보기
               </span>
               <ChevronDown className="animate-bounce w-6 h-6 sm:w-8 sm:h-8 text-[#c8a96e] group-hover:text-white transition-colors duration-300 shrink-0" />
             </div>
@@ -369,23 +369,23 @@ export function CareMembershipHallimLanding() {
         })}
       </section>
 
-      {/* ═══ 9월 SPECIAL PROMOTION GIFT SECTION ═══ */}
+      {/* ═══ 10월 PASSIVE STRETCHING PROGRAM SECTION ═══ */}
       <section
-        id="september-promo-gift"
+        id="october-passive-stretching"
         ref={secPromoGift.ref}
         className={`cm-promo-gift ${secPromoGift.visible ? "cm-promo-gift--visible" : ""}`}
-        aria-label="9월 케어멤버십 특별 프로모션 증정 혜택"
+        aria-label="10월 케어멤버십 패시브스트레칭 프로그램"
       >
         <div className="cm-promo-gift__container">
           {/* Header Badge & Title */}
           <div className="cm-promo-gift__header">
             <div className="cm-promo-gift__badge">
               <Sparkles className="w-3.5 h-3.5 text-[#c8a96e]" />
-              <span>SEPTEMBER SPECIAL GIFT</span>
+              <span>OCTOBER SPECIAL PROGRAM</span>
             </div>
             <h2 className="cm-promo-gift__main-title">
-              내 몸의 밸런스를 되찾는<br />
-              <span className="text-[#c8a96e]">9월 케어멤버십 프로모션!</span>
+              전문가의 손길로 완성되는 유연성<br />
+              <span className="text-[#c8a96e]">10월 케어멤버십 패시브 스트레칭 도입!</span>
             </h2>
           </div>
 
@@ -394,22 +394,23 @@ export function CareMembershipHallimLanding() {
             {/* Left: Image Container */}
             <div className="cm-promo-gift__image-card">
               <div className="cm-promo-gift__image-badge">
-                <Gift className="w-4 h-4 text-[#0d0d0d]" />
-                <span>등록 회원 전원 증정</span>
+                <CheckCircle2 className="w-4 h-4 text-[#0d0d0d]" />
+                <span>10월 한정 신규 프로그램</span>
               </div>
               <div className="cm-promo-gift__image-inner">
                 <Image
-                  src="/images/방탄커피선물.png"
-                  alt="마이노멀 시그니처 방탄커피 (6개입) 사은품"
+                  src="/images/패시브스트레칭사진.jpg"
+                  alt="전문 코치와 함께하는 패시브 스트레칭"
                   width={600}
                   height={600}
                   className="cm-promo-gift__img"
+                  style={{ objectFit: 'cover' }}
                   priority
                 />
               </div>
               <div className="cm-promo-gift__image-footer">
-                <span className="cm-promo-gift__product-name">마이노멀 시그니처 방탄커피</span>
-                <span className="cm-promo-gift__product-qty">6개입 1세트</span>
+                <span className="cm-promo-gift__product-name">패시브 스트레칭 (Passive Stretching)</span>
+                <span className="cm-promo-gift__product-qty">케어멤버십 포함</span>
               </div>
             </div>
 
@@ -417,8 +418,8 @@ export function CareMembershipHallimLanding() {
             <div className="cm-promo-gift__content">
               <div className="cm-promo-gift__intro-box">
                 <p className="cm-promo-gift__headline">
-                  등록하시는 분들께 든든한 에너지를 채워줄<br />
-                  <strong className="text-[#c8a96e] font-bold">&apos;마이노멀 시그니처 방탄커피(6개입)&apos;</strong>를 증정합니다.
+                  굳어있는 몸의 한계를 넘어 가동범위를 회복하는<br />
+                  <strong className="text-[#c8a96e] font-bold">&apos;패시브 스트레칭&apos;</strong>이 10월 케어멤버십에 포함됩니다.
                 </p>
               </div>
 
@@ -428,16 +429,16 @@ export function CareMembershipHallimLanding() {
                     <Zap className="w-4 h-4 text-[#c8a96e]" />
                   </div>
                   <p className="cm-promo-gift__text">
-                    무너진 체형을 교정하고 근력을 강화하는 과정에서는 지치지 않게 도와주는 <strong>효율적인 에너지 공급</strong>이 매우 중요합니다.
+                    <strong>패시브 스트레칭이란?</strong> 스스로의 힘이 아닌 <strong>전문 코치의 도움을 받아 근육을 이완</strong>시키는 방법입니다. 혼자서는 닿기 힘든 깊은 근육까지 안전하게 스트레칭할 수 있습니다.
                   </p>
                 </div>
 
                 <div className="cm-promo-gift__item">
                   <div className="cm-promo-gift__icon-wrap">
-                    <Coffee className="w-4 h-4 text-[#c8a96e]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#c8a96e]" />
                   </div>
                   <p className="cm-promo-gift__text">
-                    방탄커피에 포함된 <strong>MCT 오일</strong>(탄소수 8~12개로 이중결합이 없는 포화지방)은 우리 몸에 빠르게 흡수되어 즉각적인 에너지로 쓰이기 때문에, <strong>케어멤버십 트레이닝 시 훌륭한 부스터 역할</strong>을 해냅니다.
+                    <strong>가동범위 회복과 통증 완화</strong>에 탁월합니다. 굳어있는 관절과 근육의 긴장을 풀어주어, <strong>케어멤버십의 체형 교정과 근력 강화 효과를 극대화</strong>시켜 줍니다.
                   </p>
                 </div>
 
@@ -446,17 +447,17 @@ export function CareMembershipHallimLanding() {
                     <Sparkles className="w-4 h-4 text-[#c8a96e]" />
                   </div>
                   <p className="cm-promo-gift__text">
-                    엄선된 3가지 원두와 프랑스산 기버터가 만나 고소한 풍미를 자랑하며, 긴 시간 유지되는 포만감 덕분에 <strong>건강한 몸을 만드는 든든한 조력자</strong>가 될 것입니다.
+                    <strong>10월 케어멤버십 회원 혜택</strong>으로 기존 프로그램에 더해 더욱 체계적이고 심도 있는 프리미엄 바디 케어 솔루션을 경험해 보세요.
                   </p>
                 </div>
               </div>
 
               {/* Feature Tags */}
               <div className="cm-promo-gift__tags">
-                <span className="cm-promo-gift__tag">#MCT오일부스터</span>
-                <span className="cm-promo-gift__tag">#프랑스산기버터</span>
-                <span className="cm-promo-gift__tag">#3가지엄선원두</span>
-                <span className="cm-promo-gift__tag">#든든한포만감</span>
+                <span className="cm-promo-gift__tag">#전문가스트레칭</span>
+                <span className="cm-promo-gift__tag">#가동범위회복</span>
+                <span className="cm-promo-gift__tag">#깊은근육이완</span>
+                <span className="cm-promo-gift__tag">#체형교정극대화</span>
               </div>
             </div>
           </div>
