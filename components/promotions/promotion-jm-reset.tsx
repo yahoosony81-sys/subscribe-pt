@@ -494,7 +494,7 @@ export function PromotionJmReset() {
             {/* 사진 영역 */}
             <div className="w-full lg:w-[45%] rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(204,255,0,0.15)] border border-white/10 lg:sticky lg:top-24">
               <img
-                src="/images/김윤진텍스트1.png"
+                src="/images/제목텍스트-1.png"
                 alt="우리 아이 구부정한 자세 더 늦기전에 교정하세요! - 바른자세 전문강사 김윤진"
                 className="w-full h-full object-cover"
                 style={{ aspectRatio: '1/1' }}
@@ -529,13 +529,6 @@ export function PromotionJmReset() {
                     <line x1="10" y1="14" x2="21" y2="3" />
                   </svg>
                 </a>
-
-                <span
-                  className="text-white/90 font-bold text-xs sm:text-sm border border-white/25 bg-white/10 rounded-full px-3.5 py-2"
-                  style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
-                >
-                  학부모 &amp; 자녀 추천
-                </span>
               </div>
 
               {/* 학부모 공감 유도 박스 */}
@@ -606,7 +599,7 @@ export function PromotionJmReset() {
             {/* 사진 영역 */}
             <div className="w-full lg:w-[45%] rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(204,255,0,0.15)] border border-white/10 lg:sticky lg:top-24 transition-transform duration-500 hover:scale-[1.01]">
               <img
-                src="/images/김윤진텍스트3.png"
+                src="/images/제목텍스트-2.png"
                 alt="반복되는 뻐근한 통증 (목, 어깨, 허리) 바른자세 교정운동으로 개선해보세요! - 김윤진 강사"
                 className="w-full h-full object-cover"
                 style={{ aspectRatio: '1/1' }}
@@ -615,16 +608,6 @@ export function PromotionJmReset() {
 
             {/* 텍스트 영역 (혜택 1과 동일한 구조: 배지 → 공감 박스 → 핵심 혜택 01~03) */}
             <div className="w-full lg:w-[55%] flex flex-col justify-center">
-              {/* 추천 대상 배지 */}
-              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-6">
-                <span
-                  className="text-white/90 font-bold text-xs sm:text-sm border border-white/25 bg-white/10 rounded-full px-3.5 py-2"
-                  style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
-                >
-                  직장인 &amp; 성인 자세교정 추천
-                </span>
-              </div>
-
               {/* 공감 유도 박스 */}
               <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.05] border border-white/10 mb-8 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
                 <p className="text-white text-base sm:text-lg font-bold leading-relaxed" style={{ wordBreak: "keep-all" }}>
