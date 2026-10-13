@@ -43,7 +43,7 @@ export function PromotionJmReset() {
     if (isPaused) return
     const timer = setInterval(() => {
       nextSlide()
-    }, 5000)
+    }, 2000)
     return () => clearInterval(timer)
   }, [isPaused, nextSlide])
 
@@ -166,120 +166,13 @@ export function PromotionJmReset() {
             minHeight: "100svh",
           }}
         >
-          {/* ══════ [슬라이드 1] 현재 이미지 & 기존 히어로 콘텐츠 ══════ */}
-          <div
-            className="relative min-w-full w-full shrink-0 flex items-center justify-center overflow-hidden"
-            style={{ minHeight: "100svh" }}
-            role="group"
-            aria-roledescription="slide"
-            aria-label="슬라이드 1: TEAM RESET 소개"
-          >
-            {/* 배경 이미지 */}
-            <img
-              src="/images/리워드랜딩히어로최종사진.png"
-              alt="리셋중문점 히어로"
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{ zIndex: 0 }}
-            />
-
-            {/* 다크 그라디언트 오버레이 */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.80) 100%)",
-                zIndex: 1,
-              }}
-            />
-
-            {/* 콘텐츠 래퍼 */}
-            <div
-              className="relative z-10 flex flex-col items-center justify-center text-center px-4 w-full"
-              style={{ minHeight: "100svh", paddingTop: "80px", paddingBottom: "110px" }}
-            >
-              {/* 서브 배지 */}
-              <div
-                className="animate-fadeSlideUp-1 mb-8 inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-[#CCFF00]/40 bg-[#CCFF00]/10"
-                style={{ backdropFilter: "blur(10px)" }}
-              >
-                <span
-                  className="w-2 h-2 rounded-full bg-[#CCFF00] animate-pulse"
-                  style={{ boxShadow: "0 0 8px #CCFF00" }}
-                />
-                <span
-                  className="text-[#CCFF00] text-xs font-bold tracking-[0.25em] uppercase"
-                  style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
-                >
-                  리셋중문점
-                </span>
-              </div>
-
-              {/* 라인 1: PERFECT WORKOUT */}
-              <h1
-                className="animate-fadeSlideUp-2 leading-none uppercase text-white"
-                style={{
-                  fontFamily: "'Barlow Condensed', 'Oswald', 'Noto Sans KR', sans-serif",
-                  fontWeight: 900,
-                  fontSize: "clamp(3.8rem, 13vw, 11rem)",
-                  lineHeight: 0.88,
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                <span className="neon-green">PERFECT</span>
-                {" "}
-                <span className="text-white">WORKOUT</span>
-              </h1>
-
-              {/* 라인 2: WE ARE TEAM RESET */}
-              <h2
-                className="animate-fadeSlideUp-3 leading-none uppercase mt-4"
-                style={{
-                  fontFamily: "'Barlow Condensed', 'Oswald', 'Noto Sans KR', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "clamp(2rem, 7.5vw, 6.5rem)",
-                  lineHeight: 1.0,
-                  letterSpacing: "0.05em",
-                }}
-              >
-                <span className="text-white">WE ARE TEAM </span>
-                <span className="neon-green">RESET</span>
-              </h2>
-
-              {/* 상시 프로그램 바로가기 버튼 */}
-              <div className="animate-fadeSlideUp-4 mt-12 cursor-pointer z-20">
-                <button
-                  onClick={() => {
-                    document.getElementById('weekly-program-section')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="flex items-center justify-center gap-4 px-8 py-4 rounded-full bg-[#CCFF00]/15 hover:bg-[#CCFF00]/30 border border-[#CCFF00]/50 backdrop-blur-md transition-all duration-300 shadow-[0_0_20px_rgba(204,255,0,0.3)] hover:shadow-[0_0_30px_rgba(204,255,0,0.6)] cursor-pointer"
-                >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#CCFF00] animate-bounce">
-                    <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  <span className="text-[#CCFF00] font-black text-xl md:text-2xl tracking-wide drop-shadow-[0_0_8px_rgba(204,255,0,0.8)]" style={{ fontFamily: "'Noto Sans KR', sans-serif" }}>
-                    리셋 중문 상시 프로그램 자세히 보기
-                  </span>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#CCFF00] animate-bounce">
-                    <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-              </div>
-
-              {/* 구분선 */}
-              <div
-                className="animate-fadeSlideUp-4 mt-10 mb-10 w-20 h-0.5"
-                style={{ background: "linear-gradient(90deg, transparent, #CCFF00, transparent)" }}
-              />
-            </div>
-          </div>
-
-          {/* ══════ [슬라이드 2] 추가 이미지 & 좌측 텍스트 (자세 관리 특별 클래스) ══════ */}
+          {/* ══════ [슬라이드 1] 리셋 중문점- 자세 관리 특별 클래스 ══════ */}
           <div
             className="relative min-w-full w-full shrink-0 flex items-center overflow-hidden"
             style={{ minHeight: "100svh" }}
             role="group"
             aria-roledescription="slide"
-            aria-label="슬라이드 2: 리셋 중문점- 자세 관리 특별 클래스"
+            aria-label="슬라이드 1: 리셋 중문점- 자세 관리 특별 클래스"
           >
             {/* 배경 이미지: 강사가 우측에 위치한 특별 클래스 16:9 고화질 이미지 */}
             <img
@@ -399,7 +292,114 @@ export function PromotionJmReset() {
               </div>
             </div>
           </div>
-        </div>
+{/* ══════ [슬라이드 2] PERFECT WORKOUT 및 상시 프로그램 소개 ══════ */}
+          <div
+            className="relative min-w-full w-full shrink-0 flex items-center justify-center overflow-hidden"
+            style={{ minHeight: "100svh" }}
+            role="group"
+            aria-roledescription="slide"
+            aria-label="슬라이드 2: TEAM RESET 소개"
+          >
+            {/* 배경 이미지 */}
+            <img
+              src="/images/리워드랜딩히어로최종사진.png"
+              alt="리셋중문점 히어로"
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ zIndex: 0 }}
+            />
+
+            {/* 다크 그라디언트 오버레이 */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.80) 100%)",
+                zIndex: 1,
+              }}
+            />
+
+            {/* 콘텐츠 래퍼 */}
+            <div
+              className="relative z-10 flex flex-col items-center justify-center text-center px-4 w-full"
+              style={{ minHeight: "100svh", paddingTop: "80px", paddingBottom: "110px" }}
+            >
+              {/* 서브 배지 */}
+              <div
+                className="animate-fadeSlideUp-1 mb-8 inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-[#CCFF00]/40 bg-[#CCFF00]/10"
+                style={{ backdropFilter: "blur(10px)" }}
+              >
+                <span
+                  className="w-2 h-2 rounded-full bg-[#CCFF00] animate-pulse"
+                  style={{ boxShadow: "0 0 8px #CCFF00" }}
+                />
+                <span
+                  className="text-[#CCFF00] text-xs font-bold tracking-[0.25em] uppercase"
+                  style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+                >
+                  리셋중문점
+                </span>
+              </div>
+
+              {/* 라인 1: PERFECT WORKOUT */}
+              <h1
+                className="animate-fadeSlideUp-2 leading-none uppercase text-white"
+                style={{
+                  fontFamily: "'Barlow Condensed', 'Oswald', 'Noto Sans KR', sans-serif",
+                  fontWeight: 900,
+                  fontSize: "clamp(3.8rem, 13vw, 11rem)",
+                  lineHeight: 0.88,
+                  letterSpacing: "-0.01em",
+                }}
+              >
+                <span className="neon-green">PERFECT</span>
+                {" "}
+                <span className="text-white">WORKOUT</span>
+              </h1>
+
+              {/* 라인 2: WE ARE TEAM RESET */}
+              <h2
+                className="animate-fadeSlideUp-3 leading-none uppercase mt-4"
+                style={{
+                  fontFamily: "'Barlow Condensed', 'Oswald', 'Noto Sans KR', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(2rem, 7.5vw, 6.5rem)",
+                  lineHeight: 1.0,
+                  letterSpacing: "0.05em",
+                }}
+              >
+                <span className="text-white">WE ARE TEAM </span>
+                <span className="neon-green">RESET</span>
+              </h2>
+
+              {/* 상시 프로그램 바로가기 버튼 */}
+              <div className="animate-fadeSlideUp-4 mt-12 cursor-pointer z-20">
+                <button
+                  onClick={() => {
+                    document.getElementById('weekly-program-section')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="flex items-center justify-center gap-4 px-8 py-4 rounded-full bg-[#CCFF00]/15 hover:bg-[#CCFF00]/30 border border-[#CCFF00]/50 backdrop-blur-md transition-all duration-300 shadow-[0_0_20px_rgba(204,255,0,0.3)] hover:shadow-[0_0_30px_rgba(204,255,0,0.6)] cursor-pointer"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#CCFF00] animate-bounce">
+                    <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  <span className="text-[#CCFF00] font-black text-xl md:text-2xl tracking-wide drop-shadow-[0_0_8px_rgba(204,255,0,0.8)]" style={{ fontFamily: "'Noto Sans KR', sans-serif" }}>
+                    리셋 중문 상시 프로그램 자세히 보기
+                  </span>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#CCFF00] animate-bounce">
+                    <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+
+              {/* 구분선 */}
+              <div
+                className="animate-fadeSlideUp-4 mt-10 mb-10 w-20 h-0.5"
+                style={{ background: "linear-gradient(90deg, transparent, #CCFF00, transparent)" }}
+              />
+            </div>
+          </div>
+
+                  </div>
 
         {/* ── 좌우 네비게이션 화살표 ── */}
         <button
@@ -432,7 +432,7 @@ export function PromotionJmReset() {
             onClick={() => goToSlide(0)}
             role="tab"
             aria-selected={currentSlide === 0}
-            aria-label="1번 슬라이드: PERFECT WORKOUT"
+            aria-label="1번 슬라이드: 리셋 중문점- 자세 관리 특별 클래스"
             className={`transition-all duration-300 rounded-full cursor-pointer ${
               currentSlide === 0
                 ? "w-8 h-2.5 bg-[#CCFF00] shadow-[0_0_10px_#CCFF00]"
@@ -443,7 +443,7 @@ export function PromotionJmReset() {
             onClick={() => goToSlide(1)}
             role="tab"
             aria-selected={currentSlide === 1}
-            aria-label="2번 슬라이드: 리셋 중문점- 자세 관리 특별 클래스"
+            aria-label="2번 슬라이드: PERFECT WORKOUT"
             className={`transition-all duration-300 rounded-full cursor-pointer ${
               currentSlide === 1
                 ? "w-8 h-2.5 bg-[#CCFF00] shadow-[0_0_10px_#CCFF00]"
