@@ -364,7 +364,7 @@ export function ProgramSectionJmReset() {
           }
         }
       `}</style>
-      <section className="jm-weekly-section">
+      <section id="weekly-program-section" className="jm-weekly-section">
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           {/* 헤더 */}
           <div style={{ textAlign: "center", marginBottom: 52 }}>

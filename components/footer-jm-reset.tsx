@@ -238,7 +238,7 @@ function LegalModal({ type }: { type: keyof typeof legalContent }) {
 
 export function FooterJmReset() {
   return (
-    <footer className="bg-slate-900 py-12 text-slate-300">
+    <footer className="bg-slate-900 py-12 pb-28 sm:pb-32 text-slate-300">
       <div className="mx-auto max-w-6xl px-4">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
