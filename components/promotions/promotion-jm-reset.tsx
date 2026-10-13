@@ -691,42 +691,6 @@ export function PromotionJmReset() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════
-          📌 [2] 브랜드 메시지 — Why Team Mind
-          ═══════════════════════════════════════════════ */}
-      <section className="bg-black py-20 md:py-28 border-t border-white/10 pb-32">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <p
-            className="text-[#CCFF00] text-xs tracking-[0.35em] font-bold mb-6 uppercase"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
-          >
-            Why Team Reset
-          </p>
-          <h2
-            className="font-black uppercase leading-tight text-white"
-            style={{
-              fontFamily: "'Barlow Condensed', 'Oswald', sans-serif",
-              fontWeight: 900,
-              fontSize: "clamp(2rem, 5.6vw, 4.8rem)",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            운동은 의지가 아니라
-            <br />
-            <span style={{ color: "#CCFF00" }}>환경</span>이 바꿉니다.
-          </h2>
-          <p className="mt-8 text-white/60 text-base md:text-xl leading-relaxed max-w-2xl mx-auto font-medium" style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>
-            혼자서는 3일도 못 가는 운동,
-            <br className="md:hidden" />{" "}
-            <span className="text-white font-bold">팀 리셋</span>과 함께하면 달라집니다.
-            <br />
-            전문강사가 직접 이끌어 드리는
-            <br className="md:hidden" />{" "}
-            <span className="text-[#CCFF00] font-bold">100일 그룹 트레이닝</span>을 경험해보세요.
-          </p>
-
-        </div>
-      </section>
 
       {/* ── Fixed Sticky Dual CTA Buttons ── */}
       <div className="fixed bottom-0 left-0 right-0 z-50 p-2 sm:p-3.5 bg-black/90 backdrop-blur-md border-t border-white/10 flex justify-center items-center">
