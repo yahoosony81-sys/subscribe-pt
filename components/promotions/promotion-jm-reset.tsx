@@ -233,38 +233,21 @@ export function PromotionJmReset() {
                 </span>
               </div>
 
-              {/* 메인 타이틀: 리셋 중문점- 자세 관리 특별 클래스 */}
+              {/* 메인 타이틀: 10월 특별클래스 */}
               <h2
-                className="text-white font-black tracking-tight mb-3 sm:mb-4"
+                className="text-white font-black tracking-tight mb-6"
                 style={{
                   fontFamily: "'Noto Sans KR', sans-serif",
-                  fontSize: "clamp(2rem, 5vw, 4.2rem)",
+                  fontSize: "clamp(2.4rem, 6vw, 4.8rem)",
                   lineHeight: 1.15,
                   letterSpacing: "-0.02em",
                   wordBreak: "keep-all",
                   textShadow: "0 2px 10px rgba(0,0,0,0.9), 0 4px 20px rgba(0,0,0,0.8)",
                 }}
               >
-                <span className="text-white">리셋 중문점 -</span>{" "}
-                <span className="neon-green">자세 관리 특별 클래스</span>
+                <span className="text-white inline-block">10월</span>{" "}
+                <span className="neon-green inline-block">특별클래스</span>
               </h2>
-
-              {/* 서브 타이틀: 척추 건강을 위한 교정 운동 */}
-              <div
-                className="flex items-center gap-3 mb-6"
-                style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
-              >
-                <span className="hidden sm:inline-block w-8 h-[3px] bg-[#CCFF00] shadow-[0_0_8px_#CCFF00]" />
-                <p
-                  className="text-[#CCFF00] font-black text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-tight leading-snug drop-shadow-[0_0_12px_rgba(204,255,0,0.5)]"
-                  style={{
-                    wordBreak: "keep-all",
-                    textShadow: "0 2px 8px rgba(0,0,0,0.9), 0 0 15px rgba(204,255,0,0.5)",
-                  }}
-                >
-                  척추 건강을 위한 교정 운동
-                </p>
-              </div>
 
               {/* 강사 안내 문구 */}
               <div
@@ -275,7 +258,7 @@ export function PromotionJmReset() {
                   className="text-white text-base sm:text-lg md:text-xl font-semibold"
                   style={{ textShadow: "0 2px 8px rgba(0,0,0,0.95)" }}
                 >
-                  SNPE 협회 인증강사 / 바른자세 운동 지도사 <span className="text-[#CCFF00] font-bold">&lsquo;김윤진&rsquo; 강사</span>
+                  <span className="inline-block">SNPE 협회 인증강사 / 바른자세 운동 지도사</span>{" "}<span className="text-[#CCFF00] font-bold inline-block">&lsquo;김윤진&rsquo; 강사</span>
                 </p>
               </div>
 
@@ -386,15 +369,15 @@ export function PromotionJmReset() {
                   onClick={() => {
                     document.getElementById('weekly-program-section')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="flex items-center justify-center gap-4 px-8 py-4 rounded-full bg-[#CCFF00]/15 hover:bg-[#CCFF00]/30 border border-[#CCFF00]/50 backdrop-blur-md transition-all duration-300 shadow-[0_0_20px_rgba(204,255,0,0.3)] hover:shadow-[0_0_30px_rgba(204,255,0,0.6)] cursor-pointer"
+                  className="flex items-center justify-center gap-2 sm:gap-4 px-5 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#CCFF00]/15 hover:bg-[#CCFF00]/30 border border-[#CCFF00]/50 backdrop-blur-md transition-all duration-300 shadow-[0_0_20px_rgba(204,255,0,0.3)] hover:shadow-[0_0_30px_rgba(204,255,0,0.6)] cursor-pointer"
                 >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#CCFF00] animate-bounce">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="hidden sm:block text-[#CCFF00] animate-bounce">
                     <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                  <span className="text-[#CCFF00] font-black text-xl md:text-2xl tracking-wide drop-shadow-[0_0_8px_rgba(204,255,0,0.8)]" style={{ fontFamily: "'Noto Sans KR', sans-serif" }}>
+                  <span className="text-[#CCFF00] font-black text-[15px] min-[400px]:text-base sm:text-xl md:text-2xl tracking-wide whitespace-nowrap drop-shadow-[0_0_8px_rgba(204,255,0,0.8)]" style={{ fontFamily: "'Noto Sans KR', sans-serif" }}>
                     리셋 중문 상시 프로그램 자세히 보기
                   </span>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#CCFF00] animate-bounce">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="hidden sm:block text-[#CCFF00] animate-bounce">
                     <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </button>
@@ -523,11 +506,11 @@ export function PromotionJmReset() {
               {/* 타겟 & 일정 & 교육장소 배지 */}
               <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-6">
                 <span
-                  className="text-[#CCFF00] font-black text-sm sm:text-base md:text-lg border-2 border-[#CCFF00] bg-[#CCFF00]/15 rounded-full px-4 sm:px-5 py-2 sm:py-2.5 shadow-[0_0_20px_rgba(204,255,0,0.3)] flex items-center gap-2"
+                  className="text-[#CCFF00] font-black text-[13px] min-[400px]:text-sm sm:text-base md:text-lg border-2 border-[#CCFF00] bg-[#CCFF00]/15 rounded-full px-3.5 sm:px-5 py-2 sm:py-2.5 shadow-[0_0_20px_rgba(204,255,0,0.3)] flex items-center gap-2"
                   style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
                 >
                   <span>📅</span>
-                  <span>10월 31일 오전 9시 / 10시 스페셜 클래스</span>
+                  <span><span className="inline-block">10월 31일 오전 9시 / 10시</span>{" "}<span className="inline-block">스페셜 클래스</span></span>
                 </span>
 
                 {/* 교육장소 : 리셋중문점 (네이버 지도 바로가기 버튼) */}
@@ -558,11 +541,11 @@ export function PromotionJmReset() {
               {/* 학부모 공감 유도 박스 */}
               <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.05] border border-white/10 mb-8 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
                 <p className="text-white text-base sm:text-lg font-bold leading-relaxed" style={{ wordBreak: "keep-all" }}>
-                  &ldquo;우리 아이 자세가 안 좋은데 한번 배워보게 할까?&rdquo;<br />
-                  &ldquo;내가 직접 배워서 집에서 매일 바르게 알려줘야겠다!&rdquo;
+                  &ldquo;<span className="inline-block">우리 아이 자세가 안 좋은데</span>{" "}<span className="inline-block">한번 배워보게 할까?</span>&rdquo;<br />
+                  &ldquo;<span className="inline-block">내가 직접 배워서</span>{" "}<span className="inline-block">집에서 매일 바르게 알려줘야겠다!</span>&rdquo;
                 </p>
                 <p className="text-white/60 text-xs sm:text-sm mt-3 font-normal leading-relaxed" style={{ wordBreak: "keep-all" }}>
-                  단순한 일회성 운동 체험이 아닌, 부모와 아이가 평생 활용할 수 있는 바른 자세 습관을 심어드립니다.
+                  <span className="inline-block">단순한 일회성 운동 체험이 아닌,</span>{" "}<span className="inline-block">부모와 아이가 평생 활용할 수 있는</span>{" "}<span className="inline-block">바른 자세 습관을 심어드립니다.</span>
                 </p>
               </div>
 
@@ -573,8 +556,8 @@ export function PromotionJmReset() {
                   <span className="text-xs font-black px-2 py-0.5 rounded bg-[#CCFF00] text-black shrink-0">
                     혜택 01
                   </span>
-                  <h4 className="text-base sm:text-lg md:text-xl font-bold text-white">
-                    50분에 배우는 교정운동 핵심 노하우
+                  <h4 className="text-[15px] min-[400px]:text-base sm:text-lg md:text-xl font-bold text-white leading-snug">
+                    <span className="inline-block">50분에 배우는</span>{" "}<span className="inline-block">교정운동 핵심 노하우</span>
                   </h4>
                 </div>
 
@@ -583,8 +566,8 @@ export function PromotionJmReset() {
                   <span className="text-xs font-black px-2 py-0.5 rounded bg-[#CCFF00] text-black shrink-0">
                     혜택 02
                   </span>
-                  <h4 className="text-base sm:text-lg md:text-xl font-bold text-white">
-                    집에서도 실천 가능한 운동 가이드북 무료 제공
+                  <h4 className="text-[15px] min-[400px]:text-base sm:text-lg md:text-xl font-bold text-white leading-snug">
+                    <span className="inline-block">집에서도 실천 가능한</span>{" "}<span className="inline-block">운동 가이드북 무료 제공</span>
                   </h4>
                 </div>
 
@@ -593,7 +576,7 @@ export function PromotionJmReset() {
                   <span className="text-xs font-black px-2 py-0.5 rounded bg-[#CCFF00] text-black shrink-0 self-start sm:self-center mt-0.5 sm:mt-0">
                     혜택 03
                   </span>
-                  <h4 className="text-base sm:text-lg md:text-xl font-bold text-white flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                  <h4 className="text-[15px] min-[400px]:text-base sm:text-lg md:text-xl font-bold text-white leading-snug flex flex-wrap items-baseline gap-x-2 gap-y-1">
                     <span>할인 혜택 파격 참가비</span>
                     <span className="inline-flex items-baseline gap-1.5 whitespace-nowrap">
                       <span className="line-through text-white/45 text-sm sm:text-base font-medium">50,000원</span>
@@ -602,6 +585,16 @@ export function PromotionJmReset() {
                         20,000원
                       </span>
                     </span>
+                  </h4>
+                </div>
+
+                {/* 혜택 4 */}
+                <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-white/[0.04] border-l-[4px] border-l-[#CCFF00] border-y border-r border-white/10">
+                  <span className="text-xs font-black px-2 py-0.5 rounded bg-[#CCFF00] text-black shrink-0">
+                    혜택 04
+                  </span>
+                  <h4 className="text-[15px] min-[400px]:text-base sm:text-lg md:text-xl font-bold text-white leading-snug" style={{ wordBreak: "keep-all" }}>
+                    <span className="inline-block">리셋 회원은</span>{" "}<span className="inline-block">참가비 <span className="text-[#CCFF00] font-black">무료!</span></span>
                   </h4>
                 </div>
               </div>
@@ -620,125 +613,77 @@ export function PromotionJmReset() {
               />
             </div>
 
-            {/* 텍스트 영역 */}
+            {/* 텍스트 영역 (혜택 1과 동일한 구조: 배지 → 공감 박스 → 핵심 혜택 01~03) */}
             <div className="w-full lg:w-[55%] flex flex-col justify-center">
-              {/* 타겟 & 카테고리 배지 */}
-              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-4">
+              {/* 추천 대상 배지 */}
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-6">
                 <span
-                  className="text-[#CCFF00] font-black text-xs sm:text-sm border-2 border-[#CCFF00] bg-[#CCFF00]/15 rounded-full px-4 py-1.5 shadow-[0_0_15px_rgba(204,255,0,0.25)] flex items-center gap-2"
+                  className="text-white/90 font-bold text-xs sm:text-sm border border-white/25 bg-white/10 rounded-full px-3.5 py-2"
                   style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
                 >
-                  <span>🎯</span>
-                  <span>맞춤 추천 대상 &amp; 특별 혜택</span>
-                </span>
-                <span
-                  className="text-white/90 font-bold text-xs sm:text-sm border border-white/20 bg-white/10 rounded-full px-3.5 py-1.5"
-                  style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
-                >
-                  직장인 · 주부 · 학생 모두 추천
+                  직장인 &amp; 성인 자세교정 추천
                 </span>
               </div>
 
-              {/* 메인 질문 타이틀 */}
-              <h3
-                className="text-2xl sm:text-3xl md:text-4xl font-black mb-5 leading-tight text-white"
-                style={{ fontFamily: "'Noto Sans KR', sans-serif", wordBreak: "keep-all" }}
-              >
-                목, 어깨, 허리{" "}
-                <span className="text-[#CCFF00]">반복되는 뻐근함</span> 때문에<br className="hidden sm:inline" />{" "}
-                불편하신가요?
-              </h3>
-
-              {/* 추천 대상 체크리스트 박스 */}
-              <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.05] border border-white/10 mb-6 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
-                <p
-                  className="text-[#CCFF00] text-xs sm:text-sm font-bold tracking-wider mb-3.5 flex items-center gap-2 uppercase"
-                  style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
-                >
-                  <span className="w-2 h-2 rounded-full bg-[#CCFF00] animate-pulse shadow-[0_0_8px_#CCFF00]" />
-                  이런 분들께 특히 추천합니다!
+              {/* 공감 유도 박스 */}
+              <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.05] border border-white/10 mb-8 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+                <p className="text-white text-base sm:text-lg font-bold leading-relaxed" style={{ wordBreak: "keep-all" }}>
+                  &ldquo;<span className="inline-block">목, 어깨, 허리 반복되는 뻐근함 때문에</span>{" "}<span className="inline-block">불편하신가요?</span>&rdquo;<br />
+                  &ldquo;<span className="inline-block">이제 바른자세 교정운동으로</span>{" "}<span className="inline-block">직접 해결해야겠다!</span>&rdquo;
                 </p>
-                <ul className="space-y-2.5">
-                  <li className="flex items-center gap-3">
-                    <span className="w-5 h-5 rounded-full bg-[#CCFF00]/20 text-[#CCFF00] border border-[#CCFF00]/40 flex items-center justify-center text-xs font-black shrink-0">✓</span>
-                    <span className="text-white/95 text-sm sm:text-base font-semibold">오래 앉아 생활하는 분</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="w-5 h-5 rounded-full bg-[#CCFF00]/20 text-[#CCFF00] border border-[#CCFF00]/40 flex items-center justify-center text-xs font-black shrink-0">✓</span>
-                    <span className="text-white/95 text-sm sm:text-base font-semibold">목, 어깨, 허리가 자주 뻐근한 분</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="w-5 h-5 rounded-full bg-[#CCFF00]/20 text-[#CCFF00] border border-[#CCFF00]/40 flex items-center justify-center text-xs font-black shrink-0">✓</span>
-                    <span className="text-white/95 text-sm sm:text-base font-semibold">바른자세와 운동습관을 배우고 싶은 분</span>
-                  </li>
-                </ul>
+                <p className="text-white/60 text-xs sm:text-sm mt-3 font-normal leading-relaxed" style={{ wordBreak: "keep-all" }}>
+                  <span className="inline-block">오래 앉아 생활하는 분,</span>{" "}<span className="inline-block">목·어깨·허리가 자주 뻐근한 분,</span>{" "}<span className="inline-block">바른자세와 운동습관을 배우고 싶은 분께 추천합니다.</span>
+                </p>
               </div>
 
-              {/* 50분 집중 교정 & 가이드북 핵심 안내 */}
-              <div className="space-y-3 mb-6">
-                <div className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.04] border-l-[4px] border-l-[#CCFF00] border-y border-r border-white/10">
-                  <span className="text-xs font-black px-2 py-0.5 rounded bg-[#CCFF00] text-black shrink-0 mt-0.5">
-                    핵심 01
+              {/* 3대 핵심 혜택 리스트 */}
+              <div className="space-y-3.5 mb-2">
+                {/* 혜택 1 */}
+                <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-white/[0.04] border-l-[4px] border-l-[#CCFF00] border-y border-r border-white/10">
+                  <span className="text-xs font-black px-2 py-0.5 rounded bg-[#CCFF00] text-black shrink-0">
+                    혜택 01
                   </span>
-                  <div>
-                    <h4 className="text-base sm:text-lg font-bold text-white mb-1">
-                      50분 집중 교정운동 &amp; 자세관리
-                    </h4>
-                    <p className="text-white/70 text-xs sm:text-sm leading-relaxed" style={{ wordBreak: "keep-all" }}>
-                      척추건강을 위한 교정운동, 자세관리 핵심을 50분에 집중해서 직접 체득합니다.
-                    </p>
-                  </div>
+                  <h4 className="text-[15px] min-[400px]:text-base sm:text-lg md:text-xl font-bold text-white leading-snug" style={{ wordBreak: "keep-all" }}>
+                    <span className="inline-block">척추건강 교정운동·자세관리 핵심을</span>{" "}<span className="inline-block">50분에 집중</span>
+                  </h4>
                 </div>
 
-                <div className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.04] border-l-[4px] border-l-[#CCFF00] border-y border-r border-white/10">
-                  <span className="text-xs font-black px-2 py-0.5 rounded bg-[#CCFF00] text-black shrink-0 mt-0.5">
-                    핵심 02
+                {/* 혜택 2 */}
+                <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-white/[0.04] border-l-[4px] border-l-[#CCFF00] border-y border-r border-white/10">
+                  <span className="text-xs font-black px-2 py-0.5 rounded bg-[#CCFF00] text-black shrink-0">
+                    혜택 02
                   </span>
-                  <div>
-                    <h4 className="text-base sm:text-lg font-bold text-white mb-1">
-                      현장 직접 실습 + 홈케어 가이드북 제공
-                    </h4>
-                    <p className="text-white/70 text-xs sm:text-sm leading-relaxed" style={{ wordBreak: "keep-all" }}>
-                      현장에서 직접 배우는 교정운동과 함께 집에서도 스스로 따라할 수 있는 가이드북을 제공합니다.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* 할인 혜택 파격 참가비 박스 */}
-              <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#CCFF00]/15 via-[#CCFF00]/10 to-transparent border-2 border-[#CCFF00]/60 shadow-[0_0_25px_rgba(204,255,0,0.2)] flex flex-wrap items-center justify-between gap-3 mb-6">
-                <div className="flex items-center gap-2.5">
-                  <span className="text-xs font-black px-2.5 py-1 rounded bg-[#CCFF00] text-black shrink-0">
-                    SPECIAL
-                  </span>
-                  <span className="text-base sm:text-lg font-bold text-white" style={{ fontFamily: "'Noto Sans KR', sans-serif" }}>
-                    할인 혜택 파격 참가비
-                  </span>
+                  <h4 className="text-[15px] min-[400px]:text-base sm:text-lg md:text-xl font-bold text-white leading-snug" style={{ wordBreak: "keep-all" }}>
+                    <span className="inline-block">현장 직접 교정운동 +</span>{" "}<span className="inline-block">집에서 따라하는 가이드북 제공</span>
+                  </h4>
                 </div>
 
-                <div className="flex items-baseline gap-2.5 bg-black/70 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl border border-white/15">
-                  <span className="line-through text-white/45 text-sm sm:text-base font-medium">
-                    50,000원
+                {/* 혜택 3 */}
+                <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-white/[0.04] border-l-[4px] border-l-[#CCFF00] border-y border-r border-white/10">
+                  <span className="text-xs font-black px-2 py-0.5 rounded bg-[#CCFF00] text-black shrink-0 self-start sm:self-center mt-0.5 sm:mt-0">
+                    혜택 03
                   </span>
-                  <span className="text-[#CCFF00] font-black text-sm sm:text-base">→</span>
-                  <span className="text-[#CCFF00] text-2xl sm:text-3xl font-black drop-shadow-[0_0_12px_rgba(204,255,0,0.6)]">
-                    20,000원
-                  </span>
+                  <h4 className="text-[15px] min-[400px]:text-base sm:text-lg md:text-xl font-bold text-white leading-snug flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                    <span>할인 혜택 파격 참가비</span>
+                    <span className="inline-flex items-baseline gap-1.5 whitespace-nowrap">
+                      <span className="line-through text-white/45 text-sm sm:text-base font-medium">50,000원</span>
+                      <span className="text-[#CCFF00] font-bold text-sm sm:text-base">→</span>
+                      <span className="text-[#CCFF00] text-xl sm:text-2xl md:text-3xl font-black drop-shadow-[0_0_12px_rgba(204,255,0,0.5)]">
+                        20,000원
+                      </span>
+                    </span>
+                  </h4>
                 </div>
-              </div>
 
-              {/* 신청하기 액션 버튼 */}
-              <div>
-                <button
-                  onClick={scrollToForm}
-                  className="cta-shimmer w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#CCFF00] hover:bg-white text-black font-black text-base sm:text-lg tracking-wide transition-all duration-300 shadow-[0_0_25px_rgba(204,255,0,0.5)] hover:shadow-[0_0_35px_rgba(255,255,255,0.7)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
-                  style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
-                >
-                  <span>10/31 스페셜 클래스 신청하기</span>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </button>
+                {/* 혜택 4 */}
+                <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-white/[0.04] border-l-[4px] border-l-[#CCFF00] border-y border-r border-white/10">
+                  <span className="text-xs font-black px-2 py-0.5 rounded bg-[#CCFF00] text-black shrink-0">
+                    혜택 04
+                  </span>
+                  <h4 className="text-[15px] min-[400px]:text-base sm:text-lg md:text-xl font-bold text-white leading-snug" style={{ wordBreak: "keep-all" }}>
+                    <span className="inline-block">리셋 회원은</span>{" "}<span className="inline-block">참가비 <span className="text-[#CCFF00] font-black">무료!</span></span>
+                  </h4>
+                </div>
               </div>
             </div>
           </div>

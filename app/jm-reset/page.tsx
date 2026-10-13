@@ -18,7 +18,21 @@ export const metadata: Metadata = {
 
 export default function JmResetPage() {
   return (
-    <main className="min-h-screen bg-black">
+    <main className="jm-reset-page min-h-screen bg-black">
+      <style>{`
+        .jm-reset-page h1, .jm-reset-page h2, .jm-reset-page h3, .jm-reset-page h4,
+        .jm-reset-page h5, .jm-reset-page p, .jm-reset-page li, .jm-reset-page span,
+        .jm-reset-page a, .jm-reset-page button, .jm-reset-page label {
+          word-break: keep-all;
+          overflow-wrap: break-word;
+        }
+        .jm-reset-page h1, .jm-reset-page h2, .jm-reset-page h3, .jm-reset-page h4 {
+          text-wrap: balance;
+        }
+        .jm-reset-page p, .jm-reset-page li {
+          text-wrap: pretty;
+        }
+      `}</style>
       <PromotionJmReset />
       <ProgramSectionJmReset />
       <InstructorSectionJmReset />
