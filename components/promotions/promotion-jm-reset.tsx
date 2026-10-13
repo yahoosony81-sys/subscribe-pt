@@ -192,19 +192,19 @@ export function PromotionJmReset() {
               }}
             />
 
-            {/* 모바일 다크 그라디언트: 상하 및 전체적인 텍스트 가독성 확보 */}
+            {/* 모바일 다크 그라디언트: 바탕 인물/사진이 선명하고 맑게 드러나도록 오버레이를 대폭 완화 */}
             <div
               className="absolute inset-0 block md:hidden"
               style={{
                 background:
-                  "linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.68) 50%, rgba(0,0,0,0.95) 100%)",
+                  "linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.08) 35%, rgba(0,0,0,0.12) 65%, rgba(0,0,0,0.45) 100%), linear-gradient(90deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.08) 55%, transparent 85%)",
                 zIndex: 1,
               }}
             />
 
-            {/* 상하단 경계 부드러운 페이드 오버레이 */}
+            {/* 상하단 경계 부드러운 페이드 오버레이 (PC 데스크톱 전용으로 분리하여 모바일 이중 어두움 방지) */}
             <div
-              className="absolute inset-0"
+              className="absolute inset-0 hidden md:block"
               style={{
                 background:
                   "linear-gradient(180deg, rgba(0,0,0,0.65) 0%, transparent 18%, transparent 80%, rgba(0,0,0,0.85) 100%)",
@@ -242,6 +242,7 @@ export function PromotionJmReset() {
                   lineHeight: 1.15,
                   letterSpacing: "-0.02em",
                   wordBreak: "keep-all",
+                  textShadow: "0 2px 10px rgba(0,0,0,0.9), 0 4px 20px rgba(0,0,0,0.8)",
                 }}
               >
                 <span className="text-white">리셋 중문점 -</span>{" "}
@@ -256,7 +257,10 @@ export function PromotionJmReset() {
                 <span className="hidden sm:inline-block w-8 h-[3px] bg-[#CCFF00] shadow-[0_0_8px_#CCFF00]" />
                 <p
                   className="text-[#CCFF00] font-black text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-tight leading-snug drop-shadow-[0_0_12px_rgba(204,255,0,0.5)]"
-                  style={{ wordBreak: "keep-all" }}
+                  style={{
+                    wordBreak: "keep-all",
+                    textShadow: "0 2px 8px rgba(0,0,0,0.9), 0 0 15px rgba(204,255,0,0.5)",
+                  }}
                 >
                   척추 건강을 위한 교정 운동
                 </p>
@@ -267,7 +271,10 @@ export function PromotionJmReset() {
                 className="max-w-xl mb-8 leading-relaxed"
                 style={{ fontFamily: "'Noto Sans KR', sans-serif", wordBreak: "keep-all" }}
               >
-                <p className="text-white/90 text-base sm:text-lg md:text-xl font-semibold">
+                <p
+                  className="text-white text-base sm:text-lg md:text-xl font-semibold"
+                  style={{ textShadow: "0 2px 8px rgba(0,0,0,0.95)" }}
+                >
                   SNPE 협회 인증강사 / 바른자세 운동 지도사 <span className="text-[#CCFF00] font-bold">&lsquo;김윤진&rsquo; 강사</span>
                 </p>
               </div>
@@ -308,12 +315,12 @@ export function PromotionJmReset() {
               style={{ zIndex: 0 }}
             />
 
-            {/* 다크 그라디언트 오버레이 */}
+            {/* 다크 그라디언트 오버레이: 바탕 사진이 맑게 보이도록 오버레이 완화 */}
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.80) 100%)",
+                  "linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.18) 50%, rgba(0,0,0,0.60) 100%)",
                 zIndex: 1,
               }}
             />
@@ -349,6 +356,7 @@ export function PromotionJmReset() {
                   fontSize: "clamp(3.8rem, 13vw, 11rem)",
                   lineHeight: 0.88,
                   letterSpacing: "-0.01em",
+                  textShadow: "0 2px 16px rgba(0,0,0,0.9)",
                 }}
               >
                 <span className="neon-green">PERFECT</span>
@@ -365,6 +373,7 @@ export function PromotionJmReset() {
                   fontSize: "clamp(2rem, 7.5vw, 6.5rem)",
                   lineHeight: 1.0,
                   letterSpacing: "0.05em",
+                  textShadow: "0 2px 14px rgba(0,0,0,0.9)",
                 }}
               >
                 <span className="text-white">WE ARE TEAM </span>
