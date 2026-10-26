@@ -11,7 +11,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog"
 import { RegistrationSectionHallim } from "@/components/registration-section-hallim"
-import { CheckCircle2, AlertCircle, Plus, ChevronDown, Phone, MessageSquare, Smartphone, Clock, MapPin, Eye, Sparkles, Gift, Zap, Coffee } from "lucide-react"
+import { CheckCircle2, AlertCircle, Plus, ChevronDown, Phone, MessageSquare, Smartphone, Clock, MapPin, Eye, Sparkles, Gift, Zap, Coffee, X } from "lucide-react"
 
 /* ─── 슬라이드쇼 이미지 목록 ─── */
 const HERO_IMAGES = [
@@ -442,7 +442,7 @@ export function CareMembershipHallimLanding() {
             {PASSIVE_MASSAGE_SECTIONS.map((item, idx) => (
               <div
                 key={idx}
-                className="flex flex-col md:flex-row items-center gap-8 sm:gap-12 lg:gap-16 bg-[#1a1815] border border-[#c8a96e]/25 rounded-3xl p-8 sm:p-12 lg:p-14 shadow-[0_15px_40px_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-[#c8a96e]/50"
+                className="flex flex-col md:flex-row items-center gap-8 sm:gap-12 lg:gap-16 bg-[#1a1815] border border-[#c8a96e]/25 rounded-3xl p-8 sm:p-12 lg:p-14 pb-12 sm:pb-16 lg:pb-16 shadow-[0_15px_40px_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-[#c8a96e]/50"
               >
                 {/* 이미지 영역 (이미지 자리 확보) */}
                 <div className="w-full md:w-1/2 flex-1">
@@ -476,14 +476,15 @@ export function CareMembershipHallimLanding() {
                       </div>
                     )}
 
-                    {/* 이미지 우하단 패시브 마사지 가격정보 보기 버튼 (확장 및 가독성 강화) */}
+                    {/* 이미지 우하단 가격정보 버튼 (케어멤버십 버튼과 동일한 디자인) */}
                     <button
                       type="button"
                       onClick={() => setIsMassagePriceOpen(true)}
-                      className="group/btn absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-10 inline-flex items-center gap-2 px-4 py-2.5 sm:px-6 sm:py-3.5 rounded-full bg-black/85 hover:bg-[#c8a96e] text-[#c8a96e] hover:text-[#121110] border-2 border-[#c8a96e] backdrop-blur-md text-sm sm:text-base font-extrabold shadow-[0_6px_20px_rgba(0,0,0,0.6)] hover:shadow-[0_8px_25px_rgba(200,169,110,0.4)] transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+                      className="cm-target-row__detail-btn !z-10"
+                      aria-label="가격정보 자세히 보기"
                     >
-                      <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-[#c8a96e] group-hover/btn:text-[#121110] transition-colors shrink-0" />
-                      <span className="tracking-tight">패시브 마사지 가격정보 보기</span>
+                      <Plus className="w-4 h-4" />
+                      <span>가격정보 자세히 보기</span>
                     </button>
                   </div>
                 </div>
@@ -517,7 +518,7 @@ export function CareMembershipHallimLanding() {
           </div>
 
           {/* ═══ 전문가 패시브 마사지 섹션 전용 고정 CTA 버튼 ═══ */}
-          <div className="mt-14 sm:mt-20 md:mt-24 mb-6 sm:mb-10 flex justify-center w-full px-4">
+          <div className="mt-20 sm:mt-28 md:mt-32 pt-8 sm:pt-12 mb-12 sm:mb-20 flex justify-center w-full px-4">
             <div className="w-full max-w-[480px]">
               <button
                 type="button"
@@ -595,7 +596,17 @@ export function CareMembershipHallimLanding() {
 
       {/* ═══ CONSULTATION CONTACT MODAL ═══ */}
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
-        <DialogContent className="bg-[#171717] border border-[#333] text-white sm:max-w-md p-6 sm:p-8 rounded-3xl shadow-2xl">
+        <DialogContent showCloseButton={false} className="bg-[#171717] border border-[#333] text-white sm:max-w-md p-6 sm:p-8 rounded-3xl shadow-2xl relative">
+          {/* 오른쪽 상단 X 닫기 버튼 */}
+          <button
+            type="button"
+            onClick={() => setIsFormOpen(false)}
+            className="absolute top-4 right-4 sm:top-5 sm:right-5 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white border border-white/20 transition-all cursor-pointer"
+            aria-label="닫기"
+          >
+            <X className="w-5 h-5" />
+          </button>
+
           <div className="flex flex-col items-center">
             {/* 뱃지 */}
             <div className="border border-[#c8a96e] text-[#c8a96e] px-4 py-1 rounded-full text-xs font-bold mb-4 tracking-wider">
@@ -669,8 +680,18 @@ export function CareMembershipHallimLanding() {
 
       {/* ═══ DETAILS MODAL ═══ */}
       <Dialog open={isDetailsOpen} onOpenChange={setIsDetailsOpen}>
-        <DialogContent className="max-h-[90vh] overflow-y-auto bg-white sm:max-w-2xl p-0 rounded-2xl border-0 shadow-2xl z-[100]">
+        <DialogContent showCloseButton={false} className="max-h-[90vh] overflow-y-auto bg-white sm:max-w-2xl p-0 rounded-2xl border-0 shadow-2xl z-[100]">
           <div className="bg-slate-50 p-6 sm:p-8 rounded-t-2xl border-b border-slate-100 relative">
+            {/* 오른쪽 상단 X 닫기 버튼 */}
+            <button
+              type="button"
+              onClick={() => setIsDetailsOpen(false)}
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 z-50 p-2 rounded-full bg-slate-200/80 hover:bg-slate-300 text-slate-700 hover:text-slate-900 border border-slate-300 transition-all cursor-pointer"
+              aria-label="닫기"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-2">케어 멤버십 패키지 안내</h2>
             <p className="text-center text-slate-600 font-medium">합리적인 가격으로 프리미엄 케어를 경험하세요</p>
           </div>
@@ -758,9 +779,19 @@ export function CareMembershipHallimLanding() {
 
       {/* ═══ PASSIVE MASSAGE PRICE MODAL ═══ */}
       <Dialog open={isMassagePriceOpen} onOpenChange={setIsMassagePriceOpen}>
-        <DialogContent className="max-h-[90vh] overflow-y-auto bg-white sm:max-w-xl p-0 rounded-2xl border-0 shadow-2xl z-[100]">
+        <DialogContent showCloseButton={false} className="max-h-[90vh] overflow-y-auto bg-white sm:max-w-xl p-0 rounded-2xl border-0 shadow-2xl z-[100]">
           {/* 모달 상단 헤더 */}
           <div className="bg-gradient-to-b from-[#1c1917] to-[#292524] text-white p-6 sm:p-8 rounded-t-2xl relative border-b border-[#c8a96e]/30">
+            {/* 오른쪽 상단 X 닫기 버튼 */}
+            <button
+              type="button"
+              onClick={() => setIsMassagePriceOpen(false)}
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 text-[#c8a96e] hover:text-white border border-[#c8a96e]/40 transition-all cursor-pointer"
+              aria-label="닫기"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#c8a96e]/20 border border-[#c8a96e]/40 text-[#c8a96e] text-xs font-bold tracking-wider mb-3">
               <Sparkles className="w-3.5 h-3.5" />
               <span>PASSIVE MASSAGE PRICE</span>
