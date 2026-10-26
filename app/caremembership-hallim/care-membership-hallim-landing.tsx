@@ -475,6 +475,16 @@ export function CareMembershipHallimLanding() {
                         </p>
                       </div>
                     )}
+
+                    {/* 이미지 우하단 패시브 마사지 가격정보 보기 버튼 (확장 및 가독성 강화) */}
+                    <button
+                      type="button"
+                      onClick={() => setIsMassagePriceOpen(true)}
+                      className="group/btn absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-10 inline-flex items-center gap-2 px-4 py-2.5 sm:px-6 sm:py-3.5 rounded-full bg-black/85 hover:bg-[#c8a96e] text-[#c8a96e] hover:text-[#121110] border-2 border-[#c8a96e] backdrop-blur-md text-sm sm:text-base font-extrabold shadow-[0_6px_20px_rgba(0,0,0,0.6)] hover:shadow-[0_8px_25px_rgba(200,169,110,0.4)] transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+                    >
+                      <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-[#c8a96e] group-hover/btn:text-[#121110] transition-colors shrink-0" />
+                      <span className="tracking-tight">패시브 마사지 가격정보 보기</span>
+                    </button>
                   </div>
                 </div>
 
@@ -506,20 +516,8 @@ export function CareMembershipHallimLanding() {
             ))}
           </div>
 
-          {/* ═══ 패시브 마사지 가격보기 버튼 (골드 아웃라인 경량 스타일) ═══ */}
-          <div className="mt-8 sm:mt-12 flex justify-center w-full px-4">
-            <button
-              type="button"
-              onClick={() => setIsMassagePriceOpen(true)}
-              className="group inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full border-2 border-[#c8a96e] bg-[#c8a96e]/10 hover:bg-[#c8a96e] text-[#c8a96e] hover:text-[#121110] font-bold text-sm sm:text-base tracking-wide transition-all duration-300 shadow-[0_4px_20px_rgba(200,169,110,0.15)] hover:shadow-[0_6px_25px_rgba(200,169,110,0.4)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
-            >
-              <Sparkles className="w-4 h-4 text-[#c8a96e] group-hover:text-[#121110] transition-colors" />
-              <span>패시브 마사지 가격보기</span>
-            </button>
-          </div>
-
           {/* ═══ 전문가 패시브 마사지 섹션 전용 고정 CTA 버튼 ═══ */}
-          <div className="mt-12 sm:mt-16 md:mt-20 mb-6 sm:mb-10 flex justify-center w-full px-4">
+          <div className="mt-14 sm:mt-20 md:mt-24 mb-6 sm:mb-10 flex justify-center w-full px-4">
             <div className="w-full max-w-[480px]">
               <button
                 type="button"
