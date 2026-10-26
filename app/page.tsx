@@ -19,6 +19,6 @@
 import { redirect } from "next/navigation"
 
 export default function Home() {
-  // 사용자가 메인 도메인으로 접속하면 자동으로 리마인드스트레칭 마곡점으로 이동시킵니다.
-  redirect("/remindstretching-MG")
+  // 사용자가 메인 도메인(루트)으로 접속하면 자동으로 한림점 케어멤버십으로 이동시킵니다.
+  redirect("/caremembership-hallim")
 }

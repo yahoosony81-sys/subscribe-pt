@@ -356,25 +356,24 @@ export function CareMembershipJejusiLanding() {
             <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
               <div className="bg-[#c8a96e] text-white py-3 px-5 font-bold text-lg flex items-center justify-between">
                 <span>케어 멤버십 회원권</span>
-                <span className="text-xs sm:text-sm font-medium bg-white/20 px-2 py-1 rounded">정기 결제</span>
               </div>
               <div className="p-4 sm:p-5 space-y-4">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-slate-100 pb-3 gap-1">
-                  <span className="font-semibold text-slate-800 text-base">1개월 케어 멤버십</span>
+                  <span className="font-semibold text-slate-800 text-base">1개월 5회 케어PT</span>
                   <div className="text-left sm:text-right">
                     <div className="font-bold text-[#c8a96e] text-lg">총 190,000원</div>
                     <div className="text-sm text-slate-500 font-medium">월 190,000원</div>
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-slate-100 pb-3 gap-1">
-                  <span className="font-semibold text-slate-800 text-base">3개월 케어 멤버십</span>
+                  <span className="font-semibold text-slate-800 text-base">3개월 15회 케어PT</span>
                   <div className="text-left sm:text-right">
                     <div className="font-bold text-[#c8a96e] text-lg">총 450,000원</div>
                     <div className="text-sm text-slate-500 font-medium">월 150,000원</div>
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
-                  <span className="font-semibold text-slate-800 text-base">6개월 케어 멤버십</span>
+                  <span className="font-semibold text-slate-800 text-base">6개월 45회 케어PT</span>
                   <div className="text-left sm:text-right">
                     <div className="font-bold text-[#c8a96e] text-lg">총 690,000원</div>
                     <div className="text-sm text-slate-500 font-medium">월 115,000원</div>

@@ -115,6 +115,34 @@ const ZIGZAG_ITEMS: ZigzagItem[] = [
   },
 ]
 
+/* ─── 전문가 패시브 마사지 상시 프로그램 지그재그 섹션 데이터 ─── */
+const PASSIVE_MASSAGE_SECTIONS = [
+  {
+    step: "01",
+    subtitle: "DAILY RECOVERY",
+    title: "무너진 일상과\n삶의 질 회복",
+    desc: "일상생활의 잘못된 자세나 반복적인 작업은 특정 부위의 통증을 유발하여 삶의 질을 크게 떨어뜨립니다. 편안하고 건강한 일상을 되찾기 위해서는 반드시 이 문제를 짚고 넘어가야 합니다.",
+    image: "/images/패시브스트레칭사진.jpg",
+    alt: "무너진 일상과 삶의 질 회복",
+  },
+  {
+    step: "02",
+    subtitle: "ROOT CAUSE SOLUTION",
+    title: "일시적 완화가 아닌\n근본적 원인 해결",
+    desc: "단순히 병원에 방문하여 약을 복용하거나 일반적인 물리치료를 받는 것은 근본적인 해결책이 될 수 없습니다. 마인드휘트니스의 전문가 패시브 마사지는 통증을 유발하는 정확한 부위를 진단하고, 그 통증이 발생한 진짜 원인을 찾아 해결하는 데 가장 큰 목표를 둡니다.",
+    image: null, // 추후 이미지 파일 경로 추가 (예: '/images/passive-massage-2.jpg')
+    alt: "일시적 완화가 아닌 근본적 원인 해결",
+  },
+  {
+    step: "03",
+    subtitle: "REHABILITATION & STRENGTH",
+    title: "정확한 이완부터 원인 근육의\n재활 및 강화까지",
+    desc: "통증이 발생한 부위의 긴장된 근육을 정확하게 찾아내어 풀어냅니다. 이에 그치지 않고, 통증을 유발한 원인 근육 자체를 재활하고 강화시켜 다시는 동일한 통증이 반복되지 않도록 몸의 균형을 맞추는 것이 패시브 마사지의 궁극적인 목적입니다.",
+    image: null, // 추후 이미지 파일 경로 추가 (예: '/images/passive-massage-3.jpg')
+    alt: "정확한 이완부터 원인 근육의 재활 및 강화까지",
+  },
+]
+
 export function CareMembershipHallimLanding() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [prevSlide, setPrevSlide] = useState<number | null>(null)
@@ -162,12 +190,13 @@ export function CareMembershipHallimLanding() {
     return () => clearTimeout(t)
   }, [])
 
-  const handleCtaClick = () => {
+  const handleCtaClick = (type: 'care' | 'massage' = 'care') => {
     // ── 메타 이벤트: 연락처 보기 CTA 클릭 시 Contact 이벤트 전송 ──
     const eventId = crypto.randomUUID();
+    const contentName = type === 'massage' ? '패시브 마사지 상담' : '케어멤버십 상담';
     // 클라이언트 사이드 (브라우저 픽셀)
     if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Contact', {}, { eventID: eventId });
+      (window as any).fbq('track', 'Contact', { content_name: contentName }, { eventID: eventId });
     }
     // 서버 사이드 (Conversions API — iOS 쿠키 제한 우회)
     fetch('/api/capi', {
@@ -233,44 +262,45 @@ export function CareMembershipHallimLanding() {
         <div className={`cm-hero__content ${textVisible ? "cm-hero__content--visible" : ""}`}>
           <div className="cm-hero__badge"><span>MIND FITNESS</span></div>
           <p className="cm-hero__subtitle">마인드의 케어멤버십</p>
-          <h1 className="cm-hero__title" style={{ marginBottom: "16px" }}>CARE<br />MEMBERSHIP</h1>
+          <h1 className="cm-hero__title" style={{ marginBottom: "16px" }}>MIND<br />FITNESS</h1>
           <p className="cm-hero__branch">한림점</p>
           <div className="cm-hero__divider">
             <span className="cm-hero__divider-line" />
             <span className="cm-hero__divider-text">FITNESS &amp; WELLNESS</span>
             <span className="cm-hero__divider-line" />
           </div>
-          {/* ═══ ELEGANT LUXURY PROMOTION SCROLL BANNER ═══ */}
-          <div 
-            role="button"
-            tabIndex={0}
-            onClick={() => {
-              document.getElementById('october-passive-stretching')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                document.getElementById('october-passive-stretching')?.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-            className="group mt-8 cursor-pointer flex flex-col items-center gap-3 px-6 py-5 sm:px-10 sm:py-6 rounded-2xl bg-black/45 backdrop-blur-md border border-[#c8a96e]/40 shadow-[0_10px_35px_rgba(0,0,0,0.5)] transition-all duration-500 hover:border-[#c8a96e] hover:bg-black/65 hover:shadow-[0_12px_45px_rgba(200,169,110,0.4)] hover:-translate-y-1 w-full sm:max-w-2xl mx-auto"
-          >
-            {/* 上 긴 라인 (Top Accent Line with Gold Gradient) */}
-            <div className="w-full flex items-center gap-3">
-              <span className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#c8a96e] to-transparent group-hover:via-[#e2c99a] transition-all duration-300" />
-            </div>
+          {/* ═══ HERO NAVIGATION TAB MENU ═══ */}
+          <div className="mt-8 flex items-center justify-center w-full px-2">
+            <nav 
+              className="inline-flex items-center justify-center gap-2 sm:gap-5 py-2 select-none"
+              aria-label="섹션 바로가기 탭 메뉴"
+            >
+              <button
+                type="button"
+                onClick={() => {
+                  document.getElementById('care-membership-targets')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="group flex items-center gap-1.5 sm:gap-2 text-white hover:text-[#c8a96e] transition-all duration-300 cursor-pointer font-extrabold text-[16px] sm:text-[22px] md:text-[26px] tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]"
+                aria-label="케어멤버십 섹션으로 이동"
+              >
+                <span>케어멤버십</span>
+                <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-[#c8a96e] group-hover:translate-y-1 transition-transform duration-300" />
+              </button>
 
-            {/* 메인 텍스트 & 화살표 */}
-            <div className="flex items-center justify-center gap-3 sm:gap-4 my-1">
-              <span className="whitespace-nowrap text-[15px] sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white drop-shadow-md group-hover:text-[#c8a96e] transition-colors duration-300">
-                10월 패시브스트레칭 프로그램 자세히 보기
-              </span>
-              <ChevronDown className="animate-bounce w-6 h-6 sm:w-8 sm:h-8 text-[#c8a96e] group-hover:text-white transition-colors duration-300 shrink-0" />
-            </div>
+              <span className="text-[#c8a96e]/70 font-light select-none text-base sm:text-2xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">|</span>
 
-            {/* 下 긴 라인 (Bottom Accent Line) */}
-            <div className="w-full flex items-center gap-3">
-              <span className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#c8a96e]/70 to-transparent group-hover:via-[#e2c99a] transition-all duration-300" />
-            </div>
+              <button
+                type="button"
+                onClick={() => {
+                  document.getElementById('october-passive-stretching')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="group flex items-center gap-1.5 sm:gap-2 text-white hover:text-[#c8a96e] transition-all duration-300 cursor-pointer font-extrabold text-[16px] sm:text-[22px] md:text-[26px] tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]"
+                aria-label="전문가 패시브 마사지 섹션으로 이동"
+              >
+                <span>전문가 패시브 마사지</span>
+                <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-[#c8a96e] group-hover:translate-y-1 transition-transform duration-300" />
+              </button>
+            </nav>
           </div>
         </div>
 
@@ -331,10 +361,10 @@ export function CareMembershipHallimLanding() {
                   }}>
                     {item.tag}
                   </div>
-                  {/* 자세히보기 버튼 추가 */}
-                  <button className="cm-target-row__detail-btn" onClick={() => setIsDetailsOpen(true)} type="button" aria-label="멤버십 상세 보기">
+                  {/* 가격 및 프로그램 보기 버튼 */}
+                  <button className="cm-target-row__detail-btn" onClick={() => setIsDetailsOpen(true)} type="button" aria-label="가격 및 프로그램 보기">
                     <Plus className="w-4 h-4" />
-                    <span>자세히 보기</span>
+                    <span>가격및 프로그램 보기</span>
                   </button>
                 </div>
               </div>
@@ -367,98 +397,118 @@ export function CareMembershipHallimLanding() {
             </div>
           )
         })}
+
+        {/* ═══ 케어멤버십 고정형 CTA 버튼 (라이트레그 케어 멤버십 아래 중앙) ═══ */}
+        <div className="mt-12 sm:mt-16 mb-6 sm:mb-10 flex justify-center w-full px-4">
+          <div className="w-full max-w-[480px]">
+            <button
+              type="button"
+              className="cm-sticky-cta"
+              onClick={() => handleCtaClick('care')}
+            >
+              <span>케어멤버십 전화/문자 상담 가능한 연락처 보기 &rarr;</span>
+            </button>
+          </div>
+        </div>
       </section>
 
-      {/* ═══ 10월 PASSIVE STRETCHING PROGRAM SECTION ═══ */}
+      {/* ═══ 전문가 패시브 마사지 상시 프로그램 섹션 (지그재그 배치) ═══ */}
       <section
         id="october-passive-stretching"
         ref={secPromoGift.ref}
         className={`cm-promo-gift ${secPromoGift.visible ? "cm-promo-gift--visible" : ""}`}
-        aria-label="10월 케어멤버십 패시브스트레칭 프로그램"
+        aria-label="전문가 패시브 마사지 프로그램"
       >
-        <div className="cm-promo-gift__container">
+        <div className="cm-promo-gift__container max-w-6xl mx-auto px-4 sm:px-6">
           {/* Header Badge & Title */}
-          <div className="cm-promo-gift__header">
-            <div className="cm-promo-gift__badge">
-              <Sparkles className="w-3.5 h-3.5 text-[#c8a96e]" />
-              <span>OCTOBER SPECIAL PROGRAM</span>
+          <div className="cm-promo-gift__header text-center mb-12 sm:mb-20">
+            <div className="cm-promo-gift__badge inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#c8a96e]/15 border border-[#c8a96e]/40 text-[#c8a96e] text-xs font-bold tracking-wider mb-4">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>PASSIVE MASSAGE PROGRAM</span>
             </div>
-            <h2 className="cm-promo-gift__main-title">
-              전문가의 손길로 완성되는 유연성<br />
-              <span className="text-[#c8a96e]">10월 케어멤버십 패시브 스트레칭 도입!</span>
+            <p className="text-gray-400 text-sm sm:text-lg md:text-xl font-medium mb-2 break-keep">
+              지속되는 통증, 약과 물리치료가 정답일까요?
+            </p>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight tracking-tight break-keep">
+              전문가 패시브 마사지로<br className="sm:hidden" /> 통증의 <span className="text-[#c8a96e]">&apos;근본 원인&apos;</span>을 해결하세요.
             </h2>
           </div>
 
-          {/* Grid Layout: Left Image, Right Text */}
-          <div className="cm-promo-gift__grid">
-            {/* Left: Image Container */}
-            <div className="cm-promo-gift__image-card">
-              <div className="cm-promo-gift__image-badge">
-                <CheckCircle2 className="w-4 h-4 text-[#0d0d0d]" />
-                <span>10월 한정 신규 프로그램</span>
-              </div>
-              <div className="cm-promo-gift__image-inner">
-                <Image
-                  src="/images/패시브스트레칭사진.jpg"
-                  alt="전문 코치와 함께하는 패시브 스트레칭"
-                  width={600}
-                  height={600}
-                  className="cm-promo-gift__img"
-                  style={{ objectFit: 'cover' }}
-                  priority
-                />
-              </div>
-              <div className="cm-promo-gift__image-footer">
-                <span className="cm-promo-gift__product-name">패시브 스트레칭 (Passive Stretching)</span>
-                <span className="cm-promo-gift__product-qty">케어멤버십 포함</span>
-              </div>
-            </div>
-
-            {/* Right: Text Description */}
-            <div className="cm-promo-gift__content">
-              <div className="cm-promo-gift__intro-box">
-                <p className="cm-promo-gift__headline">
-                  굳어있는 몸의 한계를 넘어 가동범위를 회복하는<br />
-                  <strong className="text-[#c8a96e] font-bold">&apos;패시브 스트레칭&apos;</strong>이 10월 케어멤버십에 포함됩니다.
-                </p>
-              </div>
-
-              <div className="cm-promo-gift__body-list">
-                <div className="cm-promo-gift__item">
-                  <div className="cm-promo-gift__icon-wrap">
-                    <Zap className="w-4 h-4 text-[#c8a96e]" />
+          {/* 콘텐츠 리스트 (왼쪽 사진, 오른쪽 텍스트 통일) */}
+          <div className="flex flex-col gap-10 sm:gap-16 lg:gap-20">
+            {PASSIVE_MASSAGE_SECTIONS.map((item, idx) => (
+              <div
+                key={idx}
+                className="flex flex-col md:flex-row items-center gap-8 sm:gap-12 lg:gap-16 bg-[#1a1815] border border-[#c8a96e]/25 rounded-3xl p-6 sm:p-10 shadow-[0_15px_40px_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-[#c8a96e]/50"
+              >
+                {/* 이미지 영역 (이미지 자리 확보) */}
+                <div className="w-full md:w-1/2 flex-1">
+                  <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden shadow-2xl bg-[#141210] border border-white/10 group">
+                    {item.image ? (
+                      <>
+                        <Image
+                          src={item.image}
+                          alt={item.alt}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                        <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-[#c8a96e]/40 text-[#c8a96e] text-xs font-bold px-3 py-1 rounded-full">
+                          STEP {item.step}
+                        </div>
+                      </>
+                    ) : (
+                      /* 추후 이미지 추가용 플레이스홀더 */
+                      <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center border-2 border-dashed border-[#c8a96e]/35 rounded-2xl bg-[#161412] group-hover:border-[#c8a96e] transition-colors">
+                        <div className="w-14 h-14 rounded-full bg-[#c8a96e]/10 border border-[#c8a96e]/30 flex items-center justify-center text-[#c8a96e] mb-3">
+                          <Eye className="w-6 h-6" />
+                        </div>
+                        <span className="text-[#c8a96e] text-xs font-bold tracking-widest uppercase mb-1">
+                          IMAGE SLOT {item.step}
+                        </span>
+                        <span className="text-white text-base sm:text-lg font-bold mb-1">이미지 추가 영역</span>
+                        <p className="text-gray-400 text-xs sm:text-sm max-w-xs break-keep">
+                          {item.step}번 주제에 맞는 맞춤형 이미지가 들어갈 자리입니다.
+                        </p>
+                      </div>
+                    )}
                   </div>
-                  <p className="cm-promo-gift__text">
-                    <strong>패시브 스트레칭이란?</strong> 스스로의 힘이 아닌 <strong>전문 코치의 도움을 받아 근육을 이완</strong>시키는 방법입니다. 혼자서는 닿기 힘든 깊은 근육까지 안전하게 스트레칭할 수 있습니다.
-                  </p>
                 </div>
 
-                <div className="cm-promo-gift__item">
-                  <div className="cm-promo-gift__icon-wrap">
-                    <CheckCircle2 className="w-4 h-4 text-[#c8a96e]" />
+                {/* 텍스트 내용 영역 */}
+                <div className="w-full md:w-1/2 flex-1 flex flex-col justify-center">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-[#c8a96e] font-black text-2xl sm:text-3xl tracking-tight">
+                      {item.step}
+                    </span>
+                    <span className="w-8 h-[2px] bg-[#c8a96e]/50" />
+                    <span className="text-xs sm:text-sm font-semibold tracking-wider text-[#c8a96e] uppercase">
+                      {item.subtitle}
+                    </span>
                   </div>
-                  <p className="cm-promo-gift__text">
-                    <strong>가동범위 회복과 통증 완화</strong>에 탁월합니다. 굳어있는 관절과 근육의 긴장을 풀어주어, <strong>케어멤버십의 체형 교정과 근력 강화 효과를 극대화</strong>시켜 줍니다.
-                  </p>
-                </div>
 
-                <div className="cm-promo-gift__item">
-                  <div className="cm-promo-gift__icon-wrap">
-                    <Sparkles className="w-4 h-4 text-[#c8a96e]" />
-                  </div>
-                  <p className="cm-promo-gift__text">
-                    <strong>10월 케어멤버십 회원 혜택</strong>으로 기존 프로그램에 더해 더욱 체계적이고 심도 있는 프리미엄 바디 케어 솔루션을 경험해 보세요.
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-4 leading-snug whitespace-pre-line break-keep">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed break-keep">
+                    {item.desc}
                   </p>
                 </div>
               </div>
+            ))}
+          </div>
 
-              {/* Feature Tags */}
-              <div className="cm-promo-gift__tags">
-                <span className="cm-promo-gift__tag">#전문가스트레칭</span>
-                <span className="cm-promo-gift__tag">#가동범위회복</span>
-                <span className="cm-promo-gift__tag">#깊은근육이완</span>
-                <span className="cm-promo-gift__tag">#체형교정극대화</span>
-              </div>
+          {/* ═══ 전문가 패시브 마사지 섹션 전용 고정 CTA 버튼 ═══ */}
+          <div className="mt-20 sm:mt-28 md:mt-32 mb-6 sm:mb-10 flex justify-center w-full px-4">
+            <div className="w-full max-w-[480px]">
+              <button
+                type="button"
+                className="cm-sticky-cta"
+                onClick={() => handleCtaClick('massage')}
+              >
+                <span>전문가 패시브 마사지 전화/문자 상담 가능한 연락처 보기 &rarr;</span>
+              </button>
             </div>
           </div>
         </div>
@@ -522,50 +572,9 @@ export function CareMembershipHallimLanding() {
         </div>
       </section>
 
-      {/* ═══ MEMBERSHIP PACKAGES SECTION ═══ */}
-      <section
-        ref={secPackages.ref}
-        className={`cm-packages ${secPackages.visible ? "cm-packages--visible" : ""}`}
-        aria-label="케어 멤버십 패키지 안내"
-      >
-        <div className="cm-packages__container">
-          <div className="cm-packages__image-wrap" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <Image
-              src="/images/caremembership-jejusi/케어pt.png"
-              alt="케어 멤버십 회원권 안내"
-              width={1200}
-              height={1200}
-              style={{ width: "100%", height: "auto", display: "block" }}
-              priority
-            />
-            <Image
-              src="/images/caremembership-jejusi/2.png"
-              alt="케어 PT 충전권 안내"
-              width={1200}
-              height={1200}
-              style={{ width: "100%", height: "auto", display: "block" }}
-              priority
-            />
-          </div>
-          <div className="cm-packages__notice">
-            <p className="cm-packages__notice-text">
-              * <strong>&quot;케어 멤버십 회원&quot;</strong>에 한하여 저렴한 <strong>&quot;케어 PT 충전권&quot;</strong> 구매가 가능합니다.
-            </p>
-            <p className="cm-packages__notice-text" style={{ fontSize: "clamp(12px, 1.4vw, 13px)", color: "#888", fontWeight: 400 }}>
-              * 케어 멤버십 상품은 노형점/한림점 전용 상품으로 타 지점에서는 이용이 불가한 점 양해 부탁드립니다. 더불어 휴회와 양도가 불가함도 알려드립니다.
-            </p>
-          </div>
-        </div>
-      </section>
 
-      {/* ═══ STICKY BOTTOM CTA BUTTON ═══ */}
-      {(!isDetailsOpen && !isFormOpen) && (
-        <div className="cm-sticky-cta-wrap">
-          <button className="cm-sticky-cta" type="button" onClick={handleCtaClick}>
-            <span>케어멤버십 전화/문자 상담 가능한 연락처 보기 &rarr;</span>
-          </button>
-        </div>
-      )}
+
+
 
       {/* ═══ CONSULTATION CONTACT MODAL ═══ */}
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
@@ -654,25 +663,24 @@ export function CareMembershipHallimLanding() {
             <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
               <div className="bg-[#c8a96e] text-white py-3 px-5 font-bold text-lg flex items-center justify-between">
                 <span>케어 멤버십 회원권</span>
-                <span className="text-xs sm:text-sm font-medium bg-white/20 px-2 py-1 rounded">정기 결제</span>
               </div>
               <div className="p-4 sm:p-5 space-y-4">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-slate-100 pb-3 gap-1">
-                  <span className="font-semibold text-slate-800 text-base">1개월 케어 멤버십</span>
+                  <span className="font-semibold text-slate-800 text-base">1개월 5회 케어PT</span>
                   <div className="text-left sm:text-right">
                     <div className="font-bold text-[#c8a96e] text-lg">총 190,000원</div>
                     <div className="text-sm text-slate-500 font-medium">월 190,000원</div>
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-slate-100 pb-3 gap-1">
-                  <span className="font-semibold text-slate-800 text-base">3개월 케어 멤버십</span>
+                  <span className="font-semibold text-slate-800 text-base">3개월 15회 케어PT</span>
                   <div className="text-left sm:text-right">
                     <div className="font-bold text-[#c8a96e] text-lg">총 450,000원</div>
                     <div className="text-sm text-slate-500 font-medium">월 150,000원</div>
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
-                  <span className="font-semibold text-slate-800 text-base">6개월 케어 멤버십</span>
+                  <span className="font-semibold text-slate-800 text-base">6개월 45회 케어PT</span>
                   <div className="text-left sm:text-right">
                     <div className="font-bold text-[#c8a96e] text-lg">총 690,000원</div>
                     <div className="text-sm text-slate-500 font-medium">월 115,000원</div>

@@ -143,9 +143,9 @@ export function RegistrationSectionNohyeong({
                   className="w-full cursor-pointer rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 transition-all focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20"
                 >
                   <option value="">선택해주세요</option>
-                  <option value="1개월 케어 멤버십(19만원/월)">1개월 케어 멤버십(19만원/월)</option>
-                  <option value="3개월 케어 멤버십(15만원/월)">3개월 케어 멤버십(15만원/월)</option>
-                  <option value="6개월 케어 멤버십(11만5천원/월)">6개월 케어 멤버십(11만5천원/월)</option>
+                  <option value="1개월 5회 케어PT(19만원/월)">1개월 5회 케어PT(19만원/월)</option>
+                  <option value="3개월 15회 케어PT(15만원/월)">3개월 15회 케어PT(15만원/월)</option>
+                  <option value="6개월 45회 케어PT(11만5천원/월)">6개월 45회 케어PT(11만5천원/월)</option>
                 </select>
               </div>
 
