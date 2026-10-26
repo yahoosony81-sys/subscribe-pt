@@ -692,8 +692,12 @@ export function CareMembershipHallimLanding() {
               <X className="w-5 h-5" />
             </button>
 
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-2">케어 멤버십 패키지 안내</h2>
-            <p className="text-center text-slate-600 font-medium">합리적인 가격으로 프리미엄 케어를 경험하세요</p>
+            <DialogTitle className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-2">
+              케어 멤버십 패키지 안내
+            </DialogTitle>
+            <DialogDescription className="text-center text-slate-600 font-medium">
+              합리적인 가격으로 프리미엄 케어를 경험하세요
+            </DialogDescription>
           </div>
           
           <div className="p-6 sm:p-8 space-y-8 bg-white">
@@ -796,12 +800,12 @@ export function CareMembershipHallimLanding() {
               <Sparkles className="w-3.5 h-3.5" />
               <span>PASSIVE MASSAGE PRICE</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-2 tracking-tight">
+            <DialogTitle className="text-2xl sm:text-3xl font-extrabold text-white mb-2 tracking-tight">
               전문가 패시브 마사지 가격 안내
-            </h2>
-            <p className="text-gray-300 text-sm sm:text-base font-medium break-keep">
+            </DialogTitle>
+            <DialogDescription className="text-gray-300 text-sm sm:text-base font-medium break-keep">
               통증의 근본 원인을 해결하는 1:1 맞춤형 전문가 리커버리 케어
-            </p>
+            </DialogDescription>
           </div>
 
           <div className="p-6 sm:p-8 space-y-6 bg-slate-50/50">
