@@ -507,7 +507,7 @@ export function CareMembershipHallimLanding() {
                 className="cm-sticky-cta"
                 onClick={() => handleCtaClick('massage')}
               >
-                <span>전문가 패시브 마사지 전화/문자 상담 가능한 연락처 보기 &rarr;</span>
+                <span>전문가 패시브 마사지 상담 가능한 연락처 보기 &rarr;</span>
               </button>
             </div>
           </div>
