@@ -730,7 +730,7 @@ export function CareMembershipHallimLanding() {
                 </div>
                 <div className="mt-4 bg-slate-50 p-3 rounded-lg flex items-start gap-2">
                   <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
-                  <p className="text-sm text-slate-600 leading-relaxed break-keep">매월 헬스장 이용권 기본 제공 + 월 5회 (회당 25분) 1:1 케어 PT 포함</p>
+                  <p className="text-sm text-slate-600 leading-relaxed break-keep">매월 헬스장 이용권 기본 제공 + 월 5회 (회당 30분) 1:1 케어 PT 포함</p>
                 </div>
               </div>
             </div>
