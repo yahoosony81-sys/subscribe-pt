@@ -130,7 +130,7 @@ const PASSIVE_MASSAGE_SECTIONS = [
     subtitle: "ROOT CAUSE SOLUTION",
     title: "일시적 완화가 아닌\n근본적 원인 해결",
     desc: "단순히 병원에 방문하여 약을 복용하거나 일반적인 물리치료를 받는 것은 근본적인 해결책이 될 수 없습니다. 마인드휘트니스의 전문가 패시브 마사지는 통증을 유발하는 정확한 부위를 진단하고, 그 통증이 발생한 진짜 원인을 찾아 해결하는 데 가장 큰 목표를 둡니다.",
-    image: null, // 추후 이미지 파일 경로 추가 (예: '/images/passive-massage-2.jpg')
+    image: "/images/패시브마사지-캐러셀마지막이미지.png",
     alt: "일시적 완화가 아닌 근본적 원인 해결",
   },
   {
@@ -138,7 +138,7 @@ const PASSIVE_MASSAGE_SECTIONS = [
     subtitle: "REHABILITATION & STRENGTH",
     title: "정확한 이완부터 원인 근육의\n재활 및 강화까지",
     desc: "통증이 발생한 부위의 긴장된 근육을 정확하게 찾아내어 풀어냅니다. 이에 그치지 않고, 통증을 유발한 원인 근육 자체를 재활하고 강화시켜 다시는 동일한 통증이 반복되지 않도록 몸의 균형을 맞추는 것이 패시브 마사지의 궁극적인 목적입니다.",
-    image: null, // 추후 이미지 파일 경로 추가 (예: '/images/passive-massage-3.jpg')
+    image: "/images/패시브3번재사진.png",
     alt: "정확한 이완부터 원인 근육의 재활 및 강화까지",
   },
 ]
@@ -150,6 +150,7 @@ export function CareMembershipHallimLanding() {
   const [textVisible, setTextVisible] = useState(false)
   const [isFormOpen, setIsFormOpen] = useState(false)
   const [isDetailsOpen, setIsDetailsOpen] = useState(false)
+  const [isMassagePriceOpen, setIsMassagePriceOpen] = useState(false)
 
   const sec1 = useScrollReveal()
   const sec2 = useScrollReveal()
@@ -421,17 +422,19 @@ export function CareMembershipHallimLanding() {
       >
         <div className="cm-promo-gift__container max-w-6xl mx-auto px-4 sm:px-6">
           {/* Header Badge & Title */}
-          <div className="cm-promo-gift__header text-center mb-12 sm:mb-20">
-            <div className="cm-promo-gift__badge inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#c8a96e]/15 border border-[#c8a96e]/40 text-[#c8a96e] text-xs font-bold tracking-wider mb-4">
+          <div className="cm-promo-gift__header text-center mb-14 sm:mb-20">
+            <div className="cm-promo-gift__badge inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#c8a96e]/15 border border-[#c8a96e]/40 text-[#c8a96e] text-xs font-bold tracking-wider mb-4 sm:mb-5">
               <Sparkles className="w-3.5 h-3.5" />
               <span>PASSIVE MASSAGE PROGRAM</span>
             </div>
-            <p className="text-gray-400 text-sm sm:text-lg md:text-xl font-medium mb-2 break-keep">
+            <p className="text-gray-300 text-sm sm:text-base md:text-lg font-medium tracking-tight mb-3 sm:mb-4 break-keep">
               지속되는 통증, 약과 물리치료가 정답일까요?
             </p>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight tracking-tight break-keep">
-              전문가 패시브 마사지로<br className="sm:hidden" /> 통증의 <span className="text-[#c8a96e]">&apos;근본 원인&apos;</span>을 해결하세요.
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold text-white leading-[1.45] sm:leading-[1.4] md:leading-[1.38] tracking-[-0.02em] break-keep">
+              전문가 패시브 마사지로<br />
+              통증의 <span className="text-[#c8a96e] font-black inline-block drop-shadow-[0_2px_12px_rgba(200,169,110,0.35)]">&apos;근본 원인&apos;</span>을 해결하세요.
             </h2>
+            <div className="w-14 h-[2px] bg-[#c8a96e] mx-auto mt-6 sm:mt-7 opacity-85" />
           </div>
 
           {/* 콘텐츠 리스트 (왼쪽 사진, 오른쪽 텍스트 통일) */}
@@ -439,7 +442,7 @@ export function CareMembershipHallimLanding() {
             {PASSIVE_MASSAGE_SECTIONS.map((item, idx) => (
               <div
                 key={idx}
-                className="flex flex-col md:flex-row items-center gap-8 sm:gap-12 lg:gap-16 bg-[#1a1815] border border-[#c8a96e]/25 rounded-3xl p-6 sm:p-10 shadow-[0_15px_40px_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-[#c8a96e]/50"
+                className="flex flex-col md:flex-row items-center gap-8 sm:gap-12 lg:gap-16 bg-[#1a1815] border border-[#c8a96e]/25 rounded-3xl p-8 sm:p-12 lg:p-14 shadow-[0_15px_40px_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-[#c8a96e]/50"
               >
                 {/* 이미지 영역 (이미지 자리 확보) */}
                 <div className="w-full md:w-1/2 flex-1">
@@ -477,30 +480,46 @@ export function CareMembershipHallimLanding() {
 
                 {/* 텍스트 내용 영역 */}
                 <div className="w-full md:w-1/2 flex-1 flex flex-col justify-center">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-[#c8a96e] font-black text-2xl sm:text-3xl tracking-tight">
-                      {item.step}
+                  <div className="flex items-center gap-3 mb-5 sm:mb-6">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black tracking-wider bg-[#c8a96e]/15 border border-[#c8a96e]/40 text-[#c8a96e]">
+                      STEP {item.step}
                     </span>
-                    <span className="w-8 h-[2px] bg-[#c8a96e]/50" />
-                    <span className="text-xs sm:text-sm font-semibold tracking-wider text-[#c8a96e] uppercase">
+                    <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#c8a96e]/85 uppercase">
                       {item.subtitle}
                     </span>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-4 leading-snug whitespace-pre-line break-keep">
+                  <h3 className="text-2xl sm:text-3xl lg:text-[32px] font-extrabold text-white leading-[1.38] tracking-[-0.02em] whitespace-pre-line break-keep">
                     {item.title}
                   </h3>
 
-                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed break-keep">
-                    {item.desc}
-                  </p>
+                  {/* 제목과 설명 텍스트 사이 여유 있는 간격 & 구분선 */}
+                  <div className="w-12 h-[2px] bg-[#c8a96e]/50 my-6 sm:my-8 lg:my-10" />
+
+                  <div className="relative pl-5 sm:pl-7 border-l-2 border-[#c8a96e]/70 bg-gradient-to-r from-[#c8a96e]/[0.09] via-[#c8a96e]/[0.03] to-transparent py-5 sm:py-6 pr-5 rounded-r-2xl">
+                    <p className="text-gray-200 text-sm sm:text-base lg:text-[16px] font-normal leading-[1.9] sm:leading-[2.0] break-keep">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
+          {/* ═══ 패시브 마사지 가격보기 버튼 (골드 아웃라인 경량 스타일) ═══ */}
+          <div className="mt-8 sm:mt-12 flex justify-center w-full px-4">
+            <button
+              type="button"
+              onClick={() => setIsMassagePriceOpen(true)}
+              className="group inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full border-2 border-[#c8a96e] bg-[#c8a96e]/10 hover:bg-[#c8a96e] text-[#c8a96e] hover:text-[#121110] font-bold text-sm sm:text-base tracking-wide transition-all duration-300 shadow-[0_4px_20px_rgba(200,169,110,0.15)] hover:shadow-[0_6px_25px_rgba(200,169,110,0.4)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+            >
+              <Sparkles className="w-4 h-4 text-[#c8a96e] group-hover:text-[#121110] transition-colors" />
+              <span>패시브 마사지 가격보기</span>
+            </button>
+          </div>
+
           {/* ═══ 전문가 패시브 마사지 섹션 전용 고정 CTA 버튼 ═══ */}
-          <div className="mt-20 sm:mt-28 md:mt-32 mb-6 sm:mb-10 flex justify-center w-full px-4">
+          <div className="mt-12 sm:mt-16 md:mt-20 mb-6 sm:mb-10 flex justify-center w-full px-4">
             <div className="w-full max-w-[480px]">
               <button
                 type="button"
@@ -734,6 +753,105 @@ export function CareMembershipHallimLanding() {
               className="w-full bg-orange-500 hover:bg-orange-600 text-white font-extrabold py-4 rounded-xl text-lg sm:text-xl transition-colors flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30"
             >
               케어멤버십 전화/문자 상담 가능한 연락처 보기 &rarr;
+            </button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* ═══ PASSIVE MASSAGE PRICE MODAL ═══ */}
+      <Dialog open={isMassagePriceOpen} onOpenChange={setIsMassagePriceOpen}>
+        <DialogContent className="max-h-[90vh] overflow-y-auto bg-white sm:max-w-xl p-0 rounded-2xl border-0 shadow-2xl z-[100]">
+          {/* 모달 상단 헤더 */}
+          <div className="bg-gradient-to-b from-[#1c1917] to-[#292524] text-white p-6 sm:p-8 rounded-t-2xl relative border-b border-[#c8a96e]/30">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#c8a96e]/20 border border-[#c8a96e]/40 text-[#c8a96e] text-xs font-bold tracking-wider mb-3">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>PASSIVE MASSAGE PRICE</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-2 tracking-tight">
+              전문가 패시브 마사지 가격 안내
+            </h2>
+            <p className="text-gray-300 text-sm sm:text-base font-medium break-keep">
+              통증의 근본 원인을 해결하는 1:1 맞춤형 전문가 리커버리 케어
+            </p>
+          </div>
+
+          <div className="p-6 sm:p-8 space-y-6 bg-slate-50/50">
+            {/* 가격 리스트 카드 */}
+            <div className="space-y-3.5">
+              {/* 10회 */}
+              <div className="bg-white rounded-xl border border-slate-200 p-4 sm:p-5 shadow-sm hover:border-[#c8a96e]/60 transition-colors flex items-center justify-between">
+                <div>
+                  <div className="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-0.5">Basic Program</div>
+                  <div className="text-slate-900 font-bold text-lg sm:text-xl">10회 패키지</div>
+                  <div className="text-slate-400 text-xs sm:text-sm mt-0.5">총 650,000원</div>
+                </div>
+                <div className="text-right">
+                  <div className="text-xs text-slate-500 font-medium">1회당</div>
+                  <div className="text-xl sm:text-2xl font-black text-[#c8a96e]">65,000<span className="text-sm font-bold text-slate-700">원</span></div>
+                </div>
+              </div>
+
+              {/* 20회 (추천) */}
+              <div className="relative bg-white rounded-xl border-2 border-[#c8a96e] p-4 sm:p-5 shadow-md shadow-[#c8a96e]/10 flex items-center justify-between">
+                <div className="absolute -top-3 right-4 bg-[#c8a96e] text-black font-extrabold text-[11px] px-2.5 py-0.5 rounded-full tracking-wider shadow-sm">
+                  MOST POPULAR
+                </div>
+                <div>
+                  <div className="text-[#c8a96e] text-xs font-bold uppercase tracking-wider mb-0.5">Standard Program</div>
+                  <div className="text-slate-900 font-bold text-lg sm:text-xl">20회 패키지</div>
+                  <div className="text-slate-400 text-xs sm:text-sm mt-0.5">총 1,200,000원</div>
+                </div>
+                <div className="text-right">
+                  <div className="text-xs text-slate-500 font-medium">1회당</div>
+                  <div className="text-xl sm:text-2xl font-black text-[#c8a96e]">60,000<span className="text-sm font-bold text-slate-700">원</span></div>
+                </div>
+              </div>
+
+              {/* 30회 (최대 혜택) */}
+              <div className="relative bg-white rounded-xl border border-slate-200 p-4 sm:p-5 shadow-sm hover:border-[#c8a96e]/60 transition-colors flex items-center justify-between">
+                <div className="absolute -top-3 right-4 bg-slate-800 text-white font-bold text-[11px] px-2.5 py-0.5 rounded-full tracking-wider">
+                  BEST VALUE
+                </div>
+                <div>
+                  <div className="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-0.5">Premium Program</div>
+                  <div className="text-slate-900 font-bold text-lg sm:text-xl">30회 패키지</div>
+                  <div className="text-slate-400 text-xs sm:text-sm mt-0.5">총 1,650,000원</div>
+                </div>
+                <div className="text-right">
+                  <div className="text-xs text-slate-500 font-medium">1회당</div>
+                  <div className="text-xl sm:text-2xl font-black text-[#c8a96e]">55,000<span className="text-sm font-bold text-slate-700">원</span></div>
+                </div>
+              </div>
+            </div>
+
+            {/* 안내 뱃지 / 혜택 안내 */}
+            <div className="bg-white p-4 rounded-xl border border-slate-200/80 space-y-2">
+              <div className="flex items-start gap-2 text-slate-700 text-xs sm:text-sm">
+                <CheckCircle2 className="w-4 h-4 text-[#c8a96e] shrink-0 mt-0.5" />
+                <span>전문 코치의 1:1 맞춤 근육 정밀 진단 및 타겟 이완 관리</span>
+              </div>
+              <div className="flex items-start gap-2 text-slate-700 text-xs sm:text-sm">
+                <CheckCircle2 className="w-4 h-4 text-[#c8a96e] shrink-0 mt-0.5" />
+                <span>긴장된 근육 이완과 통증 원인 근육의 재활·강화 운동 병행</span>
+              </div>
+              <div className="flex items-start gap-2 text-slate-700 text-xs sm:text-sm">
+                <CheckCircle2 className="w-4 h-4 text-[#c8a96e] shrink-0 mt-0.5" />
+                <span>마인드휘트니스 한림점 전용 프로그램</span>
+              </div>
+            </div>
+          </div>
+
+          {/* 하단 고정 액션 버튼 */}
+          <div className="sticky bottom-0 bg-white border-t border-slate-200 p-4 sm:p-5 rounded-b-2xl shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
+            <button
+              type="button"
+              onClick={() => {
+                setIsMassagePriceOpen(false);
+                setTimeout(() => handleCtaClick('massage'), 200);
+              }}
+              className="w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold py-3.5 sm:py-4 rounded-xl text-base sm:text-lg transition-all flex items-center justify-center gap-2 shadow-lg shadow-orange-500/25 cursor-pointer"
+            >
+              <span>전문가 패시브 마사지 상담 신청하기 &rarr;</span>
             </button>
           </div>
         </DialogContent>
