@@ -849,7 +849,7 @@ export function CareMembershipHallimLanding() {
               }}
               className="w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold py-3.5 sm:py-4 rounded-xl text-base sm:text-lg transition-all flex items-center justify-center gap-2 shadow-lg shadow-orange-500/25 cursor-pointer"
             >
-              <span>전문가 패시브 마사지 상담 신청하기 &rarr;</span>
+              <span>전문가 패시브 마사지 상담 가능한 연락처 보기 &rarr;</span>
             </button>
           </div>
         </DialogContent>
