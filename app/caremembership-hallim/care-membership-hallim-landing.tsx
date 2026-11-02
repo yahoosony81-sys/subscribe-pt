@@ -744,15 +744,15 @@ export function CareMembershipHallimLanding() {
               <div className="p-4 sm:p-5 space-y-4">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-slate-100 pb-3 gap-1">
                   <span className="font-semibold text-slate-800 text-base">10회 충전권</span>
-                  <span className="font-bold text-slate-700 text-lg">330,000원</span>
+                  <span className="font-bold text-slate-700 text-lg">210,000원</span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-slate-100 pb-3 gap-1">
-                  <span className="font-semibold text-slate-800 text-base">20회 충전권</span>
-                  <span className="font-bold text-slate-700 text-lg">550,000원</span>
+                  <span className="font-semibold text-slate-800 text-base">30회 충전권</span>
+                  <span className="font-bold text-slate-700 text-lg">540,000원</span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
-                  <span className="font-semibold text-slate-800 text-base">30회 충전권</span>
-                  <span className="font-bold text-slate-700 text-lg">770,000원</span>
+                  <span className="font-semibold text-slate-800 text-base">50회 충전권</span>
+                  <span className="font-bold text-slate-700 text-lg">750,000원</span>
                 </div>
                 <div className="mt-4 bg-orange-50 p-3 rounded-lg flex items-start gap-2">
                   <AlertCircle className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" />
