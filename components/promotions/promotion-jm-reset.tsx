@@ -169,141 +169,112 @@ export function PromotionJmReset() {
         >
           {/* ══════ [슬라이드 1] 4주 식단 개선 프로그램 ══════ */}
           <div
-            className="relative min-w-full w-full shrink-0 flex items-center overflow-hidden"
+            className="relative min-w-full w-full shrink-0 flex items-center justify-center overflow-hidden bg-gradient-to-b from-black via-[#0d140e] to-black"
             style={{ minHeight: "100svh" }}
             role="group"
             aria-roledescription="slide"
             aria-label="슬라이드 1: RE:SET 4주 식단 개선 프로그램"
           >
-            {/* 와이드 전체화면 배경 이미지 */}
-            <img
-              src="/images/diet-hero.png"
-              alt="4주 식단 개선 프로그램 와이드 배경"
-              className="absolute inset-0 w-full h-full object-cover object-[75%_center] sm:object-[72%_center] md:object-[75%_center]"
-              style={{ zIndex: 0 }}
-            />
+            {/* 배경 은은한 앰비언트 글로우 (모바일에서 어둡게 덮지 않도록 최소화) */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#CCFF00]/10 rounded-full blur-[140px] pointer-events-none" />
 
-            {/* PC 데스크톱 다크 그라디언트: 좌측 텍스트 영역을 집중적으로 블랙 그라데이션 처리하여 가독성 극대화, 우측 사진은 자연스럽게 노출 */}
+            {/* 슬라이드 1 콘텐츠 컨테이너 */}
             <div
-              className="absolute inset-0 hidden md:block"
-              style={{
-                background:
-                  "linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 42%, rgba(0,0,0,0.40) 70%, rgba(0,0,0,0.12) 100%)",
-                zIndex: 1,
-              }}
-            />
-
-            {/* 모바일 다크 그라디언트: 전체 텍스트 가독성을 높이면서 배경 사진이 살아나도록 처리 */}
-            <div
-              className="absolute inset-0 block md:hidden"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.60) 40%, rgba(0,0,0,0.90) 100%), linear-gradient(90deg, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.35) 100%)",
-                zIndex: 1,
-              }}
-            />
-
-            {/* 상하단 경계 부드러운 페이드 오버레이 (PC 데스크톱 전용) */}
-            <div
-              className="absolute inset-0 hidden md:block"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(0,0,0,0.65) 0%, transparent 18%, transparent 80%, rgba(0,0,0,0.85) 100%)",
-                zIndex: 2,
-              }}
-            />
-
-            {/* 좌측 텍스트 콘텐츠 컨테이너 */}
-            <div
-              className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-10 md:px-12 lg:px-16 flex flex-col items-start justify-center text-left"
-              style={{ minHeight: "100svh", paddingTop: "80px", paddingBottom: "110px" }}
+              className="relative z-10 w-full max-w-6xl mx-auto px-5 sm:px-10 md:px-12 lg:px-16 flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-between gap-6 sm:gap-8 lg:gap-12"
+              style={{ minHeight: "100svh", paddingTop: "80px", paddingBottom: "115px" }}
             >
-              {/* 11월 특별 프로그램 배지 */}
-              <div className="mb-5 sm:mb-6 inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#CCFF00]/50 bg-[#CCFF00]/10 backdrop-blur-md shadow-[0_0_15px_rgba(204,255,0,0.2)]">
-                <span
-                  className="w-2.5 h-2.5 rounded-full bg-[#CCFF00] animate-pulse"
-                  style={{ boxShadow: "0 0 10px #CCFF00" }}
-                />
-                <span
-                  className="text-[#CCFF00] text-xs sm:text-sm font-bold tracking-[0.22em] uppercase"
-                  style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+              {/* 텍스트 콘텐츠 영역 */}
+              <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start text-center lg:text-left">
+                {/* 11월 특별 프로그램 배지 */}
+                <div className="mb-3 sm:mb-5 inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#CCFF00]/50 bg-[#CCFF00]/10 backdrop-blur-md shadow-[0_0_15px_rgba(204,255,0,0.2)]">
+                  <span
+                    className="w-2.5 h-2.5 rounded-full bg-[#CCFF00] animate-pulse"
+                    style={{ boxShadow: "0 0 10px #CCFF00" }}
+                  />
+                  <span
+                    className="text-[#CCFF00] text-xs sm:text-sm font-bold tracking-[0.22em] uppercase"
+                    style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+                  >
+                    11월 특별 프로그램 · 리셋중문점
+                  </span>
+                </div>
+
+                {/* 메인 타이틀 */}
+                <h2
+                  className="text-white font-black tracking-tight mb-3 sm:mb-4"
+                  style={{
+                    fontFamily: "'Noto Sans KR', sans-serif",
+                    fontSize: "clamp(2rem, 5.2vw, 4.2rem)",
+                    lineHeight: 1.18,
+                    letterSpacing: "-0.02em",
+                    wordBreak: "keep-all",
+                    textShadow: "0 2px 14px rgba(0,0,0,0.9)",
+                  }}
                 >
-                  11월 특별 프로그램 · 리셋중문점
-                </span>
+                  <span className="text-white">지금, </span>
+                  <span className="neon-green">4주만</span>
+                  <br />
+                  달라져보세요.
+                </h2>
+
+                {/* 서브 카피 */}
+                <div
+                  className="max-w-xl mb-6 sm:mb-8 leading-relaxed"
+                  style={{ fontFamily: "'Noto Sans KR', sans-serif", wordBreak: "keep-all" }}
+                >
+                  <p className="text-white/90 text-sm sm:text-base md:text-xl font-medium">
+                    내 몸을 관찰하고, 기록하며, 느끼는 지속 가능한 식습관.
+                  </p>
+                  <p className="text-[#CCFF00] text-xs sm:text-sm font-bold mt-1.5">
+                    🥗 무조건 굶는 다이어트가 아닌, 평생 내 몸에 맞는 맞춤 식사법
+                  </p>
+                </div>
+
+                {/* 버튼: 4주 식단개선 프로그램 자세히 보기 */}
+                <div className="w-full sm:w-auto">
+                  <button
+                    onClick={scrollToDietSection}
+                    className="cta-shimmer w-full sm:w-auto flex items-center justify-center gap-2 sm:gap-2.5 px-4 sm:px-8 py-3 sm:py-4 rounded-full bg-[#CCFF00] hover:bg-white text-black font-black text-[13px] min-[360px]:text-[14.5px] min-[400px]:text-base sm:text-lg tracking-tight sm:tracking-wide transition-all duration-300 shadow-[0_0_25px_rgba(204,255,0,0.45)] hover:shadow-[0_0_35px_rgba(255,255,255,0.7)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                    style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
+                  >
+                    <span className="flex items-center justify-center flex-wrap gap-x-1.5 leading-tight text-center">
+                      <span className="inline-block whitespace-nowrap">4주 식단개선 프로그램</span>
+                      <span className="inline-block whitespace-nowrap">자세히 보기</span>
+                    </span>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="shrink-0 animate-bounce"
+                    >
+                      <path d="M12 5v14M19 12l-7 7-7-7" />
+                    </svg>
+                  </button>
+                </div>
               </div>
 
-              {/* 메인 타이틀 */}
-              <h2
-                className="text-white font-black tracking-tight mb-5"
-                style={{
-                  fontFamily: "'Noto Sans KR', sans-serif",
-                  fontSize: "clamp(2.4rem, 6vw, 4.8rem)",
-                  lineHeight: 1.15,
-                  letterSpacing: "-0.02em",
-                  wordBreak: "keep-all",
-                  textShadow: "0 2px 14px rgba(0,0,0,0.95), 0 4px 25px rgba(0,0,0,0.85)",
-                }}
-              >
-                <span className="text-white">지금, </span>
-                <span className="neon-green">4주만</span>
-                <br />
-                달라져보세요.
-              </h2>
-
-              {/* 서브 카피 */}
-              <div
-                className="max-w-xl mb-8 leading-relaxed"
-                style={{ fontFamily: "'Noto Sans KR', sans-serif", wordBreak: "keep-all" }}
-              >
-                <p
-                  className="text-white text-base sm:text-lg md:text-xl font-semibold"
-                  style={{ textShadow: "0 2px 8px rgba(0,0,0,0.95)" }}
-                >
-                  내 몸을 관찰하고, 기록하며, 느끼는 지속 가능한 식습관.
-                </p>
-                <p
-                  className="text-[#CCFF00] text-xs sm:text-sm md:text-base font-bold mt-2.5"
-                  style={{ textShadow: "0 2px 6px rgba(0,0,0,0.95)" }}
-                >
-                  🥗 무조건 굶는 다이어트가 아닌, 평생 내 몸에 맞는 맞춤 식사법
-                </p>
-              </div>
-
-              {/* 버튼: 4주 식단개선 프로그램 자세히 보기 */}
-              <div className="w-full sm:w-auto">
-                <button
+              {/* 포스터 이미지 원본 카드 영역 (모바일에서도 잘림 없이 온전하게 노출) */}
+              <div className="w-full max-w-[280px] min-[400px]:max-w-[320px] sm:max-w-[360px] lg:max-w-[400px] flex justify-center shrink-0">
+                <div
                   onClick={scrollToDietSection}
-                  className="cta-shimmer flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#CCFF00] hover:bg-white text-black font-black text-base sm:text-lg tracking-wide transition-all duration-300 shadow-[0_0_25px_rgba(204,255,0,0.5)] hover:shadow-[0_0_35px_rgba(255,255,255,0.7)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
-                  style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
+                  className="group relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-[#CCFF00]/40 hover:border-[#CCFF00] shadow-[0_12px_45px_rgba(0,0,0,0.8),0_0_30px_rgba(204,255,0,0.3)] transition-all duration-300 hover:scale-[1.02] cursor-pointer bg-[#111]"
                 >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="animate-bounce"
-                  >
-                    <path d="M12 5v14M19 12l-7 7-7-7" />
-                  </svg>
-                  <span>4주 식단개선 프로그램 자세히 보기</span>
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="animate-bounce"
-                  >
-                    <path d="M12 5v14M19 12l-7 7-7-7" />
-                  </svg>
-                </button>
+                  <img
+                    src="/images/diet-hero.png"
+                    alt="RE:SET 식단 개선 프로그램 - 지금 4주만 달라져보세요"
+                    className="w-full h-auto object-contain block"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity hidden sm:flex items-end justify-center p-4">
+                    <span className="text-[#CCFF00] font-black text-xs sm:text-sm bg-black/80 px-3.5 py-1.5 rounded-full border border-[#CCFF00]/60">
+                      클릭하여 상세 내용 보기 &darr;
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -390,20 +361,21 @@ export function PromotionJmReset() {
               </h2>
 
               {/* 상시 프로그램 바로가기 버튼 */}
-              <div className="animate-fadeSlideUp-4 mt-12 cursor-pointer z-20">
+              <div className="animate-fadeSlideUp-4 mt-10 sm:mt-12 cursor-pointer z-20 w-full sm:w-auto px-4 sm:px-0">
                 <button
                   onClick={() => {
                     document.getElementById('weekly-program-section')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="flex items-center justify-center gap-2 sm:gap-4 px-5 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#CCFF00]/15 hover:bg-[#CCFF00]/30 border border-[#CCFF00]/50 backdrop-blur-md transition-all duration-300 shadow-[0_0_20px_rgba(204,255,0,0.3)] hover:shadow-[0_0_30px_rgba(204,255,0,0.6)] cursor-pointer"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#CCFF00]/15 hover:bg-[#CCFF00]/30 border border-[#CCFF00]/50 backdrop-blur-md transition-all duration-300 shadow-[0_0_20px_rgba(204,255,0,0.3)] hover:shadow-[0_0_30px_rgba(204,255,0,0.6)] cursor-pointer"
                 >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="hidden sm:block text-[#CCFF00] animate-bounce">
-                    <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  <span className="text-[#CCFF00] font-black text-[15px] min-[400px]:text-base sm:text-xl md:text-2xl tracking-wide whitespace-nowrap drop-shadow-[0_0_8px_rgba(204,255,0,0.8)]" style={{ fontFamily: "'Noto Sans KR', sans-serif" }}>
-                    리셋 중문 상시 프로그램 자세히 보기
+                  <span
+                    className="flex items-center justify-center flex-wrap gap-x-1.5 leading-tight text-center text-[#CCFF00] font-black text-[13px] min-[360px]:text-[14.5px] min-[400px]:text-base sm:text-xl md:text-2xl tracking-tight sm:tracking-wide drop-shadow-[0_0_8px_rgba(204,255,0,0.8)]"
+                    style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
+                  >
+                    <span className="inline-block whitespace-nowrap">리셋 중문 상시 프로그램</span>
+                    <span className="inline-block whitespace-nowrap">자세히 보기</span>
                   </span>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="hidden sm:block text-[#CCFF00] animate-bounce">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="shrink-0 text-[#CCFF00] animate-bounce">
                     <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </button>
