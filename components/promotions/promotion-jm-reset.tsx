@@ -169,15 +169,12 @@ export function PromotionJmReset() {
         >
           {/* ══════ [슬라이드 1] 4주 식단 개선 프로그램 ══════ */}
           <div
-            className="relative min-w-full w-full shrink-0 flex items-center justify-center overflow-hidden bg-gradient-to-b from-black via-[#0d140e] to-black"
+            className="relative min-w-full w-full shrink-0 flex items-center justify-center overflow-hidden bg-black"
             style={{ minHeight: "100svh" }}
             role="group"
             aria-roledescription="slide"
             aria-label="슬라이드 1: RE:SET 4주 식단 개선 프로그램"
           >
-            {/* 배경 은은한 앰비언트 글로우 (모바일에서 어둡게 덮지 않도록 최소화) */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#CCFF00]/10 rounded-full blur-[140px] pointer-events-none" />
-
             {/* 슬라이드 1 콘텐츠 컨테이너 */}
             <div
               className="relative z-10 w-full max-w-6xl mx-auto px-5 sm:px-10 md:px-12 lg:px-16 flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-between gap-6 sm:gap-8 lg:gap-12"
@@ -262,18 +259,13 @@ export function PromotionJmReset() {
               <div className="w-full max-w-[280px] min-[400px]:max-w-[320px] sm:max-w-[360px] lg:max-w-[400px] flex justify-center shrink-0">
                 <div
                   onClick={scrollToDietSection}
-                  className="group relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-[#CCFF00]/40 hover:border-[#CCFF00] shadow-[0_12px_45px_rgba(0,0,0,0.8),0_0_30px_rgba(204,255,0,0.3)] transition-all duration-300 hover:scale-[1.02] cursor-pointer bg-[#111]"
+                  className="group relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-[#CCFF00]/40 hover:border-[#CCFF00] shadow-[0_12px_45px_rgba(0,0,0,0.8),0_0_30px_rgba(204,255,0,0.3)] transition-all duration-300 hover:scale-[1.02] cursor-pointer bg-transparent"
                 >
                   <img
                     src="/images/diet-hero.png"
                     alt="RE:SET 식단 개선 프로그램 - 지금 4주만 달라져보세요"
                     className="w-full h-auto object-contain block"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity hidden sm:flex items-end justify-center p-4">
-                    <span className="text-[#CCFF00] font-black text-xs sm:text-sm bg-black/80 px-3.5 py-1.5 rounded-full border border-[#CCFF00]/60">
-                      클릭하여 상세 내용 보기 &darr;
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>
